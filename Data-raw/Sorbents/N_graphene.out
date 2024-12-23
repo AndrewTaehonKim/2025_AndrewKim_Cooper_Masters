@@ -1,0 +1,666 @@
+
+*************** JDFTx 1.7.0  ***************
+
+Start date and time: Sat Sep 28 11:57:43 2024
+Executable jdftx with command-line: -i N_graphene-elecmin.in -o N_graphene-elecmin.out
+Running on hosts (process indices):  Wolf-Dell (0)
+Divided in process groups (process indices):  0 (0)
+Resource initialization completed at t[s]:      0.00
+Run totals: 1 processes, 6 threads, 0 GPUs
+
+
+Input parsed successfully to the following command list (including defaults):
+
+basis kpoint-dependent
+coords-type Cartesian
+core-overlap-check vector
+coulomb-interaction Slab 001
+coulomb-truncation-embed 0 0 5
+davidson-band-ratio 1.1
+dump End State
+dump-name N_graphene-elecmin.$VAR
+elec-cutoff 20 100
+elec-eigen-algo Davidson
+elec-ex-corr gga-PBE
+elec-smearing Fermi 0.01
+electronic-minimize  \
+	dirUpdateScheme      FletcherReeves \
+	linminMethod         DirUpdateRecommended \
+	nIterations          100 \
+	history              15 \
+	knormThreshold       0 \
+	energyDiffThreshold  1e-08 \
+	nEnergyDiff          2 \
+	alphaTstart          1 \
+	alphaTmin            1e-10 \
+	updateTestStepSize   yes \
+	alphaTreduceFactor   0.1 \
+	alphaTincreaseFactor 3 \
+	nAlphaAdjustMax      3 \
+	wolfeEnergy          0.0001 \
+	wolfeGradient        0.9 \
+	fdTest               no
+exchange-regularization WignerSeitzTruncated
+fluid None
+fluid-ex-corr lda-TF lda-PZ
+fluid-gummel-loop 10 1.000000e-05
+fluid-minimize  \
+	dirUpdateScheme      PolakRibiere \
+	linminMethod         DirUpdateRecommended \
+	nIterations          100 \
+	history              15 \
+	knormThreshold       0 \
+	energyDiffThreshold  0 \
+	nEnergyDiff          2 \
+	alphaTstart          1 \
+	alphaTmin            1e-10 \
+	updateTestStepSize   yes \
+	alphaTreduceFactor   0.1 \
+	alphaTincreaseFactor 3 \
+	nAlphaAdjustMax      3 \
+	wolfeEnergy          0.0001 \
+	wolfeGradient        0.9 \
+	fdTest               no
+fluid-solvent H2O 55.338 ScalarEOS \
+	epsBulk 78.4 \
+	pMol 0.92466 \
+	epsInf 1.77 \
+	Pvap 1.06736e-10 \
+	sigmaBulk 4.62e-05 \
+	Rvdw 2.61727 \
+	Res 1.42 \
+	tauNuc 343133 \
+	poleEl 15 7 1
+forces-output-coords Positions
+ion C  28.010542013705631   0.002014969601156   0.635465203747167 0
+ion C  16.341968157882292  20.214705522223607   0.636370795694031 0
+ion C   2.338532027351695   4.042411505399060   0.630361847754816 0
+ion C  23.343313188735969   0.002278716019722   0.640022467239564 0
+ion C   4.672620934470559   0.001554156700161   0.632050616002296 0
+ion C  11.674116326115334  20.215100669694028   0.619847495055023 0
+ion C  25.676530282256284   4.042904097616445   0.653564930084009 0
+ion C  18.675851376129700  16.172910511284943   0.662695583431347 0
+ion C   4.671777948336020   8.082036709586005   0.612564386226399 0
+ion C  18.676336142016080   0.002101964498535   0.651180333522277 0
+ion C   9.339850970925752   0.001738039847832   0.641511836963307 0
+ion C   9.341212652353351  16.175613291750459   0.599279306155555 0
+ion C  23.342941439729607   8.084920466015539   0.683240254571249 0
+ion C  21.009110272076708  12.128959849493356   0.688453340004557 0
+ion C   7.009085367604252  12.128528685817338   0.597262204671189 0
+ion C  14.008105470077210   0.001988816408382   0.654008834012114 0
+ion C  14.009120976896664  16.174984627607692   0.629938477890011 0
+ion C   7.005550759074101   4.041176716120078   0.616350899393808 0
+ion C  21.010101094155836   4.043302536041172   0.668670850704729 0
+ion C  16.344445762465487  12.130683361169906   0.668518806438794 0
+ion C   9.337643998902927   8.081728763982859   0.614931622729934 0
+ion C  16.343783017314891   4.042062713362387   0.668836182024798 0
+ion C  11.674085450205249   4.041278849785761   0.642196060576936 0
+ion C  11.675597583834264  12.133622242506720   0.630068253549407 0
+ion C  18.678074956154809   8.085220585829878   0.685769374381508 0
+ion C   7.007175797728255  20.216155157604103   0.619709324068161 0
+ion C  -6.996748017889802  20.214440105700564   0.653094683289385 0
+ion C   0.002354623270169   8.082966457809835   0.657418822396948 0
+ion C  14.012576459862725   8.083203697825988   0.669712893069494 0
+ion C   2.339067441062872  20.216465077180068   0.646220757178249 0
+ion C  -4.663670527593792  16.172490992184059   0.678596642017759 0
+ion C   2.336125814129785  12.127745765919109   0.656417500003109 0
+ion C  -2.332224039758668  12.128030282589300   0.685859862245795 0
+ion C  -2.329659352792410  20.215194179952768   0.659830322184195 0
+ion C   4.673933801454849  16.177740252210711   0.625359734501050 0
+ion C   0.002990588629148  16.174656174657997   0.666554428718456 0
+ion C  14.008266720144102  21.561374576259517   0.629777200837147 0
+ion C   2.338930816614256   1.348570645432834   0.632009758527847 0
+ion C  25.677100562977380   1.348988124751942   0.641986895200073 0
+ion C  16.342686998612663  17.520648868856785   0.642302048336074 0
+ion C   4.672307145938162   5.388219921962990   0.616057256550324 0
+ion C  21.010123495302889   1.349044430338556   0.652394834146865 0
+ion C   7.005937845436384   1.348033936218268   0.628031389286509 0
+ion C  11.674692189550257  17.521226022139913   0.612057705166649 0
+ion C  23.343784883173043   5.390651685198355   0.669612389866280 0
+ion C  18.676972543384359  13.478483594758318   0.675595907033575 0
+ion C   7.004963348139576   9.432115986525980   0.597538283264729 0
+ion C  16.342472076605748   1.348066366442404   0.659130179870282 0
+ion C  11.673522256343780   1.347802312891912   0.646547034509048 0
+ion C   9.340696631175403  13.481256291567631   0.599303874261302 0
+ion C  21.010487586627971   9.434228317035956   0.689549670827176 0
+ion C   9.340862584041272  21.562275316056120   0.623251203387415 0
+ion C  -9.330262385564788  21.561165527783945   0.640491424243255 0
+ion C   0.004476893676090   5.389148113018151   0.645932445799481 0
+ion C  14.011432130181314  13.480719160062115   0.643556882023976 0
+ion C   9.339051356617166   5.386992451363917   0.621078239496768 0
+ion C  18.677007069088155   5.390558998944344   0.676741055188348 0
+ion C  16.345725884609092   9.434637493571932   0.679131999516677 0
+ion C  14.009428395823310   5.387478001177438   0.662736904438848 0
+ion C   4.673293824799767  21.561882602550448   0.637519226383223 0
+ion C  -6.996841473985324  17.520066852095106   0.666346621047357 0
+ion C   2.337134667876788   9.428913976861832   0.643387178107247 0
+ion C  -2.330217064543965   9.432650452790400   0.678563548363968 0
+ion C  -4.663349535264295  21.561481505082671   0.652392573786173 0
+ion C   7.008365318233412  17.523060541264897   0.607450639135720 0
+ion C   0.004487123343837  21.561671103490092   0.654109318198199 0
+ion C  -4.664147187494721  13.477588422800194   0.688047082736968 0
+ion C   4.674619807111762  13.479414560663223   0.625188064189185 0
+ion C   2.338448909138405  17.522455183042435   0.645633689115609 0
+ion C  -2.330712054942804  17.520790606615741   0.670058696770369 0
+ion C   0.000363098194401  13.478789474313889   0.675559226948007 0
+ion N  11.674484029805171   9.432912355349794   0.644194404697448 0
+ion-species GBRV/$ID_pbe.uspp
+ion-width 0
+ionic-minimize  \
+	dirUpdateScheme      FletcherReeves \
+	linminMethod         DirUpdateRecommended \
+	nIterations          200 \
+	history              15 \
+	knormThreshold       0.0001 \
+	energyDiffThreshold  1e-06 \
+	nEnergyDiff          2 \
+	alphaTstart          1 \
+	alphaTmin            1e-10 \
+	updateTestStepSize   yes \
+	alphaTreduceFactor   0.1 \
+	alphaTincreaseFactor 3 \
+	nAlphaAdjustMax      3 \
+	wolfeEnergy          0.0001 \
+	wolfeGradient        0.9 \
+	fdTest               no
+kpoint   0.000000000000   0.000000000000   0.000000000000  1.00000000000000
+kpoint-folding 1 1 1 
+latt-move-scale 1 1 1
+latt-scale 1 1 1 
+lattice Triclinic 28.0058 28.0058 37.7946 90 90 120
+lattice-minimize  \
+	dirUpdateScheme      L-BFGS \
+	linminMethod         DirUpdateRecommended \
+	nIterations          0 \
+	history              15 \
+	knormThreshold       0 \
+	energyDiffThreshold  1e-06 \
+	nEnergyDiff          2 \
+	alphaTstart          1 \
+	alphaTmin            1e-10 \
+	updateTestStepSize   yes \
+	alphaTreduceFactor   0.1 \
+	alphaTincreaseFactor 3 \
+	nAlphaAdjustMax      3 \
+	wolfeEnergy          0.0001 \
+	wolfeGradient        0.9 \
+	fdTest               no
+lcao-params -1 1e-06 0.01
+pcm-variant GLSSA13
+spintype no-spin
+subspace-rotation-factor 1 yes
+symmetries automatic
+symmetry-threshold 0.0001
+
+
+
+---------- Setting up symmetries ----------
+
+Found 24 point-group symmetries of the bravais lattice
+Found 1 space-group symmetries with basis
+Applied RMS atom displacement 0 bohrs to make symmetries exact.
+
+---------- Initializing the Grid ----------
+R = 
+[      28.0058     -14.0029            0  ]
+[            0      24.2537            0  ]
+[            0            0      37.7946  ]
+unit cell volume = 25671.8
+G =
+[   0.224353    0.12953         -0  ]
+[          0   0.259061          0  ]
+[          0         -0   0.166246  ]
+Minimum fftbox size, Smin = [  128  128  172  ]
+Chosen fftbox size, S = [  128  128  180  ]
+
+---------- Initializing tighter grid for wavefunction operations ----------
+R = 
+[      28.0058     -14.0029            0  ]
+[            0      24.2537            0  ]
+[            0            0      37.7946  ]
+unit cell volume = 25671.8
+G =
+[   0.224353    0.12953         -0  ]
+[          0   0.259061          0  ]
+[          0         -0   0.166246  ]
+Minimum fftbox size, Smin = [  116  116  156  ]
+Chosen fftbox size, S = [  120  120  160  ]
+
+---------- Exchange Correlation functional ----------
+Initalized PBE GGA exchange.
+Initalized PBE GGA correlation.
+
+---------- Setting up pseudopotentials ----------
+Width of ionic core gaussian charges (only for fluid interactions / plotting) set to 0
+
+Reading pseudopotential file '/home/akakimmykim/jdftx_install/build/pseudopotentials/GBRV/c_pbe.uspp':
+  Title: C.  Created by USPP 7.3.6 on 3-2-2014
+  Reference state energy: -5.406344.  4 valence electrons in orbitals:
+    |200>  occupation: 2  eigenvalue: -0.504890
+    |210>  occupation: 2  eigenvalue: -0.194356
+  lMax: 1  lLocal: 2  QijEcut: 5
+  4 projectors sampled on a log grid with 503 points:
+    l: 0  eig: -0.504890  rCut: 1.3
+    l: 0  eig: 0.000000  rCut: 1.3
+    l: 1  eig: -0.194357  rCut: 1.3
+    l: 1  eig: 0.000000  rCut: 1.3
+  Partial core density with radius 1.1
+  Transforming core density to a uniform radial grid of dG=0.02 with 1625 points.
+  Transforming local potential to a uniform radial grid of dG=0.02 with 1625 points.
+  Transforming nonlocal projectors to a uniform radial grid of dG=0.02 with 432 points.
+  Transforming density augmentations to a uniform radial grid of dG=0.02 with 1625 points.
+  Transforming atomic orbitals to a uniform radial grid of dG=0.02 with 432 points.
+  Core radius for overlap checks: 1.30 bohrs.
+
+Reading pseudopotential file '/home/akakimmykim/jdftx_install/build/pseudopotentials/GBRV/n_pbe.uspp':
+  Title: N.  Created by USPP 7.3.6 on 3-2-2014
+  Reference state energy: -9.763716.  5 valence electrons in orbitals:
+    |200>  occupation: 2  eigenvalue: -0.681964
+    |210>  occupation: 3  eigenvalue: -0.260726
+  lMax: 1  lLocal: 2  QijEcut: 6
+  4 projectors sampled on a log grid with 491 points:
+    l: 0  eig: -0.681964  rCut: 1.15
+    l: 0  eig: 0.000000  rCut: 1.15
+    l: 1  eig: -0.260729  rCut: 1.2
+    l: 1  eig: 0.500000  rCut: 1.2
+  Partial core density with radius 0.8
+  Transforming core density to a uniform radial grid of dG=0.02 with 1625 points.
+  Transforming local potential to a uniform radial grid of dG=0.02 with 1625 points.
+  Transforming nonlocal projectors to a uniform radial grid of dG=0.02 with 432 points.
+  Transforming density augmentations to a uniform radial grid of dG=0.02 with 1625 points.
+  Transforming atomic orbitals to a uniform radial grid of dG=0.02 with 432 points.
+  Core radius for overlap checks: 1.20 bohrs.
+
+Initialized 2 species with 72 total atoms.
+
+Folded 1 k-points by 1x1x1 to 1 k-points.
+
+---------- Setting up k-points, bands, fillings ----------
+No reducable k-points. 
+Computing the number of bands and number of electrons
+Calculating initial fillings.
+nElectrons: 289.000000   nBands: 288   nStates: 1
+
+----- Setting up reduced wavefunction bases (one per k-point) -----
+average nbasis = 109673.000 , ideal nbasis = 109671.883
+
+---------- Setting up coulomb interaction ----------
+Setting up double-sized grid for truncated Coulomb potentials:
+R = 
+[      28.0058     -14.0029            0  ]
+[            0      24.2537            0  ]
+[            0            0      75.5892  ]
+unit cell volume = 51343.6
+G =
+[   0.224353    0.12953         -0  ]
+[          0   0.259061          0  ]
+[          0         -0  0.0831228  ]
+Chosen fftbox size, S = [  128  128  360  ]
+Integer grid location selected as the embedding center:
+   Grid: [  0  0  24  ]
+   Lattice: [  0  0  0.132294  ]
+   Cartesian: [  0  0  5  ]
+Constructing Wigner-Seitz cell: 8 faces (6 quadrilaterals, 2 hexagons)
+Range-separation parameter for embedded mesh potentials due to point charges: 0.590105 bohrs.
+Initialized slab truncation along lattice direction 001
+
+---------- Setting up 2D ewald sum ----------
+Optimum gaussian width for ewald sums = 15.547689 bohr.
+Real space sums over 289 unit cells with max indices [  8  8  0  ]
+Reciprocal space sums over 81 terms with max indices [  4  4  0  ]
+
+---------- Allocating electronic variables ----------
+Initializing wave functions:  linear combination of atomic orbitals
+C pseudo-atom occupations:   s ( 2 )  p ( 2 )
+N pseudo-atom occupations:   s ( 2 )  p ( 3 )
+	FillingsUpdate:  mu: -0.326952863  nElectrons: 289.000000
+LCAOMinimize: Iter:   0  F: -410.9783412883447227  |grad|_K:  2.945e-03  alpha:  1.000e+00
+	FillingsUpdate:  mu: -0.319064804  nElectrons: 289.000000
+LCAOMinimize: Iter:   1  F: -411.0502574465163548  |grad|_K:  9.746e-04  alpha:  1.469e-01  linmin: -2.493e-01  cgtest:  9.047e-01  t[s]:    279.34
+LCAOMinimize: Encountered beta<0, resetting CG.
+	FillingsUpdate:  mu: -0.317102407  nElectrons: 289.000000
+LCAOMinimize: Iter:   2  F: -411.0592684640903371  |grad|_K:  2.577e-04  alpha:  2.323e-01  linmin:  5.598e-02  cgtest: -1.715e-01  t[s]:    366.17
+	FillingsUpdate:  mu: -0.317216781  nElectrons: 289.000000
+LCAOMinimize: Iter:   3  F: -411.0599608419842070  |grad|_K:  8.476e-05  alpha:  2.738e-01  linmin: -8.635e-05  cgtest:  2.878e-01  t[s]:    452.89
+	FillingsUpdate:  mu: -0.317316957  nElectrons: 289.000000
+LCAOMinimize: Iter:   4  F: -411.0600490433595837  |grad|_K:  3.923e-05  alpha:  2.939e-01  linmin: -1.454e-03  cgtest:  2.176e-03  t[s]:    540.04
+	FillingsUpdate:  mu: -0.317283676  nElectrons: 289.000000
+LCAOMinimize: Iter:   5  F: -411.0600779842712313  |grad|_K:  2.632e-05  alpha:  4.496e-01  linmin:  2.337e-04  cgtest: -4.592e-03  t[s]:    626.82
+	FillingsUpdate:  mu: -0.317296152  nElectrons: 289.000000
+LCAOMinimize: Iter:   6  F: -411.0600874130899456  |grad|_K:  3.558e-06  alpha:  3.262e-01  linmin:  6.837e-05  cgtest:  1.774e-02  t[s]:    713.77
+	FillingsUpdate:  mu: -0.317297144  nElectrons: 289.000000
+LCAOMinimize: Iter:   7  F: -411.0600876264736598  |grad|_K:  1.718e-06  alpha:  4.036e-01  linmin:  4.819e-04  cgtest: -1.991e-03  t[s]:    800.83
+	FillingsUpdate:  mu: -0.317295391  nElectrons: 289.000000
+LCAOMinimize: Iter:   8  F: -411.0600876815234983  |grad|_K:  9.885e-07  alpha:  4.476e-01  linmin: -1.737e-04  cgtest:  3.467e-03  t[s]:    887.88
+LCAOMinimize: Converged (|Delta F|<1.000000e-06 for 2 iters).
+
+
+---- Citations for features of the code used in this run ----
+
+   Software package:
+      R. Sundararaman, K. Letchworth-Weaver, K.A. Schwarz, D. Gunceler, Y. Ozhabes and T.A. Arias, 'JDFTx: software for joint density-functional theory', SoftwareX 6, 278 (2017)
+
+   gga-PBE exchange-correlation functional:
+      J.P. Perdew, K. Burke and M. Ernzerhof, Phys. Rev. Lett. 77, 3865 (1996)
+
+   Pseudopotentials:
+      KF Garrity, JW Bennett, KM Rabe and D Vanderbilt, Comput. Mater. Sci. 81, 446 (2014)
+
+   Truncated Coulomb potentials:
+      R. Sundararaman and T.A. Arias, Phys. Rev. B 87, 165122 (2013)
+
+   Total energy minimization with Auxiliary Hamiltonian:
+      C. Freysoldt, S. Boeck, and J. Neugebauer, Phys. Rev. B 79, 241103(R) (2009)
+
+This list may not be complete. Please suggest additional citations or
+report any other bugs at https://github.com/shankar1729/jdftx/issues
+
+Initialization completed successfully at t[s]:    944.03
+
+
+-------- Electronic minimization -----------
+	FillingsUpdate:  mu: -0.317295391  nElectrons: 289.000000
+ElecMinimize: Iter:   0  F: -411.060087681534696  |grad|_K:  4.280e-04  alpha:  1.000e+00
+	FillingsUpdate:  mu: -0.162679819  nElectrons: 289.000000
+	SubspaceRotationAdjust: set factor to 1
+ElecMinimize: Iter:   1  F: -415.139999860480600  |grad|_K:  1.048e-04  alpha:  7.138e-01  linmin: -1.168e-04  t[s]:   1386.55
+	FillingsUpdate:  mu: -0.158876023  nElectrons: 289.000000
+	SubspaceRotationAdjust: set factor to 1.01
+ElecMinimize: Iter:   2  F: -415.402838898813513  |grad|_K:  4.129e-05  alpha:  7.556e-01  linmin: -7.724e-06  t[s]:   1689.93
+	FillingsUpdate:  mu: -0.156478896  nElectrons: 289.000000
+	SubspaceRotationAdjust: set factor to 0.751
+ElecMinimize: Iter:   3  F: -415.446175229737605  |grad|_K:  3.018e-05  alpha:  8.012e-01  linmin:  2.153e-05  t[s]:   1992.05
+	FillingsUpdate:  mu: -0.156647007  nElectrons: 289.000000
+	SubspaceRotationAdjust: set factor to 0.408
+ElecMinimize: Iter:   4  F: -415.453774861263412  |grad|_K:  1.677e-05  alpha:  2.716e-01  linmin:  3.518e-05  t[s]:   2295.73
+	FillingsUpdate:  mu: -0.155095841  nElectrons: 289.000000
+	SubspaceRotationAdjust: set factor to 0.494
+ElecMinimize: Iter:   5  F: -415.460875606332195  |grad|_K:  7.825e-06  alpha:  8.093e-01  linmin:  1.539e-05  t[s]:   2599.10
+	FillingsUpdate:  mu: -0.154402102  nElectrons: 289.000000
+	SubspaceRotationAdjust: set factor to 0.325
+ElecMinimize: Iter:   6  F: -415.461982393401286  |grad|_K:  4.183e-06  alpha:  5.713e-01  linmin:  5.536e-06  t[s]:   2903.70
+	FillingsUpdate:  mu: -0.154432488  nElectrons: 289.000000
+	SubspaceRotationAdjust: set factor to 0.311
+ElecMinimize: Iter:   7  F: -415.462339817951261  |grad|_K:  1.855e-06  alpha:  6.472e-01  linmin:  5.127e-06  t[s]:   3205.92
+	FillingsUpdate:  mu: -0.154476807  nElectrons: 289.000000
+	SubspaceRotationAdjust: set factor to 0.37
+ElecMinimize: Iter:   8  F: -415.462431232271456  |grad|_K:  9.718e-07  alpha:  8.429e-01  linmin:  6.618e-06  t[s]:   3507.66
+	FillingsUpdate:  mu: -0.154432865  nElectrons: 289.000000
+	SubspaceRotationAdjust: set factor to 0.356
+ElecMinimize: Iter:   9  F: -415.462454482402677  |grad|_K:  5.416e-07  alpha:  7.848e-01  linmin:  3.919e-06  t[s]:   3810.18
+	FillingsUpdate:  mu: -0.154459810  nElectrons: 289.000000
+	SubspaceRotationAdjust: set factor to 0.447
+ElecMinimize: Iter:  10  F: -415.462462369498951  |grad|_K:  3.109e-07  alpha:  8.595e-01  linmin:  1.574e-06  t[s]:   4113.09
+	FillingsUpdate:  mu: -0.154488860  nElectrons: 289.000000
+	SubspaceRotationAdjust: set factor to 0.563
+ElecMinimize: Iter:  11  F: -415.462464999969086  |grad|_K:  1.848e-07  alpha:  8.740e-01  linmin:  4.554e-07  t[s]:   4416.24
+	FillingsUpdate:  mu: -0.154484830  nElectrons: 289.000000
+	SubspaceRotationAdjust: set factor to 0.496
+ElecMinimize: Iter:  12  F: -415.462465821563626  |grad|_K:  1.177e-07  alpha:  7.672e-01  linmin:  6.096e-08  t[s]:   4719.07
+	FillingsUpdate:  mu: -0.154483937  nElectrons: 289.000000
+	SubspaceRotationAdjust: set factor to 0.352
+ElecMinimize: Iter:  13  F: -415.462466056716153  |grad|_K:  6.022e-08  alpha:  5.359e-01  linmin:  4.767e-09  t[s]:   5021.11
+	FillingsUpdate:  mu: -0.154479710  nElectrons: 289.000000
+	SubspaceRotationAdjust: set factor to 0.463
+ElecMinimize: Iter:  14  F: -415.462466143412428  |grad|_K:  3.361e-08  alpha:  7.519e-01  linmin: -7.986e-08  t[s]:   5324.69
+	FillingsUpdate:  mu: -0.154478497  nElectrons: 289.000000
+	SubspaceRotationAdjust: set factor to 0.488
+ElecMinimize: Iter:  15  F: -415.462466182503817  |grad|_K:  3.105e-08  alpha:  1.054e+00  linmin: -7.272e-08  t[s]:   5630.87
+	FillingsUpdate:  mu: -0.154478558  nElectrons: 289.000000
+	SubspaceRotationAdjust: set factor to 0.522
+ElecMinimize: Iter:  16  F: -415.462466188024109  |grad|_K:  2.928e-08  alpha:  9.733e-02  linmin: -2.491e-06  t[s]:   5933.63
+ElecMinimize: 	Predicted alpha/alphaT>3.000000, increasing alphaT to 2.919882e-01.
+	FillingsUpdate:  mu: -0.154479636  nElectrons: 289.000000
+	SubspaceRotationAdjust: set factor to 0.364
+ElecMinimize: Iter:  17  F: -415.462466205831845  |grad|_K:  3.635e-08  alpha:  5.503e-01  linmin:  5.162e-06  t[s]:   6308.95
+ElecMinimize: 	Bad step direction: g.d > 0.
+ElecMinimize: 	Undoing step.
+ElecMinimize: 	Step failed: resetting search direction.
+	FillingsUpdate:  mu: -0.154479636  nElectrons: 289.000000
+	SubspaceRotationAdjust: set factor to 0.285
+ElecMinimize: Iter:  18  F: -415.462466205828548  |grad|_K:  3.215e-08  alpha:  0.000e+00
+	FillingsUpdate:  mu: -0.154478238  nElectrons: 289.000000
+	SubspaceRotationAdjust: set factor to 0.238
+ElecMinimize: Iter:  19  F: -415.462466229216659  |grad|_K:  2.064e-08  alpha:  7.151e-01  linmin: -1.314e-07  t[s]:   6836.99
+ElecMinimize: 	Predicted alpha/alphaT>3.000000, increasing alphaT to 2.145294e+00.
+ElecMinimize: 	Step increased F by 1.171282e-05, reducing alpha to 4.790949e-01.
+	FillingsUpdate:  mu: -0.154478586  nElectrons: 289.000000
+	SubspaceRotationAdjust: set factor to 0.194
+ElecMinimize: Iter:  20  F: -415.462466240376955  |grad|_K:  1.525e-08  alpha:  4.791e-01  linmin: -7.367e-06  t[s]:   7393.51
+ElecMinimize: 	Predicted alpha/alphaT>3.000000, increasing alphaT to 1.437285e+00.
+	FillingsUpdate:  mu: -0.154481429  nElectrons: 289.000000
+	SubspaceRotationAdjust: set factor to 0.212
+ElecMinimize: Iter:  21  F: -415.462466277916576  |grad|_K:  3.946e-08  alpha:  2.120e+00  linmin: -8.260e-07  t[s]:   7768.28
+ElecMinimize: 	Step increased F by 3.714390e-05, reducing alpha to 3.080771e-09.
+ElecMinimize: 	Step increased F by 3.714390e-05, reducing alpha to 3.080771e-10.
+ElecMinimize: 	Step increased F by 3.714391e-05, reducing alpha to 3.080771e-11.
+ElecMinimize: 	Step failed to reduce F after 3 attempts. Quitting step.
+ElecMinimize: 	Undoing step.
+ElecMinimize: 	Step failed: resetting search direction.
+	FillingsUpdate:  mu: -0.154478443  nElectrons: 289.000000
+	SubspaceRotationAdjust: set factor to 0.109
+	SubspaceRotationAdjust: resetting CG because factor has changed by 0.10932
+ElecMinimize: 	State modified externally: resetting search direction.
+ElecMinimize: Iter:  22  F: -415.462429134007948  |grad|_K:  3.609e-07  alpha:  3.081e-11
+	FillingsUpdate:  mu: -0.154484046  nElectrons: 289.000000
+	SubspaceRotationAdjust: set factor to 0.113
+ElecMinimize: Iter:  23  F: -415.462456320515514  |grad|_K:  5.161e-07  alpha:  6.108e+00  linmin: -1.509e-05  t[s]:   9040.84
+ElecMinimize: 	Step increased F by 7.775798e-06, reducing alpha to 1.547318e-02.
+ElecMinimize: 	Step increased F by 1.089417e-05, reducing alpha to 1.547318e-03.
+ElecMinimize: 	Step increased F by 1.123024e-05, reducing alpha to 1.547318e-04.
+ElecMinimize: 	Step failed to reduce F after 3 attempts. Quitting step.
+ElecMinimize: 	Undoing step.
+ElecMinimize: 	Step failed: resetting search direction.
+	FillingsUpdate:  mu: -0.154483031  nElectrons: 289.000000
+	SubspaceRotationAdjust: set factor to 0.129
+ElecMinimize: Iter:  24  F: -415.462445086553771  |grad|_K:  5.505e-07  alpha:  1.547e-04
+	FillingsUpdate:  mu: -0.154478438  nElectrons: 289.000000
+	SubspaceRotationAdjust: set factor to 0.1
+ElecMinimize: Iter:  25  F: -415.462450697107556  |grad|_K:  3.009e-07  alpha:  6.964e-01  linmin: -6.685e-07  t[s]:  10194.75
+ElecMinimize: 	Predicted alpha/alphaT>3.000000, increasing alphaT to 2.089050e+00.
+	FillingsUpdate:  mu: -0.154477088  nElectrons: 289.000000
+	SubspaceRotationAdjust: set factor to 0.127
+ElecMinimize: Iter:  26  F: -415.462457184538152  |grad|_K:  3.905e-07  alpha:  2.257e+00  linmin: -2.075e-06  t[s]:  10571.75
+	FillingsUpdate:  mu: -0.154479098  nElectrons: 289.000000
+	SubspaceRotationAdjust: set factor to 0.151
+ElecMinimize: Iter:  27  F: -415.462464992679543  |grad|_K:  1.999e-07  alpha:  1.591e+00  linmin: -3.032e-06  t[s]:  10874.96
+	FillingsUpdate:  mu: -0.154479975  nElectrons: 289.000000
+	SubspaceRotationAdjust: set factor to 0.19
+ElecMinimize: Iter:  28  F: -415.462466130031146  |grad|_K:  8.078e-08  alpha:  8.759e-01  linmin: -2.683e-08  t[s]:  11178.59
+	FillingsUpdate:  mu: -0.154480043  nElectrons: 289.000000
+	SubspaceRotationAdjust: set factor to 0.247
+ElecMinimize: Iter:  29  F: -415.462466298965353  |grad|_K:  3.857e-08  alpha:  8.183e-01  linmin: -7.790e-08  t[s]:  11484.37
+	FillingsUpdate:  mu: -0.154479654  nElectrons: 289.000000
+	SubspaceRotationAdjust: set factor to 0.312
+ElecMinimize: Iter:  30  F: -415.462466349977774  |grad|_K:  2.398e-08  alpha:  1.083e+00  linmin: -3.350e-08  t[s]:  11787.65
+	FillingsUpdate:  mu: -0.154479306  nElectrons: 289.000000
+	SubspaceRotationAdjust: set factor to 0.431
+ElecMinimize: Iter:  31  F: -415.462466375231827  |grad|_K:  1.900e-08  alpha:  1.386e+00  linmin:  1.733e-08  t[s]:  12092.19
+	FillingsUpdate:  mu: -0.154479542  nElectrons: 289.000000
+	SubspaceRotationAdjust: set factor to 0.549
+ElecMinimize: Iter:  32  F: -415.462466389615315  |grad|_K:  1.335e-08  alpha:  1.242e+00  linmin:  1.947e-08  t[s]:  12395.48
+	FillingsUpdate:  mu: -0.154479563  nElectrons: 289.000000
+	SubspaceRotationAdjust: set factor to 0.662
+ElecMinimize: Iter:  33  F: -415.462466391555097  |grad|_K:  1.159e-08  alpha:  1.890e-01  linmin: -1.204e-06  t[s]:  12699.50
+	FillingsUpdate:  mu: -0.154479593  nElectrons: 289.000000
+	SubspaceRotationAdjust: set factor to 0.756
+ElecMinimize: Iter:  34  F: -415.462466395001172  |grad|_K:  7.308e-09  alpha:  4.170e-01  linmin: -1.635e-07  t[s]:  13005.45
+ElecMinimize: Converged (|Delta F|<1.000000e-08 for 2 iters).
+Setting wave functions to eigenvectors of Hamiltonian
+
+# Ionic positions in cartesian coordinates:
+ion C  28.010542013705631   0.002014969601156   0.635465203747167 0
+ion C  16.341968157882292  20.214705522223607   0.636370795694031 0
+ion C   2.338532027351695   4.042411505399060   0.630361847754816 0
+ion C  23.343313188735969   0.002278716019722   0.640022467239564 0
+ion C   4.672620934470559   0.001554156700161   0.632050616002296 0
+ion C  11.674116326115334  20.215100669694028   0.619847495055023 0
+ion C  25.676530282256284   4.042904097616445   0.653564930084009 0
+ion C  18.675851376129700  16.172910511284943   0.662695583431347 0
+ion C   4.671777948336020   8.082036709586005   0.612564386226399 0
+ion C  18.676336142016080   0.002101964498535   0.651180333522277 0
+ion C   9.339850970925752   0.001738039847832   0.641511836963307 0
+ion C   9.341212652353351  16.175613291750459   0.599279306155555 0
+ion C  23.342941439729607   8.084920466015539   0.683240254571249 0
+ion C  21.009110272076708  12.128959849493356   0.688453340004557 0
+ion C   7.009085367604252  12.128528685817338   0.597262204671189 0
+ion C  14.008105470077210   0.001988816408382   0.654008834012114 0
+ion C  14.009120976896664  16.174984627607692   0.629938477890011 0
+ion C   7.005550759074101   4.041176716120078   0.616350899393808 0
+ion C  21.010101094155836   4.043302536041172   0.668670850704729 0
+ion C  16.344445762465487  12.130683361169906   0.668518806438794 0
+ion C   9.337643998902927   8.081728763982859   0.614931622729934 0
+ion C  16.343783017314891   4.042062713362387   0.668836182024798 0
+ion C  11.674085450205249   4.041278849785761   0.642196060576936 0
+ion C  11.675597583834264  12.133622242506720   0.630068253549407 0
+ion C  18.678074956154809   8.085220585829878   0.685769374381508 0
+ion C   7.007175797728255  20.216155157604103   0.619709324068161 0
+ion C  -6.996748017889802  20.214440105700564   0.653094683289385 0
+ion C   0.002354623270169   8.082966457809835   0.657418822396948 0
+ion C  14.012576459862725   8.083203697825988   0.669712893069494 0
+ion C   2.339067441062872  20.216465077180068   0.646220757178249 0
+ion C  -4.663670527593792  16.172490992184059   0.678596642017759 0
+ion C   2.336125814129785  12.127745765919109   0.656417500003109 0
+ion C  -2.332224039758668  12.128030282589300   0.685859862245795 0
+ion C  -2.329659352792410  20.215194179952768   0.659830322184195 0
+ion C   4.673933801454849  16.177740252210711   0.625359734501050 0
+ion C   0.002990588629148  16.174656174657997   0.666554428718456 0
+ion C  14.008266720144102  21.561374576259517   0.629777200837147 0
+ion C   2.338930816614256   1.348570645432834   0.632009758527847 0
+ion C  25.677100562977380   1.348988124751942   0.641986895200073 0
+ion C  16.342686998612663  17.520648868856785   0.642302048336074 0
+ion C   4.672307145938162   5.388219921962990   0.616057256550324 0
+ion C  21.010123495302889   1.349044430338556   0.652394834146865 0
+ion C   7.005937845436384   1.348033936218268   0.628031389286509 0
+ion C  11.674692189550257  17.521226022139913   0.612057705166649 0
+ion C  23.343784883173043   5.390651685198355   0.669612389866280 0
+ion C  18.676972543384359  13.478483594758318   0.675595907033575 0
+ion C   7.004963348139576   9.432115986525980   0.597538283264729 0
+ion C  16.342472076605748   1.348066366442404   0.659130179870282 0
+ion C  11.673522256343780   1.347802312891912   0.646547034509048 0
+ion C   9.340696631175403  13.481256291567631   0.599303874261302 0
+ion C  21.010487586627971   9.434228317035956   0.689549670827176 0
+ion C   9.340862584041272  21.562275316056120   0.623251203387415 0
+ion C  -9.330262385564788  21.561165527783945   0.640491424243255 0
+ion C   0.004476893676090   5.389148113018151   0.645932445799481 0
+ion C  14.011432130181314  13.480719160062115   0.643556882023976 0
+ion C   9.339051356617166   5.386992451363917   0.621078239496768 0
+ion C  18.677007069088155   5.390558998944344   0.676741055188348 0
+ion C  16.345725884609092   9.434637493571932   0.679131999516677 0
+ion C  14.009428395823310   5.387478001177438   0.662736904438848 0
+ion C   4.673293824799767  21.561882602550448   0.637519226383223 0
+ion C  -6.996841473985324  17.520066852095106   0.666346621047357 0
+ion C   2.337134667876788   9.428913976861832   0.643387178107247 0
+ion C  -2.330217064543965   9.432650452790400   0.678563548363968 0
+ion C  -4.663349535264295  21.561481505082671   0.652392573786173 0
+ion C   7.008365318233412  17.523060541264897   0.607450639135720 0
+ion C   0.004487123343837  21.561671103490092   0.654109318198199 0
+ion C  -4.664147187494721  13.477588422800194   0.688047082736968 0
+ion C   4.674619807111762  13.479414560663223   0.625188064189185 0
+ion C   2.338448909138405  17.522455183042435   0.645633689115609 0
+ion C  -2.330712054942804  17.520790606615741   0.670058696770369 0
+ion C   0.000363098194401  13.478789474313889   0.675559226948007 0
+ion N  11.674484029805171   9.432912355349794   0.644194404697448 0
+
+# Forces in Cartesian coordinates:
+force C  -0.000494458135797   0.000315584385757  -0.000151796274571 0
+force C  -0.000877912765852   0.000192033128192  -0.000004521968465 0
+force C  -0.000420437158048  -0.000175413643881  -0.000015719591965 0
+force C   0.000954497360302   0.000436537113446  -0.000100862293618 0
+force C  -0.000835162431028   0.000590377730690  -0.000055781326116 0
+force C   0.000247120419729   0.000394949783754  -0.000047229926450 0
+force C   0.000224617378430  -0.000838841685561  -0.000012077520777 0
+force C  -0.000148941654300   0.002064351610493  -0.000041020193891 0
+force C   0.001115996203339  -0.003570833724777   0.000240233658325 0
+force C   0.000684109794256   0.000606808946468  -0.000105569636435 0
+force C  -0.002000234693309  -0.001057973431971  -0.000117663824098 0
+force C   0.004524404902144   0.000734750391035   0.000304386205836 0
+force C  -0.000190478833035  -0.000514517789751  -0.000137450333781 0
+force C   0.001841271210004  -0.000871574919701  -0.000032418417894 0
+force C  -0.007074392946620   0.004108443882116   0.000761628047184 0
+force C   0.001764860591344  -0.001018876132997   0.000047515315972 0
+force C  -0.004679825449794   0.000834289096876   0.000036490047368 0
+force C  -0.003372976297311   0.003515534726928  -0.000005530484211 0
+force C   0.000447369453010  -0.000122153132875  -0.000056799074568 0
+force C   0.005398626701568   0.003220993758733   0.000097224703781 0
+force C   0.005534003208355   0.003885757401317   0.000284287217466 0
+force C   0.003154375116579   0.003563652609805  -0.000001415496074 0
+force C   0.000069483211582  -0.006317799672121   0.000172898062177 0
+force C   0.000055375168875  -0.006330092727792  -0.000447861347677 0
+force C  -0.001491926989787  -0.004183438320576  -0.000060271773645 0
+force C   0.001048169220120   0.000237166753826   0.000075973242401 0
+force C  -0.001913626190496   0.000960760007784  -0.000056200433745 0
+force C   0.000880824779698  -0.000297925567665   0.000055865553879 0
+force C  -0.005738955303031   0.003601640362609  -0.000768749605323 0
+force C   0.001674046320200   0.000656386639102  -0.000091760453855 0
+force C   0.000190251874819   0.000038599541936  -0.000099406228461 0
+force C  -0.000581674204897  -0.000463541604600  -0.000842946495458 0
+force C   0.000680801680386  -0.001668959995263  -0.000068634061497 0
+force C   0.000005096616854  -0.000392789068049  -0.000044187716866 0
+force C  -0.000114320780904   0.000002888408143  -0.000065431338977 0
+force C   0.000329456528152  -0.000508761843663   0.000008570029300 0
+force C   0.000106887920927  -0.000220344508156   0.000004386593664 0
+force C   0.000309414875102  -0.000125112741440  -0.000000844694178 0
+force C  -0.000141378690144  -0.000044964635149   0.000087578820198 0
+force C   0.001509266732673  -0.001058893569483   0.000091197592004 0
+force C   0.000411916063520   0.000491101729476   0.000047492385043 0
+force C  -0.000673266689127   0.000100679076540   0.000120225212998 0
+force C   0.001834426033164  -0.000923217881761   0.000140711278202 0
+force C   0.000219489498183  -0.000474881326579   0.000070736078607 0
+force C  -0.000529815868438   0.000366691195401   0.000074346599431 0
+force C  -0.004630737970537  -0.003021173472883  -0.000028812730102 0
+force C   0.009993092258749   0.002402556895891   0.000761836342870 0
+force C  -0.001688491756935  -0.000630602549478  -0.000025907171838 0
+force C   0.000330276085577   0.005273005499562  -0.000063832944720 0
+force C   0.003263793037881  -0.010828239218730   0.000470402118757 0
+force C  -0.000316416819327   0.001537969432173  -0.000003704463526 0
+force C  -0.000325319849885  -0.000294612218222   0.000040968141905 0
+force C   0.001594674853099  -0.000801374389758   0.000064581948637 0
+force C   0.000036949197367   0.000485157872341   0.000080338598664 0
+force C  -0.003520687895618  -0.010545017743748   0.000047030631005 0
+force C   0.007334960077510   0.007763932795514   0.000258330177130 0
+force C  -0.000525830854103   0.000231996864791   0.000130262467415 0
+force C  -0.010379681192402   0.002014076394499  -0.000045321629733 0
+force C  -0.006949102564848   0.007951695743778  -0.000040279958913 0
+force C  -0.001668799490463  -0.000630448990036   0.000047951340182 0
+force C  -0.000365269646733  -0.001320113670467   0.000077247803336 0
+force C   0.000212270690530   0.003665277961286  -0.000162207202768 0
+force C   0.000096167449585   0.001905120750648   0.000078170305581 0
+force C   0.000993569075757   0.001101349987078   0.000058268587358 0
+force C  -0.002061651249702  -0.001327512075486   0.000188824818392 0
+force C  -0.000793064242419   0.001255083534652   0.000062195011928 0
+force C  -0.001325440781735  -0.000121703285591  -0.000007226752130 0
+force C   0.003054843368511  -0.003482768766894  -0.000232020509719 0
+force C   0.000331287605672  -0.001766454454133   0.000162190976065 0
+force C   0.000252262346242  -0.000014862466943   0.000094580697235 0
+force C   0.002864310999797  -0.000747786170195  -0.000216017812727 0
+force N   0.000269832989249   0.000205809236570  -0.000531914091335 0
+
+# Energy components:
+   Eewald =     -715.3407787986474204
+       EH =     -405.5039797892784463
+     Eloc =      537.3194908061723254
+      Enl =       58.7375671505287471
+      Exc =     -131.5007257905637346
+ Exc_core =        2.4796103962345954
+       KE =      238.4011498707268117
+-------------------------------------
+     Etot =     -415.4076661548268703
+       TS =        0.0548002401743222
+-------------------------------------
+        F =     -415.4624663950011723
+
+IonicMinimize: Iter:   0  F: -415.462466395001172  |grad|_K:  0.000e+00  alpha:  1.000e+00
+IonicMinimize: Converged (|grad|_K<1.000000e-04).
+
+#--- Lowdin population analysis ---
+# oxidation-state C +0.040 +0.041 +0.040 +0.041 +0.041 +0.040 +0.041 +0.042 +0.041 +0.041 +0.042 +0.041 +0.041 +0.042 +0.044 +0.042 +0.041 +0.041 +0.041 +0.044 +0.137 +0.041 +0.044 +0.137 +0.041 +0.041 +0.042 +0.041 +0.137 +0.042 +0.041 +0.042 +0.042 +0.041 +0.042 +0.041 +0.042 +0.042 +0.038 +0.042 +0.039 +0.041 +0.042 +0.040 +0.041 +0.035 +0.026 +0.042 +0.035 +0.027 +0.042 +0.042 +0.040 +0.042 +0.027 +0.027 +0.039 +0.026 +0.026 +0.040 +0.040 +0.042 +0.040 +0.040 +0.042 +0.040 +0.040 +0.035 +0.040 +0.036 +0.040
+# oxidation-state N -0.003
+
+
+Dumping 'N_graphene-elecmin.fillings' ... done
+Dumping 'N_graphene-elecmin.wfns' ... done
+Dumping 'N_graphene-elecmin.ionpos' ... done
+Dumping 'N_graphene-elecmin.eigenvals' ... done
+End date and time: Sat Sep 28 15:36:26 2024  (Duration: 0-3:38:42.75)
+Done!
