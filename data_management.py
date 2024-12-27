@@ -20,11 +20,12 @@ def read_after_last_instance(filepath, marker):
     if last_occurrence is not None:
         return lines[last_occurrence + 1 :]
     else:
-        return []
+        print("There are no lines found after the marker.")
+        return None
 
 
 # --- This method parses the JDFTx.out file --- #
-def parse_output_file(file_path, print=False):
+def parse_output_file(file_path, verbose=False):
     energies = []
     oxidation_states = {}
     output_file_name = None
@@ -37,11 +38,13 @@ def parse_output_file(file_path, print=False):
     )
     marker = "*************** JDFTx 1.7.0  ***************"
     lines = read_after_last_instance(file_path, marker)
+    solvent_exists = True
 
     for line in lines:
+
         # Check for energy and iteration
         energy_match = re.search(
-            r"IonicMinimize: Iter:\s+(\d+)\s+F:\s+([-+]?\d*\.\d+|\d+)", line
+            r"IonicMinimize: Iter:\s+(\d+)\s+(?:F|Etot):\s+([-+]?\d*\.\d+|\d+)", line
         )
         if energy_match:
             iteration = int(energy_match.group(1))
@@ -64,12 +67,11 @@ def parse_output_file(file_path, print=False):
             electronic_scf = True
 
         # Check for solvent information
-        solvent_exists = True
         if "fluid None" in line:
             solvent_exists = False
         elif "fluid-solvent" in line:
             solvent = line.split()[1]
-
+    solvent = "Vacuum" if not solvent_exists else solvent
     # Create dataframes
     df_energies = pd.DataFrame(energies, columns=["Iteration", "Energy"])
     df_oxidation_states = pd.DataFrame(
@@ -77,12 +79,17 @@ def parse_output_file(file_path, print=False):
     )
 
     # Print required information
-    if print:
+    if verbose:
         print(df_energies)
         print(df_oxidation_states)
         print(f"Output file name: {output_file_name}")
         print(f"Electronic SCF used: {electronic_scf}")
-        print(f"Solvent: {solvent if solvent_exists else 'None'}")
+        print(f"Solvent: {solvent}")
+
+    if df_energies.empty:
+        raise ValueError("Error: df_energies is empty.")
+    if df_oxidation_states.empty:
+        raise ValueError("Error: df_oxidation_states is empty.")
 
     return df_energies, df_oxidation_states, output_file_name, electronic_scf, solvent
 
@@ -124,7 +131,7 @@ def parse_xsf_file(file_path):
 
 
 # --- This method compiles the energies and oxidation states of all sorbents in a subdirectory of Data-raw --- #
-def extract_data(category: str):
+def extract_data(category: str, verbose=False):
     # get working directory
     working_directory = os.getcwd()
 
@@ -160,18 +167,31 @@ def extract_data(category: str):
                 }
             )
     extracted_outputs_df = pd.DataFrame(extracted_outputs)
-    output_directory = os.path.join(working_directory, "Data-extracted")
+    extracted_outputs_df.sort_values(by="name", inplace=True)
+    extracted_outputs_df.reset_index(drop=True, inplace=True)
+    if verbose:
+        print(f"df output for {category}")
+        print(extracted_outputs_df.head())
+    output_directory = os.path.join(working_directory, "Data-extracted/all")
     os.makedirs(output_directory, exist_ok=True)
     output_file_path = os.path.join(output_directory, f"{category}.csv")
     extracted_outputs_df.to_csv(output_file_path, index=False)
+    final_extracted_outputs_df = extracted_outputs_df.loc[
+        extracted_outputs_df.groupby("name")["iteration"].idxmax()
+    ]
+    output_directory = os.path.join(working_directory, "Data-extracted/final")
+    os.makedirs(output_directory, exist_ok=True)
+    output_file_path = os.path.join(output_directory, f"{category}.csv")
+    final_extracted_outputs_df.to_csv(output_file_path, index=False)
 
     # Handle xsf files
-
+    
 
 # Example usage
 if __name__ == "__main__":
     # df_energies, df_oxidation_states, output_file_name, electronic_scf, solvent = (
     #     parse_output_file("Sorbents/FeN4-PC")
     # )
-    parse_xsf_file("Sorbents/FeN4-PC")
-    # extract_data("Sorbents")
+    # parse_xsf_file("Sorbents/FeN4-PC")
+    extract_data("Sorbents")
+    extract_data("NaPS")

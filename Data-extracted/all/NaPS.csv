@@ -1,0 +1,326 @@
+name,iteration,solvent,energy,oxidation_states,electronic_scf
+Na2S,0.0,Vacuum,-105.61577022784212,"[{'Element': 'S', 'Oxidation States': [-1.173]}, {'Element': 'Na', 'Oxidation States': [0.673, 0.673]}]",False
+Na2S-PC,10.0,PC,-105.83050790115921,"[{'Element': 'S', 'Oxidation States': [-1.686]}, {'Element': 'Na', 'Oxidation States': [0.968, 0.969]}]",False
+Na2S-PC,0.0,PC,-105.79637705017683,"[{'Element': 'S', 'Oxidation States': [-1.686]}, {'Element': 'Na', 'Oxidation States': [0.968, 0.969]}]",False
+Na2S-PC,1.0,PC,-105.81585634222344,"[{'Element': 'S', 'Oxidation States': [-1.686]}, {'Element': 'Na', 'Oxidation States': [0.968, 0.969]}]",False
+Na2S-PC,2.0,PC,-105.82343357770989,"[{'Element': 'S', 'Oxidation States': [-1.686]}, {'Element': 'Na', 'Oxidation States': [0.968, 0.969]}]",False
+Na2S-PC,3.0,PC,-105.82455584497686,"[{'Element': 'S', 'Oxidation States': [-1.686]}, {'Element': 'Na', 'Oxidation States': [0.968, 0.969]}]",False
+Na2S-PC,5.0,PC,-105.8247413515662,"[{'Element': 'S', 'Oxidation States': [-1.686]}, {'Element': 'Na', 'Oxidation States': [0.968, 0.969]}]",False
+Na2S-PC,6.0,PC,-105.82497957255367,"[{'Element': 'S', 'Oxidation States': [-1.686]}, {'Element': 'Na', 'Oxidation States': [0.968, 0.969]}]",False
+Na2S-PC,7.0,PC,-105.82527423390837,"[{'Element': 'S', 'Oxidation States': [-1.686]}, {'Element': 'Na', 'Oxidation States': [0.968, 0.969]}]",False
+Na2S-PC,8.0,PC,-105.82557860819038,"[{'Element': 'S', 'Oxidation States': [-1.686]}, {'Element': 'Na', 'Oxidation States': [0.968, 0.969]}]",False
+Na2S-PC,4.0,PC,-105.8246416824656,"[{'Element': 'S', 'Oxidation States': [-1.686]}, {'Element': 'Na', 'Oxidation States': [0.968, 0.969]}]",False
+Na2S-PC,11.0,PC,-105.83061033362006,"[{'Element': 'S', 'Oxidation States': [-1.686]}, {'Element': 'Na', 'Oxidation States': [0.968, 0.969]}]",False
+Na2S-PC,12.0,PC,-105.8306103410299,"[{'Element': 'S', 'Oxidation States': [-1.686]}, {'Element': 'Na', 'Oxidation States': [0.968, 0.969]}]",False
+Na2S-PC,13.0,PC,-105.83061050390783,"[{'Element': 'S', 'Oxidation States': [-1.686]}, {'Element': 'Na', 'Oxidation States': [0.968, 0.969]}]",False
+Na2S-PC,9.0,PC,-105.83006010541649,"[{'Element': 'S', 'Oxidation States': [-1.686]}, {'Element': 'Na', 'Oxidation States': [0.968, 0.969]}]",False
+Na2S-glyme,0.0,Glyme,-105.65917250565124,"[{'Element': 'S', 'Oxidation States': [-1.413]}, {'Element': 'Na', 'Oxidation States': [0.818, 0.819]}]",False
+Na2S2,0.0,Vacuum,-115.92161553704018,"[{'Element': 'S', 'Oxidation States': [-0.704, -0.704]}, {'Element': 'Na', 'Oxidation States': [0.81, 0.81]}]",False
+Na2S2-PC,2.0,PC,-116.11934698757192,"[{'Element': 'S', 'Oxidation States': [-0.77, -0.768]}, {'Element': 'Na', 'Oxidation States': [5.485, 5.314]}]",False
+Na2S2-PC,3.0,PC,-11.714817756954872,"[{'Element': 'S', 'Oxidation States': [-0.77, -0.768]}, {'Element': 'Na', 'Oxidation States': [5.485, 5.314]}]",False
+Na2S2-PC,0.0,PC,-116.089159938137,"[{'Element': 'S', 'Oxidation States': [-0.77, -0.768]}, {'Element': 'Na', 'Oxidation States': [5.485, 5.314]}]",False
+Na2S2-PC,1.0,PC,-116.11254947497335,"[{'Element': 'S', 'Oxidation States': [-0.77, -0.768]}, {'Element': 'Na', 'Oxidation States': [5.485, 5.314]}]",False
+Na2S2-glyme,1.0,Glyme,-115.97300533511964,"[{'Element': 'S', 'Oxidation States': [-0.766, -0.766]}, {'Element': 'Na', 'Oxidation States': [0.87, 0.87]}]",False
+Na2S2-glyme,10.0,Glyme,-115.97306294921134,"[{'Element': 'S', 'Oxidation States': [-0.766, -0.766]}, {'Element': 'Na', 'Oxidation States': [0.87, 0.87]}]",False
+Na2S2-glyme,9.0,Glyme,-115.97306268420473,"[{'Element': 'S', 'Oxidation States': [-0.766, -0.766]}, {'Element': 'Na', 'Oxidation States': [0.87, 0.87]}]",False
+Na2S2-glyme,8.0,Glyme,-115.97306176474439,"[{'Element': 'S', 'Oxidation States': [-0.766, -0.766]}, {'Element': 'Na', 'Oxidation States': [0.87, 0.87]}]",False
+Na2S2-glyme,7.0,Glyme,-115.97305904700715,"[{'Element': 'S', 'Oxidation States': [-0.766, -0.766]}, {'Element': 'Na', 'Oxidation States': [0.87, 0.87]}]",False
+Na2S2-glyme,6.0,Glyme,-115.97305624746338,"[{'Element': 'S', 'Oxidation States': [-0.766, -0.766]}, {'Element': 'Na', 'Oxidation States': [0.87, 0.87]}]",False
+Na2S2-glyme,5.0,Glyme,-115.973049255686,"[{'Element': 'S', 'Oxidation States': [-0.766, -0.766]}, {'Element': 'Na', 'Oxidation States': [0.87, 0.87]}]",False
+Na2S2-glyme,3.0,Glyme,-115.97303408658216,"[{'Element': 'S', 'Oxidation States': [-0.766, -0.766]}, {'Element': 'Na', 'Oxidation States': [0.87, 0.87]}]",False
+Na2S2-glyme,2.0,Glyme,-115.97303028147152,"[{'Element': 'S', 'Oxidation States': [-0.766, -0.766]}, {'Element': 'Na', 'Oxidation States': [0.87, 0.87]}]",False
+Na2S2-glyme,0.0,Glyme,-115.97076987480669,"[{'Element': 'S', 'Oxidation States': [-0.766, -0.766]}, {'Element': 'Na', 'Oxidation States': [0.87, 0.87]}]",False
+Na2S2-glyme,4.0,Glyme,-115.9730376845136,"[{'Element': 'S', 'Oxidation States': [-0.766, -0.766]}, {'Element': 'Na', 'Oxidation States': [0.87, 0.87]}]",False
+Na2S4,0.0,Vacuum,-136.5304732228165,"[{'Element': 'S', 'Oxidation States': [-0.583, 0.005, 0.004, -0.583]}, {'Element': 'Na', 'Oxidation States': [0.765, 0.765]}]",False
+Na2S4-PC,31.0,PC,-136.71988810546492,"[{'Element': 'S', 'Oxidation States': [-0.732, -0.043, -0.043, -0.733]}, {'Element': 'Na', 'Oxidation States': [0.963, 0.963]}]",False
+Na2S4-PC,13.0,PC,-136.7195957871021,"[{'Element': 'S', 'Oxidation States': [-0.732, -0.043, -0.043, -0.733]}, {'Element': 'Na', 'Oxidation States': [0.963, 0.963]}]",False
+Na2S4-PC,12.0,PC,-136.71954691604765,"[{'Element': 'S', 'Oxidation States': [-0.732, -0.043, -0.043, -0.733]}, {'Element': 'Na', 'Oxidation States': [0.963, 0.963]}]",False
+Na2S4-PC,11.0,PC,-136.71952057002275,"[{'Element': 'S', 'Oxidation States': [-0.732, -0.043, -0.043, -0.733]}, {'Element': 'Na', 'Oxidation States': [0.963, 0.963]}]",False
+Na2S4-PC,30.0,PC,-136.7198859941317,"[{'Element': 'S', 'Oxidation States': [-0.732, -0.043, -0.043, -0.733]}, {'Element': 'Na', 'Oxidation States': [0.963, 0.963]}]",False
+Na2S4-PC,9.0,PC,-136.7190280435088,"[{'Element': 'S', 'Oxidation States': [-0.732, -0.043, -0.043, -0.733]}, {'Element': 'Na', 'Oxidation States': [0.963, 0.963]}]",False
+Na2S4-PC,8.0,PC,-136.7185502634308,"[{'Element': 'S', 'Oxidation States': [-0.732, -0.043, -0.043, -0.733]}, {'Element': 'Na', 'Oxidation States': [0.963, 0.963]}]",False
+Na2S4-PC,7.0,PC,-136.71833579253462,"[{'Element': 'S', 'Oxidation States': [-0.732, -0.043, -0.043, -0.733]}, {'Element': 'Na', 'Oxidation States': [0.963, 0.963]}]",False
+Na2S4-PC,6.0,PC,-136.71782444501486,"[{'Element': 'S', 'Oxidation States': [-0.732, -0.043, -0.043, -0.733]}, {'Element': 'Na', 'Oxidation States': [0.963, 0.963]}]",False
+Na2S4-PC,5.0,PC,-136.71647690737086,"[{'Element': 'S', 'Oxidation States': [-0.732, -0.043, -0.043, -0.733]}, {'Element': 'Na', 'Oxidation States': [0.963, 0.963]}]",False
+Na2S4-PC,4.0,PC,-136.71356958351544,"[{'Element': 'S', 'Oxidation States': [-0.732, -0.043, -0.043, -0.733]}, {'Element': 'Na', 'Oxidation States': [0.963, 0.963]}]",False
+Na2S4-PC,3.0,PC,-136.7064609329185,"[{'Element': 'S', 'Oxidation States': [-0.732, -0.043, -0.043, -0.733]}, {'Element': 'Na', 'Oxidation States': [0.963, 0.963]}]",False
+Na2S4-PC,2.0,PC,-136.6981602729751,"[{'Element': 'S', 'Oxidation States': [-0.732, -0.043, -0.043, -0.733]}, {'Element': 'Na', 'Oxidation States': [0.963, 0.963]}]",False
+Na2S4-PC,1.0,PC,-136.67414323569065,"[{'Element': 'S', 'Oxidation States': [-0.732, -0.043, -0.043, -0.733]}, {'Element': 'Na', 'Oxidation States': [0.963, 0.963]}]",False
+Na2S4-PC,0.0,PC,-136.67007287371496,"[{'Element': 'S', 'Oxidation States': [-0.732, -0.043, -0.043, -0.733]}, {'Element': 'Na', 'Oxidation States': [0.963, 0.963]}]",False
+Na2S4-PC,14.0,PC,-136.7196060964733,"[{'Element': 'S', 'Oxidation States': [-0.732, -0.043, -0.043, -0.733]}, {'Element': 'Na', 'Oxidation States': [0.963, 0.963]}]",False
+Na2S4-PC,15.0,PC,-136.71961479076478,"[{'Element': 'S', 'Oxidation States': [-0.732, -0.043, -0.043, -0.733]}, {'Element': 'Na', 'Oxidation States': [0.963, 0.963]}]",False
+Na2S4-PC,10.0,PC,-136.7194523361594,"[{'Element': 'S', 'Oxidation States': [-0.732, -0.043, -0.043, -0.733]}, {'Element': 'Na', 'Oxidation States': [0.963, 0.963]}]",False
+Na2S4-PC,17.0,PC,-136.71963569379622,"[{'Element': 'S', 'Oxidation States': [-0.732, -0.043, -0.043, -0.733]}, {'Element': 'Na', 'Oxidation States': [0.963, 0.963]}]",False
+Na2S4-PC,27.0,PC,-136.71986600803356,"[{'Element': 'S', 'Oxidation States': [-0.732, -0.043, -0.043, -0.733]}, {'Element': 'Na', 'Oxidation States': [0.963, 0.963]}]",False
+Na2S4-PC,33.0,PC,-136.71989509051986,"[{'Element': 'S', 'Oxidation States': [-0.732, -0.043, -0.043, -0.733]}, {'Element': 'Na', 'Oxidation States': [0.963, 0.963]}]",False
+Na2S4-PC,32.0,PC,-136.7198950891485,"[{'Element': 'S', 'Oxidation States': [-0.732, -0.043, -0.043, -0.733]}, {'Element': 'Na', 'Oxidation States': [0.963, 0.963]}]",False
+Na2S4-PC,16.0,PC,-136.71961795821517,"[{'Element': 'S', 'Oxidation States': [-0.732, -0.043, -0.043, -0.733]}, {'Element': 'Na', 'Oxidation States': [0.963, 0.963]}]",False
+Na2S4-PC,26.0,PC,-136.71985778243618,"[{'Element': 'S', 'Oxidation States': [-0.732, -0.043, -0.043, -0.733]}, {'Element': 'Na', 'Oxidation States': [0.963, 0.963]}]",False
+Na2S4-PC,28.0,PC,-136.7198691134904,"[{'Element': 'S', 'Oxidation States': [-0.732, -0.043, -0.043, -0.733]}, {'Element': 'Na', 'Oxidation States': [0.963, 0.963]}]",False
+Na2S4-PC,25.0,PC,-136.7198287373487,"[{'Element': 'S', 'Oxidation States': [-0.732, -0.043, -0.043, -0.733]}, {'Element': 'Na', 'Oxidation States': [0.963, 0.963]}]",False
+Na2S4-PC,29.0,PC,-136.71988273090852,"[{'Element': 'S', 'Oxidation States': [-0.732, -0.043, -0.043, -0.733]}, {'Element': 'Na', 'Oxidation States': [0.963, 0.963]}]",False
+Na2S4-PC,23.0,PC,-136.71979433034303,"[{'Element': 'S', 'Oxidation States': [-0.732, -0.043, -0.043, -0.733]}, {'Element': 'Na', 'Oxidation States': [0.963, 0.963]}]",False
+Na2S4-PC,22.0,PC,-136.71978238543062,"[{'Element': 'S', 'Oxidation States': [-0.732, -0.043, -0.043, -0.733]}, {'Element': 'Na', 'Oxidation States': [0.963, 0.963]}]",False
+Na2S4-PC,21.0,PC,-136.7197551728322,"[{'Element': 'S', 'Oxidation States': [-0.732, -0.043, -0.043, -0.733]}, {'Element': 'Na', 'Oxidation States': [0.963, 0.963]}]",False
+Na2S4-PC,20.0,PC,-136.71971939434445,"[{'Element': 'S', 'Oxidation States': [-0.732, -0.043, -0.043, -0.733]}, {'Element': 'Na', 'Oxidation States': [0.963, 0.963]}]",False
+Na2S4-PC,19.0,PC,-136.7196959641587,"[{'Element': 'S', 'Oxidation States': [-0.732, -0.043, -0.043, -0.733]}, {'Element': 'Na', 'Oxidation States': [0.963, 0.963]}]",False
+Na2S4-PC,18.0,PC,-136.71966355321427,"[{'Element': 'S', 'Oxidation States': [-0.732, -0.043, -0.043, -0.733]}, {'Element': 'Na', 'Oxidation States': [0.963, 0.963]}]",False
+Na2S4-PC,24.0,PC,-136.71980971880402,"[{'Element': 'S', 'Oxidation States': [-0.732, -0.043, -0.043, -0.733]}, {'Element': 'Na', 'Oxidation States': [0.963, 0.963]}]",False
+Na2S4-glyme,11.0,Glyme,-136.5737877312873,"[{'Element': 'S', 'Oxidation States': [-0.633, -0.018, -0.02, -0.635]}, {'Element': 'Na', 'Oxidation States': [0.839, 0.84]}]",False
+Na2S4-glyme,9.0,Glyme,-136.57378154261096,"[{'Element': 'S', 'Oxidation States': [-0.633, -0.018, -0.02, -0.635]}, {'Element': 'Na', 'Oxidation States': [0.839, 0.84]}]",False
+Na2S4-glyme,8.0,Glyme,-136.57377884674077,"[{'Element': 'S', 'Oxidation States': [-0.633, -0.018, -0.02, -0.635]}, {'Element': 'Na', 'Oxidation States': [0.839, 0.84]}]",False
+Na2S4-glyme,7.0,Glyme,-136.5737662553625,"[{'Element': 'S', 'Oxidation States': [-0.633, -0.018, -0.02, -0.635]}, {'Element': 'Na', 'Oxidation States': [0.839, 0.84]}]",False
+Na2S4-glyme,10.0,Glyme,-136.573785363063,"[{'Element': 'S', 'Oxidation States': [-0.633, -0.018, -0.02, -0.635]}, {'Element': 'Na', 'Oxidation States': [0.839, 0.84]}]",False
+Na2S4-glyme,3.0,Glyme,-136.57347652076288,"[{'Element': 'S', 'Oxidation States': [-0.633, -0.018, -0.02, -0.635]}, {'Element': 'Na', 'Oxidation States': [0.839, 0.84]}]",False
+Na2S4-glyme,5.0,Glyme,-136.5737068291212,"[{'Element': 'S', 'Oxidation States': [-0.633, -0.018, -0.02, -0.635]}, {'Element': 'Na', 'Oxidation States': [0.839, 0.84]}]",False
+Na2S4-glyme,4.0,Glyme,-136.57364098886794,"[{'Element': 'S', 'Oxidation States': [-0.633, -0.018, -0.02, -0.635]}, {'Element': 'Na', 'Oxidation States': [0.839, 0.84]}]",False
+Na2S4-glyme,2.0,Glyme,-136.57316178518914,"[{'Element': 'S', 'Oxidation States': [-0.633, -0.018, -0.02, -0.635]}, {'Element': 'Na', 'Oxidation States': [0.839, 0.84]}]",False
+Na2S4-glyme,1.0,Glyme,-136.57108382108916,"[{'Element': 'S', 'Oxidation States': [-0.633, -0.018, -0.02, -0.635]}, {'Element': 'Na', 'Oxidation States': [0.839, 0.84]}]",False
+Na2S4-glyme,12.0,Glyme,-136.57378900960845,"[{'Element': 'S', 'Oxidation States': [-0.633, -0.018, -0.02, -0.635]}, {'Element': 'Na', 'Oxidation States': [0.839, 0.84]}]",False
+Na2S4-glyme,0.0,Glyme,-136.57060911006388,"[{'Element': 'S', 'Oxidation States': [-0.633, -0.018, -0.02, -0.635]}, {'Element': 'Na', 'Oxidation States': [0.839, 0.84]}]",False
+Na2S4-glyme,6.0,Glyme,-136.5737539126842,"[{'Element': 'S', 'Oxidation States': [-0.633, -0.018, -0.02, -0.635]}, {'Element': 'Na', 'Oxidation States': [0.839, 0.84]}]",False
+Na2S4-glyme,13.0,Glyme,-136.57378967410017,"[{'Element': 'S', 'Oxidation States': [-0.633, -0.018, -0.02, -0.635]}, {'Element': 'Na', 'Oxidation States': [0.839, 0.84]}]",False
+Na2S6,0.0,Vacuum,-157.09853754089247,"[{'Element': 'S', 'Oxidation States': [-0.392, 0.392, -0.457, -0.457, 0.392, -0.393]}, {'Element': 'Na', 'Oxidation States': [0.72, 0.721]}]",False
+Na2S6-PC,2.0,PC,-157.24620384053247,"[{'Element': 'S', 'Oxidation States': [-0.568, 0.363, -0.409, -0.409, 0.361, -0.57]}, {'Element': 'Na', 'Oxidation States': [0.9, 0.9]}]",False
+Na2S6-PC,3.0,PC,-157.256500130556,"[{'Element': 'S', 'Oxidation States': [-0.568, 0.363, -0.409, -0.409, 0.361, -0.57]}, {'Element': 'Na', 'Oxidation States': [0.9, 0.9]}]",False
+Na2S6-PC,4.0,PC,-157.25922929695705,"[{'Element': 'S', 'Oxidation States': [-0.568, 0.363, -0.409, -0.409, 0.361, -0.57]}, {'Element': 'Na', 'Oxidation States': [0.9, 0.9]}]",False
+Na2S6-PC,5.0,PC,-157.26697193238365,"[{'Element': 'S', 'Oxidation States': [-0.568, 0.363, -0.409, -0.409, 0.361, -0.57]}, {'Element': 'Na', 'Oxidation States': [0.9, 0.9]}]",False
+Na2S6-PC,6.0,PC,-157.2692756851122,"[{'Element': 'S', 'Oxidation States': [-0.568, 0.363, -0.409, -0.409, 0.361, -0.57]}, {'Element': 'Na', 'Oxidation States': [0.9, 0.9]}]",False
+Na2S6-PC,1.0,PC,-157.24165963135164,"[{'Element': 'S', 'Oxidation States': [-0.568, 0.363, -0.409, -0.409, 0.361, -0.57]}, {'Element': 'Na', 'Oxidation States': [0.9, 0.9]}]",False
+Na2S6-PC,0.0,PC,-157.2314191674215,"[{'Element': 'S', 'Oxidation States': [-0.568, 0.363, -0.409, -0.409, 0.361, -0.57]}, {'Element': 'Na', 'Oxidation States': [0.9, 0.9]}]",False
+Na2S6-glyme,20.0,Glyme,-157.14177264456558,"[{'Element': 'S', 'Oxidation States': [-0.478, 0.371, -0.444, -0.443, 0.372, -0.478]}, {'Element': 'Na', 'Oxidation States': [0.815, 0.815]}]",False
+Na2S6-glyme,19.0,Glyme,-157.1417629303225,"[{'Element': 'S', 'Oxidation States': [-0.478, 0.371, -0.444, -0.443, 0.372, -0.478]}, {'Element': 'Na', 'Oxidation States': [0.815, 0.815]}]",False
+Na2S6-glyme,22.0,Glyme,-157.14178471591208,"[{'Element': 'S', 'Oxidation States': [-0.478, 0.371, -0.444, -0.443, 0.372, -0.478]}, {'Element': 'Na', 'Oxidation States': [0.815, 0.815]}]",False
+Na2S6-glyme,17.0,Glyme,-157.1417592856169,"[{'Element': 'S', 'Oxidation States': [-0.478, 0.371, -0.444, -0.443, 0.372, -0.478]}, {'Element': 'Na', 'Oxidation States': [0.815, 0.815]}]",False
+Na2S6-glyme,16.0,Glyme,-157.14175433469205,"[{'Element': 'S', 'Oxidation States': [-0.478, 0.371, -0.444, -0.443, 0.372, -0.478]}, {'Element': 'Na', 'Oxidation States': [0.815, 0.815]}]",False
+Na2S6-glyme,15.0,Glyme,-157.14175100082977,"[{'Element': 'S', 'Oxidation States': [-0.478, 0.371, -0.444, -0.443, 0.372, -0.478]}, {'Element': 'Na', 'Oxidation States': [0.815, 0.815]}]",False
+Na2S6-glyme,23.0,Glyme,-157.14179145068684,"[{'Element': 'S', 'Oxidation States': [-0.478, 0.371, -0.444, -0.443, 0.372, -0.478]}, {'Element': 'Na', 'Oxidation States': [0.815, 0.815]}]",False
+Na2S6-glyme,24.0,Glyme,-157.14179404944625,"[{'Element': 'S', 'Oxidation States': [-0.478, 0.371, -0.444, -0.443, 0.372, -0.478]}, {'Element': 'Na', 'Oxidation States': [0.815, 0.815]}]",False
+Na2S6-glyme,25.0,Glyme,-157.14179765886144,"[{'Element': 'S', 'Oxidation States': [-0.478, 0.371, -0.444, -0.443, 0.372, -0.478]}, {'Element': 'Na', 'Oxidation States': [0.815, 0.815]}]",False
+Na2S6-glyme,26.0,Glyme,-157.14179785896982,"[{'Element': 'S', 'Oxidation States': [-0.478, 0.371, -0.444, -0.443, 0.372, -0.478]}, {'Element': 'Na', 'Oxidation States': [0.815, 0.815]}]",False
+Na2S6-glyme,14.0,Glyme,-157.14174335437292,"[{'Element': 'S', 'Oxidation States': [-0.478, 0.371, -0.444, -0.443, 0.372, -0.478]}, {'Element': 'Na', 'Oxidation States': [0.815, 0.815]}]",False
+Na2S6-glyme,21.0,Glyme,-157.14177603582698,"[{'Element': 'S', 'Oxidation States': [-0.478, 0.371, -0.444, -0.443, 0.372, -0.478]}, {'Element': 'Na', 'Oxidation States': [0.815, 0.815]}]",False
+Na2S6-glyme,18.0,Glyme,-157.14176050815547,"[{'Element': 'S', 'Oxidation States': [-0.478, 0.371, -0.444, -0.443, 0.372, -0.478]}, {'Element': 'Na', 'Oxidation States': [0.815, 0.815]}]",False
+Na2S6-glyme,12.0,Glyme,-157.1417376097603,"[{'Element': 'S', 'Oxidation States': [-0.478, 0.371, -0.444, -0.443, 0.372, -0.478]}, {'Element': 'Na', 'Oxidation States': [0.815, 0.815]}]",False
+Na2S6-glyme,0.0,Glyme,-157.13720461696795,"[{'Element': 'S', 'Oxidation States': [-0.478, 0.371, -0.444, -0.443, 0.372, -0.478]}, {'Element': 'Na', 'Oxidation States': [0.815, 0.815]}]",False
+Na2S6-glyme,1.0,Glyme,-157.13844540408212,"[{'Element': 'S', 'Oxidation States': [-0.478, 0.371, -0.444, -0.443, 0.372, -0.478]}, {'Element': 'Na', 'Oxidation States': [0.815, 0.815]}]",False
+Na2S6-glyme,2.0,Glyme,-157.1405671060436,"[{'Element': 'S', 'Oxidation States': [-0.478, 0.371, -0.444, -0.443, 0.372, -0.478]}, {'Element': 'Na', 'Oxidation States': [0.815, 0.815]}]",False
+Na2S6-glyme,3.0,Glyme,-157.14073772960506,"[{'Element': 'S', 'Oxidation States': [-0.478, 0.371, -0.444, -0.443, 0.372, -0.478]}, {'Element': 'Na', 'Oxidation States': [0.815, 0.815]}]",False
+Na2S6-glyme,4.0,Glyme,-157.14112503958404,"[{'Element': 'S', 'Oxidation States': [-0.478, 0.371, -0.444, -0.443, 0.372, -0.478]}, {'Element': 'Na', 'Oxidation States': [0.815, 0.815]}]",False
+Na2S6-glyme,5.0,Glyme,-157.14135898659396,"[{'Element': 'S', 'Oxidation States': [-0.478, 0.371, -0.444, -0.443, 0.372, -0.478]}, {'Element': 'Na', 'Oxidation States': [0.815, 0.815]}]",False
+Na2S6-glyme,6.0,Glyme,-157.14155180968183,"[{'Element': 'S', 'Oxidation States': [-0.478, 0.371, -0.444, -0.443, 0.372, -0.478]}, {'Element': 'Na', 'Oxidation States': [0.815, 0.815]}]",False
+Na2S6-glyme,7.0,Glyme,-157.14162692403153,"[{'Element': 'S', 'Oxidation States': [-0.478, 0.371, -0.444, -0.443, 0.372, -0.478]}, {'Element': 'Na', 'Oxidation States': [0.815, 0.815]}]",False
+Na2S6-glyme,8.0,Glyme,-157.14167862603426,"[{'Element': 'S', 'Oxidation States': [-0.478, 0.371, -0.444, -0.443, 0.372, -0.478]}, {'Element': 'Na', 'Oxidation States': [0.815, 0.815]}]",False
+Na2S6-glyme,9.0,Glyme,-157.14169668452217,"[{'Element': 'S', 'Oxidation States': [-0.478, 0.371, -0.444, -0.443, 0.372, -0.478]}, {'Element': 'Na', 'Oxidation States': [0.815, 0.815]}]",False
+Na2S6-glyme,10.0,Glyme,-157.14172220948143,"[{'Element': 'S', 'Oxidation States': [-0.478, 0.371, -0.444, -0.443, 0.372, -0.478]}, {'Element': 'Na', 'Oxidation States': [0.815, 0.815]}]",False
+Na2S6-glyme,11.0,Glyme,-157.14172537203848,"[{'Element': 'S', 'Oxidation States': [-0.478, 0.371, -0.444, -0.443, 0.372, -0.478]}, {'Element': 'Na', 'Oxidation States': [0.815, 0.815]}]",False
+Na2S6-glyme,13.0,Glyme,-157.14174058664003,"[{'Element': 'S', 'Oxidation States': [-0.478, 0.371, -0.444, -0.443, 0.372, -0.478]}, {'Element': 'Na', 'Oxidation States': [0.815, 0.815]}]",False
+Na2S6-glyme,27.0,Glyme,-157.14179842826687,"[{'Element': 'S', 'Oxidation States': [-0.478, 0.371, -0.444, -0.443, 0.372, -0.478]}, {'Element': 'Na', 'Oxidation States': [0.815, 0.815]}]",False
+Na2S8,0.0,Vacuum,-177.6560185433347,"[{'Element': 'S', 'Oxidation States': [-0.06, -0.015, -0.049, -0.148, 0.27, -0.415, 0.177, -0.522]}, {'Element': 'Na', 'Oxidation States': [0.731, 0.735]}]",False
+Na2S8-PC,0.0,PC,-177.84475062417602,"[{'Element': 'S', 'Oxidation States': [-0.131, -0.069, 0.032, -0.065, 0.105, -0.652, 0.168, -0.628]}, {'Element': 'Na', 'Oxidation States': [0.975, 0.97]}]",False
+Na2S8-PC,1.0,PC,-177.84475130872698,"[{'Element': 'S', 'Oxidation States': [-0.131, -0.069, 0.032, -0.065, 0.105, -0.652, 0.168, -0.628]}, {'Element': 'Na', 'Oxidation States': [0.975, 0.97]}]",False
+Na2S8-PC,2.0,PC,-177.84475301832398,"[{'Element': 'S', 'Oxidation States': [-0.131, -0.069, 0.032, -0.065, 0.105, -0.652, 0.168, -0.628]}, {'Element': 'Na', 'Oxidation States': [0.975, 0.97]}]",False
+Na2S8-PC,3.0,PC,-177.844752817135,"[{'Element': 'S', 'Oxidation States': [-0.131, -0.069, 0.032, -0.065, 0.105, -0.652, 0.168, -0.628]}, {'Element': 'Na', 'Oxidation States': [0.975, 0.97]}]",False
+Na2S8-PC,4.0,PC,-177.84475454760064,"[{'Element': 'S', 'Oxidation States': [-0.131, -0.069, 0.032, -0.065, 0.105, -0.652, 0.168, -0.628]}, {'Element': 'Na', 'Oxidation States': [0.975, 0.97]}]",False
+Na2S8-PC,5.0,PC,-177.84475455081042,"[{'Element': 'S', 'Oxidation States': [-0.131, -0.069, 0.032, -0.065, 0.105, -0.652, 0.168, -0.628]}, {'Element': 'Na', 'Oxidation States': [0.975, 0.97]}]",False
+Na2S8-glyme,44.0,Glyme,-177.7006200684375,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,181.0,Glyme,-177.70651101240762,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,180.0,Glyme,-177.70650406904684,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,179.0,Glyme,-177.70649594159872,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,178.0,Glyme,-177.7064889702965,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,175.0,Glyme,-177.70646496588955,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,176.0,Glyme,-177.70647188214647,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,182.0,Glyme,-177.706515439988,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,174.0,Glyme,-177.70645850346668,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,177.0,Glyme,-177.70648167988367,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,183.0,Glyme,-177.70652223649049,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,186.0,Glyme,-177.70653548081637,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,185.0,Glyme,-177.7065291009915,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,173.0,Glyme,-177.70645539221883,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,187.0,Glyme,-177.7065400520893,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,188.0,Glyme,-177.7065446791084,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,189.0,Glyme,-177.70655047169402,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,190.0,Glyme,-177.7065539085383,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,191.0,Glyme,-177.7065554481127,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,192.0,Glyme,-177.70655579185842,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,193.0,Glyme,-177.70656315641597,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,184.0,Glyme,-177.7065275356004,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,172.0,Glyme,-177.7064510002389,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,168.0,Glyme,-177.70643444915632,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,170.0,Glyme,-177.7064438073974,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,149.0,Glyme,-177.70632527493208,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,150.0,Glyme,-177.70633140073363,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,151.0,Glyme,-177.7063382235223,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,152.0,Glyme,-177.70634466055867,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,153.0,Glyme,-177.7063505070211,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,154.0,Glyme,-177.70635475389582,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,155.0,Glyme,-177.70635957053287,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,156.0,Glyme,-177.7063635803531,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,157.0,Glyme,-177.70636742974563,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,158.0,Glyme,-177.70637249340814,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,159.0,Glyme,-177.70637634243866,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,160.0,Glyme,-177.70638168207475,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,161.0,Glyme,-177.7063866308952,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,162.0,Glyme,-177.70639300977538,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,163.0,Glyme,-177.70640053175705,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,164.0,Glyme,-177.70640640808176,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,165.0,Glyme,-177.7064138126763,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,166.0,Glyme,-177.7064220326139,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,167.0,Glyme,-177.70642863177662,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,194.0,Glyme,-177.70656937768925,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,169.0,Glyme,-177.70644012837084,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,171.0,Glyme,-177.70644665330633,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,195.0,Glyme,-177.70657548051253,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,198.0,Glyme,-177.70658984938626,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,197.0,Glyme,-177.7065850853096,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,19.0,Glyme,-177.69564172301517,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,18.0,Glyme,-177.69556949265578,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,17.0,Glyme,-177.69545843638878,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,16.0,Glyme,-177.69544669377137,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,15.0,Glyme,-177.69518895868418,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,14.0,Glyme,-177.6950642453867,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,13.0,Glyme,-177.69493671390003,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,12.0,Glyme,-177.69488177671082,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,11.0,Glyme,-177.69477685031876,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,20.0,Glyme,-177.69566770256435,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,10.0,Glyme,-177.69473142569439,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,8.0,Glyme,-177.69453613563292,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,7.0,Glyme,-177.6943995223615,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,6.0,Glyme,-177.69431144087434,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,5.0,Glyme,-177.6938925066118,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,4.0,Glyme,-177.69366723666357,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,3.0,Glyme,-177.69309701198483,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,2.0,Glyme,-177.69252125610905,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,1.0,Glyme,-177.6907507704796,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,0.0,Glyme,-177.68923097626887,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,9.0,Glyme,-177.69457452157855,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,21.0,Glyme,-177.69570823658032,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,22.0,Glyme,-177.6957664902648,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,23.0,Glyme,-177.69580819209835,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,148.0,Glyme,-177.70631594534763,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,199.0,Glyme,-177.70659442533193,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,200.0,Glyme,-177.70660005605515,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,41.0,Glyme,-177.69779926064035,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,40.0,Glyme,-177.69740859950653,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,39.0,Glyme,-177.69710678299555,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,38.0,Glyme,-177.6968773289907,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,37.0,Glyme,-177.69651105486014,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,36.0,Glyme,-177.69636537850343,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,35.0,Glyme,-177.696312065977,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,34.0,Glyme,-177.696302661709,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,33.0,Glyme,-177.69618413921773,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,32.0,Glyme,-177.6961266744118,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,31.0,Glyme,-177.6960836137728,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,30.0,Glyme,-177.69604799098818,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,29.0,Glyme,-177.69600170510606,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,28.0,Glyme,-177.69596928910914,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,27.0,Glyme,-177.69592020462719,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,26.0,Glyme,-177.69588115195265,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,25.0,Glyme,-177.69585990920956,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,24.0,Glyme,-177.69583457965174,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,196.0,Glyme,-177.70657929834297,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,43.0,Glyme,-177.69966614501857,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,147.0,Glyme,-177.70630980496978,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,145.0,Glyme,-177.70629646073013,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,71.0,Glyme,-177.70462698999063,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,72.0,Glyme,-177.70467018254055,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,73.0,Glyme,-177.70470238283957,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,74.0,Glyme,-177.70473174740815,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,75.0,Glyme,-177.70477396321598,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,76.0,Glyme,-177.70481787328885,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,77.0,Glyme,-177.70486739888747,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,78.0,Glyme,-177.70492568690509,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,79.0,Glyme,-177.7049565298461,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,80.0,Glyme,-177.7049847311174,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,70.0,Glyme,-177.70457765053112,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,81.0,Glyme,-177.70500822313232,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,83.0,Glyme,-177.70505853930297,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,84.0,Glyme,-177.7050800543243,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,85.0,Glyme,-177.7051034926184,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,86.0,Glyme,-177.70513278318734,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,87.0,Glyme,-177.70516832831555,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,42.0,Glyme,-177.69899257750552,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,89.0,Glyme,-177.70523940924232,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,90.0,Glyme,-177.70526472013444,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,91.0,Glyme,-177.70528844619525,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,92.0,Glyme,-177.70531049944572,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,82.0,Glyme,-177.70503342796687,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,93.0,Glyme,-177.70532648054942,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,69.0,Glyme,-177.70452337924286,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,67.0,Glyme,-177.70439356489982,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,45.0,Glyme,-177.700620087973,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,46.0,Glyme,-177.70145959483028,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,47.0,Glyme,-177.70210671079008,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,48.0,Glyme,-177.7027633604171,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,49.0,Glyme,-177.70311045660264,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,50.0,Glyme,-177.70326311534689,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,51.0,Glyme,-177.70332266256315,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,52.0,Glyme,-177.70337465386064,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,53.0,Glyme,-177.70340768158923,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,54.0,Glyme,-177.70345688098553,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,68.0,Glyme,-177.70449389140012,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,55.0,Glyme,-177.7035146182165,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,57.0,Glyme,-177.70369759262348,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,58.0,Glyme,-177.70374480788155,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,59.0,Glyme,-177.70382496197374,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,60.0,Glyme,-177.7038928093977,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,61.0,Glyme,-177.70393530863782,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,62.0,Glyme,-177.70401049188945,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,63.0,Glyme,-177.70410520683095,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,64.0,Glyme,-177.70410560120536,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,65.0,Glyme,-177.7041888404113,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,66.0,Glyme,-177.70429526848787,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,56.0,Glyme,-177.70366207707468,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,146.0,Glyme,-177.70630338808684,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,94.0,Glyme,-177.70534181423056,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,96.0,Glyme,-177.70537141522738,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,123.0,Glyme,-177.7058770858638,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,124.0,Glyme,-177.70589361946514,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,125.0,Glyme,-177.705915868305,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,126.0,Glyme,-177.70593945947303,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,127.0,Glyme,-177.70596922356597,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,128.0,Glyme,-177.7060207321068,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,129.0,Glyme,-177.70611549933022,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,130.0,Glyme,-177.7061154997685,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,131.0,Glyme,-177.70612862224138,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,132.0,Glyme,-177.70614663578283,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,122.0,Glyme,-177.70586994029264,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,133.0,Glyme,-177.70616540617203,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,135.0,Glyme,-177.70618279425352,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,136.0,Glyme,-177.70619360981186,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,137.0,Glyme,-177.7062086912875,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,138.0,Glyme,-177.7062278633606,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,139.0,Glyme,-177.70624150384225,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,140.0,Glyme,-177.70625400923828,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,141.0,Glyme,-177.70626600535832,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,142.0,Glyme,-177.70627538187406,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,143.0,Glyme,-177.7062833162164,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,144.0,Glyme,-177.70629014275826,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,134.0,Glyme,-177.70616968573574,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,95.0,Glyme,-177.70535876864662,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,121.0,Glyme,-177.70584494835379,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,119.0,Glyme,-177.7058016921053,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,97.0,Glyme,-177.70538301389809,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,98.0,Glyme,-177.7053969411676,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,99.0,Glyme,-177.70541107724043,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,100.0,Glyme,-177.70543445361758,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,101.0,Glyme,-177.70544743015955,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,102.0,Glyme,-177.70547328806316,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,103.0,Glyme,-177.70549716520043,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,104.0,Glyme,-177.7055231488565,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,105.0,Glyme,-177.70554730643687,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,106.0,Glyme,-177.70556621089108,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,120.0,Glyme,-177.70582565704473,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,107.0,Glyme,-177.70557929379348,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,109.0,Glyme,-177.70560890011953,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,110.0,Glyme,-177.70562464153804,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,111.0,Glyme,-177.7056421938741,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,112.0,Glyme,-177.7056632953308,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,113.0,Glyme,-177.70567861571107,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,114.0,Glyme,-177.70569636708848,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,115.0,Glyme,-177.70571447860016,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,116.0,Glyme,-177.70573574216087,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,117.0,Glyme,-177.70575619619171,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,118.0,Glyme,-177.7057776123557,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,108.0,Glyme,-177.7055926427424,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
+Na2S8-glyme,88.0,Glyme,-177.7052136817283,"[{'Element': 'S', 'Oxidation States': [-0.007, 0.035, -0.009, 0.006, 0.1, -0.577, 0.081, -0.562]}, {'Element': 'Na', 'Oxidation States': [0.823, 0.817]}]",False
