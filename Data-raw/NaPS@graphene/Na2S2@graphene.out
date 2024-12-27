@@ -1,0 +1,656 @@
+
+*************** JDFTx 1.7.0  ***************
+
+Start date and time: Sat May  6 20:34:08 2023
+Executable jdftx with command-line: -i Na2S2@graphene_6x6x1.in -o Na2S2@graphene_6x6x1.out
+Running on hosts (process indices):  DESKTOP-H9SOOLG (0)
+Divided in process groups (process indices):  0 (0)
+Resource initialization completed at t[s]:      0.00
+Run totals: 1 processes, 4 threads, 0 GPUs
+
+
+Input parsed successfully to the following command list (including defaults):
+
+basis kpoint-dependent
+coords-type Cartesian
+core-overlap-check vector
+coulomb-interaction Slab 001
+coulomb-truncation-embed 0 0 18.8973
+davidson-band-ratio 1.1
+dump End State
+dump-name Na2S2@graphene_6x6x1.$VAR
+elec-cutoff 20 100
+elec-eigen-algo Davidson
+elec-ex-corr gga-PBE
+elec-smearing Fermi 0.01
+electronic-minimize  \
+	dirUpdateScheme      FletcherReeves \
+	linminMethod         DirUpdateRecommended \
+	nIterations          100 \
+	history              15 \
+	knormThreshold       0 \
+	energyDiffThreshold  1e-08 \
+	nEnergyDiff          2 \
+	alphaTstart          1 \
+	alphaTmin            1e-10 \
+	updateTestStepSize   yes \
+	alphaTreduceFactor   0.1 \
+	alphaTincreaseFactor 3 \
+	nAlphaAdjustMax      3 \
+	wolfeEnergy          0.0001 \
+	wolfeGradient        0.9 \
+	fdTest               no
+electronic-scf  \
+	nIterations	50 \
+	energyDiffThreshold	1e-08 \
+	residualThreshold	1e-07 \
+	mixFraction	0.5 \
+	qMetric	0.8 \
+	history	10 \
+	nEigSteps	2 \
+	eigDiffThreshold	1e-08 \
+	mixedVariable	Density \
+	qKerker	0.8 \
+	qKappa	-1 \
+	verbose	no \
+	mixFractionMag	1.5
+exchange-regularization WignerSeitzTruncated
+fluid None
+fluid-ex-corr lda-TF lda-PZ
+fluid-gummel-loop 10 1.000000e-05
+fluid-minimize  \
+	dirUpdateScheme      PolakRibiere \
+	linminMethod         DirUpdateRecommended \
+	nIterations          100 \
+	history              15 \
+	knormThreshold       0 \
+	energyDiffThreshold  0 \
+	nEnergyDiff          2 \
+	alphaTstart          1 \
+	alphaTmin            1e-10 \
+	updateTestStepSize   yes \
+	alphaTreduceFactor   0.1 \
+	alphaTincreaseFactor 3 \
+	nAlphaAdjustMax      3 \
+	wolfeEnergy          0.0001 \
+	wolfeGradient        0.9 \
+	fdTest               no
+fluid-solvent H2O 55.338 ScalarEOS \
+	epsBulk 78.4 \
+	pMol 0.92466 \
+	epsInf 1.77 \
+	Pvap 1.06736e-10 \
+	sigmaBulk 4.62e-05 \
+	Rvdw 2.61727 \
+	Res 1.42 \
+	tauNuc 343133 \
+	poleEl 15 7 1
+forces-output-coords Positions
+ion C  27.960435777659406  -0.000836748455272  18.967225597257869 1
+ion C  16.293008899767823  20.209797818350172  18.966954068896204 1
+ion C   2.284526133009872   4.038629794641428  18.934239832000621 1
+ion C  23.293968583788732   0.000941593104949  18.988483786505867 1
+ion C   4.620187559141830  -0.004185110706158  18.974117291140171 1
+ion C  11.627560536053156  20.213154638204099  18.967304909614739 1
+ion C  25.625941413530906   4.040548605123029  18.955298098082881 1
+ion C  18.627480249730958  16.167709166067187  18.950015520065072 1
+ion C   4.615956082724603   8.079909848275026  18.896953368656547 1
+ion C  18.626446949877973   0.000162812578174  19.010914262498648 1
+ion C   9.289070653340683  -0.005353821550489  18.997438721945013 1
+ion C   9.297113137201020  16.171240444484461  18.938669194607488 1
+ion C  23.293264777450027   8.081901879774755  18.955538789338135 1
+ion C  20.960326159519390  12.124734040103963  18.951442873129608 1
+ion C   6.954149710801754  12.123018290895926  18.894940078206229 1
+ion C  13.959195578054860  -0.003503869475525  19.013004502691942 1
+ion C  13.963913688698817  16.169595368214839  18.930557232059289 1
+ion C   6.949729310028082   4.034923904670982  18.963252426295515 1
+ion C  20.960762362008971   4.040739903593209  18.991824194138175 1
+ion C  16.296245335738078  12.126362840736908  18.937754720481976 1
+ion C   9.288487391865697   8.083108277810224  18.928755141026979 1
+ion C  16.296237611893119   4.038849861673149  19.009360886585707 1
+ion C  11.627796924776026   4.034873551514135  19.004690324589568 1
+ion C  11.633134782020216  12.127706416554956  18.909506242801843 1
+ion C  18.629123922330365   8.082769217958322  18.976651349751837 1
+ion C   6.957091755434060  20.217963047978820  18.997496910933126 1
+ion C  -7.047173622534929  20.208263710488335  18.980044334342434 1
+ion C  -0.048846044232073   8.080835967187035  18.913469953671758 1
+ion C  13.965297480126354   8.082876268602098  18.968139483295257 1
+ion C   2.286881538680776  20.211505620374140  19.003023982715341 1
+ion C  -4.713923797317030  16.166425829072896  18.960636484269511 1
+ion C   2.281482994827999  12.121416683375426  18.913149728523106 1
+ion C  -2.381235064716933  12.123335617806838  18.933759171557206 1
+ion C  -2.380075329613394  20.208546083604062  18.990540698142738 1
+ion C   4.616409455129544  16.169330606127787  18.965622841086176 1
+ion C  -0.049224545911487  16.166808426348918  18.960549182889963 1
+ion C  13.960653081190188  21.558352386049371  18.969129729085548 1
+ion C   2.287549938125089   1.344516669434774  18.959543572007075 1
+ion C  25.627555583909476   1.346872438882805  18.969691679842246 1
+ion C  16.295578375260369  17.516068280870449  18.949073348904975 1
+ion C   4.617067997802534   5.385007789594122  18.923885529928061 1
+ion C  20.960020952102226   1.346881707733130  18.999903205868755 1
+ion C   6.953882482319247   1.340808181606315  18.981165777431993 1
+ion C  11.633032580511689  17.519491951855379  18.945542632478222 1
+ion C  23.293488285979549   5.388230726884447  18.968117479379519 1
+ion C  18.628265252806123  13.473560025167183  18.944403945495484 1
+ion C   6.948863572035099   9.427349551862886  18.898788170181216 1
+ion C  16.292302727322841   1.344655705695604  19.015263235265216 1
+ion C  11.624195539227365   1.339935664392244  19.009432389050122 1
+ion C   9.295036430975749  13.471116916913431  18.902594768963869 1
+ion C  20.961174019546103   9.430536093169314  18.962552490490722 1
+ion C   9.292565761706586  21.561217770899230  18.986271724930294 1
+ion C  -9.380045295317339  21.555523111877413  18.977659266896840 1
+ion C  -0.047611671352562   5.386811635680852  18.929042782846576 1
+ion C  13.964345214096095  13.474572797645095  18.918823780904837 1
+ion C   9.287815540479658   5.381462335956552  18.976295710854579 1
+ion C  18.628339012006826   5.387939138514611  18.995890530057867 1
+ion C  16.297617932255939   9.432088091065840  18.961561793808269 1
+ion C  11.630620864159033   9.432695880471982  18.933435077362457 1
+ion C  13.962759059998787   5.385213755273272  18.999203935408552 1
+ion C   4.620938218825678  21.560161759453038  19.007559832741958 1
+ion C  -7.046177052724490  17.514550011849263  18.965403199590025 1
+ion C   2.283181057403023   9.427800625538129  18.897566342268348 1
+ion C  -2.380528007451757   9.429250644626755  18.930463840681305 1
+ion C  -4.713747236126427  21.554927788417448  18.992077672594331 1
+ion C   6.955886532903662  17.520898321589701  18.975724491903382 1
+ion C  -0.046943402481569  21.556137201721889  19.004497191178505 1
+ion C  -4.713426187126700  13.472449621325163  18.948371448053731 1
+ion C   4.615634273068003  13.469658487804836  18.919470679709526 1
+ion C   2.281420186845013  17.517271005454010  18.982853017410299 1
+ion C  -2.381486664243415  17.514482330999062  18.970307959902918 1
+ion C  -0.049161937562907  13.470985110226032  18.932387958963570 1
+ion S  10.171556359516019  12.006086899690814  26.820140956471057 1
+ion S   6.507488340341624  10.627912342006763  26.552053258557091 1
+ion Na   9.881779741931272   7.713632329873738  24.028357432749679 1
+ion Na   7.219240068380778  14.874746855818364  23.762443623306204 1
+ion-species GBRV/$ID_pbe.uspp
+ion-width 0
+ionic-minimize  \
+	dirUpdateScheme      FletcherReeves \
+	linminMethod         DirUpdateRecommended \
+	nIterations          200 \
+	history              15 \
+	knormThreshold       0.0001 \
+	energyDiffThreshold  1e-06 \
+	nEnergyDiff          2 \
+	alphaTstart          1 \
+	alphaTmin            1e-10 \
+	updateTestStepSize   yes \
+	alphaTreduceFactor   0.1 \
+	alphaTincreaseFactor 3 \
+	nAlphaAdjustMax      3 \
+	wolfeEnergy          0.0001 \
+	wolfeGradient        0.9 \
+	fdTest               no
+kpoint   0.000000000000   0.000000000000   0.000000000000  1.00000000000000
+kpoint-folding 1 1 1 
+latt-move-scale 1 1 1
+latt-scale 1 1 1 
+lattice Triclinic 28.0058 28.0058 28.3459 90 90 120
+lattice-minimize  \
+	dirUpdateScheme      L-BFGS \
+	linminMethod         DirUpdateRecommended \
+	nIterations          0 \
+	history              15 \
+	knormThreshold       0 \
+	energyDiffThreshold  1e-06 \
+	nEnergyDiff          2 \
+	alphaTstart          1 \
+	alphaTmin            1e-10 \
+	updateTestStepSize   yes \
+	alphaTreduceFactor   0.1 \
+	alphaTincreaseFactor 3 \
+	nAlphaAdjustMax      3 \
+	wolfeEnergy          0.0001 \
+	wolfeGradient        0.9 \
+	fdTest               no
+lcao-params -1 1e-06 0.01
+pcm-variant GLSSA13
+spintype no-spin
+subspace-rotation-factor 1 yes
+symmetries automatic
+symmetry-threshold 0.0001
+
+
+
+---------- Setting up symmetries ----------
+
+Found 24 point-group symmetries of the bravais lattice
+Found 1 space-group symmetries with basis
+Applied RMS atom displacement 0 bohrs to make symmetries exact.
+
+---------- Initializing the Grid ----------
+R = 
+[      28.0058     -14.0029            0  ]
+[            0      24.2537            0  ]
+[            0            0      28.3459  ]
+unit cell volume = 19253.8
+G =
+[   0.224353    0.12953         -0  ]
+[          0   0.259061          0  ]
+[          0         -0   0.221661  ]
+Minimum fftbox size, Smin = [  128  128  128  ]
+Chosen fftbox size, S = [  128  128  128  ]
+
+---------- Initializing tighter grid for wavefunction operations ----------
+R = 
+[      28.0058     -14.0029            0  ]
+[            0      24.2537            0  ]
+[            0            0      28.3459  ]
+unit cell volume = 19253.8
+G =
+[   0.224353    0.12953         -0  ]
+[          0   0.259061          0  ]
+[          0         -0   0.221661  ]
+Minimum fftbox size, Smin = [  116  116  116  ]
+Chosen fftbox size, S = [  120  120  120  ]
+
+---------- Exchange Correlation functional ----------
+Initalized PBE GGA exchange.
+Initalized PBE GGA correlation.
+
+---------- Setting up pseudopotentials ----------
+Width of ionic core gaussian charges (only for fluid interactions / plotting) set to 0
+
+Reading pseudopotential file '/home/danielkim/jdftx_install/build/pseudopotentials/GBRV/c_pbe.uspp':
+  Title: C.  Created by USPP 7.3.6 on 3-2-2014
+  Reference state energy: -5.406344.  4 valence electrons in orbitals:
+    |200>  occupation: 2  eigenvalue: -0.504890
+    |210>  occupation: 2  eigenvalue: -0.194356
+  lMax: 1  lLocal: 2  QijEcut: 5
+  4 projectors sampled on a log grid with 503 points:
+    l: 0  eig: -0.504890  rCut: 1.3
+    l: 0  eig: 0.000000  rCut: 1.3
+    l: 1  eig: -0.194357  rCut: 1.3
+    l: 1  eig: 0.000000  rCut: 1.3
+  Partial core density with radius 1.1
+  Transforming core density to a uniform radial grid of dG=0.02 with 1607 points.
+  Transforming local potential to a uniform radial grid of dG=0.02 with 1607 points.
+  Transforming nonlocal projectors to a uniform radial grid of dG=0.02 with 432 points.
+  Transforming density augmentations to a uniform radial grid of dG=0.02 with 1607 points.
+  Transforming atomic orbitals to a uniform radial grid of dG=0.02 with 432 points.
+  Core radius for overlap checks: 1.30 bohrs.
+
+Reading pseudopotential file '/home/danielkim/jdftx_install/build/pseudopotentials/GBRV/s_pbe.uspp':
+  Title: S.  Created by USPP 7.3.6 on 1-4-15
+  Reference state energy: -11.898476.  6 valence electrons in orbitals:
+    |300>  occupation: 2  eigenvalue: -0.634167
+    |310>  occupation: 4  eigenvalue: -0.257568
+  lMax: 2  lLocal: 3  QijEcut: 6
+  6 projectors sampled on a log grid with 635 points:
+    l: 0  eig: -0.634161  rCut: 1.5
+    l: 0  eig: 1.500000  rCut: 1.5
+    l: 1  eig: -0.257567  rCut: 1.5
+    l: 1  eig: 1.500000  rCut: 1.5
+    l: 2  eig: -1.000000  rCut: 1.5
+    l: 2  eig: 1.500000  rCut: 1.5
+  Partial core density with radius 1.15
+  Transforming core density to a uniform radial grid of dG=0.02 with 1607 points.
+  Transforming local potential to a uniform radial grid of dG=0.02 with 1607 points.
+  Transforming nonlocal projectors to a uniform radial grid of dG=0.02 with 432 points.
+  Transforming density augmentations to a uniform radial grid of dG=0.02 with 1607 points.
+  Transforming atomic orbitals to a uniform radial grid of dG=0.02 with 432 points.
+  Core radius for overlap checks: 1.50 bohrs.
+
+Reading pseudopotential file '/home/danielkim/jdftx_install/build/pseudopotentials/GBRV/na_pbe.uspp':
+  Title: Na.  Created by USPP 7.3.6 on 23-9-15
+  Reference state energy: -47.625620.  9 valence electrons in orbitals:
+    |200>  occupation: 2  eigenvalue: -2.085638
+    |210>  occupation: 6  eigenvalue: -1.053708
+    |300>  occupation: 1  eigenvalue: -0.100838
+  lMax: 2  lLocal: 0  QijEcut: 6
+  5 projectors sampled on a log grid with 657 points:
+    l: 0  eig: -2.085640  rCut: 1.37
+    l: 0  eig: -0.100839  rCut: 1.37
+    l: 1  eig: -1.053708  rCut: 1.47
+    l: 1  eig: 0.500000  rCut: 1.47
+    l: 2  eig: 0.750000  rCut: 2
+  Transforming local potential to a uniform radial grid of dG=0.02 with 1607 points.
+  Transforming nonlocal projectors to a uniform radial grid of dG=0.02 with 432 points.
+  Transforming density augmentations to a uniform radial grid of dG=0.02 with 1607 points.
+  Transforming atomic orbitals to a uniform radial grid of dG=0.02 with 432 points.
+  Core radius for overlap checks: 2.00 bohrs.
+
+Initialized 3 species with 76 total atoms.
+
+Folded 1 k-points by 1x1x1 to 1 k-points.
+
+---------- Setting up k-points, bands, fillings ----------
+No reducable k-points. 
+Computing the number of bands and number of electrons
+Calculating initial fillings.
+nElectrons: 318.000000   nBands: 306   nStates: 1
+
+----- Setting up reduced wavefunction bases (one per k-point) -----
+average nbasis = 82281.000 , ideal nbasis = 82253.767
+
+---------- Setting up coulomb interaction ----------
+Setting up double-sized grid for truncated Coulomb potentials:
+R = 
+[      28.0058     -14.0029            0  ]
+[            0      24.2537            0  ]
+[            0            0      56.6918  ]
+unit cell volume = 38507.6
+G =
+[   0.224353    0.12953         -0  ]
+[          0   0.259061          0  ]
+[          0         -0   0.110831  ]
+Chosen fftbox size, S = [  128  128  256  ]
+Integer grid location selected as the embedding center:
+   Grid: [  0  0  85  ]
+   Lattice: [  0  0  0.666668  ]
+   Cartesian: [  0  0  18.8973  ]
+Constructing Wigner-Seitz cell: 8 faces (6 quadrilaterals, 2 hexagons)
+Range-separation parameter for embedded mesh potentials due to point charges: 0.593677 bohrs.
+Initialized slab truncation along lattice direction 001
+
+---------- Setting up 2D ewald sum ----------
+Optimum gaussian width for ewald sums = 15.547689 bohr.
+Real space sums over 289 unit cells with max indices [  8  8  0  ]
+Reciprocal space sums over 81 terms with max indices [  4  4  0  ]
+
+---------- Allocating electronic variables ----------
+Initializing wave functions:  linear combination of atomic orbitals
+C pseudo-atom occupations:   s ( 2 )  p ( 2 )
+S pseudo-atom occupations:   s ( 2 )  p ( 4 )
+Na pseudo-atom occupations:   s ( 2 1 )  p ( 6 )
+	FillingsUpdate:  mu: -0.207203460  nElectrons: 318.000000
+LCAOMinimize: Iter:   0  F: -522.0066368483447832  |grad|_K:  1.180e-02  alpha:  1.000e+00
+LCAOMinimize: 	Step increased F by 1.459741e+00, reducing alpha to 3.405663e-02.
+	FillingsUpdate:  mu: -0.241897075  nElectrons: 318.000000
+LCAOMinimize: Iter:   1  F: -522.5567350139457403  |grad|_K:  1.017e-02  alpha:  3.406e-02  linmin: -1.521e-01  cgtest:  6.784e-01  t[s]:    299.25
+	FillingsUpdate:  mu: -0.271030766  nElectrons: 318.000000
+LCAOMinimize: Iter:   2  F: -522.8299506606039131  |grad|_K:  2.851e-03  alpha:  5.235e-02  linmin:  1.478e-01  cgtest: -9.476e-01  t[s]:    377.51
+LCAOMinimize: 	Bad step direction: g.d > 0.
+LCAOMinimize: 	Undoing step.
+LCAOMinimize: 	Step failed: resetting search direction.
+	FillingsUpdate:  mu: -0.271030766  nElectrons: 318.000000
+LCAOMinimize: Iter:   3  F: -522.8299506606039131  |grad|_K:  2.851e-03  alpha:  0.000e+00
+	FillingsUpdate:  mu: -0.284872678  nElectrons: 318.000000
+LCAOMinimize: Iter:   4  F: -522.8520058501867425  |grad|_K:  5.156e-04  alpha:  5.845e-02  linmin:  1.449e-01  cgtest: -4.063e-01  t[s]:    504.46
+LCAOMinimize: 	Predicted alpha/alphaT>3.000000, increasing alphaT to 1.753637e-01.
+	FillingsUpdate:  mu: -0.283723594  nElectrons: 318.000000
+LCAOMinimize: Iter:   5  F: -522.8566463355444967  |grad|_K:  5.896e-04  alpha:  5.199e-01  linmin:  1.586e-03  cgtest:  5.407e-01  t[s]:    603.49
+	FillingsUpdate:  mu: -0.281439510  nElectrons: 318.000000
+LCAOMinimize: Iter:   6  F: -522.8576054942617475  |grad|_K:  2.530e-04  alpha:  6.935e-02  linmin:  2.907e-02  cgtest: -3.231e-01  t[s]:    681.87
+	FillingsUpdate:  mu: -0.281523688  nElectrons: 318.000000
+LCAOMinimize: Iter:   7  F: -522.8580453459729824  |grad|_K:  1.670e-04  alpha:  1.906e-01  linmin:  9.735e-05  cgtest:  6.258e-01  t[s]:    760.02
+	FillingsUpdate:  mu: -0.282579061  nElectrons: 318.000000
+LCAOMinimize: Iter:   8  F: -522.8581180937449062  |grad|_K:  4.511e-05  alpha:  5.490e-02  linmin: -7.361e-03  cgtest:  2.575e-02  t[s]:    838.52
+LCAOMinimize: 	Predicted alpha/alphaT>3.000000, increasing alphaT to 1.647106e-01.
+	FillingsUpdate:  mu: -0.282574987  nElectrons: 318.000000
+LCAOMinimize: Iter:   9  F: -522.8581621828471953  |grad|_K:  2.889e-05  alpha:  4.571e-01  linmin:  9.329e-05  cgtest: -1.727e-02  t[s]:    937.30
+	FillingsUpdate:  mu: -0.282681870  nElectrons: 318.000000
+LCAOMinimize: Iter:  10  F: -522.8581761487287167  |grad|_K:  1.020e-05  alpha:  3.553e-01  linmin:  2.753e-05  cgtest:  1.097e-02  t[s]:   1015.45
+	FillingsUpdate:  mu: -0.282604712  nElectrons: 318.000000
+LCAOMinimize: Iter:  11  F: -522.8581769053954531  |grad|_K:  1.132e-05  alpha:  1.544e-01  linmin:  1.365e-05  cgtest: -2.928e-04  t[s]:   1093.74
+	FillingsUpdate:  mu: -0.282661973  nElectrons: 318.000000
+LCAOMinimize: Iter:  12  F: -522.8581777280460301  |grad|_K:  2.800e-06  alpha:  1.362e-01  linmin: -1.686e-05  cgtest:  2.528e-03  t[s]:   1171.76
+LCAOMinimize: Converged (|Delta F|<1.000000e-06 for 2 iters).
+
+
+---- Citations for features of the code used in this run ----
+
+   Software package:
+      R. Sundararaman, K. Letchworth-Weaver, K.A. Schwarz, D. Gunceler, Y. Ozhabes and T.A. Arias, 'JDFTx: software for joint density-functional theory', SoftwareX 6, 278 (2017)
+
+   gga-PBE exchange-correlation functional:
+      J.P. Perdew, K. Burke and M. Ernzerhof, Phys. Rev. Lett. 77, 3865 (1996)
+
+   Pseudopotentials:
+      KF Garrity, JW Bennett, KM Rabe and D Vanderbilt, Comput. Mater. Sci. 81, 446 (2014)
+
+   Truncated Coulomb potentials:
+      R. Sundararaman and T.A. Arias, Phys. Rev. B 87, 165122 (2013)
+
+This list may not be complete. Please suggest additional citations or
+report any other bugs at https://github.com/shankar1729/jdftx/issues
+
+Initialization completed successfully at t[s]:   1214.81
+
+
+-------- Electronic minimization -----------
+Will mix electronic density at each iteration.
+	FillingsUpdate:  mu: -0.282661973  nElectrons: 318.000000
+	FillingsUpdate:  mu: -0.290067595  nElectrons: 318.000000
+SCF: Cycle:  0   F: -526.307822448935553   dF: -3.450e+00   |Residual|: 9.490e-01   |deigs|: 1.255e-01  t[s]:   1606.50
+	FillingsUpdate:  mu: -0.263659497  nElectrons: 318.000000
+SCF: Cycle:  1   F: -526.771722052932546   dF: -4.639e-01   |Residual|: 4.888e-01   |deigs|: 3.568e-02  t[s]:   1957.77
+	FillingsUpdate:  mu: -0.230480099  nElectrons: 318.000000
+SCF: Cycle:  2   F: -527.114712368232517   dF: -3.430e-01   |Residual|: 1.315e-01   |deigs|: 3.167e-02  t[s]:   2308.79
+	FillingsUpdate:  mu: -0.223179525  nElectrons: 318.000000
+SCF: Cycle:  3   F: -527.116139227156737   dF: -1.427e-03   |Residual|: 8.280e-02   |deigs|: 9.439e-03  t[s]:   2658.44
+	FillingsUpdate:  mu: -0.211955395  nElectrons: 318.000000
+SCF: Cycle:  4   F: -527.158523366709005   dF: -4.238e-02   |Residual|: 4.876e-02   |deigs|: 9.620e-03  t[s]:   3009.56
+	FillingsUpdate:  mu: -0.203147384  nElectrons: 318.000000
+SCF: Cycle:  5   F: -527.162871666108913   dF: -4.348e-03   |Residual|: 3.391e-02   |deigs|: 8.893e-03  t[s]:   3360.16
+	FillingsUpdate:  mu: -0.195743682  nElectrons: 318.000000
+SCF: Cycle:  6   F: -527.172131314960666   dF: -9.260e-03   |Residual|: 2.097e-02   |deigs|: 6.422e-03  t[s]:   3699.61
+	FillingsUpdate:  mu: -0.188896701  nElectrons: 318.000000
+SCF: Cycle:  7   F: -527.173832562312555   dF: -1.701e-03   |Residual|: 1.423e-02   |deigs|: 7.384e-03  t[s]:   4037.96
+	FillingsUpdate:  mu: -0.182301951  nElectrons: 318.000000
+SCF: Cycle:  8   F: -527.174392097545137   dF: -5.595e-04   |Residual|: 1.469e-02   |deigs|: 6.029e-03  t[s]:   4362.09
+	FillingsUpdate:  mu: -0.178925404  nElectrons: 318.000000
+SCF: Cycle:  9   F: -527.175380448214469   dF: -9.884e-04   |Residual|: 7.586e-03   |deigs|: 3.381e-03  t[s]:   4672.83
+	FillingsUpdate:  mu: -0.170150631  nElectrons: 318.000000
+SCF: Cycle: 10   F: -527.170433563677761   dF: +4.947e-03   |Residual|: 1.797e-02   |deigs|: 7.488e-03  t[s]:   4983.41
+	FillingsUpdate:  mu: -0.168284401  nElectrons: 318.000000
+SCF: Cycle: 11   F: -527.175611942891578   dF: -5.178e-03   |Residual|: 5.258e-03   |deigs|: 2.375e-03  t[s]:   5288.92
+	FillingsUpdate:  mu: -0.161935592  nElectrons: 318.000000
+SCF: Cycle: 12   F: -527.174830970409175   dF: +7.810e-04   |Residual|: 5.858e-03   |deigs|: 5.854e-03  t[s]:   5591.25
+	FillingsUpdate:  mu: -0.159354300  nElectrons: 318.000000
+SCF: Cycle: 13   F: -527.175633346319160   dF: -8.024e-04   |Residual|: 2.362e-03   |deigs|: 2.805e-03  t[s]:   5893.44
+	FillingsUpdate:  mu: -0.157701307  nElectrons: 318.000000
+SCF: Cycle: 14   F: -527.175725458421539   dF: -9.211e-05   |Residual|: 1.705e-03   |deigs|: 2.380e-03  t[s]:   6195.65
+	FillingsUpdate:  mu: -0.156849982  nElectrons: 318.000000
+SCF: Cycle: 15   F: -527.175744813882943   dF: -1.936e-05   |Residual|: 1.158e-03   |deigs|: 9.009e-04  t[s]:   6498.22
+	FillingsUpdate:  mu: -0.156917418  nElectrons: 318.000000
+SCF: Cycle: 16   F: -527.175760055129103   dF: -1.524e-05   |Residual|: 9.190e-04   |deigs|: 2.616e-04  t[s]:   6800.43
+	FillingsUpdate:  mu: -0.156842472  nElectrons: 318.000000
+SCF: Cycle: 17   F: -527.175765783899351   dF: -5.729e-06   |Residual|: 5.343e-04   |deigs|: 3.303e-04  t[s]:   7102.58
+	FillingsUpdate:  mu: -0.156849787  nElectrons: 318.000000
+SCF: Cycle: 18   F: -527.175766752088975   dF: -9.682e-07   |Residual|: 3.262e-04   |deigs|: 4.741e-04  t[s]:   7404.43
+	FillingsUpdate:  mu: -0.156777908  nElectrons: 318.000000
+SCF: Cycle: 19   F: -527.175766831924648   dF: -7.984e-08   |Residual|: 2.416e-04   |deigs|: 4.516e-04  t[s]:   7706.41
+	FillingsUpdate:  mu: -0.156687917  nElectrons: 318.000000
+SCF: Cycle: 20   F: -527.175767372665632   dF: -5.407e-07   |Residual|: 1.309e-04   |deigs|: 3.536e-04  t[s]:   8009.38
+	FillingsUpdate:  mu: -0.156652930  nElectrons: 318.000000
+SCF: Cycle: 21   F: -527.175767550835303   dF: -1.782e-07   |Residual|: 9.138e-05   |deigs|: 3.060e-04  t[s]:   8311.26
+	FillingsUpdate:  mu: -0.156623897  nElectrons: 318.000000
+SCF: Cycle: 22   F: -527.175767631357189   dF: -8.052e-08   |Residual|: 6.270e-05   |deigs|: 2.712e-04  t[s]:   8613.55
+	FillingsUpdate:  mu: -0.156603195  nElectrons: 318.000000
+SCF: Cycle: 23   F: -527.175767691350188   dF: -5.999e-08   |Residual|: 3.398e-05   |deigs|: 3.342e-04  t[s]:   8916.32
+	FillingsUpdate:  mu: -0.156591773  nElectrons: 318.000000
+SCF: Cycle: 24   F: -527.175767704217378   dF: -1.287e-08   |Residual|: 2.590e-05   |deigs|: 1.552e-04  t[s]:   9219.37
+	FillingsUpdate:  mu: -0.156578984  nElectrons: 318.000000
+SCF: Cycle: 25   F: -527.175767714113476   dF: -9.896e-09   |Residual|: 1.965e-05   |deigs|: 1.466e-04  t[s]:   9521.20
+	FillingsUpdate:  mu: -0.156575660  nElectrons: 318.000000
+SCF: Cycle: 26   F: -527.175767720335216   dF: -6.222e-09   |Residual|: 1.513e-05   |deigs|: 7.195e-05  t[s]:   9823.57
+SCF: Converged (|Delta E|<1.000000e-08 for 2 iters).
+
+Setting wave functions to eigenvectors of Hamiltonian
+
+# Ionic positions in cartesian coordinates:
+ion C  27.960435777659406  -0.000836748455272  18.967225597257869 1
+ion C  16.293008899767823  20.209797818350172  18.966954068896204 1
+ion C   2.284526133009872   4.038629794641428  18.934239832000621 1
+ion C  23.293968583788732   0.000941593104949  18.988483786505867 1
+ion C   4.620187559141830  -0.004185110706158  18.974117291140171 1
+ion C  11.627560536053156  20.213154638204099  18.967304909614739 1
+ion C  25.625941413530906   4.040548605123029  18.955298098082881 1
+ion C  18.627480249730958  16.167709166067187  18.950015520065072 1
+ion C   4.615956082724603   8.079909848275026  18.896953368656547 1
+ion C  18.626446949877973   0.000162812578174  19.010914262498648 1
+ion C   9.289070653340683  -0.005353821550489  18.997438721945013 1
+ion C   9.297113137201020  16.171240444484461  18.938669194607488 1
+ion C  23.293264777450027   8.081901879774755  18.955538789338135 1
+ion C  20.960326159519390  12.124734040103963  18.951442873129608 1
+ion C   6.954149710801754  12.123018290895926  18.894940078206229 1
+ion C  13.959195578054860  -0.003503869475525  19.013004502691942 1
+ion C  13.963913688698817  16.169595368214839  18.930557232059289 1
+ion C   6.949729310028082   4.034923904670982  18.963252426295515 1
+ion C  20.960762362008971   4.040739903593209  18.991824194138175 1
+ion C  16.296245335738078  12.126362840736908  18.937754720481976 1
+ion C   9.288487391865697   8.083108277810224  18.928755141026979 1
+ion C  16.296237611893119   4.038849861673149  19.009360886585707 1
+ion C  11.627796924776026   4.034873551514135  19.004690324589568 1
+ion C  11.633134782020216  12.127706416554956  18.909506242801843 1
+ion C  18.629123922330365   8.082769217958322  18.976651349751837 1
+ion C   6.957091755434060  20.217963047978820  18.997496910933126 1
+ion C  -7.047173622534929  20.208263710488335  18.980044334342434 1
+ion C  -0.048846044232073   8.080835967187035  18.913469953671758 1
+ion C  13.965297480126354   8.082876268602098  18.968139483295257 1
+ion C   2.286881538680776  20.211505620374140  19.003023982715341 1
+ion C  -4.713923797317030  16.166425829072896  18.960636484269511 1
+ion C   2.281482994827999  12.121416683375426  18.913149728523106 1
+ion C  -2.381235064716933  12.123335617806838  18.933759171557206 1
+ion C  -2.380075329613394  20.208546083604062  18.990540698142738 1
+ion C   4.616409455129544  16.169330606127787  18.965622841086176 1
+ion C  -0.049224545911487  16.166808426348918  18.960549182889963 1
+ion C  13.960653081190188  21.558352386049371  18.969129729085548 1
+ion C   2.287549938125089   1.344516669434774  18.959543572007075 1
+ion C  25.627555583909476   1.346872438882805  18.969691679842246 1
+ion C  16.295578375260369  17.516068280870449  18.949073348904975 1
+ion C   4.617067997802534   5.385007789594122  18.923885529928061 1
+ion C  20.960020952102226   1.346881707733130  18.999903205868755 1
+ion C   6.953882482319247   1.340808181606315  18.981165777431993 1
+ion C  11.633032580511689  17.519491951855379  18.945542632478222 1
+ion C  23.293488285979549   5.388230726884447  18.968117479379519 1
+ion C  18.628265252806123  13.473560025167183  18.944403945495484 1
+ion C   6.948863572035099   9.427349551862886  18.898788170181216 1
+ion C  16.292302727322841   1.344655705695604  19.015263235265216 1
+ion C  11.624195539227365   1.339935664392244  19.009432389050122 1
+ion C   9.295036430975749  13.471116916913431  18.902594768963869 1
+ion C  20.961174019546103   9.430536093169314  18.962552490490722 1
+ion C   9.292565761706586  21.561217770899230  18.986271724930294 1
+ion C  -9.380045295317339  21.555523111877413  18.977659266896840 1
+ion C  -0.047611671352562   5.386811635680852  18.929042782846576 1
+ion C  13.964345214096095  13.474572797645095  18.918823780904837 1
+ion C   9.287815540479658   5.381462335956552  18.976295710854579 1
+ion C  18.628339012006826   5.387939138514611  18.995890530057867 1
+ion C  16.297617932255939   9.432088091065840  18.961561793808269 1
+ion C  11.630620864159033   9.432695880471982  18.933435077362457 1
+ion C  13.962759059998787   5.385213755273272  18.999203935408552 1
+ion C   4.620938218825678  21.560161759453038  19.007559832741958 1
+ion C  -7.046177052724490  17.514550011849263  18.965403199590025 1
+ion C   2.283181057403023   9.427800625538129  18.897566342268348 1
+ion C  -2.380528007451757   9.429250644626755  18.930463840681305 1
+ion C  -4.713747236126427  21.554927788417448  18.992077672594331 1
+ion C   6.955886532903662  17.520898321589701  18.975724491903382 1
+ion C  -0.046943402481569  21.556137201721889  19.004497191178505 1
+ion C  -4.713426187126700  13.472449621325163  18.948371448053731 1
+ion C   4.615634273068003  13.469658487804836  18.919470679709526 1
+ion C   2.281420186845013  17.517271005454010  18.982853017410299 1
+ion C  -2.381486664243415  17.514482330999062  18.970307959902918 1
+ion C  -0.049161937562907  13.470985110226032  18.932387958963570 1
+ion S  10.171556359516019  12.006086899690814  26.820140956471057 1
+ion S   6.507488340341624  10.627912342006763  26.552053258557091 1
+ion Na   9.881779741931272   7.713632329873738  24.028357432749679 1
+ion Na   7.219240068380778  14.874746855818364  23.762443623306204 1
+
+# Forces in Cartesian coordinates:
+force C  -0.000028616360252  -0.000053492300594  -0.000036319329362 1
+force C  -0.000112008893070   0.000063932407310  -0.000214223647321 1
+force C   0.000061138669919  -0.000035535875478   0.000044416821858 1
+force C   0.000022939138276  -0.000094721531092  -0.000117249180645 1
+force C   0.000016094228472   0.000041076691777  -0.000088148571471 1
+force C  -0.000035130471042   0.000045594098087   0.000027334320730 1
+force C  -0.000001639934759  -0.000079377732452  -0.000000202405200 1
+force C  -0.000018940523308  -0.000143267849098   0.000022729958357 1
+force C   0.000029090186951   0.000085417821286   0.000171727933033 1
+force C  -0.000028104036336  -0.000062322635660   0.000026913788279 1
+force C   0.000013514656318   0.000060036531304  -0.000009850140997 1
+force C  -0.000043010096314  -0.000184273900370   0.000041460986946 1
+force C  -0.000121581022780  -0.000002367730808  -0.000174618697391 1
+force C  -0.000023830138224  -0.000002361238239  -0.000037253029140 1
+force C   0.000094179020055  -0.000051592608827   0.000018246047880 1
+force C  -0.000015208136802   0.000019859737916   0.000039759055515 1
+force C  -0.000127933872082  -0.000108688557249   0.000135225006936 1
+force C  -0.000058373705599  -0.000025441514330   0.000095074317668 1
+force C  -0.000020340413182   0.000060600643288  -0.000097618204737 1
+force C  -0.000055776258926  -0.000057257819207   0.000043051813152 1
+force C  -0.000149812046469   0.000075939803875  -0.000275110932830 1
+force C  -0.000042660778520   0.000039907973839  -0.000088244601511 1
+force C   0.000107077695579  -0.000031225327050   0.000021263281712 1
+force C  -0.000143800224175   0.000097773927672   0.000094309028218 1
+force C  -0.000026603309152  -0.000003972281554  -0.000111340320581 1
+force C  -0.000005122874381   0.000075332999731  -0.000056838407330 1
+force C  -0.000003199356459   0.000059032340942  -0.000113185669373 1
+force C   0.000134959619708   0.000072702812935   0.000110913223559 1
+force C   0.000055099161840  -0.000063918421805   0.000032506306630 1
+force C  -0.000011294166324   0.000077603559970  -0.000153073774770 1
+force C   0.000044701890950  -0.000075684873066  -0.000102675598057 1
+force C  -0.000039915662465  -0.000074565454358   0.000041224981920 1
+force C   0.000014683164918   0.000108614177059   0.000085146908840 1
+force C   0.000066437052739   0.000007732011363   0.000042285904089 1
+force C   0.000008085989200  -0.000012409815126  -0.000086124642820 1
+force C  -0.000057163312021  -0.000025546332376   0.000066247398109 1
+force C  -0.000028206091438   0.000079948787932  -0.000088063292374 1
+force C   0.000056956567130   0.000006352939376  -0.000084552218164 1
+force C   0.000072734061408  -0.000084056451855   0.000049942356878 1
+force C  -0.000049236592849  -0.000031564460964  -0.000057076640778 1
+force C   0.000064416282468   0.000112474323939   0.000250467757082 1
+force C   0.000015472383557  -0.000036718887620  -0.000004258119650 1
+force C  -0.000003226520459   0.000024880284914   0.000018252248087 1
+force C  -0.000038747544990  -0.000027690453332   0.000147725497300 1
+force C  -0.000009256892899   0.000056934628114  -0.000092109037771 1
+force C   0.000055428657545  -0.000016870973781   0.000110393571873 1
+force C  -0.000109596087216   0.000125741402804  -0.000085203105787 1
+force C  -0.000022631101835   0.000022044252924  -0.000042677410945 1
+force C   0.000007958902525  -0.000009367155486   0.000120569217771 1
+force C  -0.000037397459043  -0.000039853909706   0.000086411008381 1
+force C  -0.000049371937657   0.000012876438798  -0.000149038792512 1
+force C   0.000018822679739   0.000015758374455  -0.000027490852559 1
+force C   0.000025815542464   0.000125917229563  -0.000172315344818 1
+force C   0.000149392123769   0.000047802633886   0.000036568255044 1
+force C  -0.000118113638596  -0.000002561222008   0.000123441258579 1
+force C  -0.000029914376690  -0.000082333331527  -0.000114014315162 1
+force C  -0.000054537640726   0.000056860988130  -0.000086608011193 1
+force C   0.000041085107052  -0.000075985302865   0.000025423105038 1
+force C   0.000067187443452   0.000133248661832  -0.000046941917822 1
+force C   0.000034034897063  -0.000009469333466   0.000012461913588 1
+force C  -0.000026629485079  -0.000005204518994   0.000038524941635 1
+force C   0.000092798932959  -0.000056333635400  -0.000069462562374 1
+force C   0.000168950568626  -0.000000484920375   0.000164742183305 1
+force C   0.000062835452537   0.000101453322098   0.000060174747675 1
+force C   0.000017391232634   0.000052191849193  -0.000049662329228 1
+force C   0.000154310074321   0.000015695097587  -0.000101762696450 1
+force C   0.000037073996737   0.000006787855624  -0.000033691069461 1
+force C   0.000050311157933   0.000046940708387  -0.000044006923106 1
+force C   0.000128873413214  -0.000148420576977   0.000047359817907 1
+force C  -0.000159029824573   0.000051997974814  -0.000133789243415 1
+force C   0.000042675787266  -0.000084224009953   0.000109403593475 1
+force C  -0.000013590053539   0.000077652964570   0.000096882454137 1
+force S   0.000322030356053  -0.000199169788462  -0.000228335557846 1
+force S  -0.000128526838053  -0.000239851185520   0.000274122664248 1
+force Na   0.000023115771819   0.000245094005765  -0.000355000415347 1
+force Na  -0.000345142662773  -0.000056465519354  -0.000288064139921 1
+
+# Energy components:
+   Eewald =    -1199.7804867255238150
+       EH =     -798.6101041576602029
+     Eloc =     1439.6621214280366985
+      Enl =      -82.0253149813093643
+      Exc =     -153.5462206360120945
+ Exc_core =        5.9601267702848135
+       KE =      261.2388416081686273
+-------------------------------------
+     Etot =     -527.1010366940153062
+       TS =        0.0747310263198935
+-------------------------------------
+        F =     -527.1757677203352159
+
+IonicMinimize: Iter:   0  F: -527.175767720335216  |grad|_K:  9.680e-05  alpha:  1.000e+00
+IonicMinimize: Converged (|grad|_K<1.000000e-04).
+
+#--- Lowdin population analysis ---
+# oxidation-state C +0.040 +0.041 +0.040 +0.038 +0.039 +0.036 +0.041 +0.041 +0.037 +0.038 +0.037 -0.006 +0.041 +0.041 +0.007 +0.038 +0.039 +0.026 +0.040 +0.040 -0.019 +0.035 +0.015 +0.032 +0.039 +0.028 +0.041 +0.042 +0.020 +0.035 +0.040 +0.037 +0.041 +0.040 -0.001 +0.038 +0.040 +0.040 +0.040 +0.041 +0.035 +0.040 +0.035 +0.031 +0.041 +0.041 +0.023 +0.038 +0.033 +0.001 +0.041 +0.035 +0.040 +0.041 +0.040 -0.006 +0.039 +0.037 +0.004 +0.022 +0.035 +0.041 +0.041 +0.041 +0.039 -0.008 +0.038 +0.041 +0.008 +0.030 +0.039 +0.039
+# oxidation-state S -0.414 -0.413
+# oxidation-state Na +0.839 +0.836
+
+
+Dumping 'Na2S2@graphene_6x6x1.fillings' ... done
+Dumping 'Na2S2@graphene_6x6x1.wfns' ... done
+Dumping 'Na2S2@graphene_6x6x1.ionpos' ... done
+Dumping 'Na2S2@graphene_6x6x1.eigenvals' ... done
+End date and time: Sat May  6 23:19:25 2023  (Duration: 0-2:45:16.84)
+Done!
