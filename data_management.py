@@ -95,7 +95,7 @@ def parse_output_file(file_path, verbose=False):
 
 
 # --- This method parses xsf files --- #
-def parse_xsf_file(file_path):
+def parse_xsf_file(file_path: str, model: str, radius=6):
     file_path = (
         "Data-raw/" + file_path + ".xsf"
         if not file_path.endswith(".xsf")
@@ -111,6 +111,17 @@ def parse_xsf_file(file_path):
         22: "Ti",
         26: "Fe",
         28: "Ni",
+    }
+    atomic_weights = {
+        'H': 1.008,
+        'C': 12.011,
+        'N': 14.007,
+        'O': 15.999,
+        'Na': 22.990,
+        'S': 32.066,
+        'Ti': 47.867,
+        'Fe': 55.845,
+        'Ni': 58.693,
     }
     marker = "PRIMCOORD"
     lines = read_after_last_instance(file_path, marker)
@@ -128,7 +139,12 @@ def parse_xsf_file(file_path):
             }
         )
     xyz_df = pd.DataFrame(xyz)
-
+    bond_df, angle_df = x2t.run_x2t(xyz_df, args_filename=model, args_print=False, args_radius=radius)
+    bond_df["name"] = model
+    angle_df["name"] = model
+    bond_df = bond_df[["name"] + [col for col in bond_df.columns if col != "name"]]
+    angle_df = angle_df[["name"] + [col for col in angle_df.columns if col != "name"]]
+    return bond_df, angle_df
 
 # --- This method compiles the energies and oxidation states of all sorbents in a subdirectory of Data-raw --- #
 def extract_data(category: str, verbose=False):
@@ -166,6 +182,7 @@ def extract_data(category: str, verbose=False):
                     "electronic_scf": electronic_scf,
                 }
             )
+            
     extracted_outputs_df = pd.DataFrame(extracted_outputs)
     extracted_outputs_df.sort_values(by="name", inplace=True)
     extracted_outputs_df.reset_index(drop=True, inplace=True)
@@ -185,13 +202,41 @@ def extract_data(category: str, verbose=False):
     final_extracted_outputs_df.to_csv(output_file_path, index=False)
 
     # Handle xsf files
+    bond_dfs = []
+    angle_dfs = []
+    for radius in [8, 62]:
+        extracted_xsf_bonds = []
+        extracted_xsf_angles = []
+        for file in xsf_files:
+            bond_df, angle_df = parse_xsf_file(f"{category}/{file}", file.split(".")[0], radius=radius)
+            for _, row in bond_df.iterrows():
+                extracted_xsf_bonds.append(row)
+            for _, row in angle_df.iterrows():
+                extracted_xsf_angles.append(row)
+        
+        extracted_xsf_bonds_df = pd.DataFrame(extracted_xsf_bonds)
+        extracted_xsf_angles_df = pd.DataFrame(extracted_xsf_angles)
+        extracted_xsf_bonds_df.sort_values(by="name", inplace=True)
+        extracted_xsf_angles_df.sort_values(by="name", inplace=True)
+        extracted_xsf_bonds_df.reset_index(drop=True, inplace=True)
+        extracted_xsf_angles_df.reset_index(drop=True, inplace=True)
+        bond_dfs.append(extracted_xsf_bonds_df)
+        angle_dfs.append(extracted_xsf_angles_df)
+        output_directory = os.path.join(working_directory, "Data-extracted/final")
+        os.makedirs(output_directory, exist_ok=True)
+        bond_output_file_path = os.path.join(output_directory, f"{category}_bond-rad{radius}.csv")
+        angle_output_file_path = os.path.join(output_directory, f"{category}_angle-rad{radius}.csv")
+        extracted_xsf_bonds_df.to_csv(bond_output_file_path, index=False)
+        extracted_xsf_angles_df.to_csv(angle_output_file_path, index=False)
     
+    print(f"Data extraction for {category} is complete.")
+    return final_extracted_outputs_df, bond_dfs[0], bond_dfs[1], angle_dfs[0], angle_dfs[1]
 
 # Example usage
 if __name__ == "__main__":
     # df_energies, df_oxidation_states, output_file_name, electronic_scf, solvent = (
     #     parse_output_file("Sorbents/FeN4-PC")
     # )
-    # parse_xsf_file("Sorbents/FeN4-PC")
-    extract_data("Sorbents")
-    extract_data("NaPS")
+    # parse_xsf_file("Sorbents/FeN4-PC", "FeNe")
+    # extract_data("Sorbents")
+    # extract_data("NaPS")
