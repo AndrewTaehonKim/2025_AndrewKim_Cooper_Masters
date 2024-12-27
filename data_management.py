@@ -118,7 +118,7 @@ def extract_data(category: str):
     
     extracted_outputs_df = pd.DataFrame(extracted_outputs)
     
-    
+
 
 # Example usage
 if __name__ == "__main__":

@@ -1,0 +1,1903 @@
+
+*************** JDFTx 1.7.0  ***************
+
+Start date and time: Mon Dec 23 12:25:19 2024
+Executable jdftx_gpu with command-line: -i /home/akim2/JDFTx/Na2S2-glyme/Na2S2-glyme.in -o /home/akim2/JDFTx/Na2S2-glyme/Na2S2-glyme.out
+Running on hosts (process indices):  exp-1-60 (0)
+Divided in process groups (process indices):  0 (0)
+gpuInit: Found compatible cuda device 0 'Tesla V100-SXM2-32GB'
+gpuInit: Selected device 0
+Resource initialization completed at t[s]:      0.39
+Run totals: 1 processes, 1 threads, 1 GPUs
+
+
+Input parsed successfully to the following command list (including defaults):
+
+basis kpoint-dependent
+coords-type Cartesian
+core-overlap-check vector
+coulomb-interaction Isolated
+coulomb-truncation-embed 9.40288 12.4301 27.2635
+davidson-band-ratio 1.1
+dump End State
+dump-name Na2S2-glyme.$VAR
+elec-cutoff 20 100
+elec-eigen-algo Davidson
+elec-ex-corr gga-PBE
+electronic-minimize  \
+	dirUpdateScheme      FletcherReeves \
+	linminMethod         DirUpdateRecommended \
+	nIterations          100 \
+	history              15 \
+	knormThreshold       0 \
+	energyDiffThreshold  1e-08 \
+	nEnergyDiff          2 \
+	alphaTstart          1 \
+	alphaTmin            1e-10 \
+	updateTestStepSize   yes \
+	alphaTreduceFactor   0.1 \
+	alphaTincreaseFactor 3 \
+	nAlphaAdjustMax      3 \
+	wolfeEnergy          0.0001 \
+	wolfeGradient        0.9 \
+	fdTest               no
+exchange-regularization None
+fluid LinearPCM 298.000000 1.013250
+fluid-ex-corr lda-TF lda-PZ
+fluid-gummel-loop 10 1.000000e-05
+fluid-minimize  \
+	dirUpdateScheme      PolakRibiere \
+	linminMethod         DirUpdateRecommended \
+	nIterations          400 \
+	history              15 \
+	knormThreshold       1e-11 \
+	energyDiffThreshold  0 \
+	nEnergyDiff          2 \
+	alphaTstart          1 \
+	alphaTmin            1e-10 \
+	updateTestStepSize   yes \
+	alphaTreduceFactor   0.1 \
+	alphaTincreaseFactor 3 \
+	nAlphaAdjustMax      6 \
+	wolfeEnergy          0.0001 \
+	wolfeGradient        0.9 \
+	fdTest               no
+fluid-solvent Glyme 9.62137 ScalarEOS \
+	epsBulk 7.2 \
+	pMol 0 \
+	epsInf 1.9 \
+	Pvap 0 \
+	sigmaBulk 0 \
+	Rvdw 0 \
+	Res 0 \
+	tauNuc 343133
+forces-output-coords Positions
+ion S   9.402875070209999  12.430078910730000  27.263527773840000 1
+ion S   5.921463285810000  10.087698104369998  27.341467797959996 1
+ion Na   9.852901041599997   7.943043527369999  25.470895880699999 1
+ion Na   5.365079530559999  14.615699054669998  25.686786194819998 1
+ion-species GBRV/$ID_pbe.uspp
+ion-width Ecut
+ionic-minimize  \
+	dirUpdateScheme      FletcherReeves \
+	linminMethod         DirUpdateRecommended \
+	nIterations          200 \
+	history              15 \
+	knormThreshold       0.0001 \
+	energyDiffThreshold  1e-06 \
+	nEnergyDiff          2 \
+	alphaTstart          1 \
+	alphaTmin            1e-10 \
+	updateTestStepSize   yes \
+	alphaTreduceFactor   0.1 \
+	alphaTincreaseFactor 3 \
+	nAlphaAdjustMax      3 \
+	wolfeEnergy          0.0001 \
+	wolfeGradient        0.9 \
+	fdTest               no
+kpoint   0.000000000000   0.000000000000   0.000000000000  1.00000000000000
+kpoint-folding 1 1 1 
+latt-move-scale 1 1 1
+latt-scale 1 1 1 
+lattice Triclinic 28.0058 28.0058 37.7946 90 90 120
+lattice-minimize  \
+	dirUpdateScheme      L-BFGS \
+	linminMethod         DirUpdateRecommended \
+	nIterations          0 \
+	history              15 \
+	knormThreshold       0 \
+	energyDiffThreshold  1e-06 \
+	nEnergyDiff          2 \
+	alphaTstart          1 \
+	alphaTmin            1e-10 \
+	updateTestStepSize   yes \
+	alphaTreduceFactor   0.1 \
+	alphaTincreaseFactor 3 \
+	nAlphaAdjustMax      3 \
+	wolfeEnergy          0.0001 \
+	wolfeGradient        0.9 \
+	fdTest               no
+lcao-params -1 1e-06 0.001
+pcm-variant GLSSA13
+spintype no-spin
+subspace-rotation-factor 1 yes
+symmetries automatic
+symmetry-threshold 0.0001
+
+
+
+---------- Setting up symmetries ----------
+
+Found 24 point-group symmetries of the bravais lattice
+Found 1 space-group symmetries with basis
+Applied RMS atom displacement 0 bohrs to make symmetries exact.
+
+---------- Initializing the Grid ----------
+R = 
+[      28.0058     -14.0029            0  ]
+[            0      24.2537            0  ]
+[            0            0      37.7946  ]
+unit cell volume = 25671.8
+G =
+[   0.224353    0.12953         -0  ]
+[          0   0.259061          0  ]
+[          0         -0   0.166246  ]
+Minimum fftbox size, Smin = [  128  128  172  ]
+Chosen fftbox size, S = [  128  128  180  ]
+
+---------- Initializing tighter grid for wavefunction operations ----------
+R = 
+[      28.0058     -14.0029            0  ]
+[            0      24.2537            0  ]
+[            0            0      37.7946  ]
+unit cell volume = 25671.8
+G =
+[   0.224353    0.12953         -0  ]
+[          0   0.259061          0  ]
+[          0         -0   0.166246  ]
+Minimum fftbox size, Smin = [  116  116  156  ]
+Chosen fftbox size, S = [  120  120  160  ]
+
+---------- Exchange Correlation functional ----------
+Initalized PBE GGA exchange.
+Initalized PBE GGA correlation.
+
+---------- Setting up pseudopotentials ----------
+Width of ionic core gaussian charges (only for fluid interactions / plotting) set to 0.397384
+
+Reading pseudopotential file '/home/akim2/jdftx_install/build/pseudopotentials/GBRV/s_pbe.uspp':
+  Title: S.  Created by USPP 7.3.6 on 1-4-15
+  Reference state energy: -11.898476.  6 valence electrons in orbitals:
+    |300>  occupation: 2  eigenvalue: -0.634167
+    |310>  occupation: 4  eigenvalue: -0.257568
+  lMax: 2  lLocal: 3  QijEcut: 6
+  6 projectors sampled on a log grid with 635 points:
+    l: 0  eig: -0.634161  rCut: 1.5
+    l: 0  eig: 1.500000  rCut: 1.5
+    l: 1  eig: -0.257567  rCut: 1.5
+    l: 1  eig: 1.500000  rCut: 1.5
+    l: 2  eig: -1.000000  rCut: 1.5
+    l: 2  eig: 1.500000  rCut: 1.5
+  Partial core density with radius 1.15
+  Transforming core density to a uniform radial grid of dG=0.02 with 1625 points.
+  Transforming local potential to a uniform radial grid of dG=0.02 with 1625 points.
+  Transforming nonlocal projectors to a uniform radial grid of dG=0.02 with 432 points.
+  Transforming density augmentations to a uniform radial grid of dG=0.02 with 1625 points.
+  Transforming atomic orbitals to a uniform radial grid of dG=0.02 with 432 points.
+  Core radius for overlap checks: 1.50 bohrs.
+
+Reading pseudopotential file '/home/akim2/jdftx_install/build/pseudopotentials/GBRV/na_pbe.uspp':
+  Title: Na.  Created by USPP 7.3.6 on 23-9-15
+  Reference state energy: -47.625620.  9 valence electrons in orbitals:
+    |200>  occupation: 2  eigenvalue: -2.085638
+    |210>  occupation: 6  eigenvalue: -1.053708
+    |300>  occupation: 1  eigenvalue: -0.100838
+  lMax: 2  lLocal: 0  QijEcut: 6
+  5 projectors sampled on a log grid with 657 points:
+    l: 0  eig: -2.085640  rCut: 1.37
+    l: 0  eig: -0.100839  rCut: 1.37
+    l: 1  eig: -1.053708  rCut: 1.47
+    l: 1  eig: 0.500000  rCut: 1.47
+    l: 2  eig: 0.750000  rCut: 2
+  Transforming local potential to a uniform radial grid of dG=0.02 with 1625 points.
+  Transforming nonlocal projectors to a uniform radial grid of dG=0.02 with 432 points.
+  Transforming density augmentations to a uniform radial grid of dG=0.02 with 1625 points.
+  Transforming atomic orbitals to a uniform radial grid of dG=0.02 with 432 points.
+  Core radius for overlap checks: 2.00 bohrs.
+
+Initialized 2 species with 4 total atoms.
+
+Folded 1 k-points by 1x1x1 to 1 k-points.
+
+---------- Setting up k-points, bands, fillings ----------
+No reducable k-points. 
+Computing the number of bands and number of electrons
+Calculating initial fillings.
+nElectrons:  30.000000   nBands: 15   nStates: 1
+
+----- Setting up reduced wavefunction bases (one per k-point) -----
+average nbasis = 109673.000 , ideal nbasis = 109671.883
+
+---------- Setting up coulomb interaction ----------
+Fluid mode embedding: using embedded box, but periodic Coulomb kernel.
+(Fluid response is responsible for (approximate) separation between periodic images.)
+Setting up double-sized grid for truncated Coulomb potentials:
+R = 
+[      56.0116     -28.0058            0  ]
+[            0      48.5075            0  ]
+[            0            0      75.5892  ]
+unit cell volume = 205374
+G =
+[   0.112177  0.0647651         -0  ]
+[          0    0.12953          0  ]
+[          0         -0  0.0831228  ]
+Chosen fftbox size, S = [  256  256  360  ]
+Integer grid location selected as the embedding center:
+   Grid: [  76  66  130  ]
+   Lattice: [  0.591998  0.512502  0.72136  ]
+   Cartesian: [  9.40288  12.4301  27.2635  ]
+Constructing Wigner-Seitz cell: 8 faces (6 quadrilaterals, 2 hexagons)
+Range-separation parameter for embedded mesh potentials due to point charges: 0.590105 bohrs.
+
+---------- Setting up ewald sum ----------
+Optimum gaussian width for ewald sums = 18.681662 bohr.
+Real space sum over 1089 unit cells with max indices [  5  5  4  ]
+Reciprocal space sum over 2873 terms with max indices [  6  6  8  ]
+
+---------- Allocating electronic variables ----------
+Initializing wave functions:  linear combination of atomic orbitals
+S pseudo-atom occupations:   s ( 2 )  p ( 4 )
+Na pseudo-atom occupations:   s ( 2 1 )  p ( 6 )
+	FillingsUpdate:  mu: -0.000443411  nElectrons: 30.000000
+LCAOMinimize: Iter:   0  Etot: -115.7661534105568393  |grad|_K:  1.230e-02  alpha:  1.000e+00
+	FillingsUpdate:  mu: -0.002888541  nElectrons: 30.000000
+LCAOMinimize: Iter:   1  Etot: -115.7702864728458394  |grad|_K:  1.213e-02  alpha:  7.333e-02  linmin: -1.090e-01  cgtest:  9.274e-01  t[s]:      3.82
+LCAOMinimize: 	Wrong curvature in test step, increasing alphaT to 2.199864e-01.
+	FillingsUpdate:  mu: -0.005609494  nElectrons: 30.000000
+LCAOMinimize: Iter:   2  Etot: -115.7745525082539046  |grad|_K:  1.189e-02  alpha: -1.248e+00  linmin: -1.144e-01  cgtest:  9.257e-01  t[s]:      4.11
+	FillingsUpdate:  mu: -0.008105406  nElectrons: 30.000000
+LCAOMinimize: Iter:   3  Etot: -115.7781888437365865  |grad|_K:  1.163e-02  alpha:  6.556e-02  linmin: -1.193e-01  cgtest:  9.365e-01  t[s]:      4.39
+LCAOMinimize: None of the convergence criteria satisfied after 3 iterations.
+----- createFluidSolver() ----- (Fluid-side solver setup)
+   Initializing fluid molecule 'Glyme'
+     Net charge: 0   dipole magnitude: 0
+     Initializing spherical shell mfKernel with radius 0 Bohr
+     deltaS corrections:
+
+Correction to mu due to finite nuclear width = -0.000144935
+   Cavity determined by nc: 8.36e-05 and sigma: 0.6
+   Effective cavity tension: -8.03e-06 Eh/bohr^2 to account for cavitation and dispersion.
+
+
+---- Citations for features of the code used in this run ----
+
+   Software package:
+      R. Sundararaman, K. Letchworth-Weaver, K.A. Schwarz, D. Gunceler, Y. Ozhabes and T.A. Arias, 'JDFTx: software for joint density-functional theory', SoftwareX 6, 278 (2017)
+
+   gga-PBE exchange-correlation functional:
+      J.P. Perdew, K. Burke and M. Ernzerhof, Phys. Rev. Lett. 77, 3865 (1996)
+
+   Pseudopotentials:
+      KF Garrity, JW Bennett, KM Rabe and D Vanderbilt, Comput. Mater. Sci. 81, 446 (2014)
+
+   Truncated Coulomb potentials:
+      R. Sundararaman and T.A. Arias, Phys. Rev. B 87, 165122 (2013)
+
+   Linear/nonlinear dielectric/ionic fluid model with effective cavity tension:
+      D. Gunceler, K. Letchworth-Weaver, R. Sundararaman, K.A. Schwarz and T.A. Arias, Modelling Simul. Mater. Sci. Eng. 21, 074005 (2013)
+
+   Total energy minimization:
+      T.A. Arias, M.C. Payne and J.D. Joannopoulos, Phys. Rev. Lett. 69, 1077 (1992)
+
+This list may not be complete. Please suggest additional citations or
+report any other bugs at https://github.com/shankar1729/jdftx/issues
+
+Initialization completed successfully at t[s]:      4.40
+
+Fluid solver invoked on fresh (random / LCAO) wavefunctions
+Running a vacuum solve first:
+
+-------- Initial electronic minimization -----------
+ElecMinimize: Iter:   0  Etot: -115.778188843736586  |grad|_K:  2.688e-04  alpha:  1.000e+00
+ElecMinimize: Iter:   1  Etot: -115.887855288137658  |grad|_K:  1.210e-04  alpha:  9.215e-01  linmin:  8.722e-03  t[s]:      4.91
+ElecMinimize: Iter:   2  Etot: -115.905836893839378  |grad|_K:  9.741e-05  alpha:  7.499e-01  linmin:  5.825e-04  t[s]:      5.20
+ElecMinimize: Iter:   3  Etot: -115.914477933768467  |grad|_K:  6.146e-05  alpha:  5.538e-01  linmin:  2.855e-05  t[s]:      5.49
+ElecMinimize: Iter:   4  Etot: -115.917681059401090  |grad|_K:  4.086e-05  alpha:  5.154e-01  linmin:  4.080e-04  t[s]:      5.78
+ElecMinimize: Iter:   5  Etot: -115.919757723422521  |grad|_K:  2.759e-05  alpha:  7.568e-01  linmin:  2.297e-04  t[s]:      6.08
+ElecMinimize: Iter:   6  Etot: -115.920544841059865  |grad|_K:  2.003e-05  alpha:  6.285e-01  linmin:  1.372e-04  t[s]:      6.37
+ElecMinimize: Iter:   7  Etot: -115.921026552026248  |grad|_K:  1.462e-05  alpha:  7.303e-01  linmin:  3.247e-04  t[s]:      6.65
+ElecMinimize: Iter:   8  Etot: -115.921329418324206  |grad|_K:  9.125e-06  alpha:  8.617e-01  linmin:  3.148e-04  t[s]:      6.94
+ElecMinimize: Iter:   9  Etot: -115.921475570844677  |grad|_K:  6.294e-06  alpha:  1.067e+00  linmin: -1.541e-04  t[s]:      7.23
+ElecMinimize: Iter:  10  Etot: -115.921534394506466  |grad|_K:  5.428e-06  alpha:  9.024e-01  linmin: -6.784e-05  t[s]:      7.52
+ElecMinimize: Iter:  11  Etot: -115.921560131447563  |grad|_K:  4.272e-06  alpha:  5.309e-01  linmin:  1.383e-06  t[s]:      7.81
+ElecMinimize: Iter:  12  Etot: -115.921581550097301  |grad|_K:  2.902e-06  alpha:  7.133e-01  linmin: -8.028e-05  t[s]:      8.10
+ElecMinimize: Iter:  13  Etot: -115.921592718883375  |grad|_K:  2.218e-06  alpha:  8.063e-01  linmin: -8.099e-05  t[s]:      8.39
+ElecMinimize: Iter:  14  Etot: -115.921599222798008  |grad|_K:  1.593e-06  alpha:  8.036e-01  linmin: -9.236e-05  t[s]:      8.69
+ElecMinimize: Iter:  15  Etot: -115.921602603757421  |grad|_K:  1.272e-06  alpha:  8.099e-01  linmin: -4.055e-05  t[s]:      8.98
+ElecMinimize: Iter:  16  Etot: -115.921604487276525  |grad|_K:  9.337e-07  alpha:  7.074e-01  linmin: -3.409e-06  t[s]:      9.27
+ElecMinimize: Iter:  17  Etot: -115.921605624220462  |grad|_K:  6.970e-07  alpha:  7.928e-01  linmin: -4.367e-06  t[s]:      9.55
+ElecMinimize: Iter:  18  Etot: -115.921606339849262  |grad|_K:  5.142e-07  alpha:  8.954e-01  linmin:  1.214e-06  t[s]:      9.84
+ElecMinimize: Iter:  19  Etot: -115.921606683638430  |grad|_K:  4.643e-07  alpha:  7.904e-01  linmin:  1.533e-07  t[s]:     10.13
+ElecMinimize: Iter:  20  Etot: -115.921606877932732  |grad|_K:  3.316e-07  alpha:  5.480e-01  linmin:  2.326e-07  t[s]:     10.42
+ElecMinimize: Iter:  21  Etot: -115.921607004029738  |grad|_K:  2.433e-07  alpha:  6.970e-01  linmin:  2.018e-06  t[s]:     10.71
+ElecMinimize: Iter:  22  Etot: -115.921607079504469  |grad|_K:  1.656e-07  alpha:  7.750e-01  linmin:  9.850e-06  t[s]:     11.00
+ElecMinimize: Iter:  23  Etot: -115.921607115616453  |grad|_K:  1.283e-07  alpha:  8.008e-01  linmin:  1.354e-06  t[s]:     11.29
+ElecMinimize: Iter:  24  Etot: -115.921607134115007  |grad|_K:  8.870e-08  alpha:  6.829e-01  linmin: -1.270e-06  t[s]:     11.57
+ElecMinimize: Iter:  25  Etot: -115.921607144900975  |grad|_K:  6.368e-08  alpha:  8.333e-01  linmin:  5.907e-06  t[s]:     11.86
+ElecMinimize: Iter:  26  Etot: -115.921607149956529  |grad|_K:  4.334e-08  alpha:  7.577e-01  linmin:  1.092e-05  t[s]:     12.16
+ElecMinimize: Iter:  27  Etot: -115.921607152381611  |grad|_K:  3.044e-08  alpha:  7.848e-01  linmin: -1.095e-05  t[s]:     12.45
+ElecMinimize: Converged (|Delta Etot|<1.000000e-08 for 2 iters).
+Setting wave functions to eigenvectors of Hamiltonian
+Vacuum energy after initial minimize, Etot = -115.921607152381611
+
+
+-------- Electronic minimization -----------
+	Linear fluid (dielectric constant: 7.2) occupying 0.991966 of unit cell:	Completed after 8 iterations at t[s]:     13.11
+ElecMinimize: Iter:   0  Etot: -115.958772730588748  |grad|_K:  6.076e-05  alpha:  1.000e+00
+	Linear fluid (dielectric constant: 7.2) occupying 0.992333 of unit cell:	Completed after 8 iterations at t[s]:     14.14
+	Linear fluid (dielectric constant: 7.2) occupying 0.992326 of unit cell:	Completed after 3 iterations at t[s]:     14.93
+ElecMinimize: Iter:   1  Etot: -115.964711981487667  |grad|_K:  4.814e-05  alpha:  9.748e-01  linmin:  5.019e-02  t[s]:     15.18
+	Linear fluid (dielectric constant: 7.2) occupying 0.992526 of unit cell:	Completed after 9 iterations at t[s]:     16.00
+	Linear fluid (dielectric constant: 7.2) occupying 0.992520 of unit cell:	Completed after 3 iterations at t[s]:     16.89
+ElecMinimize: Iter:   2  Etot: -115.968107371691431  |grad|_K:  3.992e-05  alpha:  9.439e-01  linmin:  2.459e-02  t[s]:     17.13
+	Linear fluid (dielectric constant: 7.2) occupying 0.992601 of unit cell:	Completed after 7 iterations at t[s]:     17.88
+	Linear fluid (dielectric constant: 7.2) occupying 0.992572 of unit cell:	Completed after 5 iterations at t[s]:     18.84
+ElecMinimize: Iter:   3  Etot: -115.969621908719688  |grad|_K:  2.527e-05  alpha:  5.963e-01  linmin: -1.328e-03  t[s]:     19.16
+	Linear fluid (dielectric constant: 7.2) occupying 0.992574 of unit cell:	Completed after 5 iterations at t[s]:     19.83
+	Linear fluid (dielectric constant: 7.2) occupying 0.992574 of unit cell:	Completed after 1 iterations at t[s]:     20.57
+ElecMinimize: Iter:   4  Etot: -115.970232665485440  |grad|_K:  1.658e-05  alpha:  5.806e-01  linmin: -7.640e-03  t[s]:     20.81
+	Linear fluid (dielectric constant: 7.2) occupying 0.992583 of unit cell:	Completed after 5 iterations at t[s]:     21.48
+	Linear fluid (dielectric constant: 7.2) occupying 0.992584 of unit cell:	Completed after 2 iterations at t[s]:     22.26
+ElecMinimize: Iter:   5  Etot: -115.970532813660995  |grad|_K:  1.086e-05  alpha:  6.566e-01  linmin: -5.604e-03  t[s]:     22.50
+	Linear fluid (dielectric constant: 7.2) occupying 0.992590 of unit cell:	Completed after 4 iterations at t[s]:     23.13
+	Linear fluid (dielectric constant: 7.2) occupying 0.992589 of unit cell:	Completed after 1 iterations at t[s]:     23.86
+ElecMinimize: Iter:   6  Etot: -115.970650524703430  |grad|_K:  7.179e-06  alpha:  6.018e-01  linmin:  3.379e-04  t[s]:     24.10
+	Linear fluid (dielectric constant: 7.2) occupying 0.992589 of unit cell:	Completed after 2 iterations at t[s]:     24.67
+	Linear fluid (dielectric constant: 7.2) occupying 0.992589 of unit cell:	Completed after 0 iterations at t[s]:     25.35
+ElecMinimize: Iter:   7  Etot: -115.970704507098361  |grad|_K:  5.364e-06  alpha:  6.372e-01  linmin:  4.187e-04  t[s]:     25.58
+	Linear fluid (dielectric constant: 7.2) occupying 0.992587 of unit cell:	Completed after 2 iterations at t[s]:     26.15
+	Linear fluid (dielectric constant: 7.2) occupying 0.992587 of unit cell:	Completed after 0 iterations at t[s]:     26.84
+ElecMinimize: Iter:   8  Etot: -115.970736607279662  |grad|_K:  3.508e-06  alpha:  6.787e-01  linmin: -8.225e-04  t[s]:     27.08
+	Linear fluid (dielectric constant: 7.2) occupying 0.992587 of unit cell:	Completed after 2 iterations at t[s]:     27.56
+	Linear fluid (dielectric constant: 7.2) occupying 0.992587 of unit cell:	Completed after 0 iterations at t[s]:     28.18
+ElecMinimize: Iter:   9  Etot: -115.970750923886840  |grad|_K:  2.771e-06  alpha:  7.061e-01  linmin: -4.029e-03  t[s]:     28.42
+	Linear fluid (dielectric constant: 7.2) occupying 0.992586 of unit cell:	Completed after 2 iterations at t[s]:     28.89
+	Linear fluid (dielectric constant: 7.2) occupying 0.992586 of unit cell:	Completed after 0 iterations at t[s]:     29.55
+ElecMinimize: Iter:  10  Etot: -115.970758737105200  |grad|_K:  1.980e-06  alpha:  6.153e-01  linmin: -5.200e-04  t[s]:     29.80
+	Linear fluid (dielectric constant: 7.2) occupying 0.992584 of unit cell:	Completed after 1 iterations at t[s]:     30.23
+	Linear fluid (dielectric constant: 7.2) occupying 0.992583 of unit cell:	Completed after 0 iterations at t[s]:     30.87
+ElecMinimize: Iter:  11  Etot: -115.970763242157020  |grad|_K:  1.512e-06  alpha:  6.991e-01  linmin: -2.822e-03  t[s]:     31.11
+	Linear fluid (dielectric constant: 7.2) occupying 0.992581 of unit cell:	Completed after 1 iterations at t[s]:     31.55
+	Linear fluid (dielectric constant: 7.2) occupying 0.992581 of unit cell:	Completed after 0 iterations at t[s]:     32.15
+ElecMinimize: Iter:  12  Etot: -115.970765867140727  |grad|_K:  1.116e-06  alpha:  6.952e-01  linmin: -2.188e-03  t[s]:     32.40
+	Linear fluid (dielectric constant: 7.2) occupying 0.992579 of unit cell:	Completed after 1 iterations at t[s]:     32.83
+	Linear fluid (dielectric constant: 7.2) occupying 0.992579 of unit cell:	Completed after 0 iterations at t[s]:     33.43
+ElecMinimize: Iter:  13  Etot: -115.970767273672877  |grad|_K:  8.984e-07  alpha:  6.836e-01  linmin: -1.869e-03  t[s]:     33.68
+	Linear fluid (dielectric constant: 7.2) occupying 0.992579 of unit cell:	Completed after 1 iterations at t[s]:     34.11
+	Linear fluid (dielectric constant: 7.2) occupying 0.992579 of unit cell:	Completed after 0 iterations at t[s]:     34.71
+ElecMinimize: Iter:  14  Etot: -115.970768244848102  |grad|_K:  7.317e-07  alpha:  7.286e-01  linmin: -2.366e-03  t[s]:     34.95
+	Linear fluid (dielectric constant: 7.2) occupying 0.992579 of unit cell:	Completed after 1 iterations at t[s]:     35.38
+	Linear fluid (dielectric constant: 7.2) occupying 0.992579 of unit cell:	Completed after 0 iterations at t[s]:     35.98
+ElecMinimize: Iter:  15  Etot: -115.970768880564037  |grad|_K:  5.639e-07  alpha:  7.185e-01  linmin:  1.038e-03  t[s]:     36.22
+	Linear fluid (dielectric constant: 7.2) occupying 0.992579 of unit cell:	Completed after 0 iterations at t[s]:     36.62
+	Linear fluid (dielectric constant: 7.2) occupying 0.992579 of unit cell:	Completed after 0 iterations at t[s]:     37.23
+ElecMinimize: Iter:  16  Etot: -115.970769290252633  |grad|_K:  4.696e-07  alpha:  8.012e-01  linmin: -1.302e-03  t[s]:     37.47
+	Linear fluid (dielectric constant: 7.2) occupying 0.992580 of unit cell:	Completed after 0 iterations at t[s]:     37.87
+	Linear fluid (dielectric constant: 7.2) occupying 0.992580 of unit cell:	Completed after 0 iterations at t[s]:     38.44
+ElecMinimize: Iter:  17  Etot: -115.970769522009903  |grad|_K:  3.754e-07  alpha:  6.417e-01  linmin: -2.206e-03  t[s]:     38.68
+	Linear fluid (dielectric constant: 7.2) occupying 0.992580 of unit cell:	Completed after 0 iterations at t[s]:     39.08
+	Linear fluid (dielectric constant: 7.2) occupying 0.992580 of unit cell:	Completed after 0 iterations at t[s]:     39.66
+ElecMinimize: Iter:  18  Etot: -115.970769681775366  |grad|_K:  2.846e-07  alpha:  6.815e-01  linmin: -3.044e-02  t[s]:     39.90
+	Linear fluid (dielectric constant: 7.2) occupying 0.992580 of unit cell:	Completed after 0 iterations at t[s]:     40.29
+	Linear fluid (dielectric constant: 7.2) occupying 0.992580 of unit cell:	Completed after 0 iterations at t[s]:     40.87
+ElecMinimize: Iter:  19  Etot: -115.970769757815759  |grad|_K:  2.390e-07  alpha:  5.594e-01  linmin: -1.789e-02  t[s]:     41.10
+	Linear fluid (dielectric constant: 7.2) occupying 0.992580 of unit cell:	Completed after 0 iterations at t[s]:     41.50
+	Linear fluid (dielectric constant: 7.2) occupying 0.992580 of unit cell:	Completed after 0 iterations at t[s]:     42.08
+ElecMinimize: Iter:  20  Etot: -115.970769801174072  |grad|_K:  1.645e-07  alpha:  4.672e-01  linmin: -6.423e-02  t[s]:     42.32
+	Linear fluid (dielectric constant: 7.2) occupying 0.992580 of unit cell:	Completed after 0 iterations at t[s]:     42.67
+	Linear fluid (dielectric constant: 7.2) occupying 0.992580 of unit cell:	Completed after 0 iterations at t[s]:     43.23
+ElecMinimize: Iter:  21  Etot: -115.970769836248181  |grad|_K:  1.464e-07  alpha:  7.029e-01  linmin:  9.025e-05  t[s]:     43.47
+	Linear fluid (dielectric constant: 7.2) occupying 0.992580 of unit cell:	Completed after 0 iterations at t[s]:     43.87
+	Linear fluid (dielectric constant: 7.2) occupying 0.992580 of unit cell:	Completed after 0 iterations at t[s]:     44.44
+ElecMinimize: Iter:  22  Etot: -115.970769842856072  |grad|_K:  1.549e-07  alpha:  3.578e-01  linmin: -1.099e-03  t[s]:     44.67
+	Linear fluid (dielectric constant: 7.2) occupying 0.992580 of unit cell:	Completed after 0 iterations at t[s]:     45.03
+	Linear fluid (dielectric constant: 7.2) occupying 0.992580 of unit cell:	Completed after 0 iterations at t[s]:     45.58
+ElecMinimize: Iter:  23  Etot: -115.970769856389580  |grad|_K:  1.343e-07  alpha:  3.417e-01  linmin:  6.337e-06  t[s]:     45.83
+	Linear fluid (dielectric constant: 7.2) occupying 0.992580 of unit cell:	Completed after 0 iterations at t[s]:     46.22
+	Linear fluid (dielectric constant: 7.2) occupying 0.992580 of unit cell:	Completed after 0 iterations at t[s]:     46.79
+ElecMinimize: 	Step increased Etot by 5.487806e-10, reducing alpha to 1.573604e-02.
+	Linear fluid (dielectric constant: 7.2) occupying 0.992580 of unit cell:	Completed after 0 iterations at t[s]:     47.38
+ElecMinimize: 	Step increased Etot by 2.665672e-09, reducing alpha to 1.573604e-03.
+	Linear fluid (dielectric constant: 7.2) occupying 0.992580 of unit cell:	Completed after 0 iterations at t[s]:     48.00
+ElecMinimize: 	Step increased Etot by 3.021967e-09, reducing alpha to 1.573604e-04.
+ElecMinimize: 	Step failed to reduce Etot after 3 attempts. Quitting step.
+ElecMinimize: 	Undoing step.
+	Linear fluid (dielectric constant: 7.2) occupying 0.992580 of unit cell:	Completed after 0 iterations at t[s]:     48.60
+ElecMinimize: 	Step failed: resetting search direction.
+ElecMinimize: Iter:  24  Etot: -115.970769853363265  |grad|_K:  1.106e-07  alpha:  1.574e-04
+	Linear fluid (dielectric constant: 7.2) occupying 0.992580 of unit cell:	Completed after 0 iterations at t[s]:     49.19
+	Linear fluid (dielectric constant: 7.2) occupying 0.992580 of unit cell:	Completed after 0 iterations at t[s]:     49.73
+ElecMinimize: Iter:  25  Etot: -115.970769864983836  |grad|_K:  7.226e-08  alpha:  5.779e-01  linmin: -5.896e-05  t[s]:     49.98
+	Linear fluid (dielectric constant: 7.2) occupying 0.992580 of unit cell:	Completed after 0 iterations at t[s]:     50.34
+	Linear fluid (dielectric constant: 7.2) occupying 0.992580 of unit cell:	Completed after 0 iterations at t[s]:     50.88
+ElecMinimize: Iter:  26  Etot: -115.970769871327974  |grad|_K:  6.290e-08  alpha:  7.384e-01  linmin: -8.932e-05  t[s]:     51.12
+	Linear fluid (dielectric constant: 7.2) occupying 0.992580 of unit cell:	Completed after 0 iterations at t[s]:     51.51
+	Linear fluid (dielectric constant: 7.2) occupying 0.992580 of unit cell:	Completed after 0 iterations at t[s]:     52.09
+ElecMinimize: 	Step increased Etot by 5.884715e-09, reducing alpha to 1.890203e-02.
+	Linear fluid (dielectric constant: 7.2) occupying 0.992580 of unit cell:	Completed after 0 iterations at t[s]:     52.69
+ElecMinimize: 	Step increased Etot by 5.279446e-09, reducing alpha to 1.890203e-03.
+	Linear fluid (dielectric constant: 7.2) occupying 0.992580 of unit cell:	Completed after 0 iterations at t[s]:     53.28
+ElecMinimize: 	Step increased Etot by 5.229609e-09, reducing alpha to 1.890203e-04.
+ElecMinimize: 	Step failed to reduce Etot after 3 attempts. Quitting step.
+ElecMinimize: 	Undoing step.
+	Linear fluid (dielectric constant: 7.2) occupying 0.992580 of unit cell:	Completed after 0 iterations at t[s]:     53.89
+ElecMinimize: 	Step failed: resetting search direction.
+ElecMinimize: Iter:  27  Etot: -115.970769866098877  |grad|_K:  1.081e-07  alpha:  1.890e-04
+	Linear fluid (dielectric constant: 7.2) occupying 0.992580 of unit cell:	Completed after 0 iterations at t[s]:     54.52
+	Linear fluid (dielectric constant: 7.2) occupying 0.992580 of unit cell:	Completed after 0 iterations at t[s]:     55.09
+ElecMinimize: Iter:  28  Etot: -115.970769871286365  |grad|_K:  5.040e-08  alpha:  3.763e-01  linmin:  3.286e-01  t[s]:     55.33
+	Linear fluid (dielectric constant: 7.2) occupying 0.992580 of unit cell:	Completed after 0 iterations at t[s]:     55.69
+	Linear fluid (dielectric constant: 7.2) occupying 0.992580 of unit cell:	Completed after 0 iterations at t[s]:     56.23
+ElecMinimize: Iter:  29  Etot: -115.970769874806692  |grad|_K:  5.162e-08  alpha:  1.049e+00  linmin: -2.495e-05  t[s]:     56.46
+ElecMinimize: Converged (|Delta Etot|<1.000000e-08 for 2 iters).
+Setting wave functions to eigenvectors of Hamiltonian
+Single-point solvation energy estimate, DeltaEtot = -0.049162722425081
+
+# Ionic positions in cartesian coordinates:
+ion S   9.402875070209999  12.430078910730000  27.263527773840000 1
+ion S   5.921463285810000  10.087698104369998  27.341467797959996 1
+ion Na   9.852901041599997   7.943043527369999  25.470895880699999 1
+ion Na   5.365079530559999  14.615699054669998  25.686786194819998 1
+
+# Forces in Cartesian coordinates:
+force S  -0.001201584388381  -0.000819945215767   0.004098402867430 1
+force S   0.001377776933548   0.000854649627898   0.004359664649411 1
+force Na   0.005381415385456  -0.007783356063186  -0.004199523901467 1
+force Na  -0.005261066744940   0.008043079273076  -0.003763779822589 1
+
+# Energy components:
+   A_diel =       -0.0610824473088469
+   Eewald =       42.5786531081733202
+       EH =      139.5367065048093878
+     Eloc =     -163.2477069018773079
+      Enl =     -140.2317987466819886
+      Exc =      -22.8133768938076607
+ Exc_core =        3.5354580038104433
+       KE =       24.7323774980759659
+-------------------------------------
+     Etot =     -115.9707698748066917
+
+IonicMinimize: Iter:   0  Etot: -115.970769874806692  |grad|_K:  4.602e-03  alpha:  1.000e+00
+
+#--- Lowdin population analysis ---
+# oxidation-state S -0.766 -0.766
+# oxidation-state Na +0.862 +0.862
+
+
+-------- Electronic minimization -----------
+	Linear fluid (dielectric constant: 7.2) occupying 0.992577 of unit cell:	Completed after 4 iterations at t[s]:     57.32
+ElecMinimize: Iter:   0  Etot: -115.971010579562432  |grad|_K:  2.105e-06  alpha:  1.000e+00
+	Linear fluid (dielectric constant: 7.2) occupying 0.992579 of unit cell:	Completed after 2 iterations at t[s]:     58.13
+	Linear fluid (dielectric constant: 7.2) occupying 0.992578 of unit cell:	Completed after 2 iterations at t[s]:     58.88
+ElecMinimize: Iter:   1  Etot: -115.971014813635520  |grad|_K:  9.195e-07  alpha:  5.806e-01  linmin:  3.631e-03  t[s]:     59.11
+	Linear fluid (dielectric constant: 7.2) occupying 0.992577 of unit cell:	Completed after 1 iterations at t[s]:     59.61
+	Linear fluid (dielectric constant: 7.2) occupying 0.992577 of unit cell:	Completed after 0 iterations at t[s]:     60.21
+ElecMinimize: Iter:   2  Etot: -115.971015556010215  |grad|_K:  5.925e-07  alpha:  5.344e-01  linmin:  1.774e-02  t[s]:     60.45
+	Linear fluid (dielectric constant: 7.2) occupying 0.992576 of unit cell:	Completed after 1 iterations at t[s]:     60.88
+	Linear fluid (dielectric constant: 7.2) occupying 0.992576 of unit cell:	Completed after 0 iterations at t[s]:     61.48
+ElecMinimize: Iter:   3  Etot: -115.971015786099613  |grad|_K:  3.808e-07  alpha:  3.995e-01  linmin:  7.279e-02  t[s]:     61.72
+	Linear fluid (dielectric constant: 7.2) occupying 0.992576 of unit cell:	Completed after 0 iterations at t[s]:     62.12
+	Linear fluid (dielectric constant: 7.2) occupying 0.992576 of unit cell:	Completed after 0 iterations at t[s]:     62.69
+ElecMinimize: Iter:   4  Etot: -115.971015898823865  |grad|_K:  2.170e-07  alpha:  4.818e-01  linmin: -2.222e-01  t[s]:     62.93
+	Linear fluid (dielectric constant: 7.2) occupying 0.992575 of unit cell:	Completed after 0 iterations at t[s]:     63.32
+	Linear fluid (dielectric constant: 7.2) occupying 0.992575 of unit cell:	Completed after 0 iterations at t[s]:     63.90
+ElecMinimize: Iter:   5  Etot: -115.971015957880695  |grad|_K:  1.574e-07  alpha:  5.802e-01  linmin: -1.656e-01  t[s]:     64.13
+	Linear fluid (dielectric constant: 7.2) occupying 0.992574 of unit cell:	Completed after 0 iterations at t[s]:     64.49
+	Linear fluid (dielectric constant: 7.2) occupying 0.992573 of unit cell:	Completed after 0 iterations at t[s]:     65.07
+ElecMinimize: Iter:   6  Etot: -115.971015981403781  |grad|_K:  2.196e-07  alpha:  1.042e+00  linmin:  1.461e-01  t[s]:     65.30
+	Linear fluid (dielectric constant: 7.2) occupying 0.992571 of unit cell:	Completed after 1 iterations at t[s]:     65.75
+	Linear fluid (dielectric constant: 7.2) occupying 0.992573 of unit cell:	Completed after 0 iterations at t[s]:     66.39
+ElecMinimize: Iter:   7  Etot: -115.971015985419726  |grad|_K:  2.036e-07  alpha:  1.868e-01  linmin:  2.900e-02  t[s]:     66.62
+	Linear fluid (dielectric constant: 7.2) occupying 0.992573 of unit cell:	Completed after 0 iterations at t[s]:     67.00
+	Linear fluid (dielectric constant: 7.2) occupying 0.992572 of unit cell:	Completed after 0 iterations at t[s]:     67.54
+ElecMinimize: Iter:   8  Etot: -115.971016002417585  |grad|_K:  1.345e-07  alpha:  2.793e-01  linmin:  1.178e-05  t[s]:     67.78
+	Linear fluid (dielectric constant: 7.2) occupying 0.992572 of unit cell:	Completed after 0 iterations at t[s]:     68.17
+	Linear fluid (dielectric constant: 7.2) occupying 0.992572 of unit cell:	Completed after 0 iterations at t[s]:     68.74
+ElecMinimize: 	Step increased Etot by 5.344887e-09, reducing alpha to 8.917525e-03.
+	Linear fluid (dielectric constant: 7.2) occupying 0.992572 of unit cell:	Completed after 0 iterations at t[s]:     69.33
+ElecMinimize: 	Step increased Etot by 5.200278e-09, reducing alpha to 8.917525e-04.
+	Linear fluid (dielectric constant: 7.2) occupying 0.992572 of unit cell:	Completed after 0 iterations at t[s]:     69.92
+ElecMinimize: 	Step increased Etot by 5.237112e-09, reducing alpha to 8.917525e-05.
+ElecMinimize: 	Step failed to reduce Etot after 3 attempts. Quitting step.
+ElecMinimize: 	Undoing step.
+	Linear fluid (dielectric constant: 7.2) occupying 0.992572 of unit cell:	Completed after 0 iterations at t[s]:     70.51
+ElecMinimize: 	Step failed: resetting search direction.
+ElecMinimize: Iter:   9  Etot: -115.971015997179947  |grad|_K:  1.434e-07  alpha:  8.918e-05
+	Linear fluid (dielectric constant: 7.2) occupying 0.992573 of unit cell:	Completed after 0 iterations at t[s]:     71.14
+	Linear fluid (dielectric constant: 7.2) occupying 0.992572 of unit cell:	Completed after 0 iterations at t[s]:     71.71
+ElecMinimize: Iter:  10  Etot: -115.971016004685893  |grad|_K:  9.292e-08  alpha:  2.524e-01  linmin: -6.449e-01  t[s]:     71.95
+	Linear fluid (dielectric constant: 7.2) occupying 0.992573 of unit cell:	Completed after 0 iterations at t[s]:     72.31
+ElecMinimize: 	Predicted alpha/alphaT>3.000000, increasing alphaT to 7.571400e-01.
+	Linear fluid (dielectric constant: 7.2) occupying 0.992573 of unit cell:	Completed after 0 iterations at t[s]:     72.85
+	Linear fluid (dielectric constant: 7.2) occupying 0.992573 of unit cell:	Completed after 0 iterations at t[s]:     73.40
+ElecMinimize: Iter:  11  Etot: -115.971016022838299  |grad|_K:  1.046e-07  alpha:  8.395e-01  linmin: -3.503e-06  t[s]:     73.63
+	Linear fluid (dielectric constant: 7.2) occupying 0.992574 of unit cell:	Completed after 0 iterations at t[s]:     74.03
+	Linear fluid (dielectric constant: 7.2) occupying 0.992573 of unit cell:	Completed after 0 iterations at t[s]:     74.64
+ElecMinimize: 	Step increased Etot by 1.261769e-08, reducing alpha to 2.070470e-02.
+	Linear fluid (dielectric constant: 7.2) occupying 0.992573 of unit cell:	Completed after 0 iterations at t[s]:     75.24
+ElecMinimize: 	Step increased Etot by 9.671652e-09, reducing alpha to 2.070470e-03.
+	Linear fluid (dielectric constant: 7.2) occupying 0.992573 of unit cell:	Completed after 0 iterations at t[s]:     75.83
+ElecMinimize: 	Step increased Etot by 9.430707e-09, reducing alpha to 2.070470e-04.
+ElecMinimize: 	Step failed to reduce Etot after 3 attempts. Quitting step.
+ElecMinimize: 	Undoing step.
+	Linear fluid (dielectric constant: 7.2) occupying 0.992573 of unit cell:	Completed after 0 iterations at t[s]:     76.43
+ElecMinimize: 	Step failed: resetting search direction.
+ElecMinimize: Iter:  12  Etot: -115.971016013410150  |grad|_K:  1.460e-07  alpha:  2.070e-04
+	Linear fluid (dielectric constant: 7.2) occupying 0.992573 of unit cell:	Completed after 0 iterations at t[s]:     77.07
+	Linear fluid (dielectric constant: 7.2) occupying 0.992573 of unit cell:	Completed after 0 iterations at t[s]:     77.67
+ElecMinimize: Iter:  13  Etot: -115.971016022338887  |grad|_K:  7.699e-08  alpha:  3.200e-01  linmin:  3.134e-01  t[s]:     77.91
+	Linear fluid (dielectric constant: 7.2) occupying 0.992573 of unit cell:	Completed after 0 iterations at t[s]:     78.28
+	Linear fluid (dielectric constant: 7.2) occupying 0.992573 of unit cell:	Completed after 0 iterations at t[s]:     78.83
+ElecMinimize: Iter:  14  Etot: -115.971016028778635  |grad|_K:  4.986e-08  alpha:  8.790e-01  linmin: -3.656e-05  t[s]:     79.06
+ElecMinimize: Converged (|Delta Etot|<1.000000e-08 for 2 iters).
+Setting wave functions to eigenvectors of Hamiltonian
+IonicMinimize: 	Predicted alpha/alphaT>3.000000, increasing alphaT to 3.000000e+00.
+
+-------- Electronic minimization -----------
+	Linear fluid (dielectric constant: 7.2) occupying 0.992573 of unit cell:	Completed after 6 iterations at t[s]:     79.71
+ElecMinimize: Iter:   0  Etot: -115.954648200249792  |grad|_K:  1.666e-04  alpha:  1.000e+00
+	Linear fluid (dielectric constant: 7.2) occupying 0.992581 of unit cell:	Completed after 8 iterations at t[s]:     80.75
+	Linear fluid (dielectric constant: 7.2) occupying 0.992576 of unit cell:	Completed after 6 iterations at t[s]:     81.64
+ElecMinimize: Iter:   1  Etot: -115.970697222904775  |grad|_K:  2.763e-05  alpha:  3.522e-01  linmin: -5.835e-04  t[s]:     81.89
+	Linear fluid (dielectric constant: 7.2) occupying 0.992569 of unit cell:	Completed after 4 iterations at t[s]:     82.53
+	Linear fluid (dielectric constant: 7.2) occupying 0.992566 of unit cell:	Completed after 3 iterations at t[s]:     83.31
+ElecMinimize: Iter:   2  Etot: -115.971335696344454  |grad|_K:  1.188e-05  alpha:  5.082e-01  linmin: -8.057e-05  t[s]:     83.55
+	Linear fluid (dielectric constant: 7.2) occupying 0.992562 of unit cell:	Completed after 4 iterations at t[s]:     84.19
+	Linear fluid (dielectric constant: 7.2) occupying 0.992563 of unit cell:	Completed after 2 iterations at t[s]:     84.96
+ElecMinimize: Iter:   3  Etot: -115.971423582262858  |grad|_K:  5.500e-06  alpha:  3.785e-01  linmin: -2.080e-04  t[s]:     85.20
+	Linear fluid (dielectric constant: 7.2) occupying 0.992561 of unit cell:	Completed after 2 iterations at t[s]:     85.77
+	Linear fluid (dielectric constant: 7.2) occupying 0.992561 of unit cell:	Completed after 2 iterations at t[s]:     86.52
+ElecMinimize: Iter:   4  Etot: -115.971451762189574  |grad|_K:  2.861e-06  alpha:  5.687e-01  linmin:  8.421e-03  t[s]:     86.75
+	Linear fluid (dielectric constant: 7.2) occupying 0.992559 of unit cell:	Completed after 2 iterations at t[s]:     87.32
+	Linear fluid (dielectric constant: 7.2) occupying 0.992559 of unit cell:	Completed after 1 iterations at t[s]:     88.03
+ElecMinimize: Iter:   5  Etot: -115.971457542351573  |grad|_K:  1.673e-06  alpha:  4.355e-01  linmin: -2.648e-03  t[s]:     88.27
+	Linear fluid (dielectric constant: 7.2) occupying 0.992559 of unit cell:	Completed after 2 iterations at t[s]:     88.83
+	Linear fluid (dielectric constant: 7.2) occupying 0.992558 of unit cell:	Completed after 1 iterations at t[s]:     89.54
+ElecMinimize: Iter:   6  Etot: -115.971461137142143  |grad|_K:  1.024e-06  alpha:  7.835e-01  linmin:  1.219e-02  t[s]:     89.78
+	Linear fluid (dielectric constant: 7.2) occupying 0.992558 of unit cell:	Completed after 2 iterations at t[s]:     90.30
+	Linear fluid (dielectric constant: 7.2) occupying 0.992558 of unit cell:	Completed after 0 iterations at t[s]:     90.93
+ElecMinimize: Iter:   7  Etot: -115.971462433360642  |grad|_K:  6.741e-07  alpha:  7.627e-01  linmin:  1.057e-02  t[s]:     91.17
+	Linear fluid (dielectric constant: 7.2) occupying 0.992558 of unit cell:	Completed after 1 iterations at t[s]:     91.60
+	Linear fluid (dielectric constant: 7.2) occupying 0.992558 of unit cell:	Completed after 0 iterations at t[s]:     92.24
+ElecMinimize: Iter:   8  Etot: -115.971462834047415  |grad|_K:  3.713e-07  alpha:  5.449e-01  linmin:  1.595e-02  t[s]:     92.49
+	Linear fluid (dielectric constant: 7.2) occupying 0.992558 of unit cell:	Completed after 0 iterations at t[s]:     92.89
+	Linear fluid (dielectric constant: 7.2) occupying 0.992558 of unit cell:	Completed after 0 iterations at t[s]:     93.46
+ElecMinimize: Iter:   9  Etot: -115.971462953700410  |grad|_K:  2.418e-07  alpha:  5.375e-01  linmin: -2.692e-02  t[s]:     93.70
+	Linear fluid (dielectric constant: 7.2) occupying 0.992558 of unit cell:	Completed after 0 iterations at t[s]:     94.06
+	Linear fluid (dielectric constant: 7.2) occupying 0.992558 of unit cell:	Completed after 0 iterations at t[s]:     94.64
+ElecMinimize: Iter:  10  Etot: -115.971463008601503  |grad|_K:  1.736e-07  alpha:  6.365e-01  linmin:  6.179e-02  t[s]:     94.89
+	Linear fluid (dielectric constant: 7.2) occupying 0.992558 of unit cell:	Completed after 0 iterations at t[s]:     95.25
+	Linear fluid (dielectric constant: 7.2) occupying 0.992558 of unit cell:	Completed after 0 iterations at t[s]:     95.80
+ElecMinimize: Iter:  11  Etot: -115.971463039661785  |grad|_K:  1.290e-07  alpha:  6.877e-01  linmin:  2.739e-05  t[s]:     96.03
+	Linear fluid (dielectric constant: 7.2) occupying 0.992558 of unit cell:	Completed after 0 iterations at t[s]:     96.43
+	Linear fluid (dielectric constant: 7.2) occupying 0.992558 of unit cell:	Completed after 0 iterations at t[s]:     97.00
+ElecMinimize: Iter:  12  Etot: -115.971463040671026  |grad|_K:  1.124e-07  alpha:  3.273e-01  linmin: -4.512e-03  t[s]:     97.24
+	Linear fluid (dielectric constant: 7.2) occupying 0.992558 of unit cell:	Completed after 0 iterations at t[s]:     97.60
+	Linear fluid (dielectric constant: 7.2) occupying 0.992558 of unit cell:	Completed after 0 iterations at t[s]:     98.15
+ElecMinimize: Iter:  13  Etot: -115.971463049028984  |grad|_K:  9.288e-08  alpha:  3.991e-01  linmin:  3.217e-07  t[s]:     98.40
+ElecMinimize: Converged (|Delta Etot|<1.000000e-08 for 2 iters).
+Setting wave functions to eigenvectors of Hamiltonian
+IonicMinimize: 	Predicted alpha/alphaT>3.000000, increasing alphaT to 9.000000e+00.
+
+-------- Electronic minimization -----------
+	Linear fluid (dielectric constant: 7.2) occupying 0.992557 of unit cell:	Completed after 7 iterations at t[s]:     99.09
+ElecMinimize: Iter:   0  Etot: -115.820318801630222  |grad|_K:  5.049e-04  alpha:  1.000e+00
+	Linear fluid (dielectric constant: 7.2) occupying 0.992579 of unit cell:	Completed after 11 iterations at t[s]:    100.22
+	Linear fluid (dielectric constant: 7.2) occupying 0.992569 of unit cell:	Completed after 9 iterations at t[s]:    101.33
+ElecMinimize: Iter:   1  Etot: -115.964609078048809  |grad|_K:  9.534e-05  alpha:  3.503e-01  linmin: -1.032e-02  t[s]:    101.67
+	Linear fluid (dielectric constant: 7.2) occupying 0.992549 of unit cell:	Completed after 5 iterations at t[s]:    102.34
+	Linear fluid (dielectric constant: 7.2) occupying 0.992546 of unit cell:	Completed after 4 iterations at t[s]:    103.20
+ElecMinimize: Iter:   2  Etot: -115.970576664904868  |grad|_K:  4.781e-05  alpha:  3.980e-01  linmin:  6.499e-04  t[s]:    103.47
+	Linear fluid (dielectric constant: 7.2) occupying 0.992528 of unit cell:	Completed after 5 iterations at t[s]:    104.15
+	Linear fluid (dielectric constant: 7.2) occupying 0.992529 of unit cell:	Completed after 1 iterations at t[s]:    104.91
+ElecMinimize: Iter:   3  Etot: -115.972044757401534  |grad|_K:  1.721e-05  alpha:  3.907e-01  linmin: -1.258e-03  t[s]:    105.16
+	Linear fluid (dielectric constant: 7.2) occupying 0.992524 of unit cell:	Completed after 4 iterations at t[s]:    105.80
+	Linear fluid (dielectric constant: 7.2) occupying 0.992522 of unit cell:	Completed after 4 iterations at t[s]:    106.62
+ElecMinimize: Iter:   4  Etot: -115.972342971976985  |grad|_K:  9.172e-06  alpha:  6.116e-01  linmin:  1.065e-03  t[s]:    106.86
+	Linear fluid (dielectric constant: 7.2) occupying 0.992517 of unit cell:	Completed after 4 iterations at t[s]:    107.49
+	Linear fluid (dielectric constant: 7.2) occupying 0.992518 of unit cell:	Completed after 2 iterations at t[s]:    108.24
+ElecMinimize: Iter:   5  Etot: -115.972405003208763  |grad|_K:  4.603e-06  alpha:  4.486e-01  linmin:  4.052e-04  t[s]:    108.48
+	Linear fluid (dielectric constant: 7.2) occupying 0.992516 of unit cell:	Completed after 2 iterations at t[s]:    109.06
+	Linear fluid (dielectric constant: 7.2) occupying 0.992515 of unit cell:	Completed after 2 iterations at t[s]:    109.81
+ElecMinimize: Iter:   6  Etot: -115.972432353901596  |grad|_K:  2.899e-06  alpha:  7.868e-01  linmin:  3.456e-03  t[s]:    110.05
+	Linear fluid (dielectric constant: 7.2) occupying 0.992515 of unit cell:	Completed after 2 iterations at t[s]:    110.61
+	Linear fluid (dielectric constant: 7.2) occupying 0.992515 of unit cell:	Completed after 0 iterations at t[s]:    111.29
+ElecMinimize: Iter:   7  Etot: -115.972441134518789  |grad|_K:  2.251e-06  alpha:  6.374e-01  linmin:  2.227e-03  t[s]:    111.52
+	Linear fluid (dielectric constant: 7.2) occupying 0.992515 of unit cell:	Completed after 2 iterations at t[s]:    112.09
+	Linear fluid (dielectric constant: 7.2) occupying 0.992515 of unit cell:	Completed after 1 iterations at t[s]:    112.80
+ElecMinimize: Iter:   8  Etot: -115.972445148348044  |grad|_K:  1.332e-06  alpha:  4.868e-01  linmin: -5.329e-03  t[s]:    113.03
+	Linear fluid (dielectric constant: 7.2) occupying 0.992515 of unit cell:	Completed after 1 iterations at t[s]:    113.52
+	Linear fluid (dielectric constant: 7.2) occupying 0.992515 of unit cell:	Completed after 0 iterations at t[s]:    114.12
+ElecMinimize: Iter:   9  Etot: -115.972446675232959  |grad|_K:  7.680e-07  alpha:  5.191e-01  linmin: -1.340e-02  t[s]:    114.36
+	Linear fluid (dielectric constant: 7.2) occupying 0.992515 of unit cell:	Completed after 0 iterations at t[s]:    114.75
+	Linear fluid (dielectric constant: 7.2) occupying 0.992515 of unit cell:	Completed after 0 iterations at t[s]:    115.32
+ElecMinimize: Iter:  10  Etot: -115.972447316347257  |grad|_K:  4.642e-07  alpha:  6.486e-01  linmin: -1.822e-02  t[s]:    115.56
+	Linear fluid (dielectric constant: 7.2) occupying 0.992515 of unit cell:	Completed after 1 iterations at t[s]:    115.99
+	Linear fluid (dielectric constant: 7.2) occupying 0.992515 of unit cell:	Completed after 0 iterations at t[s]:    116.59
+ElecMinimize: Iter:  11  Etot: -115.972447519865923  |grad|_K:  3.487e-07  alpha:  5.722e-01  linmin: -2.669e-02  t[s]:    116.83
+	Linear fluid (dielectric constant: 7.2) occupying 0.992514 of unit cell:	Completed after 0 iterations at t[s]:    117.22
+	Linear fluid (dielectric constant: 7.2) occupying 0.992514 of unit cell:	Completed after 0 iterations at t[s]:    117.79
+ElecMinimize: Iter:  12  Etot: -115.972447619235027  |grad|_K:  2.403e-07  alpha:  4.797e-01  linmin:  3.731e-03  t[s]:    118.03
+	Linear fluid (dielectric constant: 7.2) occupying 0.992514 of unit cell:	Completed after 0 iterations at t[s]:    118.39
+	Linear fluid (dielectric constant: 7.2) occupying 0.992514 of unit cell:	Completed after 0 iterations at t[s]:    118.93
+ElecMinimize: Iter:  13  Etot: -115.972447698480792  |grad|_K:  2.072e-07  alpha:  8.392e-01  linmin: -6.646e-06  t[s]:    119.17
+	Linear fluid (dielectric constant: 7.2) occupying 0.992514 of unit cell:	Completed after 0 iterations at t[s]:    119.56
+	Linear fluid (dielectric constant: 7.2) occupying 0.992514 of unit cell:	Completed after 0 iterations at t[s]:    120.14
+ElecMinimize: Iter:  14  Etot: -115.972447731863383  |grad|_K:  1.671e-07  alpha:  5.412e-01  linmin: -1.345e-02  t[s]:    120.37
+	Linear fluid (dielectric constant: 7.2) occupying 0.992514 of unit cell:	Completed after 0 iterations at t[s]:    120.77
+	Linear fluid (dielectric constant: 7.2) occupying 0.992514 of unit cell:	Completed after 0 iterations at t[s]:    121.34
+ElecMinimize: Iter:  15  Etot: -115.972447754271798  |grad|_K:  1.219e-07  alpha:  4.921e-01  linmin: -1.007e-01  t[s]:    121.58
+	Linear fluid (dielectric constant: 7.2) occupying 0.992513 of unit cell:	Completed after 0 iterations at t[s]:    121.94
+	Linear fluid (dielectric constant: 7.2) occupying 0.992513 of unit cell:	Completed after 0 iterations at t[s]:    122.48
+ElecMinimize: Iter:  16  Etot: -115.972447772518649  |grad|_K:  9.895e-08  alpha:  6.320e-01  linmin: -3.310e-06  t[s]:    122.71
+	Linear fluid (dielectric constant: 7.2) occupying 0.992513 of unit cell:	Completed after 0 iterations at t[s]:    123.11
+	Linear fluid (dielectric constant: 7.2) occupying 0.992513 of unit cell:	Completed after 0 iterations at t[s]:    123.68
+ElecMinimize: 	Step increased Etot by 2.776432e-09, reducing alpha to 2.864870e-02.
+	Linear fluid (dielectric constant: 7.2) occupying 0.992513 of unit cell:	Completed after 0 iterations at t[s]:    124.27
+ElecMinimize: 	Step increased Etot by 6.002125e-09, reducing alpha to 2.864870e-03.
+	Linear fluid (dielectric constant: 7.2) occupying 0.992513 of unit cell:	Completed after 0 iterations at t[s]:    124.86
+ElecMinimize: 	Step increased Etot by 6.452524e-09, reducing alpha to 2.864870e-04.
+ElecMinimize: 	Step failed to reduce Etot after 3 attempts. Quitting step.
+ElecMinimize: 	Undoing step.
+	Linear fluid (dielectric constant: 7.2) occupying 0.992513 of unit cell:	Completed after 0 iterations at t[s]:    125.45
+ElecMinimize: 	Step failed: resetting search direction.
+ElecMinimize: Iter:  17  Etot: -115.972447766061038  |grad|_K:  1.453e-07  alpha:  2.865e-04
+	Linear fluid (dielectric constant: 7.2) occupying 0.992513 of unit cell:	Completed after 0 iterations at t[s]:    126.08
+	Linear fluid (dielectric constant: 7.2) occupying 0.992513 of unit cell:	Completed after 0 iterations at t[s]:    126.65
+ElecMinimize: Iter:  18  Etot: -115.972447775552325  |grad|_K:  6.345e-08  alpha:  3.441e-01  linmin:  1.180e-01  t[s]:    126.88
+	Linear fluid (dielectric constant: 7.2) occupying 0.992513 of unit cell:	Completed after 0 iterations at t[s]:    127.24
+ElecMinimize: 	Predicted alpha/alphaT>3.000000, increasing alphaT to 1.032189e+00.
+	Linear fluid (dielectric constant: 7.2) occupying 0.992513 of unit cell:	Completed after 0 iterations at t[s]:    127.79
+	Linear fluid (dielectric constant: 7.2) occupying 0.992513 of unit cell:	Completed after 0 iterations at t[s]:    128.33
+ElecMinimize: Iter:  19  Etot: -115.972447783155587  |grad|_K:  6.884e-08  alpha:  1.231e+00  linmin: -1.784e-05  t[s]:    128.56
+ElecMinimize: Converged (|Delta Etot|<1.000000e-08 for 2 iters).
+Setting wave functions to eigenvectors of Hamiltonian
+
+-------- Electronic minimization -----------
+	Linear fluid (dielectric constant: 7.2) occupying 0.992511 of unit cell:	Completed after 7 iterations at t[s]:    129.26
+ElecMinimize: Iter:   0  Etot: -115.708829384340717  |grad|_K:  6.692e-04  alpha:  1.000e+00
+	Linear fluid (dielectric constant: 7.2) occupying 0.992540 of unit cell:	Completed after 11 iterations at t[s]:    130.39
+	Linear fluid (dielectric constant: 7.2) occupying 0.992528 of unit cell:	Completed after 9 iterations at t[s]:    131.50
+ElecMinimize: Iter:   1  Etot: -115.958168096770152  |grad|_K:  1.363e-04  alpha:  3.491e-01  linmin: -2.029e-02  t[s]:    131.83
+	Linear fluid (dielectric constant: 7.2) occupying 0.992503 of unit cell:	Completed after 6 iterations at t[s]:    132.55
+	Linear fluid (dielectric constant: 7.2) occupying 0.992502 of unit cell:	Completed after 2 iterations at t[s]:    133.37
+ElecMinimize: Iter:   2  Etot: -115.969304411040042  |grad|_K:  6.561e-05  alpha:  3.626e-01  linmin:  2.505e-03  t[s]:    133.61
+	Linear fluid (dielectric constant: 7.2) occupying 0.992479 of unit cell:	Completed after 6 iterations at t[s]:    134.32
+	Linear fluid (dielectric constant: 7.2) occupying 0.992475 of unit cell:	Completed after 3 iterations at t[s]:    135.15
+ElecMinimize: Iter:   3  Etot: -115.972278321368549  |grad|_K:  2.303e-05  alpha:  4.204e-01  linmin: -4.131e-03  t[s]:    135.38
+	Linear fluid (dielectric constant: 7.2) occupying 0.992469 of unit cell:	Completed after 5 iterations at t[s]:    136.06
+	Linear fluid (dielectric constant: 7.2) occupying 0.992466 of unit cell:	Completed after 4 iterations at t[s]:    136.91
+ElecMinimize: Iter:   4  Etot: -115.972809719758885  |grad|_K:  1.280e-05  alpha:  6.086e-01  linmin:  4.461e-03  t[s]:    137.20
+	Linear fluid (dielectric constant: 7.2) occupying 0.992459 of unit cell:	Completed after 4 iterations at t[s]:    137.84
+	Linear fluid (dielectric constant: 7.2) occupying 0.992461 of unit cell:	Completed after 2 iterations at t[s]:    138.60
+ElecMinimize: Iter:   5  Etot: -115.972928848914620  |grad|_K:  6.204e-06  alpha:  4.433e-01  linmin:  1.037e-03  t[s]:    138.83
+	Linear fluid (dielectric constant: 7.2) occupying 0.992458 of unit cell:	Completed after 2 iterations at t[s]:    139.40
+	Linear fluid (dielectric constant: 7.2) occupying 0.992457 of unit cell:	Completed after 2 iterations at t[s]:    140.15
+ElecMinimize: Iter:   6  Etot: -115.972975371539803  |grad|_K:  4.393e-06  alpha:  7.382e-01  linmin:  5.665e-03  t[s]:    140.38
+	Linear fluid (dielectric constant: 7.2) occupying 0.992456 of unit cell:	Completed after 2 iterations at t[s]:    140.95
+	Linear fluid (dielectric constant: 7.2) occupying 0.992456 of unit cell:	Completed after 1 iterations at t[s]:    141.66
+ElecMinimize: Iter:   7  Etot: -115.972990998912508  |grad|_K:  3.090e-06  alpha:  4.967e-01  linmin: -4.196e-04  t[s]:    141.89
+	Linear fluid (dielectric constant: 7.2) occupying 0.992456 of unit cell:	Completed after 2 iterations at t[s]:    142.46
+	Linear fluid (dielectric constant: 7.2) occupying 0.992456 of unit cell:	Completed after 0 iterations at t[s]:    143.13
+ElecMinimize: Iter:   8  Etot: -115.973000135706968  |grad|_K:  1.802e-06  alpha:  5.807e-01  linmin: -5.660e-03  t[s]:    143.37
+	Linear fluid (dielectric constant: 7.2) occupying 0.992456 of unit cell:	Completed after 1 iterations at t[s]:    143.89
+	Linear fluid (dielectric constant: 7.2) occupying 0.992456 of unit cell:	Completed after 0 iterations at t[s]:    144.49
+ElecMinimize: Iter:   9  Etot: -115.973003291621595  |grad|_K:  1.057e-06  alpha:  5.866e-01  linmin: -1.708e-03  t[s]:    144.72
+	Linear fluid (dielectric constant: 7.2) occupying 0.992456 of unit cell:	Completed after 1 iterations at t[s]:    145.16
+	Linear fluid (dielectric constant: 7.2) occupying 0.992456 of unit cell:	Completed after 0 iterations at t[s]:    145.76
+ElecMinimize: Iter:  10  Etot: -115.973004410921178  |grad|_K:  6.738e-07  alpha:  6.082e-01  linmin: -6.173e-03  t[s]:    145.99
+	Linear fluid (dielectric constant: 7.2) occupying 0.992456 of unit cell:	Completed after 1 iterations at t[s]:    146.42
+	Linear fluid (dielectric constant: 7.2) occupying 0.992456 of unit cell:	Completed after 0 iterations at t[s]:    147.02
+ElecMinimize: Iter:  11  Etot: -115.973004815334519  |grad|_K:  5.169e-07  alpha:  5.333e-01  linmin:  2.637e-02  t[s]:    147.26
+	Linear fluid (dielectric constant: 7.2) occupying 0.992455 of unit cell:	Completed after 1 iterations at t[s]:    147.69
+	Linear fluid (dielectric constant: 7.2) occupying 0.992455 of unit cell:	Completed after 0 iterations at t[s]:    148.29
+ElecMinimize: Iter:  12  Etot: -115.973005025581116  |grad|_K:  3.143e-07  alpha:  5.022e-01  linmin: -8.574e-03  t[s]:    148.53
+	Linear fluid (dielectric constant: 7.2) occupying 0.992455 of unit cell:	Completed after 0 iterations at t[s]:    148.89
+	Linear fluid (dielectric constant: 7.2) occupying 0.992455 of unit cell:	Completed after 0 iterations at t[s]:    149.43
+ElecMinimize: Iter:  13  Etot: -115.973005175940671  |grad|_K:  2.701e-07  alpha:  9.151e-01  linmin:  8.105e-06  t[s]:    149.66
+	Linear fluid (dielectric constant: 7.2) occupying 0.992454 of unit cell:	Completed after 1 iterations at t[s]:    150.09
+	Linear fluid (dielectric constant: 7.2) occupying 0.992454 of unit cell:	Completed after 0 iterations at t[s]:    150.69
+ElecMinimize: Iter:  14  Etot: -115.973005224419026  |grad|_K:  3.042e-07  alpha:  5.114e-01  linmin:  1.347e-02  t[s]:    150.93
+	Linear fluid (dielectric constant: 7.2) occupying 0.992454 of unit cell:	Completed after 0 iterations at t[s]:    151.32
+	Linear fluid (dielectric constant: 7.2) occupying 0.992454 of unit cell:	Completed after 0 iterations at t[s]:    151.90
+ElecMinimize: Iter:  15  Etot: -115.973005264589560  |grad|_K:  1.908e-07  alpha:  3.040e-01  linmin:  9.629e-03  t[s]:    152.13
+	Linear fluid (dielectric constant: 7.2) occupying 0.992454 of unit cell:	Completed after 0 iterations at t[s]:    152.49
+	Linear fluid (dielectric constant: 7.2) occupying 0.992454 of unit cell:	Completed after 0 iterations at t[s]:    153.03
+ElecMinimize: Iter:  16  Etot: -115.973005307819392  |grad|_K:  1.544e-07  alpha:  7.365e-01  linmin: -2.209e-05  t[s]:    153.27
+	Linear fluid (dielectric constant: 7.2) occupying 0.992454 of unit cell:	Completed after 0 iterations at t[s]:    153.66
+	Linear fluid (dielectric constant: 7.2) occupying 0.992454 of unit cell:	Completed after 0 iterations at t[s]:    154.23
+ElecMinimize: Iter:  17  Etot: -115.973005322313639  |grad|_K:  1.195e-07  alpha:  4.497e-01  linmin:  1.110e-02  t[s]:    154.47
+	Linear fluid (dielectric constant: 7.2) occupying 0.992454 of unit cell:	Completed after 0 iterations at t[s]:    154.86
+	Linear fluid (dielectric constant: 7.2) occupying 0.992454 of unit cell:	Completed after 0 iterations at t[s]:    155.44
+ElecMinimize: Iter:  18  Etot: -115.973005326281793  |grad|_K:  8.111e-08  alpha:  3.072e-01  linmin: -2.048e-01  t[s]:    155.67
+	Linear fluid (dielectric constant: 7.2) occupying 0.992454 of unit cell:	Completed after 0 iterations at t[s]:    156.03
+	Linear fluid (dielectric constant: 7.2) occupying 0.992454 of unit cell:	Completed after 0 iterations at t[s]:    156.57
+ElecMinimize: Iter:  19  Etot: -115.973005335119637  |grad|_K:  7.582e-08  alpha:  6.017e-01  linmin:  4.836e-05  t[s]:    156.81
+ElecMinimize: Converged (|Delta Etot|<1.000000e-08 for 2 iters).
+Setting wave functions to eigenvectors of Hamiltonian
+
+# Ionic positions in cartesian coordinates:
+ion S   9.381330341506970  12.414988340078645  27.330653876065121 1
+ion S   5.943479568644303  10.100888583250192  27.413006165889175 1
+ion Na   9.942531946438645   7.810352829243384  25.397884158633968 1
+ion Na   5.274977071590078  14.750289844567774  25.621133446731733 1
+
+# Forces in Cartesian coordinates:
+force S   0.000093761744396   0.000099180704721   0.000808177765245 1
+force S  -0.000068329863250   0.000011695725878   0.000086204127432 1
+force Na   0.000538101715621  -0.000694777024415  -0.000071500678942 1
+force Na  -0.000385898528860   0.000858593600276   0.000156153735911 1
+
+# Energy components:
+   A_diel =       -0.0667126021653149
+   Eewald =       40.7753865809224934
+       EH =      137.7135066225478397
+     Eloc =     -159.6170514377452889
+      Enl =     -140.2142576313079587
+      Exc =      -22.8000594604099440
+ Exc_core =        3.5354584445002546
+       KE =       24.7007241485383062
+-------------------------------------
+     Etot =     -115.9730053351196375
+
+IonicMinimize: Iter:   1  Etot: -115.973005335119637  |grad|_K:  4.189e-04  alpha:  1.689e+01  linmin: -8.230e-01  t[s]:    157.10
+
+#--- Lowdin population analysis ---
+# oxidation-state S -0.765 -0.765
+# oxidation-state Na +0.869 +0.869
+
+
+-------- Electronic minimization -----------
+	Linear fluid (dielectric constant: 7.2) occupying 0.992447 of unit cell:	Completed after 5 iterations at t[s]:    157.71
+ElecMinimize: Iter:   0  Etot: -115.973014602024605  |grad|_K:  3.357e-06  alpha:  1.000e+00
+	Linear fluid (dielectric constant: 7.2) occupying 0.992450 of unit cell:	Completed after 3 iterations at t[s]:    158.56
+	Linear fluid (dielectric constant: 7.2) occupying 0.992448 of unit cell:	Completed after 2 iterations at t[s]:    159.31
+ElecMinimize: Iter:   1  Etot: -115.973025250946392  |grad|_K:  1.466e-06  alpha:  5.735e-01  linmin:  1.057e-03  t[s]:    159.56
+	Linear fluid (dielectric constant: 7.2) occupying 0.992447 of unit cell:	Completed after 2 iterations at t[s]:    160.12
+	Linear fluid (dielectric constant: 7.2) occupying 0.992447 of unit cell:	Completed after 0 iterations at t[s]:    160.74
+ElecMinimize: Iter:   2  Etot: -115.973027391585234  |grad|_K:  9.403e-07  alpha:  6.044e-01  linmin: -2.246e-02  t[s]:    160.98
+	Linear fluid (dielectric constant: 7.2) occupying 0.992445 of unit cell:	Completed after 1 iterations at t[s]:    161.41
+	Linear fluid (dielectric constant: 7.2) occupying 0.992445 of unit cell:	Completed after 0 iterations at t[s]:    162.05
+ElecMinimize: Iter:   3  Etot: -115.973028077640819  |grad|_K:  6.823e-07  alpha:  4.663e-01  linmin:  1.688e-02  t[s]:    162.28
+	Linear fluid (dielectric constant: 7.2) occupying 0.992444 of unit cell:	Completed after 1 iterations at t[s]:    162.73
+	Linear fluid (dielectric constant: 7.2) occupying 0.992443 of unit cell:	Completed after 0 iterations at t[s]:    163.33
+ElecMinimize: Iter:   4  Etot: -115.973028658798995  |grad|_K:  4.647e-07  alpha:  7.334e-01  linmin: -8.646e-02  t[s]:    163.57
+	Linear fluid (dielectric constant: 7.2) occupying 0.992442 of unit cell:	Completed after 1 iterations at t[s]:    164.00
+	Linear fluid (dielectric constant: 7.2) occupying 0.992442 of unit cell:	Completed after 0 iterations at t[s]:    164.60
+ElecMinimize: Iter:   5  Etot: -115.973028897172199  |grad|_K:  3.841e-07  alpha:  6.077e-01  linmin: -1.432e-02  t[s]:    164.83
+	Linear fluid (dielectric constant: 7.2) occupying 0.992441 of unit cell:	Completed after 0 iterations at t[s]:    165.23
+	Linear fluid (dielectric constant: 7.2) occupying 0.992441 of unit cell:	Completed after 0 iterations at t[s]:    165.80
+ElecMinimize: Iter:   6  Etot: -115.973029047930339  |grad|_K:  3.201e-07  alpha:  6.041e-01  linmin: -3.100e-03  t[s]:    166.03
+	Linear fluid (dielectric constant: 7.2) occupying 0.992440 of unit cell:	Completed after 0 iterations at t[s]:    166.43
+	Linear fluid (dielectric constant: 7.2) occupying 0.992440 of unit cell:	Completed after 0 iterations at t[s]:    167.00
+ElecMinimize: Iter:   7  Etot: -115.973029133536954  |grad|_K:  2.184e-07  alpha:  5.082e-01  linmin: -4.278e-03  t[s]:    167.24
+	Linear fluid (dielectric constant: 7.2) occupying 0.992440 of unit cell:	Completed after 0 iterations at t[s]:    167.61
+	Linear fluid (dielectric constant: 7.2) occupying 0.992440 of unit cell:	Completed after 0 iterations at t[s]:    168.19
+ElecMinimize: Iter:   8  Etot: -115.973029169411134  |grad|_K:  2.030e-07  alpha:  6.200e-01  linmin:  5.867e-02  t[s]:    168.42
+	Linear fluid (dielectric constant: 7.2) occupying 0.992440 of unit cell:	Completed after 0 iterations at t[s]:    168.80
+	Linear fluid (dielectric constant: 7.2) occupying 0.992440 of unit cell:	Completed after 0 iterations at t[s]:    169.34
+ElecMinimize: Iter:   9  Etot: -115.973029202624403  |grad|_K:  1.497e-07  alpha:  5.865e-01  linmin:  5.483e-07  t[s]:    169.57
+	Linear fluid (dielectric constant: 7.2) occupying 0.992440 of unit cell:	Completed after 0 iterations at t[s]:    169.97
+	Linear fluid (dielectric constant: 7.2) occupying 0.992440 of unit cell:	Completed after 0 iterations at t[s]:    170.54
+ElecMinimize: Iter:  10  Etot: -115.973029205548713  |grad|_K:  1.391e-07  alpha:  2.606e-01  linmin: -9.461e-03  t[s]:    170.78
+	Linear fluid (dielectric constant: 7.2) occupying 0.992440 of unit cell:	Completed after 0 iterations at t[s]:    171.14
+	Linear fluid (dielectric constant: 7.2) occupying 0.992440 of unit cell:	Completed after 0 iterations at t[s]:    171.69
+ElecMinimize: Iter:  11  Etot: -115.973029215766829  |grad|_K:  1.241e-07  alpha:  3.126e-01  linmin:  3.711e-06  t[s]:    171.92
+	Linear fluid (dielectric constant: 7.2) occupying 0.992440 of unit cell:	Completed after 0 iterations at t[s]:    172.31
+	Linear fluid (dielectric constant: 7.2) occupying 0.992440 of unit cell:	Completed after 0 iterations at t[s]:    172.89
+ElecMinimize: Iter:  12  Etot: -115.973029216000583  |grad|_K:  9.768e-08  alpha:  1.543e-01  linmin: -8.163e-02  t[s]:    173.12
+	Linear fluid (dielectric constant: 7.2) occupying 0.992440 of unit cell:	Completed after 0 iterations at t[s]:    173.48
+	Linear fluid (dielectric constant: 7.2) occupying 0.992440 of unit cell:	Completed after 0 iterations at t[s]:    174.02
+ElecMinimize: Iter:  13  Etot: -115.973029221099296  |grad|_K:  7.169e-08  alpha:  2.717e-01  linmin:  2.202e-06  t[s]:    174.26
+ElecMinimize: Converged (|Delta Etot|<1.000000e-08 for 2 iters).
+Setting wave functions to eigenvectors of Hamiltonian
+
+-------- Electronic minimization -----------
+	Linear fluid (dielectric constant: 7.2) occupying 0.992438 of unit cell:	Completed after 4 iterations at t[s]:    174.84
+ElecMinimize: Iter:   0  Etot: -115.973028772618974  |grad|_K:  1.099e-06  alpha:  1.000e+00
+	Linear fluid (dielectric constant: 7.2) occupying 0.992439 of unit cell:	Completed after 2 iterations at t[s]:    175.64
+	Linear fluid (dielectric constant: 7.2) occupying 0.992439 of unit cell:	Completed after 1 iterations at t[s]:    176.35
+ElecMinimize: Iter:   1  Etot: -115.973029873099875  |grad|_K:  5.142e-07  alpha:  5.520e-01  linmin:  1.065e-02  t[s]:    176.59
+	Linear fluid (dielectric constant: 7.2) occupying 0.992438 of unit cell:	Completed after 1 iterations at t[s]:    177.06
+	Linear fluid (dielectric constant: 7.2) occupying 0.992438 of unit cell:	Completed after 0 iterations at t[s]:    177.66
+ElecMinimize: Iter:   2  Etot: -115.973030077490236  |grad|_K:  3.737e-07  alpha:  4.729e-01  linmin:  2.499e-02  t[s]:    177.90
+	Linear fluid (dielectric constant: 7.2) occupying 0.992438 of unit cell:	Completed after 0 iterations at t[s]:    178.29
+	Linear fluid (dielectric constant: 7.2) occupying 0.992438 of unit cell:	Completed after 0 iterations at t[s]:    178.86
+ElecMinimize: Iter:   3  Etot: -115.973030173763675  |grad|_K:  1.978e-07  alpha:  4.352e-01  linmin: -1.352e-02  t[s]:    179.10
+	Linear fluid (dielectric constant: 7.2) occupying 0.992438 of unit cell:	Completed after 0 iterations at t[s]:    179.49
+	Linear fluid (dielectric constant: 7.2) occupying 0.992437 of unit cell:	Completed after 0 iterations at t[s]:    180.06
+ElecMinimize: Iter:   4  Etot: -115.973030214528549  |grad|_K:  1.423e-07  alpha:  5.512e-01  linmin: -2.742e-01  t[s]:    180.30
+	Linear fluid (dielectric constant: 7.2) occupying 0.992437 of unit cell:	Completed after 0 iterations at t[s]:    180.66
+	Linear fluid (dielectric constant: 7.2) occupying 0.992437 of unit cell:	Completed after 0 iterations at t[s]:    181.20
+ElecMinimize: Iter:   5  Etot: -115.973030253588533  |grad|_K:  1.335e-07  alpha:  8.567e-01  linmin:  1.642e-05  t[s]:    181.44
+	Linear fluid (dielectric constant: 7.2) occupying 0.992436 of unit cell:	Completed after 0 iterations at t[s]:    181.83
+	Linear fluid (dielectric constant: 7.2) occupying 0.992436 of unit cell:	Completed after 0 iterations at t[s]:    182.40
+ElecMinimize: Iter:   6  Etot: -115.973030258011704  |grad|_K:  1.616e-07  alpha:  4.396e-01  linmin: -9.014e-03  t[s]:    182.64
+	Linear fluid (dielectric constant: 7.2) occupying 0.992436 of unit cell:	Completed after 0 iterations at t[s]:    182.99
+	Linear fluid (dielectric constant: 7.2) occupying 0.992436 of unit cell:	Completed after 0 iterations at t[s]:    183.54
+ElecMinimize: Iter:   7  Etot: -115.973030273669536  |grad|_K:  1.174e-07  alpha:  3.520e-01  linmin: -8.178e-06  t[s]:    183.77
+	Linear fluid (dielectric constant: 7.2) occupying 0.992436 of unit cell:	Completed after 0 iterations at t[s]:    184.17
+	Linear fluid (dielectric constant: 7.2) occupying 0.992436 of unit cell:	Completed after 0 iterations at t[s]:    184.74
+ElecMinimize: 	Step increased Etot by 5.023026e-09, reducing alpha to 1.194804e-02.
+	Linear fluid (dielectric constant: 7.2) occupying 0.992436 of unit cell:	Completed after 0 iterations at t[s]:    185.34
+ElecMinimize: 	Step increased Etot by 5.474504e-09, reducing alpha to 1.194804e-03.
+	Linear fluid (dielectric constant: 7.2) occupying 0.992436 of unit cell:	Completed after 0 iterations at t[s]:    185.94
+ElecMinimize: 	Step increased Etot by 5.575984e-09, reducing alpha to 1.194804e-04.
+ElecMinimize: 	Step failed to reduce Etot after 3 attempts. Quitting step.
+ElecMinimize: 	Undoing step.
+	Linear fluid (dielectric constant: 7.2) occupying 0.992436 of unit cell:	Completed after 0 iterations at t[s]:    186.53
+ElecMinimize: 	Step failed: resetting search direction.
+ElecMinimize: Iter:   8  Etot: -115.973030268092302  |grad|_K:  1.141e-07  alpha:  1.195e-04
+	Linear fluid (dielectric constant: 7.2) occupying 0.992436 of unit cell:	Completed after 0 iterations at t[s]:    187.12
+	Linear fluid (dielectric constant: 7.2) occupying 0.992436 of unit cell:	Completed after 0 iterations at t[s]:    187.70
+ElecMinimize: Iter:   9  Etot: -115.973030273129837  |grad|_K:  1.071e-07  alpha:  7.595e-01  linmin:  2.162e-01  t[s]:    187.95
+	Linear fluid (dielectric constant: 7.2) occupying 0.992436 of unit cell:	Completed after 0 iterations at t[s]:    188.31
+	Linear fluid (dielectric constant: 7.2) occupying 0.992436 of unit cell:	Completed after 0 iterations at t[s]:    188.86
+ElecMinimize: Iter:  10  Etot: -115.973030281471523  |grad|_K:  6.764e-08  alpha:  6.832e-01  linmin: -2.146e-06  t[s]:    189.09
+ElecMinimize: Converged (|Delta Etot|<1.000000e-08 for 2 iters).
+Setting wave functions to eigenvectors of Hamiltonian
+
+# Ionic positions in cartesian coordinates:
+ion S   9.382197359074041  12.415504845995153  27.343985041384681 1
+ion S   5.941200753363139  10.099759510240647  27.410246194896565 1
+ion Na   9.954551187107718   7.791831054635391  25.390013637446888 1
+ion Na   5.264369628635095  14.769424186268802  25.618432773591859 1
+
+# Forces in Cartesian coordinates:
+force S  -0.000541252988712  -0.000376516212361   0.000263905207617 1
+force S   0.000521553126946   0.000379793635068  -0.000352124490384 1
+force Na   0.000099360272785   0.000139657428880   0.000225526531152 1
+force Na   0.000144006525716   0.000174474442535   0.000507811995244 1
+
+# Energy components:
+   A_diel =       -0.0674137107202291
+   Eewald =       40.5247822432085556
+       EH =      137.4603649238999026
+     Eloc =     -159.1104292416637520
+      Enl =     -140.2127372285789875
+      Exc =      -22.7973205265125607
+ Exc_core =        3.5354585730626340
+       KE =       24.6942646858329127
+-------------------------------------
+     Etot =     -115.9730302814715230
+
+IonicMinimize: Iter:   2  Etot: -115.973030281471523  |grad|_K:  3.281e-04  alpha:  2.235e+01  linmin:  1.237e-02  t[s]:    189.40
+
+#--- Lowdin population analysis ---
+# oxidation-state S -0.766 -0.766
+# oxidation-state Na +0.870 +0.870
+
+
+-------- Electronic minimization -----------
+	Linear fluid (dielectric constant: 7.2) occupying 0.992441 of unit cell:	Completed after 5 iterations at t[s]:    190.01
+ElecMinimize: Iter:   0  Etot: -115.972941863199679  |grad|_K:  6.140e-06  alpha:  1.000e+00
+	Linear fluid (dielectric constant: 7.2) occupying 0.992441 of unit cell:	Completed after 3 iterations at t[s]:    190.85
+	Linear fluid (dielectric constant: 7.2) occupying 0.992441 of unit cell:	Completed after 1 iterations at t[s]:    191.58
+ElecMinimize: Iter:   1  Etot: -115.972994716367637  |grad|_K:  2.913e-06  alpha:  8.521e-01  linmin:  7.773e-04  t[s]:    191.82
+	Linear fluid (dielectric constant: 7.2) occupying 0.992438 of unit cell:	Completed after 3 iterations at t[s]:    192.39
+	Linear fluid (dielectric constant: 7.2) occupying 0.992439 of unit cell:	Completed after 1 iterations at t[s]:    193.11
+ElecMinimize: Iter:   2  Etot: -115.973004408094113  |grad|_K:  1.805e-06  alpha:  6.944e-01  linmin:  2.593e-03  t[s]:    193.35
+	Linear fluid (dielectric constant: 7.2) occupying 0.992439 of unit cell:	Completed after 1 iterations at t[s]:    193.82
+	Linear fluid (dielectric constant: 7.2) occupying 0.992439 of unit cell:	Completed after 0 iterations at t[s]:    194.42
+ElecMinimize: Iter:   3  Etot: -115.973008716581106  |grad|_K:  1.420e-06  alpha:  8.042e-01  linmin: -8.323e-03  t[s]:    194.65
+	Linear fluid (dielectric constant: 7.2) occupying 0.992438 of unit cell:	Completed after 2 iterations at t[s]:    195.12
+	Linear fluid (dielectric constant: 7.2) occupying 0.992438 of unit cell:	Completed after 1 iterations at t[s]:    195.82
+ElecMinimize: Iter:   4  Etot: -115.973010514085161  |grad|_K:  8.780e-07  alpha:  5.363e-01  linmin: -4.454e-04  t[s]:    196.06
+	Linear fluid (dielectric constant: 7.2) occupying 0.992437 of unit cell:	Completed after 1 iterations at t[s]:    199.24
+	Linear fluid (dielectric constant: 7.2) occupying 0.992436 of unit cell:	Completed after 0 iterations at t[s]:    199.88
+ElecMinimize: Iter:   5  Etot: -115.973011617008524  |grad|_K:  6.746e-07  alpha:  8.647e-01  linmin: -8.875e-03  t[s]:    200.11
+	Linear fluid (dielectric constant: 7.2) occupying 0.992435 of unit cell:	Completed after 1 iterations at t[s]:    200.56
+	Linear fluid (dielectric constant: 7.2) occupying 0.992436 of unit cell:	Completed after 0 iterations at t[s]:    203.27
+ElecMinimize: Iter:   6  Etot: -115.973012042357269  |grad|_K:  4.764e-07  alpha:  5.567e-01  linmin:  9.898e-03  t[s]:    203.50
+	Linear fluid (dielectric constant: 7.2) occupying 0.992435 of unit cell:	Completed after 0 iterations at t[s]:    203.91
+	Linear fluid (dielectric constant: 7.2) occupying 0.992435 of unit cell:	Completed after 0 iterations at t[s]:    204.48
+ElecMinimize: Iter:   7  Etot: -115.973012295045024  |grad|_K:  3.393e-07  alpha:  6.759e-01  linmin: -3.750e-02  t[s]:    204.72
+	Linear fluid (dielectric constant: 7.2) occupying 0.992434 of unit cell:	Completed after 0 iterations at t[s]:    205.11
+	Linear fluid (dielectric constant: 7.2) occupying 0.992434 of unit cell:	Completed after 0 iterations at t[s]:    205.69
+ElecMinimize: Iter:   8  Etot: -115.973012443228612  |grad|_K:  2.398e-07  alpha:  7.266e-01  linmin: -4.276e-02  t[s]:    205.92
+	Linear fluid (dielectric constant: 7.2) occupying 0.992433 of unit cell:	Completed after 0 iterations at t[s]:    207.92
+	Linear fluid (dielectric constant: 7.2) occupying 0.992434 of unit cell:	Completed after 0 iterations at t[s]:    208.50
+ElecMinimize: Iter:   9  Etot: -115.973012505683869  |grad|_K:  1.935e-07  alpha:  6.277e-01  linmin: -2.075e-02  t[s]:    208.73
+	Linear fluid (dielectric constant: 7.2) occupying 0.992433 of unit cell:	Completed after 0 iterations at t[s]:    209.09
+	Linear fluid (dielectric constant: 7.2) occupying 0.992433 of unit cell:	Completed after 0 iterations at t[s]:    209.63
+ElecMinimize: Iter:  10  Etot: -115.973012550858783  |grad|_K:  1.468e-07  alpha:  7.023e-01  linmin:  3.720e-06  t[s]:    209.87
+	Linear fluid (dielectric constant: 7.2) occupying 0.992433 of unit cell:	Completed after 0 iterations at t[s]:    210.26
+	Linear fluid (dielectric constant: 7.2) occupying 0.992433 of unit cell:	Completed after 0 iterations at t[s]:    210.84
+ElecMinimize: Iter:  11  Etot: -115.973012559046069  |grad|_K:  1.351e-07  alpha:  4.039e-01  linmin: -4.877e-02  t[s]:    211.07
+	Linear fluid (dielectric constant: 7.2) occupying 0.992433 of unit cell:	Completed after 0 iterations at t[s]:    211.43
+	Linear fluid (dielectric constant: 7.2) occupying 0.992433 of unit cell:	Completed after 0 iterations at t[s]:    211.97
+ElecMinimize: Iter:  12  Etot: -115.973012574707511  |grad|_K:  1.135e-07  alpha:  4.604e-01  linmin:  2.339e-06  t[s]:    212.22
+	Linear fluid (dielectric constant: 7.2) occupying 0.992433 of unit cell:	Completed after 0 iterations at t[s]:    212.62
+	Linear fluid (dielectric constant: 7.2) occupying 0.992433 of unit cell:	Completed after 0 iterations at t[s]:    213.19
+ElecMinimize: Iter:  13  Etot: -115.973012575803978  |grad|_K:  9.617e-08  alpha:  2.363e-01  linmin: -5.012e-02  t[s]:    213.42
+	Linear fluid (dielectric constant: 7.2) occupying 0.992433 of unit cell:	Completed after 0 iterations at t[s]:    213.78
+	Linear fluid (dielectric constant: 7.2) occupying 0.992433 of unit cell:	Completed after 0 iterations at t[s]:    214.33
+ElecMinimize: Iter:  14  Etot: -115.973012582560898  |grad|_K:  7.957e-08  alpha:  3.868e-01  linmin:  1.150e-05  t[s]:    214.57
+ElecMinimize: Converged (|Delta Etot|<1.000000e-08 for 2 iters).
+Setting wave functions to eigenvectors of Hamiltonian
+
+-------- Electronic minimization -----------
+	Linear fluid (dielectric constant: 7.2) occupying 0.992429 of unit cell:	Completed after 4 iterations at t[s]:    215.16
+ElecMinimize: Iter:   0  Etot: -115.973000040776199  |grad|_K:  4.280e-06  alpha:  1.000e+00
+	Linear fluid (dielectric constant: 7.2) occupying 0.992429 of unit cell:	Completed after 2 iterations at t[s]:    215.97
+	Linear fluid (dielectric constant: 7.2) occupying 0.992429 of unit cell:	Completed after 1 iterations at t[s]:    216.67
+ElecMinimize: Iter:   1  Etot: -115.973025591280162  |grad|_K:  2.011e-06  alpha:  8.482e-01  linmin:  5.489e-04  t[s]:    216.92
+	Linear fluid (dielectric constant: 7.2) occupying 0.992431 of unit cell:	Completed after 2 iterations at t[s]:    217.42
+	Linear fluid (dielectric constant: 7.2) occupying 0.992431 of unit cell:	Completed after 0 iterations at t[s]:    218.08
+ElecMinimize: Iter:   2  Etot: -115.973030226911320  |grad|_K:  1.255e-06  alpha:  6.959e-01  linmin:  1.058e-02  t[s]:    218.32
+	Linear fluid (dielectric constant: 7.2) occupying 0.992431 of unit cell:	Completed after 1 iterations at t[s]:    218.76
+	Linear fluid (dielectric constant: 7.2) occupying 0.992431 of unit cell:	Completed after 0 iterations at t[s]:    219.36
+ElecMinimize: Iter:   3  Etot: -115.973032224289369  |grad|_K:  9.951e-07  alpha:  7.757e-01  linmin: -1.334e-02  t[s]:    219.60
+	Linear fluid (dielectric constant: 7.2) occupying 0.992432 of unit cell:	Completed after 1 iterations at t[s]:    220.03
+	Linear fluid (dielectric constant: 7.2) occupying 0.992431 of unit cell:	Completed after 0 iterations at t[s]:    220.67
+ElecMinimize: Iter:   4  Etot: -115.973033110530764  |grad|_K:  6.562e-07  alpha:  5.268e-01  linmin:  1.817e-02  t[s]:    220.92
+	Linear fluid (dielectric constant: 7.2) occupying 0.992432 of unit cell:	Completed after 1 iterations at t[s]:    221.36
+	Linear fluid (dielectric constant: 7.2) occupying 0.992432 of unit cell:	Completed after 0 iterations at t[s]:    221.96
+ElecMinimize: Iter:   5  Etot: -115.973033565500700  |grad|_K:  4.921e-07  alpha:  6.433e-01  linmin: -6.039e-02  t[s]:    222.20
+	Linear fluid (dielectric constant: 7.2) occupying 0.992433 of unit cell:	Completed after 0 iterations at t[s]:    222.59
+	Linear fluid (dielectric constant: 7.2) occupying 0.992433 of unit cell:	Completed after 0 iterations at t[s]:    223.17
+ElecMinimize: Iter:   6  Etot: -115.973033839101717  |grad|_K:  3.230e-07  alpha:  6.230e-01  linmin:  4.609e-04  t[s]:    223.41
+	Linear fluid (dielectric constant: 7.2) occupying 0.992433 of unit cell:	Completed after 0 iterations at t[s]:    223.80
+	Linear fluid (dielectric constant: 7.2) occupying 0.992433 of unit cell:	Completed after 0 iterations at t[s]:    224.37
+ElecMinimize: Iter:   7  Etot: -115.973033955181506  |grad|_K:  2.501e-07  alpha:  6.681e-01  linmin: -5.135e-02  t[s]:    224.62
+	Linear fluid (dielectric constant: 7.2) occupying 0.992434 of unit cell:	Completed after 0 iterations at t[s]:    225.01
+	Linear fluid (dielectric constant: 7.2) occupying 0.992434 of unit cell:	Completed after 0 iterations at t[s]:    225.58
+ElecMinimize: Iter:   8  Etot: -115.973034031562975  |grad|_K:  1.698e-07  alpha:  6.733e-01  linmin: -3.738e-02  t[s]:    225.82
+	Linear fluid (dielectric constant: 7.2) occupying 0.992434 of unit cell:	Completed after 0 iterations at t[s]:    226.17
+	Linear fluid (dielectric constant: 7.2) occupying 0.992434 of unit cell:	Completed after 0 iterations at t[s]:    226.73
+ElecMinimize: Iter:   9  Etot: -115.973034071826660  |grad|_K:  1.468e-07  alpha:  7.936e-01  linmin:  6.921e-06  t[s]:    226.97
+	Linear fluid (dielectric constant: 7.2) occupying 0.992435 of unit cell:	Completed after 0 iterations at t[s]:    227.36
+	Linear fluid (dielectric constant: 7.2) occupying 0.992435 of unit cell:	Completed after 0 iterations at t[s]:    227.94
+ElecMinimize: Iter:  10  Etot: -115.973034081079945  |grad|_K:  1.098e-07  alpha:  4.306e-01  linmin: -4.194e-02  t[s]:    228.18
+	Linear fluid (dielectric constant: 7.2) occupying 0.992435 of unit cell:	Completed after 0 iterations at t[s]:    228.53
+	Linear fluid (dielectric constant: 7.2) occupying 0.992435 of unit cell:	Completed after 0 iterations at t[s]:    229.11
+ElecMinimize: Iter:  11  Etot: -115.973034086582160  |grad|_K:  1.012e-07  alpha:  5.615e-01  linmin:  7.088e-02  t[s]:    229.35
+ElecMinimize: Converged (|Delta Etot|<1.000000e-08 for 2 iters).
+Setting wave functions to eigenvectors of Hamiltonian
+
+# Ionic positions in cartesian coordinates:
+ion S   9.378240242491241  12.412456513663459  27.347219172632734 1
+ion S   5.943982593912708  10.101619092232147  27.406179982599031 1
+ion Na   9.957128301842783   7.788737929149984  25.388965809842485 1
+ion Na   5.262967789933265  14.773706062094401  25.620312682245743 1
+
+# Forces in Cartesian coordinates:
+force S   0.000204568779917   0.000110257669591   0.000147564930675 1
+force S  -0.000231773797840  -0.000120352082666  -0.000259973724887 1
+force Na  -0.000007570852251   0.000289945460345   0.000263140973737 1
+force Na   0.000228113038354   0.000017766820913   0.000523934426547 1
+
+# Energy components:
+   A_diel =       -0.0675250540634473
+   Eewald =       40.5206905372028245
+       EH =      137.4564155260557357
+     Eloc =     -159.1035756705199162
+      Enl =     -140.2127466779064378
+      Exc =      -22.7982646393984183
+ Exc_core =        3.5354586264851333
+       KE =       24.6965132655623627
+-------------------------------------
+     Etot =     -115.9730340865821603
+
+IonicMinimize: Iter:   3  Etot: -115.973034086582160  |grad|_K:  2.134e-04  alpha:  6.902e+00  linmin:  1.096e-01  t[s]:    229.66
+
+#--- Lowdin population analysis ---
+# oxidation-state S -0.765 -0.765
+# oxidation-state Na +0.870 +0.870
+
+
+-------- Electronic minimization -----------
+	Linear fluid (dielectric constant: 7.2) occupying 0.992435 of unit cell:	Completed after 2 iterations at t[s]:    230.17
+ElecMinimize: Iter:   0  Etot: -115.973036020567363  |grad|_K:  9.452e-07  alpha:  1.000e+00
+	Linear fluid (dielectric constant: 7.2) occupying 0.992435 of unit cell:	Completed after 1 iterations at t[s]:    230.91
+	Linear fluid (dielectric constant: 7.2) occupying 0.992435 of unit cell:	Completed after 0 iterations at t[s]:    231.51
+ElecMinimize: Iter:   1  Etot: -115.973037215380373  |grad|_K:  4.704e-07  alpha:  8.084e-01  linmin:  3.812e-02  t[s]:    231.75
+	Linear fluid (dielectric constant: 7.2) occupying 0.992435 of unit cell:	Completed after 0 iterations at t[s]:    232.14
+	Linear fluid (dielectric constant: 7.2) occupying 0.992435 of unit cell:	Completed after 0 iterations at t[s]:    232.72
+ElecMinimize: Iter:   2  Etot: -115.973037425162374  |grad|_K:  3.136e-07  alpha:  6.056e-01  linmin: -8.787e-03  t[s]:    232.95
+	Linear fluid (dielectric constant: 7.2) occupying 0.992435 of unit cell:	Completed after 0 iterations at t[s]:    233.34
+	Linear fluid (dielectric constant: 7.2) occupying 0.992435 of unit cell:	Completed after 0 iterations at t[s]:    233.92
+ElecMinimize: Iter:   3  Etot: -115.973037540786777  |grad|_K:  2.299e-07  alpha:  6.900e-01  linmin: -7.491e-02  t[s]:    234.15
+	Linear fluid (dielectric constant: 7.2) occupying 0.992435 of unit cell:	Completed after 0 iterations at t[s]:    234.55
+	Linear fluid (dielectric constant: 7.2) occupying 0.992435 of unit cell:	Completed after 0 iterations at t[s]:    235.12
+ElecMinimize: Iter:   4  Etot: -115.973037613342598  |grad|_K:  1.680e-07  alpha:  7.328e-01  linmin: -8.751e-02  t[s]:    235.35
+	Linear fluid (dielectric constant: 7.2) occupying 0.992435 of unit cell:	Completed after 0 iterations at t[s]:    235.75
+	Linear fluid (dielectric constant: 7.2) occupying 0.992435 of unit cell:	Completed after 0 iterations at t[s]:    236.32
+ElecMinimize: Iter:   5  Etot: -115.973037645395891  |grad|_K:  1.479e-07  alpha:  6.202e-01  linmin: -2.982e-02  t[s]:    236.55
+	Linear fluid (dielectric constant: 7.2) occupying 0.992435 of unit cell:	Completed after 0 iterations at t[s]:    236.91
+	Linear fluid (dielectric constant: 7.2) occupying 0.992435 of unit cell:	Completed after 0 iterations at t[s]:    237.45
+ElecMinimize: Iter:   6  Etot: -115.973037675176272  |grad|_K:  1.199e-07  alpha:  7.666e-01  linmin: -5.629e-06  t[s]:    237.69
+	Linear fluid (dielectric constant: 7.2) occupying 0.992435 of unit cell:	Completed after 0 iterations at t[s]:    238.08
+	Linear fluid (dielectric constant: 7.2) occupying 0.992435 of unit cell:	Completed after 0 iterations at t[s]:    238.65
+ElecMinimize: Iter:   7  Etot: -115.973037676268916  |grad|_K:  1.194e-07  alpha:  3.215e-01  linmin:  4.008e-02  t[s]:    238.89
+	Linear fluid (dielectric constant: 7.2) occupying 0.992435 of unit cell:	Completed after 0 iterations at t[s]:    239.29
+	Linear fluid (dielectric constant: 7.2) occupying 0.992435 of unit cell:	Completed after 0 iterations at t[s]:    239.86
+ElecMinimize: 	Step increased Etot by 1.605173e-09, reducing alpha to 1.605882e-02.
+	Linear fluid (dielectric constant: 7.2) occupying 0.992435 of unit cell:	Completed after 0 iterations at t[s]:    240.45
+ElecMinimize: 	Step increased Etot by 5.465125e-09, reducing alpha to 1.605882e-03.
+	Linear fluid (dielectric constant: 7.2) occupying 0.992435 of unit cell:	Completed after 0 iterations at t[s]:    241.04
+ElecMinimize: 	Step increased Etot by 5.977597e-09, reducing alpha to 1.605882e-04.
+ElecMinimize: 	Step failed to reduce Etot after 3 attempts. Quitting step.
+ElecMinimize: 	Undoing step.
+	Linear fluid (dielectric constant: 7.2) occupying 0.992435 of unit cell:	Completed after 0 iterations at t[s]:    241.63
+ElecMinimize: 	Step failed: resetting search direction.
+ElecMinimize: Iter:   8  Etot: -115.973037670285379  |grad|_K:  1.006e-07  alpha:  1.606e-04
+	Linear fluid (dielectric constant: 7.2) occupying 0.992435 of unit cell:	Completed after 0 iterations at t[s]:    242.23
+	Linear fluid (dielectric constant: 7.2) occupying 0.992435 of unit cell:	Completed after 0 iterations at t[s]:    242.77
+ElecMinimize: Iter:   9  Etot: -115.973037679999109  |grad|_K:  5.384e-08  alpha:  5.831e-01  linmin: -5.488e-06  t[s]:    243.00
+	Linear fluid (dielectric constant: 7.2) occupying 0.992435 of unit cell:	Completed after 0 iterations at t[s]:    243.36
+	Linear fluid (dielectric constant: 7.2) occupying 0.992435 of unit cell:	Completed after 0 iterations at t[s]:    243.91
+ElecMinimize: Iter:  10  Etot: -115.973037686619406  |grad|_K:  6.838e-08  alpha:  1.389e+00  linmin:  6.162e-04  t[s]:    244.14
+ElecMinimize: Converged (|Delta Etot|<1.000000e-08 for 2 iters).
+Setting wave functions to eigenvectors of Hamiltonian
+IonicMinimize: 	Wrong curvature in test step, increasing alphaT to 2.070462e+01.
+
+-------- Electronic minimization -----------
+	Linear fluid (dielectric constant: 7.2) occupying 0.992435 of unit cell:	Completed after 0 iterations at t[s]:    244.53
+ElecMinimize: Iter:   0  Etot: -115.973037686619463  |grad|_K:  6.838e-08  alpha:  1.000e+00
+	Linear fluid (dielectric constant: 7.2) occupying 0.992435 of unit cell:	Completed after 0 iterations at t[s]:    245.17
+	Linear fluid (dielectric constant: 7.2) occupying 0.992435 of unit cell:	Completed after 0 iterations at t[s]:    245.74
+ElecMinimize: 	Step increased Etot by 2.810268e-09, reducing alpha to 3.126258e-02.
+	Linear fluid (dielectric constant: 7.2) occupying 0.992435 of unit cell:	Completed after 0 iterations at t[s]:    246.33
+ElecMinimize: 	Step increased Etot by 2.114064e-09, reducing alpha to 3.126258e-03.
+	Linear fluid (dielectric constant: 7.2) occupying 0.992435 of unit cell:	Completed after 0 iterations at t[s]:    246.92
+ElecMinimize: 	Step increased Etot by 2.105949e-09, reducing alpha to 3.126258e-04.
+ElecMinimize: 	Step failed to reduce Etot after 3 attempts. Quitting step.
+ElecMinimize: 	Undoing step.
+	Linear fluid (dielectric constant: 7.2) occupying 0.992435 of unit cell:	Completed after 0 iterations at t[s]:    247.51
+ElecMinimize: 	Step failed along negative gradient direction.
+ElecMinimize: Probably at roundoff error limit. (Stopping)
+Setting wave functions to eigenvectors of Hamiltonian
+
+# Ionic positions in cartesian coordinates:
+ion S   9.377644863401578  12.411414682948012  27.348441393769306 1
+ion S   5.943225978805513  10.101061470701071  27.401501925078293 1
+ion Na   9.957832444763435   7.788917275869395  25.389174656021339 1
+ion Na   5.263615641209471  14.775126167621513  25.623559672451055 1
+
+# Forces in Cartesian coordinates:
+force S   0.000252596414710   0.000130987097297   0.000159007594725 1
+force S  -0.000291454071645  -0.000167250701802  -0.000242789126509 1
+force Na   0.000044539244149   0.000255176854994   0.000250153742138 1
+force Na   0.000231128948445   0.000061124885609   0.000598103739513 1
+
+# Energy components:
+   A_diel =       -0.0674929958121944
+   Eewald =       40.5270968025448468
+       EH =      137.4631357570106047
+     Eloc =     -159.1166338349364082
+      Enl =     -140.2130176206173644
+      Exc =      -22.7983840062707124
+ Exc_core =        3.5354586378995547
+       KE =       24.6967995756680843
+-------------------------------------
+     Etot =     -115.9730376845135993
+
+IonicMinimize: Iter:   4  Etot: -115.973037684513599  |grad|_K:  2.315e-04  alpha: -5.255e+01  linmin: -6.450e-01  t[s]:    248.03
+
+#--- Lowdin population analysis ---
+# oxidation-state S -0.765 -0.765
+# oxidation-state Na +0.870 +0.870
+
+
+-------- Electronic minimization -----------
+	Linear fluid (dielectric constant: 7.2) occupying 0.992435 of unit cell:	Completed after 1 iterations at t[s]:    248.50
+ElecMinimize: Iter:   0  Etot: -115.973038710365614  |grad|_K:  2.869e-07  alpha:  1.000e+00
+	Linear fluid (dielectric constant: 7.2) occupying 0.992435 of unit cell:	Completed after 1 iterations at t[s]:    249.21
+	Linear fluid (dielectric constant: 7.2) occupying 0.992435 of unit cell:	Completed after 0 iterations at t[s]:    249.81
+ElecMinimize: Iter:   1  Etot: -115.973038803584174  |grad|_K:  1.801e-07  alpha:  6.882e-01  linmin:  6.303e-02  t[s]:    250.05
+	Linear fluid (dielectric constant: 7.2) occupying 0.992435 of unit cell:	Completed after 0 iterations at t[s]:    250.44
+	Linear fluid (dielectric constant: 7.2) occupying 0.992435 of unit cell:	Completed after 0 iterations at t[s]:    251.01
+ElecMinimize: Iter:   2  Etot: -115.973038820509544  |grad|_K:  1.090e-07  alpha:  3.958e-01  linmin:  5.485e-02  t[s]:    251.25
+	Linear fluid (dielectric constant: 7.2) occupying 0.992435 of unit cell:	Completed after 0 iterations at t[s]:    251.61
+	Linear fluid (dielectric constant: 7.2) occupying 0.992436 of unit cell:	Completed after 0 iterations at t[s]:    252.19
+ElecMinimize: Iter:   3  Etot: -115.973038828307750  |grad|_K:  9.061e-08  alpha:  8.862e-01  linmin:  1.019e-01  t[s]:    252.42
+	Linear fluid (dielectric constant: 7.2) occupying 0.992436 of unit cell:	Completed after 0 iterations at t[s]:    252.80
+	Linear fluid (dielectric constant: 7.2) occupying 0.992436 of unit cell:	Completed after 0 iterations at t[s]:    253.35
+ElecMinimize: Iter:   4  Etot: -115.973038838220418  |grad|_K:  7.070e-08  alpha:  8.950e-01  linmin:  1.109e-05  t[s]:    253.59
+ElecMinimize: Converged (|Delta Etot|<1.000000e-08 for 2 iters).
+Setting wave functions to eigenvectors of Hamiltonian
+IonicMinimize: 	Predicted alpha/alphaT>3.000000, increasing alphaT to 3.000000e+00.
+
+-------- Electronic minimization -----------
+	Linear fluid (dielectric constant: 7.2) occupying 0.992436 of unit cell:	Completed after 1 iterations at t[s]:    254.07
+ElecMinimize: Iter:   0  Etot: -115.973040472183044  |grad|_K:  5.363e-07  alpha:  1.000e+00
+	Linear fluid (dielectric constant: 7.2) occupying 0.992436 of unit cell:	Completed after 1 iterations at t[s]:    254.78
+	Linear fluid (dielectric constant: 7.2) occupying 0.992436 of unit cell:	Completed after 0 iterations at t[s]:    255.38
+ElecMinimize: Iter:   1  Etot: -115.973040837266097  |grad|_K:  2.697e-07  alpha:  7.728e-01  linmin:  2.976e-02  t[s]:    255.61
+	Linear fluid (dielectric constant: 7.2) occupying 0.992436 of unit cell:	Completed after 0 iterations at t[s]:    256.01
+	Linear fluid (dielectric constant: 7.2) occupying 0.992436 of unit cell:	Completed after 0 iterations at t[s]:    256.58
+ElecMinimize: Iter:   2  Etot: -115.973040896361681  |grad|_K:  2.063e-07  alpha:  5.263e-01  linmin:  1.621e-02  t[s]:    256.81
+	Linear fluid (dielectric constant: 7.2) occupying 0.992436 of unit cell:	Completed after 0 iterations at t[s]:    257.21
+	Linear fluid (dielectric constant: 7.2) occupying 0.992436 of unit cell:	Completed after 0 iterations at t[s]:    257.78
+ElecMinimize: Iter:   3  Etot: -115.973040935802302  |grad|_K:  1.344e-07  alpha:  5.615e-01  linmin: -1.392e-01  t[s]:    258.02
+	Linear fluid (dielectric constant: 7.2) occupying 0.992436 of unit cell:	Completed after 0 iterations at t[s]:    258.37
+	Linear fluid (dielectric constant: 7.2) occupying 0.992436 of unit cell:	Completed after 0 iterations at t[s]:    258.95
+ElecMinimize: Iter:   4  Etot: -115.973040950742899  |grad|_K:  1.990e-07  alpha:  9.481e-01  linmin:  1.113e-01  t[s]:    259.19
+	Linear fluid (dielectric constant: 7.2) occupying 0.992436 of unit cell:	Completed after 0 iterations at t[s]:    259.60
+	Linear fluid (dielectric constant: 7.2) occupying 0.992436 of unit cell:	Completed after 0 iterations at t[s]:    260.20
+ElecMinimize: Iter:   5  Etot: -115.973040958746935  |grad|_K:  1.761e-07  alpha:  2.544e-01  linmin:  2.870e-02  t[s]:    260.44
+	Linear fluid (dielectric constant: 7.2) occupying 0.992436 of unit cell:	Completed after 0 iterations at t[s]:    260.81
+	Linear fluid (dielectric constant: 7.2) occupying 0.992436 of unit cell:	Completed after 0 iterations at t[s]:    261.35
+ElecMinimize: Iter:   6  Etot: -115.973040972234159  |grad|_K:  1.299e-07  alpha:  2.959e-01  linmin: -2.408e-06  t[s]:    261.59
+	Linear fluid (dielectric constant: 7.2) occupying 0.992436 of unit cell:	Completed after 0 iterations at t[s]:    261.95
+	Linear fluid (dielectric constant: 7.2) occupying 0.992436 of unit cell:	Completed after 0 iterations at t[s]:    262.53
+ElecMinimize: 	Step increased Etot by 6.697150e-10, reducing alpha to 3.885204e-02.
+	Linear fluid (dielectric constant: 7.2) occupying 0.992436 of unit cell:	Completed after 0 iterations at t[s]:    263.13
+ElecMinimize: Iter:   7  Etot: -115.973040974095895  |grad|_K:  1.301e-07  alpha:  3.885e-02  linmin: -8.773e-02  t[s]:    263.37
+	Linear fluid (dielectric constant: 7.2) occupying 0.992436 of unit cell:	Completed after 0 iterations at t[s]:    263.73
+ElecMinimize: 	Predicted alpha/alphaT>3.000000, increasing alphaT to 1.165561e-01.
+	Linear fluid (dielectric constant: 7.2) occupying 0.992436 of unit cell:	Completed after 0 iterations at t[s]:    264.27
+	Linear fluid (dielectric constant: 7.2) occupying 0.992436 of unit cell:	Completed after 0 iterations at t[s]:    264.81
+ElecMinimize: Iter:   8  Etot: -115.973040983153552  |grad|_K:  9.230e-08  alpha:  2.464e-01  linmin: -7.999e-06  t[s]:    265.05
+ElecMinimize: Converged (|Delta Etot|<1.000000e-08 for 2 iters).
+Setting wave functions to eigenvectors of Hamiltonian
+IonicMinimize: 	Predicted alpha/alphaT>3.000000, increasing alphaT to 9.000000e+00.
+
+-------- Electronic minimization -----------
+	Linear fluid (dielectric constant: 7.2) occupying 0.992436 of unit cell:	Completed after 4 iterations at t[s]:    265.63
+ElecMinimize: Iter:   0  Etot: -115.973041300681857  |grad|_K:  1.645e-06  alpha:  1.000e+00
+	Linear fluid (dielectric constant: 7.2) occupying 0.992436 of unit cell:	Completed after 2 iterations at t[s]:    266.43
+	Linear fluid (dielectric constant: 7.2) occupying 0.992436 of unit cell:	Completed after 0 iterations at t[s]:    267.11
+ElecMinimize: Iter:   1  Etot: -115.973044801836295  |grad|_K:  7.526e-07  alpha:  7.853e-01  linmin:  8.307e-03  t[s]:    267.35
+	Linear fluid (dielectric constant: 7.2) occupying 0.992436 of unit cell:	Completed after 0 iterations at t[s]:    267.75
+	Linear fluid (dielectric constant: 7.2) occupying 0.992436 of unit cell:	Completed after 0 iterations at t[s]:    268.33
+ElecMinimize: Iter:   2  Etot: -115.973045446459054  |grad|_K:  4.448e-07  alpha:  6.932e-01  linmin:  1.963e-02  t[s]:    268.56
+	Linear fluid (dielectric constant: 7.2) occupying 0.992436 of unit cell:	Completed after 0 iterations at t[s]:    268.96
+	Linear fluid (dielectric constant: 7.2) occupying 0.992436 of unit cell:	Completed after 0 iterations at t[s]:    269.53
+ElecMinimize: Iter:   3  Etot: -115.973045710941648  |grad|_K:  3.683e-07  alpha:  8.147e-01  linmin: -3.736e-02  t[s]:    269.76
+	Linear fluid (dielectric constant: 7.2) occupying 0.992436 of unit cell:	Completed after 0 iterations at t[s]:    270.16
+	Linear fluid (dielectric constant: 7.2) occupying 0.992436 of unit cell:	Completed after 0 iterations at t[s]:    270.73
+ElecMinimize: Iter:   4  Etot: -115.973045862152972  |grad|_K:  2.487e-07  alpha:  6.485e-01  linmin: -1.198e-02  t[s]:    270.96
+	Linear fluid (dielectric constant: 7.2) occupying 0.992436 of unit cell:	Completed after 0 iterations at t[s]:    271.36
+	Linear fluid (dielectric constant: 7.2) occupying 0.992436 of unit cell:	Completed after 0 iterations at t[s]:    271.93
+ElecMinimize: Iter:   5  Etot: -115.973045964800377  |grad|_K:  1.727e-07  alpha:  9.256e-01  linmin: -8.693e-02  t[s]:    272.16
+	Linear fluid (dielectric constant: 7.2) occupying 0.992437 of unit cell:	Completed after 0 iterations at t[s]:    272.56
+	Linear fluid (dielectric constant: 7.2) occupying 0.992437 of unit cell:	Completed after 0 iterations at t[s]:    273.13
+ElecMinimize: Iter:   6  Etot: -115.973046000928008  |grad|_K:  1.231e-07  alpha:  6.940e-01  linmin: -3.866e-02  t[s]:    273.37
+	Linear fluid (dielectric constant: 7.2) occupying 0.992437 of unit cell:	Completed after 0 iterations at t[s]:    273.72
+	Linear fluid (dielectric constant: 7.2) occupying 0.992437 of unit cell:	Completed after 0 iterations at t[s]:    274.30
+ElecMinimize: Iter:   7  Etot: -115.973046018010393  |grad|_K:  1.017e-07  alpha:  9.474e-01  linmin:  6.217e-02  t[s]:    274.54
+	Linear fluid (dielectric constant: 7.2) occupying 0.992437 of unit cell:	Completed after 0 iterations at t[s]:    274.91
+	Linear fluid (dielectric constant: 7.2) occupying 0.992437 of unit cell:	Completed after 0 iterations at t[s]:    275.45
+ElecMinimize: Iter:   8  Etot: -115.973046029192304  |grad|_K:  7.422e-08  alpha:  7.617e-01  linmin: -3.762e-07  t[s]:    275.69
+	Linear fluid (dielectric constant: 7.2) occupying 0.992437 of unit cell:	Completed after 0 iterations at t[s]:    276.05
+	Linear fluid (dielectric constant: 7.2) occupying 0.992437 of unit cell:	Completed after 0 iterations at t[s]:    276.59
+ElecMinimize: Iter:   9  Etot: -115.973046035638973  |grad|_K:  5.825e-08  alpha:  7.115e-01  linmin: -6.132e-07  t[s]:    276.83
+	Linear fluid (dielectric constant: 7.2) occupying 0.992437 of unit cell:	Completed after 0 iterations at t[s]:    277.22
+	Linear fluid (dielectric constant: 7.2) occupying 0.992437 of unit cell:	Completed after 0 iterations at t[s]:    277.79
+ElecMinimize: 	Step increased Etot by 3.147179e-09, reducing alpha to 2.271536e-02.
+	Linear fluid (dielectric constant: 7.2) occupying 0.992437 of unit cell:	Completed after 0 iterations at t[s]:    278.38
+ElecMinimize: 	Step increased Etot by 3.260780e-09, reducing alpha to 2.271536e-03.
+	Linear fluid (dielectric constant: 7.2) occupying 0.992437 of unit cell:	Completed after 0 iterations at t[s]:    278.97
+ElecMinimize: 	Step increased Etot by 3.294474e-09, reducing alpha to 2.271536e-04.
+ElecMinimize: 	Step failed to reduce Etot after 3 attempts. Quitting step.
+ElecMinimize: 	Undoing step.
+	Linear fluid (dielectric constant: 7.2) occupying 0.992437 of unit cell:	Completed after 0 iterations at t[s]:    279.56
+ElecMinimize: 	Step failed: resetting search direction.
+ElecMinimize: Iter:  10  Etot: -115.973046032344058  |grad|_K:  7.827e-08  alpha:  2.272e-04
+	Linear fluid (dielectric constant: 7.2) occupying 0.992437 of unit cell:	Completed after 0 iterations at t[s]:    280.19
+	Linear fluid (dielectric constant: 7.2) occupying 0.992437 of unit cell:	Completed after 0 iterations at t[s]:    280.77
+ElecMinimize: Iter:  11  Etot: -115.973046033580573  |grad|_K:  4.352e-08  alpha:  3.586e-01  linmin:  3.590e-02  t[s]:    281.00
+	Linear fluid (dielectric constant: 7.2) occupying 0.992437 of unit cell:	Completed after 0 iterations at t[s]:    281.36
+ElecMinimize: 	Predicted alpha/alphaT>3.000000, increasing alphaT to 1.075824e+00.
+	Linear fluid (dielectric constant: 7.2) occupying 0.992437 of unit cell:	Completed after 0 iterations at t[s]:    281.91
+	Linear fluid (dielectric constant: 7.2) occupying 0.992437 of unit cell:	Completed after 0 iterations at t[s]:    282.45
+ElecMinimize: Iter:  12  Etot: -115.973046037067235  |grad|_K:  4.664e-08  alpha:  1.146e+00  linmin:  1.703e-05  t[s]:    282.68
+ElecMinimize: Converged (|Delta Etot|<1.000000e-08 for 2 iters).
+Setting wave functions to eigenvectors of Hamiltonian
+
+-------- Electronic minimization -----------
+	Linear fluid (dielectric constant: 7.2) occupying 0.992437 of unit cell:	Completed after 4 iterations at t[s]:    283.27
+ElecMinimize: Iter:   0  Etot: -115.973041202358417  |grad|_K:  2.122e-06  alpha:  1.000e+00
+	Linear fluid (dielectric constant: 7.2) occupying 0.992436 of unit cell:	Completed after 2 iterations at t[s]:    284.08
+	Linear fluid (dielectric constant: 7.2) occupying 0.992437 of unit cell:	Completed after 0 iterations at t[s]:    284.75
+ElecMinimize: Iter:   1  Etot: -115.973047174264224  |grad|_K:  9.790e-07  alpha:  8.054e-01  linmin:  7.638e-03  t[s]:    285.00
+	Linear fluid (dielectric constant: 7.2) occupying 0.992437 of unit cell:	Completed after 1 iterations at t[s]:    285.43
+	Linear fluid (dielectric constant: 7.2) occupying 0.992437 of unit cell:	Completed after 0 iterations at t[s]:    286.03
+ElecMinimize: Iter:   2  Etot: -115.973048265099123  |grad|_K:  6.134e-07  alpha:  6.913e-01  linmin:  2.531e-02  t[s]:    286.27
+	Linear fluid (dielectric constant: 7.2) occupying 0.992437 of unit cell:	Completed after 1 iterations at t[s]:    286.70
+	Linear fluid (dielectric constant: 7.2) occupying 0.992437 of unit cell:	Completed after 0 iterations at t[s]:    287.30
+ElecMinimize: Iter:   3  Etot: -115.973048667245365  |grad|_K:  5.409e-07  alpha:  6.684e-01  linmin: -1.305e-02  t[s]:    287.55
+	Linear fluid (dielectric constant: 7.2) occupying 0.992437 of unit cell:	Completed after 0 iterations at t[s]:    287.94
+	Linear fluid (dielectric constant: 7.2) occupying 0.992437 of unit cell:	Completed after 0 iterations at t[s]:    288.52
+ElecMinimize: Iter:   4  Etot: -115.973048950618093  |grad|_K:  3.529e-07  alpha:  5.714e-01  linmin:  2.088e-02  t[s]:    288.75
+	Linear fluid (dielectric constant: 7.2) occupying 0.992437 of unit cell:	Completed after 0 iterations at t[s]:    289.15
+	Linear fluid (dielectric constant: 7.2) occupying 0.992437 of unit cell:	Completed after 0 iterations at t[s]:    289.76
+ElecMinimize: Iter:   5  Etot: -115.973049093429353  |grad|_K:  2.793e-07  alpha:  7.416e-01  linmin: -3.005e-02  t[s]:    289.99
+	Linear fluid (dielectric constant: 7.2) occupying 0.992438 of unit cell:	Completed after 0 iterations at t[s]:    290.36
+	Linear fluid (dielectric constant: 7.2) occupying 0.992438 of unit cell:	Completed after 0 iterations at t[s]:    290.91
+ElecMinimize: Iter:   6  Etot: -115.973049189150487  |grad|_K:  2.062e-07  alpha:  7.055e-01  linmin: -4.402e-07  t[s]:    291.14
+	Linear fluid (dielectric constant: 7.2) occupying 0.992438 of unit cell:	Completed after 1 iterations at t[s]:    291.58
+	Linear fluid (dielectric constant: 7.2) occupying 0.992438 of unit cell:	Completed after 0 iterations at t[s]:    292.18
+ElecMinimize: Iter:   7  Etot: -115.973049212376679  |grad|_K:  1.728e-07  alpha:  4.450e-01  linmin: -3.598e-02  t[s]:    292.41
+	Linear fluid (dielectric constant: 7.2) occupying 0.992438 of unit cell:	Completed after 0 iterations at t[s]:    292.77
+	Linear fluid (dielectric constant: 7.2) occupying 0.992438 of unit cell:	Completed after 0 iterations at t[s]:    293.31
+ElecMinimize: Iter:   8  Etot: -115.973049239783393  |grad|_K:  1.501e-07  alpha:  5.159e-01  linmin: -1.466e-06  t[s]:    293.55
+	Linear fluid (dielectric constant: 7.2) occupying 0.992438 of unit cell:	Completed after 0 iterations at t[s]:    293.95
+	Linear fluid (dielectric constant: 7.2) occupying 0.992438 of unit cell:	Completed after 0 iterations at t[s]:    294.52
+ElecMinimize: 	Step increased Etot by 2.802452e-09, reducing alpha to 1.667489e-02.
+	Linear fluid (dielectric constant: 7.2) occupying 0.992438 of unit cell:	Completed after 0 iterations at t[s]:    295.15
+ElecMinimize: 	Step increased Etot by 9.387975e-09, reducing alpha to 1.667489e-03.
+	Linear fluid (dielectric constant: 7.2) occupying 0.992438 of unit cell:	Completed after 0 iterations at t[s]:    295.75
+ElecMinimize: 	Step increased Etot by 9.648716e-09, reducing alpha to 1.667489e-04.
+ElecMinimize: 	Step failed to reduce Etot after 3 attempts. Quitting step.
+ElecMinimize: 	Undoing step.
+	Linear fluid (dielectric constant: 7.2) occupying 0.992438 of unit cell:	Completed after 0 iterations at t[s]:    296.34
+ElecMinimize: 	Step failed: resetting search direction.
+ElecMinimize: Iter:   9  Etot: -115.973049230131664  |grad|_K:  1.866e-07  alpha:  1.667e-04
+	Linear fluid (dielectric constant: 7.2) occupying 0.992438 of unit cell:	Completed after 0 iterations at t[s]:    296.97
+	Linear fluid (dielectric constant: 7.2) occupying 0.992438 of unit cell:	Completed after 0 iterations at t[s]:    297.54
+ElecMinimize: Iter:  10  Etot: -115.973049244419002  |grad|_K:  1.195e-07  alpha:  2.537e-01  linmin:  1.958e-01  t[s]:    297.78
+	Linear fluid (dielectric constant: 7.2) occupying 0.992438 of unit cell:	Completed after 0 iterations at t[s]:    298.14
+	Linear fluid (dielectric constant: 7.2) occupying 0.992438 of unit cell:	Completed after 0 iterations at t[s]:    298.72
+ElecMinimize: Iter:  11  Etot: -115.973049247128046  |grad|_K:  1.105e-07  alpha:  5.651e-01  linmin:  1.345e-01  t[s]:    298.95
+	Linear fluid (dielectric constant: 7.2) occupying 0.992438 of unit cell:	Completed after 0 iterations at t[s]:    299.33
+	Linear fluid (dielectric constant: 7.2) occupying 0.992438 of unit cell:	Completed after 0 iterations at t[s]:    299.87
+ElecMinimize: Iter:  12  Etot: -115.973049255686007  |grad|_K:  7.440e-08  alpha:  5.400e-01  linmin:  5.430e-06  t[s]:    300.11
+ElecMinimize: Converged (|Delta Etot|<1.000000e-08 for 2 iters).
+Setting wave functions to eigenvectors of Hamiltonian
+
+# Ionic positions in cartesian coordinates:
+ion S   9.379188609283096  12.409455922927917  27.351401522296470 1
+ion S   5.935169592407295  10.095479582714283  27.380819142021334 1
+ion Na   9.959602269299493   7.792541063544737  25.390764245077794 1
+ion Na   5.268358457190118  14.779043027953053  25.639692737924396 1
+
+# Forces in Cartesian coordinates:
+force S  -0.000530259541400  -0.000404904955561   0.000238635689020 1
+force S   0.000476283858514   0.000324758694091  -0.000032101359663 1
+force Na   0.000173866271849   0.000031716796763   0.000144167880524 1
+force Na   0.000016808418662   0.000317841021412   0.000397489392860 1
+
+# Energy components:
+   A_diel =       -0.0672593400195467
+   Eewald =       40.5499204251802823
+       EH =      137.4868862103254230
+     Eloc =     -159.1631599472501364
+      Enl =     -140.2122951547576690
+      Exc =      -22.7974937035373166
+ Exc_core =        3.5354585871266488
+       KE =       24.6948936672463226
+-------------------------------------
+     Etot =     -115.9730492556860071
+
+IonicMinimize: Iter:   5  Etot: -115.973049255686007  |grad|_K:  2.864e-04  alpha:  1.680e+01  linmin: -1.304e-01  t[s]:    300.39
+
+#--- Lowdin population analysis ---
+# oxidation-state S -0.766 -0.766
+# oxidation-state Na +0.870 +0.869
+
+
+-------- Electronic minimization -----------
+	Linear fluid (dielectric constant: 7.2) occupying 0.992438 of unit cell:	Completed after 6 iterations at t[s]:    301.04
+ElecMinimize: Iter:   0  Etot: -115.951167560894135  |grad|_K:  1.827e-04  alpha:  1.000e+00
+	Linear fluid (dielectric constant: 7.2) occupying 0.992449 of unit cell:	Completed after 7 iterations at t[s]:    302.04
+	Linear fluid (dielectric constant: 7.2) occupying 0.992442 of unit cell:	Completed after 6 iterations at t[s]:    302.93
+ElecMinimize: Iter:   1  Etot: -115.971045514845656  |grad|_K:  3.967e-05  alpha:  3.633e-01  linmin: -1.791e-03  t[s]:    303.17
+	Linear fluid (dielectric constant: 7.2) occupying 0.992445 of unit cell:	Completed after 4 iterations at t[s]:    303.81
+	Linear fluid (dielectric constant: 7.2) occupying 0.992447 of unit cell:	Completed after 3 iterations at t[s]:    304.61
+ElecMinimize: Iter:   2  Etot: -115.972535195309192  |grad|_K:  2.165e-05  alpha:  5.753e-01  linmin:  6.375e-04  t[s]:    304.84
+	Linear fluid (dielectric constant: 7.2) occupying 0.992447 of unit cell:	Completed after 5 iterations at t[s]:    305.52
+	Linear fluid (dielectric constant: 7.2) occupying 0.992447 of unit cell:	Completed after 3 iterations at t[s]:    306.31
+ElecMinimize: Iter:   3  Etot: -115.972843869787297  |grad|_K:  1.129e-05  alpha:  4.008e-01  linmin: -2.154e-04  t[s]:    306.55
+	Linear fluid (dielectric constant: 7.2) occupying 0.992446 of unit cell:	Completed after 3 iterations at t[s]:    307.15
+	Linear fluid (dielectric constant: 7.2) occupying 0.992446 of unit cell:	Completed after 2 iterations at t[s]:    307.90
+ElecMinimize: Iter:   4  Etot: -115.972975636709577  |grad|_K:  6.490e-06  alpha:  6.289e-01  linmin:  1.601e-03  t[s]:    308.15
+	Linear fluid (dielectric constant: 7.2) occupying 0.992445 of unit cell:	Completed after 2 iterations at t[s]:    308.71
+	Linear fluid (dielectric constant: 7.2) occupying 0.992445 of unit cell:	Completed after 1 iterations at t[s]:    309.43
+ElecMinimize: Iter:   5  Etot: -115.973012221186053  |grad|_K:  4.516e-06  alpha:  5.295e-01  linmin: -9.289e-04  t[s]:    309.67
+	Linear fluid (dielectric constant: 7.2) occupying 0.992445 of unit cell:	Completed after 2 iterations at t[s]:    310.24
+	Linear fluid (dielectric constant: 7.2) occupying 0.992445 of unit cell:	Completed after 1 iterations at t[s]:    310.95
+ElecMinimize: Iter:   6  Etot: -115.973036105272243  |grad|_K:  2.578e-06  alpha:  7.108e-01  linmin: -7.569e-04  t[s]:    311.20
+	Linear fluid (dielectric constant: 7.2) occupying 0.992446 of unit cell:	Completed after 2 iterations at t[s]:    311.76
+	Linear fluid (dielectric constant: 7.2) occupying 0.992446 of unit cell:	Completed after 0 iterations at t[s]:    312.43
+ElecMinimize: Iter:   7  Etot: -115.973046410350747  |grad|_K:  1.783e-06  alpha:  9.404e-01  linmin: -4.139e-03  t[s]:    312.67
+	Linear fluid (dielectric constant: 7.2) occupying 0.992446 of unit cell:	Completed after 2 iterations at t[s]:    313.15
+	Linear fluid (dielectric constant: 7.2) occupying 0.992446 of unit cell:	Completed after 0 iterations at t[s]:    313.81
+ElecMinimize: Iter:   8  Etot: -115.973049823231520  |grad|_K:  1.164e-06  alpha:  6.514e-01  linmin:  9.280e-05  t[s]:    314.05
+	Linear fluid (dielectric constant: 7.2) occupying 0.992445 of unit cell:	Completed after 0 iterations at t[s]:    314.46
+	Linear fluid (dielectric constant: 7.2) occupying 0.992445 of unit cell:	Completed after 0 iterations at t[s]:    315.07
+ElecMinimize: Iter:   9  Etot: -115.973051689133740  |grad|_K:  8.520e-07  alpha:  8.388e-01  linmin: -2.997e-03  t[s]:    315.31
+	Linear fluid (dielectric constant: 7.2) occupying 0.992445 of unit cell:	Completed after 1 iterations at t[s]:    315.75
+	Linear fluid (dielectric constant: 7.2) occupying 0.992445 of unit cell:	Completed after 0 iterations at t[s]:    316.35
+ElecMinimize: Iter:  10  Etot: -115.973052807618927  |grad|_K:  6.268e-07  alpha:  9.292e-01  linmin: -1.379e-02  t[s]:    316.59
+	Linear fluid (dielectric constant: 7.2) occupying 0.992445 of unit cell:	Completed after 0 iterations at t[s]:    316.99
+	Linear fluid (dielectric constant: 7.2) occupying 0.992445 of unit cell:	Completed after 0 iterations at t[s]:    317.56
+ElecMinimize: Iter:  11  Etot: -115.973053405668196  |grad|_K:  5.417e-07  alpha:  9.068e-01  linmin: -2.766e-03  t[s]:    317.80
+	Linear fluid (dielectric constant: 7.2) occupying 0.992445 of unit cell:	Completed after 1 iterations at t[s]:    318.23
+	Linear fluid (dielectric constant: 7.2) occupying 0.992445 of unit cell:	Completed after 0 iterations at t[s]:    318.83
+ElecMinimize: Iter:  12  Etot: -115.973053784506504  |grad|_K:  3.927e-07  alpha:  7.816e-01  linmin:  1.751e-03  t[s]:    319.08
+	Linear fluid (dielectric constant: 7.2) occupying 0.992445 of unit cell:	Completed after 0 iterations at t[s]:    319.48
+	Linear fluid (dielectric constant: 7.2) occupying 0.992445 of unit cell:	Completed after 0 iterations at t[s]:    320.05
+ElecMinimize: Iter:  13  Etot: -115.973053972707717  |grad|_K:  3.134e-07  alpha:  7.450e-01  linmin: -1.966e-03  t[s]:    320.28
+	Linear fluid (dielectric constant: 7.2) occupying 0.992445 of unit cell:	Completed after 0 iterations at t[s]:    320.68
+	Linear fluid (dielectric constant: 7.2) occupying 0.992445 of unit cell:	Completed after 0 iterations at t[s]:    321.25
+ElecMinimize: Iter:  14  Etot: -115.973054076636259  |grad|_K:  2.044e-07  alpha:  6.449e-01  linmin: -6.586e-03  t[s]:    321.49
+	Linear fluid (dielectric constant: 7.2) occupying 0.992445 of unit cell:	Completed after 0 iterations at t[s]:    321.84
+	Linear fluid (dielectric constant: 7.2) occupying 0.992445 of unit cell:	Completed after 0 iterations at t[s]:    322.43
+ElecMinimize: Iter:  15  Etot: -115.973054139796560  |grad|_K:  1.843e-07  alpha:  1.029e+00  linmin:  2.563e-02  t[s]:    322.67
+	Linear fluid (dielectric constant: 7.2) occupying 0.992445 of unit cell:	Completed after 0 iterations at t[s]:    323.04
+	Linear fluid (dielectric constant: 7.2) occupying 0.992445 of unit cell:	Completed after 0 iterations at t[s]:    323.59
+ElecMinimize: Iter:  16  Etot: -115.973054178850433  |grad|_K:  1.461e-07  alpha:  7.358e-01  linmin: -2.710e-07  t[s]:    323.83
+	Linear fluid (dielectric constant: 7.2) occupying 0.992445 of unit cell:	Completed after 0 iterations at t[s]:    324.19
+	Linear fluid (dielectric constant: 7.2) occupying 0.992445 of unit cell:	Completed after 0 iterations at t[s]:    324.77
+ElecMinimize: Iter:  17  Etot: -115.973054198285979  |grad|_K:  1.319e-07  alpha:  8.721e-01  linmin:  5.707e-02  t[s]:    325.01
+	Linear fluid (dielectric constant: 7.2) occupying 0.992445 of unit cell:	Completed after 0 iterations at t[s]:    325.38
+	Linear fluid (dielectric constant: 7.2) occupying 0.992445 of unit cell:	Completed after 0 iterations at t[s]:    325.92
+ElecMinimize: Iter:  18  Etot: -115.973054215187020  |grad|_K:  1.042e-07  alpha:  6.823e-01  linmin:  8.309e-08  t[s]:    326.17
+	Linear fluid (dielectric constant: 7.2) occupying 0.992445 of unit cell:	Completed after 0 iterations at t[s]:    326.56
+	Linear fluid (dielectric constant: 7.2) occupying 0.992445 of unit cell:	Completed after 0 iterations at t[s]:    327.13
+ElecMinimize: Iter:  19  Etot: -115.973054219469759  |grad|_K:  8.390e-08  alpha:  4.037e-01  linmin: -4.741e-02  t[s]:    327.37
+	Linear fluid (dielectric constant: 7.2) occupying 0.992445 of unit cell:	Completed after 0 iterations at t[s]:    327.73
+	Linear fluid (dielectric constant: 7.2) occupying 0.992445 of unit cell:	Completed after 0 iterations at t[s]:    328.28
+ElecMinimize: Iter:  20  Etot: -115.973054226065571  |grad|_K:  6.893e-08  alpha:  5.208e-01  linmin:  3.346e-05  t[s]:    328.52
+ElecMinimize: Converged (|Delta Etot|<1.000000e-08 for 2 iters).
+Setting wave functions to eigenvectors of Hamiltonian
+
+-------- Electronic minimization -----------
+	Linear fluid (dielectric constant: 7.2) occupying 0.992443 of unit cell:	Completed after 4 iterations at t[s]:    329.10
+ElecMinimize: Iter:   0  Etot: -115.973043575838389  |grad|_K:  2.684e-06  alpha:  1.000e+00
+	Linear fluid (dielectric constant: 7.2) occupying 0.992443 of unit cell:	Completed after 2 iterations at t[s]:    329.90
+	Linear fluid (dielectric constant: 7.2) occupying 0.992443 of unit cell:	Completed after 1 iterations at t[s]:    330.61
+ElecMinimize: Iter:   1  Etot: -115.973052828680466  |grad|_K:  1.278e-06  alpha:  7.810e-01  linmin:  1.333e-03  t[s]:    330.84
+	Linear fluid (dielectric constant: 7.2) occupying 0.992443 of unit cell:	Completed after 2 iterations at t[s]:    331.35
+	Linear fluid (dielectric constant: 7.2) occupying 0.992443 of unit cell:	Completed after 0 iterations at t[s]:    331.98
+ElecMinimize: Iter:   2  Etot: -115.973054576884593  |grad|_K:  8.179e-07  alpha:  6.466e-01  linmin:  2.911e-02  t[s]:    332.22
+	Linear fluid (dielectric constant: 7.2) occupying 0.992443 of unit cell:	Completed after 1 iterations at t[s]:    332.65
+	Linear fluid (dielectric constant: 7.2) occupying 0.992443 of unit cell:	Completed after 0 iterations at t[s]:    333.25
+ElecMinimize: Iter:   3  Etot: -115.973055161911645  |grad|_K:  7.412e-07  alpha:  5.531e-01  linmin:  5.053e-07  t[s]:    333.48
+	Linear fluid (dielectric constant: 7.2) occupying 0.992442 of unit cell:	Completed after 1 iterations at t[s]:    333.92
+	Linear fluid (dielectric constant: 7.2) occupying 0.992442 of unit cell:	Completed after 0 iterations at t[s]:    334.52
+ElecMinimize: Iter:   4  Etot: -115.973055673721404  |grad|_K:  4.612e-07  alpha:  5.654e-01  linmin: -2.463e-02  t[s]:    334.76
+	Linear fluid (dielectric constant: 7.2) occupying 0.992442 of unit cell:	Completed after 0 iterations at t[s]:    335.12
+	Linear fluid (dielectric constant: 7.2) occupying 0.992442 of unit cell:	Completed after 0 iterations at t[s]:    335.70
+ElecMinimize: Iter:   5  Etot: -115.973055921252083  |grad|_K:  4.527e-07  alpha:  7.596e-01  linmin:  4.267e-02  t[s]:    335.94
+	Linear fluid (dielectric constant: 7.2) occupying 0.992442 of unit cell:	Completed after 0 iterations at t[s]:    336.35
+	Linear fluid (dielectric constant: 7.2) occupying 0.992442 of unit cell:	Completed after 0 iterations at t[s]:    336.92
+ElecMinimize: Iter:   6  Etot: -115.973056115724702  |grad|_K:  2.552e-07  alpha:  6.477e-01  linmin: -7.365e-04  t[s]:    337.16
+	Linear fluid (dielectric constant: 7.2) occupying 0.992442 of unit cell:	Completed after 0 iterations at t[s]:    337.55
+	Linear fluid (dielectric constant: 7.2) occupying 0.992442 of unit cell:	Completed after 0 iterations at t[s]:    338.13
+ElecMinimize: Iter:   7  Etot: -115.973056176724569  |grad|_K:  1.885e-07  alpha:  5.785e-01  linmin: -3.376e-02  t[s]:    338.37
+	Linear fluid (dielectric constant: 7.2) occupying 0.992442 of unit cell:	Completed after 0 iterations at t[s]:    338.72
+	Linear fluid (dielectric constant: 7.2) occupying 0.992442 of unit cell:	Completed after 0 iterations at t[s]:    339.27
+ElecMinimize: Iter:   8  Etot: -115.973056222094669  |grad|_K:  1.465e-07  alpha:  7.342e-01  linmin:  1.744e-06  t[s]:    339.50
+	Linear fluid (dielectric constant: 7.2) occupying 0.992442 of unit cell:	Completed after 0 iterations at t[s]:    339.90
+	Linear fluid (dielectric constant: 7.2) occupying 0.992442 of unit cell:	Completed after 0 iterations at t[s]:    340.47
+ElecMinimize: Iter:   9  Etot: -115.973056230933054  |grad|_K:  1.216e-07  alpha:  3.970e-01  linmin: -2.538e-02  t[s]:    340.71
+	Linear fluid (dielectric constant: 7.2) occupying 0.992442 of unit cell:	Completed after 0 iterations at t[s]:    341.07
+	Linear fluid (dielectric constant: 7.2) occupying 0.992442 of unit cell:	Completed after 0 iterations at t[s]:    341.62
+ElecMinimize: Iter:  10  Etot: -115.973056243898796  |grad|_K:  1.178e-07  alpha:  5.052e-01  linmin: -1.177e-05  t[s]:    341.86
+	Linear fluid (dielectric constant: 7.2) occupying 0.992442 of unit cell:	Completed after 0 iterations at t[s]:    342.26
+	Linear fluid (dielectric constant: 7.2) occupying 0.992442 of unit cell:	Completed after 0 iterations at t[s]:    342.83
+ElecMinimize: 	Step increased Etot by 1.326853e-09, reducing alpha to 1.917462e-02.
+	Linear fluid (dielectric constant: 7.2) occupying 0.992442 of unit cell:	Completed after 0 iterations at t[s]:    343.42
+ElecMinimize: 	Step increased Etot by 1.427608e-09, reducing alpha to 1.917462e-03.
+	Linear fluid (dielectric constant: 7.2) occupying 0.992442 of unit cell:	Completed after 0 iterations at t[s]:    344.02
+ElecMinimize: 	Step increased Etot by 1.570513e-09, reducing alpha to 1.917462e-04.
+ElecMinimize: 	Step failed to reduce Etot after 3 attempts. Quitting step.
+ElecMinimize: 	Undoing step.
+	Linear fluid (dielectric constant: 7.2) occupying 0.992442 of unit cell:	Completed after 0 iterations at t[s]:    344.61
+ElecMinimize: 	Step failed: resetting search direction.
+ElecMinimize: Iter:  11  Etot: -115.973056242326479  |grad|_K:  1.206e-07  alpha:  1.917e-04
+	Linear fluid (dielectric constant: 7.2) occupying 0.992442 of unit cell:	Completed after 0 iterations at t[s]:    345.24
+	Linear fluid (dielectric constant: 7.2) occupying 0.992442 of unit cell:	Completed after 0 iterations at t[s]:    345.81
+ElecMinimize: Iter:  12  Etot: -115.973056243527537  |grad|_K:  5.778e-08  alpha:  2.523e-01  linmin: -2.196e-01  t[s]:    346.05
+	Linear fluid (dielectric constant: 7.2) occupying 0.992442 of unit cell:	Completed after 0 iterations at t[s]:    346.41
+	Linear fluid (dielectric constant: 7.2) occupying 0.992442 of unit cell:	Completed after 0 iterations at t[s]:    346.96
+ElecMinimize: Iter:  13  Etot: -115.973056247463376  |grad|_K:  6.536e-08  alpha:  6.347e-01  linmin: -2.258e-05  t[s]:    347.21
+ElecMinimize: Converged (|Delta Etot|<1.000000e-08 for 2 iters).
+Setting wave functions to eigenvectors of Hamiltonian
+
+# Ionic positions in cartesian coordinates:
+ion S   9.374636085604585  12.402465398964502  27.354853059468983 1
+ion S   5.932033504363808  10.092781305655228  27.358220775130540 1
+ion Na   9.962835216558751   7.795705167389995  25.391859474730410 1
+ion Na   5.272814121652855  14.785567725130269  25.657744337990067 1
+
+# Forces in Cartesian coordinates:
+force S  -0.000132236315023  -0.000102747178838   0.000256200146516 1
+force S   0.000139182686107   0.000111293207551   0.000431953883807 1
+force Na   0.000322746173218  -0.000199736141095   0.000035130889802 1
+force Na  -0.000124211258150   0.000498286460055   0.000207789370943 1
+
+# Energy components:
+   A_diel =       -0.0670546674153364
+   Eewald =       40.6110494027621982
+       EH =      137.5506700138972462
+     Eloc =     -159.2882963521950899
+      Enl =     -140.2137120417453389
+      Exc =      -22.7987583958348488
+ Exc_core =        3.5354584731328837
+       KE =       24.6975873199349039
+-------------------------------------
+     Etot =     -115.9730562474633757
+
+IonicMinimize: Iter:   6  Etot: -115.973056247463376  |grad|_K:  2.068e-04  alpha:  1.074e+01  linmin:  4.999e-02  t[s]:    347.48
+
+#--- Lowdin population analysis ---
+# oxidation-state S -0.766 -0.766
+# oxidation-state Na +0.870 +0.869
+
+
+-------- Electronic minimization -----------
+	Linear fluid (dielectric constant: 7.2) occupying 0.992444 of unit cell:	Completed after 4 iterations at t[s]:    348.06
+ElecMinimize: Iter:   0  Etot: -115.973047651517561  |grad|_K:  2.648e-06  alpha:  1.000e+00
+	Linear fluid (dielectric constant: 7.2) occupying 0.992444 of unit cell:	Completed after 2 iterations at t[s]:    348.88
+	Linear fluid (dielectric constant: 7.2) occupying 0.992444 of unit cell:	Completed after 1 iterations at t[s]:    349.58
+ElecMinimize: Iter:   1  Etot: -115.973056259699632  |grad|_K:  1.261e-06  alpha:  7.459e-01  linmin:  1.948e-03  t[s]:    349.83
+	Linear fluid (dielectric constant: 7.2) occupying 0.992443 of unit cell:	Completed after 2 iterations at t[s]:    350.32
+	Linear fluid (dielectric constant: 7.2) occupying 0.992443 of unit cell:	Completed after 0 iterations at t[s]:    350.95
+ElecMinimize: Iter:   2  Etot: -115.973058024290793  |grad|_K:  6.722e-07  alpha:  6.739e-01  linmin:  2.377e-02  t[s]:    351.19
+	Linear fluid (dielectric constant: 7.2) occupying 0.992443 of unit cell:	Completed after 0 iterations at t[s]:    351.58
+	Linear fluid (dielectric constant: 7.2) occupying 0.992443 of unit cell:	Completed after 0 iterations at t[s]:    352.16
+ElecMinimize: Iter:   3  Etot: -115.973058631506078  |grad|_K:  5.536e-07  alpha:  8.252e-01  linmin: -2.291e-02  t[s]:    352.39
+	Linear fluid (dielectric constant: 7.2) occupying 0.992443 of unit cell:	Completed after 1 iterations at t[s]:    352.82
+	Linear fluid (dielectric constant: 7.2) occupying 0.992443 of unit cell:	Completed after 0 iterations at t[s]:    353.42
+ElecMinimize: Iter:   4  Etot: -115.973058954394205  |grad|_K:  3.714e-07  alpha:  6.115e-01  linmin:  2.188e-02  t[s]:    353.67
+	Linear fluid (dielectric constant: 7.2) occupying 0.992443 of unit cell:	Completed after 0 iterations at t[s]:    354.06
+	Linear fluid (dielectric constant: 7.2) occupying 0.992443 of unit cell:	Completed after 0 iterations at t[s]:    354.64
+ElecMinimize: Iter:   5  Etot: -115.973059132586741  |grad|_K:  2.683e-07  alpha:  7.844e-01  linmin: -6.263e-02  t[s]:    354.87
+	Linear fluid (dielectric constant: 7.2) occupying 0.992442 of unit cell:	Completed after 0 iterations at t[s]:    355.27
+	Linear fluid (dielectric constant: 7.2) occupying 0.992442 of unit cell:	Completed after 0 iterations at t[s]:    355.84
+ElecMinimize: Iter:   6  Etot: -115.973059220208484  |grad|_K:  1.916e-07  alpha:  6.658e-01  linmin:  1.514e-02  t[s]:    356.08
+	Linear fluid (dielectric constant: 7.2) occupying 0.992442 of unit cell:	Completed after 0 iterations at t[s]:    356.47
+	Linear fluid (dielectric constant: 7.2) occupying 0.992442 of unit cell:	Completed after 0 iterations at t[s]:    357.05
+ElecMinimize: Iter:   7  Etot: -115.973059261880650  |grad|_K:  1.268e-07  alpha:  7.016e-01  linmin: -6.492e-02  t[s]:    357.29
+	Linear fluid (dielectric constant: 7.2) occupying 0.992442 of unit cell:	Completed after 0 iterations at t[s]:    357.65
+	Linear fluid (dielectric constant: 7.2) occupying 0.992442 of unit cell:	Completed after 0 iterations at t[s]:    358.19
+ElecMinimize: Iter:   8  Etot: -115.973059284625407  |grad|_K:  1.006e-07  alpha:  7.754e-01  linmin: -4.094e-06  t[s]:    358.42
+	Linear fluid (dielectric constant: 7.2) occupying 0.992442 of unit cell:	Completed after 0 iterations at t[s]:    358.78
+	Linear fluid (dielectric constant: 7.2) occupying 0.992442 of unit cell:	Completed after 0 iterations at t[s]:    359.34
+ElecMinimize: Iter:   9  Etot: -115.973059298121711  |grad|_K:  7.454e-08  alpha:  8.107e-01  linmin: -7.889e-07  t[s]:    359.58
+	Linear fluid (dielectric constant: 7.2) occupying 0.992442 of unit cell:	Completed after 0 iterations at t[s]:    359.97
+	Linear fluid (dielectric constant: 7.2) occupying 0.992442 of unit cell:	Completed after 0 iterations at t[s]:    360.54
+ElecMinimize: 	Step increased Etot by 6.850627e-09, reducing alpha to 2.642322e-02.
+	Linear fluid (dielectric constant: 7.2) occupying 0.992442 of unit cell:	Completed after 0 iterations at t[s]:    361.14
+ElecMinimize: 	Step increased Etot by 8.449021e-09, reducing alpha to 2.642322e-03.
+	Linear fluid (dielectric constant: 7.2) occupying 0.992442 of unit cell:	Completed after 0 iterations at t[s]:    361.73
+ElecMinimize: 	Step increased Etot by 8.677603e-09, reducing alpha to 2.642322e-04.
+ElecMinimize: 	Step failed to reduce Etot after 3 attempts. Quitting step.
+ElecMinimize: 	Undoing step.
+	Linear fluid (dielectric constant: 7.2) occupying 0.992442 of unit cell:	Completed after 0 iterations at t[s]:    362.32
+ElecMinimize: 	Step failed: resetting search direction.
+ElecMinimize: Iter:  10  Etot: -115.973059289441451  |grad|_K:  9.294e-08  alpha:  2.642e-04
+	Linear fluid (dielectric constant: 7.2) occupying 0.992442 of unit cell:	Completed after 0 iterations at t[s]:    362.96
+	Linear fluid (dielectric constant: 7.2) occupying 0.992442 of unit cell:	Completed after 0 iterations at t[s]:    363.53
+ElecMinimize: Iter:  11  Etot: -115.973059292599032  |grad|_K:  5.467e-08  alpha:  4.248e-01  linmin: -7.262e-02  t[s]:    363.77
+	Linear fluid (dielectric constant: 7.2) occupying 0.992442 of unit cell:	Completed after 0 iterations at t[s]:    364.13
+	Linear fluid (dielectric constant: 7.2) occupying 0.992442 of unit cell:	Completed after 0 iterations at t[s]:    364.67
+ElecMinimize: Iter:  12  Etot: -115.973059297322237  |grad|_K:  5.205e-08  alpha:  9.126e-01  linmin: -7.220e-06  t[s]:    364.91
+ElecMinimize: Converged (|Delta Etot|<1.000000e-08 for 2 iters).
+Setting wave functions to eigenvectors of Hamiltonian
+
+-------- Electronic minimization -----------
+	Linear fluid (dielectric constant: 7.2) occupying 0.992442 of unit cell:	Completed after 3 iterations at t[s]:    365.45
+ElecMinimize: Iter:   0  Etot: -115.973057392801778  |grad|_K:  9.966e-07  alpha:  1.000e+00
+	Linear fluid (dielectric constant: 7.2) occupying 0.992443 of unit cell:	Completed after 1 iterations at t[s]:    366.22
+	Linear fluid (dielectric constant: 7.2) occupying 0.992443 of unit cell:	Completed after 0 iterations at t[s]:    366.86
+ElecMinimize: Iter:   1  Etot: -115.973058621843663  |grad|_K:  4.772e-07  alpha:  7.511e-01  linmin:  2.206e-02  t[s]:    367.09
+	Linear fluid (dielectric constant: 7.2) occupying 0.992442 of unit cell:	Completed after 0 iterations at t[s]:    367.50
+	Linear fluid (dielectric constant: 7.2) occupying 0.992442 of unit cell:	Completed after 0 iterations at t[s]:    368.07
+ElecMinimize: Iter:   2  Etot: -115.973058869728860  |grad|_K:  2.618e-07  alpha:  6.725e-01  linmin:  6.112e-03  t[s]:    368.32
+	Linear fluid (dielectric constant: 7.2) occupying 0.992442 of unit cell:	Completed after 0 iterations at t[s]:    368.71
+	Linear fluid (dielectric constant: 7.2) occupying 0.992442 of unit cell:	Completed after 0 iterations at t[s]:    369.29
+ElecMinimize: Iter:   3  Etot: -115.973058946955319  |grad|_K:  2.007e-07  alpha:  6.864e-01  linmin: -5.850e-02  t[s]:    369.52
+	Linear fluid (dielectric constant: 7.2) occupying 0.992442 of unit cell:	Completed after 0 iterations at t[s]:    369.88
+	Linear fluid (dielectric constant: 7.2) occupying 0.992442 of unit cell:	Completed after 0 iterations at t[s]:    370.42
+ElecMinimize: Iter:   4  Etot: -115.973059004754418  |grad|_K:  1.556e-07  alpha:  8.032e-01  linmin: -3.055e-08  t[s]:    370.66
+	Linear fluid (dielectric constant: 7.2) occupying 0.992442 of unit cell:	Completed after 0 iterations at t[s]:    371.05
+	Linear fluid (dielectric constant: 7.2) occupying 0.992442 of unit cell:	Completed after 0 iterations at t[s]:    371.62
+ElecMinimize: Iter:   5  Etot: -115.973059019596377  |grad|_K:  1.301e-07  alpha:  5.399e-01  linmin: -9.498e-02  t[s]:    371.86
+	Linear fluid (dielectric constant: 7.2) occupying 0.992442 of unit cell:	Completed after 0 iterations at t[s]:    372.25
+	Linear fluid (dielectric constant: 7.2) occupying 0.992442 of unit cell:	Completed after 0 iterations at t[s]:    372.83
+ElecMinimize: Iter:   6  Etot: -115.973059028825432  |grad|_K:  8.714e-08  alpha:  3.924e-01  linmin: -1.890e-01  t[s]:    373.06
+	Linear fluid (dielectric constant: 7.2) occupying 0.992442 of unit cell:	Completed after 0 iterations at t[s]:    373.42
+	Linear fluid (dielectric constant: 7.2) occupying 0.992442 of unit cell:	Completed after 0 iterations at t[s]:    373.96
+ElecMinimize: Iter:   7  Etot: -115.973059046268972  |grad|_K:  1.053e-07  alpha:  1.049e+00  linmin: -1.157e-04  t[s]:    374.20
+	Linear fluid (dielectric constant: 7.2) occupying 0.992442 of unit cell:	Completed after 1 iterations at t[s]:    374.63
+	Linear fluid (dielectric constant: 7.2) occupying 0.992442 of unit cell:	Completed after 0 iterations at t[s]:    375.26
+ElecMinimize: 	Step increased Etot by 5.316835e-09, reducing alpha to 2.126760e-02.
+	Linear fluid (dielectric constant: 7.2) occupying 0.992442 of unit cell:	Completed after 0 iterations at t[s]:    375.87
+ElecMinimize: Iter:   8  Etot: -115.973059046285584  |grad|_K:  1.424e-07  alpha:  2.127e-02  linmin:  1.328e-01  t[s]:    376.10
+	Linear fluid (dielectric constant: 7.2) occupying 0.992442 of unit cell:	Completed after 0 iterations at t[s]:    376.46
+ElecMinimize: 	Predicted alpha/alphaT>3.000000, increasing alphaT to 6.380279e-02.
+	Linear fluid (dielectric constant: 7.2) occupying 0.992442 of unit cell:	Completed after 0 iterations at t[s]:    377.01
+	Linear fluid (dielectric constant: 7.2) occupying 0.992442 of unit cell:	Completed after 0 iterations at t[s]:    377.55
+ElecMinimize: Iter:   9  Etot: -115.973059047007155  |grad|_K:  1.238e-07  alpha:  7.253e-02  linmin:  4.691e-06  t[s]:    377.78
+ElecMinimize: Converged (|Delta Etot|<1.000000e-08 for 2 iters).
+Setting wave functions to eigenvectors of Hamiltonian
+
+# Ionic positions in cartesian coordinates:
+ion S   9.368645728261818  12.394782940053721  27.357681054646505 1
+ion S   5.931078904168459  10.091352582556832  27.344924124254202 1
+ion Na   9.969176146833153   7.793886802111827  25.389721356080887 1
+ion Na   5.273418148916575  14.796497272417612  25.670351112338395 1
+
+# Forces in Cartesian coordinates:
+force S   0.000432957174685   0.000259420764216   0.000276455961674 1
+force S  -0.000529548015958  -0.000317439862002   0.000371284143481 1
+force Na   0.000289992445647  -0.000227626051760  -0.000003653330233 1
+force Na  -0.000124466027706   0.000399046554091   0.000114070756886 1
+
+# Energy components:
+   A_diel =       -0.0671125552897180
+   Eewald =       40.6058345109109595
+       EH =      137.5459475440243864
+     Eloc =     -159.2799870049314279
+      Enl =     -140.2134289603863806
+      Exc =      -22.7996198832644090
+ Exc_core =        3.5354583872841259
+       KE =       24.6998489146452869
+-------------------------------------
+     Etot =     -115.9730590470071547
+
+IonicMinimize: Iter:   7  Etot: -115.973059047007155  |grad|_K:  2.924e-04  alpha:  1.480e+01  linmin: -7.563e-03  t[s]:    378.08
+
+#--- Lowdin population analysis ---
+# oxidation-state S -0.765 -0.765
+# oxidation-state Na +0.870 +0.869
+
+
+-------- Electronic minimization -----------
+	Linear fluid (dielectric constant: 7.2) occupying 0.992441 of unit cell:	Completed after 6 iterations at t[s]:    378.73
+ElecMinimize: Iter:   0  Etot: -115.938927415742455  |grad|_K:  2.347e-04  alpha:  1.000e+00
+	Linear fluid (dielectric constant: 7.2) occupying 0.992453 of unit cell:	Completed after 9 iterations at t[s]:    379.79
+	Linear fluid (dielectric constant: 7.2) occupying 0.992446 of unit cell:	Completed after 7 iterations at t[s]:    380.72
+ElecMinimize: Iter:   1  Etot: -115.970960512208862  |grad|_K:  4.360e-05  alpha:  3.552e-01  linmin: -2.292e-03  t[s]:    380.97
+	Linear fluid (dielectric constant: 7.2) occupying 0.992442 of unit cell:	Completed after 5 iterations at t[s]:    381.64
+	Linear fluid (dielectric constant: 7.2) occupying 0.992439 of unit cell:	Completed after 4 iterations at t[s]:    382.54
+ElecMinimize: Iter:   2  Etot: -115.972547046976288  |grad|_K:  2.269e-05  alpha:  5.071e-01  linmin:  7.867e-04  t[s]:    382.81
+	Linear fluid (dielectric constant: 7.2) occupying 0.992435 of unit cell:	Completed after 5 iterations at t[s]:    383.48
+	Linear fluid (dielectric constant: 7.2) occupying 0.992436 of unit cell:	Completed after 2 iterations at t[s]:    384.28
+ElecMinimize: Iter:   3  Etot: -115.972875186217863  |grad|_K:  1.078e-05  alpha:  3.878e-01  linmin: -3.448e-05  t[s]:    384.51
+	Linear fluid (dielectric constant: 7.2) occupying 0.992435 of unit cell:	Completed after 3 iterations at t[s]:    385.11
+	Linear fluid (dielectric constant: 7.2) occupying 0.992434 of unit cell:	Completed after 3 iterations at t[s]:    385.90
+ElecMinimize: Iter:   4  Etot: -115.972995600524015  |grad|_K:  6.111e-06  alpha:  6.317e-01  linmin:  4.415e-03  t[s]:    386.13
+	Linear fluid (dielectric constant: 7.2) occupying 0.992433 of unit cell:	Completed after 3 iterations at t[s]:    386.73
+	Linear fluid (dielectric constant: 7.2) occupying 0.992433 of unit cell:	Completed after 1 iterations at t[s]:    387.45
+ElecMinimize: Iter:   5  Etot: -115.973025425625622  |grad|_K:  3.838e-06  alpha:  4.882e-01  linmin: -7.923e-05  t[s]:    387.68
+	Linear fluid (dielectric constant: 7.2) occupying 0.992433 of unit cell:	Completed after 2 iterations at t[s]:    388.25
+	Linear fluid (dielectric constant: 7.2) occupying 0.992433 of unit cell:	Completed after 1 iterations at t[s]:    388.96
+ElecMinimize: Iter:   6  Etot: -115.973044330160349  |grad|_K:  2.259e-06  alpha:  7.797e-01  linmin: -9.641e-04  t[s]:    389.20
+	Linear fluid (dielectric constant: 7.2) occupying 0.992433 of unit cell:	Completed after 2 iterations at t[s]:    389.76
+	Linear fluid (dielectric constant: 7.2) occupying 0.992433 of unit cell:	Completed after 0 iterations at t[s]:    390.44
+ElecMinimize: Iter:   7  Etot: -115.973051672291703  |grad|_K:  1.635e-06  alpha:  8.733e-01  linmin: -2.876e-03  t[s]:    390.67
+	Linear fluid (dielectric constant: 7.2) occupying 0.992434 of unit cell:	Completed after 2 iterations at t[s]:    391.20
+	Linear fluid (dielectric constant: 7.2) occupying 0.992434 of unit cell:	Completed after 0 iterations at t[s]:    391.87
+ElecMinimize: Iter:   8  Etot: -115.973054501241990  |grad|_K:  1.031e-06  alpha:  6.420e-01  linmin:  1.063e-03  t[s]:    392.10
+	Linear fluid (dielectric constant: 7.2) occupying 0.992434 of unit cell:	Completed after 1 iterations at t[s]:    392.55
+	Linear fluid (dielectric constant: 7.2) occupying 0.992434 of unit cell:	Completed after 0 iterations at t[s]:    393.15
+ElecMinimize: Iter:   9  Etot: -115.973055919164182  |grad|_K:  7.319e-07  alpha:  8.069e-01  linmin: -1.523e-02  t[s]:    393.38
+	Linear fluid (dielectric constant: 7.2) occupying 0.992433 of unit cell:	Completed after 1 iterations at t[s]:    393.81
+	Linear fluid (dielectric constant: 7.2) occupying 0.992433 of unit cell:	Completed after 0 iterations at t[s]:    394.41
+ElecMinimize: Iter:  10  Etot: -115.973056703586877  |grad|_K:  5.830e-07  alpha:  8.678e-01  linmin: -1.184e-02  t[s]:    394.65
+	Linear fluid (dielectric constant: 7.2) occupying 0.992433 of unit cell:	Completed after 1 iterations at t[s]:    395.08
+	Linear fluid (dielectric constant: 7.2) occupying 0.992433 of unit cell:	Completed after 0 iterations at t[s]:    395.68
+ElecMinimize: Iter:  11  Etot: -115.973057108471835  |grad|_K:  5.208e-07  alpha:  6.963e-01  linmin:  2.622e-02  t[s]:    395.92
+	Linear fluid (dielectric constant: 7.2) occupying 0.992433 of unit cell:	Completed after 0 iterations at t[s]:    396.31
+	Linear fluid (dielectric constant: 7.2) occupying 0.992433 of unit cell:	Completed after 0 iterations at t[s]:    396.88
+ElecMinimize: Iter:  12  Etot: -115.973057370448061  |grad|_K:  3.953e-07  alpha:  6.311e-01  linmin: -8.938e-03  t[s]:    397.12
+	Linear fluid (dielectric constant: 7.2) occupying 0.992433 of unit cell:	Completed after 0 iterations at t[s]:    397.51
+	Linear fluid (dielectric constant: 7.2) occupying 0.992433 of unit cell:	Completed after 0 iterations at t[s]:    398.09
+ElecMinimize: Iter:  13  Etot: -115.973057548688189  |grad|_K:  2.804e-07  alpha:  6.772e-01  linmin: -2.388e-02  t[s]:    398.32
+	Linear fluid (dielectric constant: 7.2) occupying 0.992433 of unit cell:	Completed after 0 iterations at t[s]:    398.72
+	Linear fluid (dielectric constant: 7.2) occupying 0.992433 of unit cell:	Completed after 0 iterations at t[s]:    399.29
+ElecMinimize: Iter:  14  Etot: -115.973057649823687  |grad|_K:  2.081e-07  alpha:  7.376e-01  linmin: -7.185e-02  t[s]:    399.52
+	Linear fluid (dielectric constant: 7.2) occupying 0.992433 of unit cell:	Completed after 0 iterations at t[s]:    399.92
+	Linear fluid (dielectric constant: 7.2) occupying 0.992433 of unit cell:	Completed after 0 iterations at t[s]:    400.49
+ElecMinimize: Iter:  15  Etot: -115.973057693954956  |grad|_K:  1.695e-07  alpha:  5.710e-01  linmin: -8.000e-03  t[s]:    400.73
+	Linear fluid (dielectric constant: 7.2) occupying 0.992433 of unit cell:	Completed after 0 iterations at t[s]:    401.09
+	Linear fluid (dielectric constant: 7.2) occupying 0.992433 of unit cell:	Completed after 0 iterations at t[s]:    401.67
+ElecMinimize: Iter:  16  Etot: -115.973057727379782  |grad|_K:  1.525e-07  alpha:  8.461e-01  linmin:  2.702e-02  t[s]:    401.91
+	Linear fluid (dielectric constant: 7.2) occupying 0.992433 of unit cell:	Completed after 0 iterations at t[s]:    402.28
+	Linear fluid (dielectric constant: 7.2) occupying 0.992433 of unit cell:	Completed after 0 iterations at t[s]:    402.82
+ElecMinimize: Iter:  17  Etot: -115.973057751059940  |grad|_K:  1.295e-07  alpha:  6.595e-01  linmin:  6.290e-08  t[s]:    403.06
+	Linear fluid (dielectric constant: 7.2) occupying 0.992433 of unit cell:	Completed after 0 iterations at t[s]:    403.45
+	Linear fluid (dielectric constant: 7.2) occupying 0.992433 of unit cell:	Completed after 0 iterations at t[s]:    404.02
+ElecMinimize: Iter:  18  Etot: -115.973057757334459  |grad|_K:  1.252e-07  alpha:  4.107e-01  linmin: -7.616e-02  t[s]:    404.26
+	Linear fluid (dielectric constant: 7.2) occupying 0.992433 of unit cell:	Completed after 0 iterations at t[s]:    404.62
+	Linear fluid (dielectric constant: 7.2) occupying 0.992433 of unit cell:	Completed after 0 iterations at t[s]:    405.16
+ElecMinimize: Iter:  19  Etot: -115.973057769184294  |grad|_K:  1.029e-07  alpha:  3.799e-01  linmin:  3.694e-06  t[s]:    405.40
+	Linear fluid (dielectric constant: 7.2) occupying 0.992433 of unit cell:	Completed after 0 iterations at t[s]:    405.79
+	Linear fluid (dielectric constant: 7.2) occupying 0.992433 of unit cell:	Completed after 0 iterations at t[s]:    406.37
+ElecMinimize: 	Step increased Etot by 4.034604e-10, reducing alpha to 1.846799e-02.
+	Linear fluid (dielectric constant: 7.2) occupying 0.992433 of unit cell:	Completed after 0 iterations at t[s]:    406.96
+ElecMinimize: 	Step increased Etot by 2.145725e-09, reducing alpha to 1.846799e-03.
+	Linear fluid (dielectric constant: 7.2) occupying 0.992433 of unit cell:	Completed after 0 iterations at t[s]:    407.55
+ElecMinimize: 	Step increased Etot by 2.407020e-09, reducing alpha to 1.846799e-04.
+ElecMinimize: 	Step failed to reduce Etot after 3 attempts. Quitting step.
+ElecMinimize: 	Undoing step.
+	Linear fluid (dielectric constant: 7.2) occupying 0.992433 of unit cell:	Completed after 0 iterations at t[s]:    408.14
+ElecMinimize: 	Step failed: resetting search direction.
+ElecMinimize: Iter:  20  Etot: -115.973057766774318  |grad|_K:  1.003e-07  alpha:  1.847e-04
+	Linear fluid (dielectric constant: 7.2) occupying 0.992433 of unit cell:	Completed after 0 iterations at t[s]:    408.73
+	Linear fluid (dielectric constant: 7.2) occupying 0.992433 of unit cell:	Completed after 0 iterations at t[s]:    409.28
+ElecMinimize: Iter:  21  Etot: -115.973057775787765  |grad|_K:  6.522e-08  alpha:  5.443e-01  linmin: -2.230e-05  t[s]:    409.52
+	Linear fluid (dielectric constant: 7.2) occupying 0.992433 of unit cell:	Completed after 0 iterations at t[s]:    409.91
+	Linear fluid (dielectric constant: 7.2) occupying 0.992433 of unit cell:	Completed after 0 iterations at t[s]:    410.48
+ElecMinimize: 	Step increased Etot by 3.051269e-09, reducing alpha to 1.957803e-02.
+	Linear fluid (dielectric constant: 7.2) occupying 0.992433 of unit cell:	Completed after 0 iterations at t[s]:    411.07
+ElecMinimize: 	Step increased Etot by 3.568786e-09, reducing alpha to 1.957803e-03.
+	Linear fluid (dielectric constant: 7.2) occupying 0.992433 of unit cell:	Completed after 0 iterations at t[s]:    411.66
+ElecMinimize: 	Step increased Etot by 3.638235e-09, reducing alpha to 1.957803e-04.
+ElecMinimize: 	Step failed to reduce Etot after 3 attempts. Quitting step.
+ElecMinimize: 	Undoing step.
+	Linear fluid (dielectric constant: 7.2) occupying 0.992433 of unit cell:	Completed after 0 iterations at t[s]:    412.26
+ElecMinimize: 	Step failed: resetting search direction.
+ElecMinimize: Iter:  22  Etot: -115.973057772148678  |grad|_K:  8.712e-08  alpha:  1.958e-04
+	Linear fluid (dielectric constant: 7.2) occupying 0.992433 of unit cell:	Completed after 0 iterations at t[s]:    412.85
+	Linear fluid (dielectric constant: 7.2) occupying 0.992433 of unit cell:	Completed after 0 iterations at t[s]:    413.43
+ElecMinimize: 	Step increased Etot by 1.161425e-09, reducing alpha to 9.332305e-02.
+	Linear fluid (dielectric constant: 7.2) occupying 0.992433 of unit cell:	Completed after 0 iterations at t[s]:    414.03
+ElecMinimize: Iter:  23  Etot: -115.973057778578251  |grad|_K:  6.063e-08  alpha:  9.332e-02  linmin: -1.022e-01  t[s]:    414.27
+	Linear fluid (dielectric constant: 7.2) occupying 0.992433 of unit cell:	Completed after 0 iterations at t[s]:    414.63
+ElecMinimize: 	Predicted alpha/alphaT>3.000000, increasing alphaT to 2.799691e-01.
+	Linear fluid (dielectric constant: 7.2) occupying 0.992433 of unit cell:	Completed after 0 iterations at t[s]:    415.17
+	Linear fluid (dielectric constant: 7.2) occupying 0.992433 of unit cell:	Completed after 0 iterations at t[s]:    415.71
+ElecMinimize: Iter:  24  Etot: -115.973057781335697  |grad|_K:  6.728e-08  alpha:  4.189e-01  linmin:  7.241e-05  t[s]:    415.95
+ElecMinimize: Converged (|Delta Etot|<1.000000e-08 for 2 iters).
+Setting wave functions to eigenvectors of Hamiltonian
+
+-------- Electronic minimization -----------
+	Linear fluid (dielectric constant: 7.2) occupying 0.992435 of unit cell:	Completed after 5 iterations at t[s]:    416.57
+ElecMinimize: Iter:   0  Etot: -115.973039740850680  |grad|_K:  3.804e-06  alpha:  1.000e+00
+	Linear fluid (dielectric constant: 7.2) occupying 0.992434 of unit cell:	Completed after 3 iterations at t[s]:    417.41
+	Linear fluid (dielectric constant: 7.2) occupying 0.992434 of unit cell:	Completed after 2 iterations at t[s]:    418.16
+ElecMinimize: Iter:   1  Etot: -115.973055826255091  |grad|_K:  1.821e-06  alpha:  6.763e-01  linmin:  5.683e-04  t[s]:    418.40
+	Linear fluid (dielectric constant: 7.2) occupying 0.992435 of unit cell:	Completed after 2 iterations at t[s]:    418.96
+	Linear fluid (dielectric constant: 7.2) occupying 0.992435 of unit cell:	Completed after 0 iterations at t[s]:    419.59
+ElecMinimize: Iter:   2  Etot: -115.973059356120345  |grad|_K:  9.540e-07  alpha:  6.472e-01  linmin:  9.247e-03  t[s]:    419.83
+	Linear fluid (dielectric constant: 7.2) occupying 0.992436 of unit cell:	Completed after 0 iterations at t[s]:    420.23
+	Linear fluid (dielectric constant: 7.2) occupying 0.992436 of unit cell:	Completed after 0 iterations at t[s]:    420.80
+ElecMinimize: Iter:   3  Etot: -115.973060291707498  |grad|_K:  7.986e-07  alpha:  6.301e-01  linmin: -5.193e-03  t[s]:    421.04
+	Linear fluid (dielectric constant: 7.2) occupying 0.992436 of unit cell:	Completed after 1 iterations at t[s]:    427.14
+	Linear fluid (dielectric constant: 7.2) occupying 0.992436 of unit cell:	Completed after 0 iterations at t[s]:    427.74
+ElecMinimize: Iter:   4  Etot: -115.973061009579737  |grad|_K:  5.169e-07  alpha:  6.778e-01  linmin: -9.100e-03  t[s]:    427.97
+	Linear fluid (dielectric constant: 7.2) occupying 0.992437 of unit cell:	Completed after 0 iterations at t[s]:    428.37
+	Linear fluid (dielectric constant: 7.2) occupying 0.992437 of unit cell:	Completed after 0 iterations at t[s]:    428.94
+ElecMinimize: Iter:   5  Etot: -115.973061371448068  |grad|_K:  4.568e-07  alpha:  8.092e-01  linmin: -1.224e-02  t[s]:    429.17
+	Linear fluid (dielectric constant: 7.2) occupying 0.992438 of unit cell:	Completed after 1 iterations at t[s]:    429.60
+	Linear fluid (dielectric constant: 7.2) occupying 0.992438 of unit cell:	Completed after 0 iterations at t[s]:    430.21
+ElecMinimize: Iter:   6  Etot: -115.973061589282608  |grad|_K:  2.958e-07  alpha:  6.250e-01  linmin:  3.811e-04  t[s]:    430.44
+	Linear fluid (dielectric constant: 7.2) occupying 0.992438 of unit cell:	Completed after 0 iterations at t[s]:    430.83
+	Linear fluid (dielectric constant: 7.2) occupying 0.992438 of unit cell:	Completed after 0 iterations at t[s]:    431.41
+ElecMinimize: Iter:   7  Etot: -115.973061673296513  |grad|_K:  2.098e-07  alpha:  5.863e-01  linmin: -1.174e-02  t[s]:    431.64
+	Linear fluid (dielectric constant: 7.2) occupying 0.992438 of unit cell:	Completed after 0 iterations at t[s]:    432.00
+	Linear fluid (dielectric constant: 7.2) occupying 0.992438 of unit cell:	Completed after 0 iterations at t[s]:    432.54
+ElecMinimize: Iter:   8  Etot: -115.973061731872718  |grad|_K:  1.476e-07  alpha:  7.915e-01  linmin:  9.769e-07  t[s]:    432.78
+	Linear fluid (dielectric constant: 7.2) occupying 0.992438 of unit cell:	Completed after 0 iterations at t[s]:    433.17
+	Linear fluid (dielectric constant: 7.2) occupying 0.992438 of unit cell:	Completed after 0 iterations at t[s]:    433.75
+ElecMinimize: Iter:   9  Etot: -115.973061741822150  |grad|_K:  1.429e-07  alpha:  4.498e-01  linmin: -4.661e-02  t[s]:    433.98
+	Linear fluid (dielectric constant: 7.2) occupying 0.992438 of unit cell:	Completed after 0 iterations at t[s]:    434.37
+	Linear fluid (dielectric constant: 7.2) occupying 0.992438 of unit cell:	Completed after 0 iterations at t[s]:    434.95
+ElecMinimize: Iter:  10  Etot: -115.973061751911587  |grad|_K:  9.410e-08  alpha:  3.181e-01  linmin: -7.998e-02  t[s]:    435.18
+	Linear fluid (dielectric constant: 7.2) occupying 0.992438 of unit cell:	Completed after 0 iterations at t[s]:    435.54
+	Linear fluid (dielectric constant: 7.2) occupying 0.992438 of unit cell:	Completed after 0 iterations at t[s]:    436.08
+ElecMinimize: Iter:  11  Etot: -115.973061759468976  |grad|_K:  7.166e-08  alpha:  4.551e-01  linmin:  1.567e-05  t[s]:    436.32
+	Linear fluid (dielectric constant: 7.2) occupying 0.992438 of unit cell:	Completed after 0 iterations at t[s]:    439.04
+	Linear fluid (dielectric constant: 7.2) occupying 0.992438 of unit cell:	Completed after 0 iterations at t[s]:    439.59
+ElecMinimize: Iter:  12  Etot: -115.973061764744386  |grad|_K:  6.457e-08  alpha:  6.245e-01  linmin:  7.075e-06  t[s]:    439.82
+ElecMinimize: Converged (|Delta Etot|<1.000000e-08 for 2 iters).
+Setting wave functions to eigenvectors of Hamiltonian
+
+# Ionic positions in cartesian coordinates:
+ion S   9.365955953536616  12.389265568459217  27.360889267512853 1
+ion S   5.926453963303782  10.087665348260332  27.333881229334324 1
+ion Na   9.976902665210044   7.790454305931797  25.386423153429913 1
+ion Na   5.273006346129563  14.809134374488652  25.681483997042900 1
+
+# Forces in Cartesian coordinates:
+force S   0.000473908856125   0.000363936871071   0.000167792517796 1
+force S  -0.000321734156725  -0.000169635189666   0.000467695849466 1
+force Na   0.000145887173686  -0.000091159002854   0.000008477186557 1
+force Na  -0.000005700922780   0.000158644544018   0.000062206394377 1
+
+# Energy components:
+   A_diel =       -0.0672583453468435
+   Eewald =       40.5412024542903211
+       EH =      137.4819521301274392
+     Eloc =     -159.1499180912829274
+      Enl =     -140.2138348737426554
+      Exc =      -22.7991117211381713
+ Exc_core =        3.5354582915601425
+       KE =       24.6984483907883181
+-------------------------------------
+     Etot =     -115.9730617647443864
+
+IonicMinimize: Iter:   8  Etot: -115.973061764744386  |grad|_K:  2.295e-04  alpha:  6.845e+00  linmin:  7.903e-02  t[s]:    440.11
+
+#--- Lowdin population analysis ---
+# oxidation-state S -0.765 -0.765
+# oxidation-state Na +0.870 +0.870
+
+
+-------- Electronic minimization -----------
+	Linear fluid (dielectric constant: 7.2) occupying 0.992434 of unit cell:	Completed after 4 iterations at t[s]:    440.70
+ElecMinimize: Iter:   0  Etot: -115.973053576676875  |grad|_K:  2.239e-06  alpha:  1.000e+00
+	Linear fluid (dielectric constant: 7.2) occupying 0.992435 of unit cell:	Completed after 2 iterations at t[s]:    441.50
+	Linear fluid (dielectric constant: 7.2) occupying 0.992435 of unit cell:	Completed after 1 iterations at t[s]:    442.21
+ElecMinimize: Iter:   1  Etot: -115.973059335531786  |grad|_K:  1.056e-06  alpha:  6.978e-01  linmin:  3.860e-03  t[s]:    442.44
+	Linear fluid (dielectric constant: 7.2) occupying 0.992434 of unit cell:	Completed after 2 iterations at t[s]:    442.95
+	Linear fluid (dielectric constant: 7.2) occupying 0.992434 of unit cell:	Completed after 0 iterations at t[s]:    443.58
+ElecMinimize: Iter:   2  Etot: -115.973060589735525  |grad|_K:  5.410e-07  alpha:  6.849e-01  linmin:  1.123e-02  t[s]:    443.81
+	Linear fluid (dielectric constant: 7.2) occupying 0.992434 of unit cell:	Completed after 0 iterations at t[s]:    444.21
+	Linear fluid (dielectric constant: 7.2) occupying 0.992434 of unit cell:	Completed after 0 iterations at t[s]:    444.78
+ElecMinimize: Iter:   3  Etot: -115.973060938374999  |grad|_K:  4.441e-07  alpha:  7.296e-01  linmin: -1.017e-02  t[s]:    445.02
+	Linear fluid (dielectric constant: 7.2) occupying 0.992433 of unit cell:	Completed after 0 iterations at t[s]:    445.41
+	Linear fluid (dielectric constant: 7.2) occupying 0.992433 of unit cell:	Completed after 0 iterations at t[s]:    445.98
+ElecMinimize: Iter:   4  Etot: -115.973061132076865  |grad|_K:  2.692e-07  alpha:  5.841e-01  linmin:  1.872e-02  t[s]:    446.22
+	Linear fluid (dielectric constant: 7.2) occupying 0.992433 of unit cell:	Completed after 0 iterations at t[s]:    446.61
+	Linear fluid (dielectric constant: 7.2) occupying 0.992433 of unit cell:	Completed after 0 iterations at t[s]:    447.18
+ElecMinimize: Iter:   5  Etot: -115.973061227854430  |grad|_K:  1.804e-07  alpha:  7.791e-01  linmin: -1.026e-01  t[s]:    447.42
+	Linear fluid (dielectric constant: 7.2) occupying 0.992432 of unit cell:	Completed after 0 iterations at t[s]:    447.81
+	Linear fluid (dielectric constant: 7.2) occupying 0.992432 of unit cell:	Completed after 0 iterations at t[s]:    448.38
+ElecMinimize: Iter:   6  Etot: -115.973061263354779  |grad|_K:  1.420e-07  alpha:  6.220e-01  linmin: -6.516e-02  t[s]:    448.62
+	Linear fluid (dielectric constant: 7.2) occupying 0.992432 of unit cell:	Completed after 0 iterations at t[s]:    448.98
+	Linear fluid (dielectric constant: 7.2) occupying 0.992432 of unit cell:	Completed after 0 iterations at t[s]:    449.52
+ElecMinimize: Iter:   7  Etot: -115.973061286829648  |grad|_K:  1.065e-07  alpha:  6.330e-01  linmin:  1.671e-07  t[s]:    449.76
+	Linear fluid (dielectric constant: 7.2) occupying 0.992433 of unit cell:	Completed after 0 iterations at t[s]:    450.15
+	Linear fluid (dielectric constant: 7.2) occupying 0.992433 of unit cell:	Completed after 0 iterations at t[s]:    450.72
+ElecMinimize: Iter:   8  Etot: -115.973061288844278  |grad|_K:  1.044e-07  alpha:  3.747e-01  linmin: -1.218e-01  t[s]:    450.96
+	Linear fluid (dielectric constant: 7.2) occupying 0.992433 of unit cell:	Completed after 0 iterations at t[s]:    451.32
+	Linear fluid (dielectric constant: 7.2) occupying 0.992433 of unit cell:	Completed after 0 iterations at t[s]:    451.86
+ElecMinimize: Iter:   9  Etot: -115.973061298335310  |grad|_K:  7.543e-08  alpha:  3.973e-01  linmin: -5.633e-06  t[s]:    452.09
+ElecMinimize: Converged (|Delta Etot|<1.000000e-08 for 2 iters).
+Setting wave functions to eigenvectors of Hamiltonian
+
+-------- Electronic minimization -----------
+	Linear fluid (dielectric constant: 7.2) occupying 0.992435 of unit cell:	Completed after 4 iterations at t[s]:    452.67
+ElecMinimize: Iter:   0  Etot: -115.973060269902049  |grad|_K:  1.262e-06  alpha:  1.000e+00
+	Linear fluid (dielectric constant: 7.2) occupying 0.992434 of unit cell:	Completed after 2 iterations at t[s]:    453.48
+	Linear fluid (dielectric constant: 7.2) occupying 0.992434 of unit cell:	Completed after 1 iterations at t[s]:    454.19
+ElecMinimize: Iter:   1  Etot: -115.973062068729561  |grad|_K:  6.061e-07  alpha:  6.861e-01  linmin:  4.082e-03  t[s]:    454.42
+	Linear fluid (dielectric constant: 7.2) occupying 0.992435 of unit cell:	Completed after 1 iterations at t[s]:    454.89
+	Linear fluid (dielectric constant: 7.2) occupying 0.992435 of unit cell:	Completed after 0 iterations at t[s]:    455.49
+ElecMinimize: Iter:   2  Etot: -115.973062460961742  |grad|_K:  3.576e-07  alpha:  6.500e-01  linmin:  1.856e-02  t[s]:    455.73
+	Linear fluid (dielectric constant: 7.2) occupying 0.992435 of unit cell:	Completed after 0 iterations at t[s]:    456.12
+	Linear fluid (dielectric constant: 7.2) occupying 0.992435 of unit cell:	Completed after 0 iterations at t[s]:    456.70
+ElecMinimize: Iter:   3  Etot: -115.973062564821859  |grad|_K:  2.804e-07  alpha:  5.047e-01  linmin:  1.932e-02  t[s]:    456.93
+	Linear fluid (dielectric constant: 7.2) occupying 0.992435 of unit cell:	Completed after 0 iterations at t[s]:    457.33
+	Linear fluid (dielectric constant: 7.2) occupying 0.992435 of unit cell:	Completed after 0 iterations at t[s]:    457.90
+ElecMinimize: Iter:   4  Etot: -115.973062647002408  |grad|_K:  1.503e-07  alpha:  6.250e-01  linmin: -1.260e-01  t[s]:    458.14
+	Linear fluid (dielectric constant: 7.2) occupying 0.992436 of unit cell:	Completed after 0 iterations at t[s]:    458.54
+	Linear fluid (dielectric constant: 7.2) occupying 0.992435 of unit cell:	Completed after 0 iterations at t[s]:    459.11
+ElecMinimize: Iter:   5  Etot: -115.973062655901117  |grad|_K:  1.695e-07  alpha:  3.530e-01  linmin: -3.737e-02  t[s]:    459.35
+	Linear fluid (dielectric constant: 7.2) occupying 0.992436 of unit cell:	Completed after 0 iterations at t[s]:    459.70
+	Linear fluid (dielectric constant: 7.2) occupying 0.992436 of unit cell:	Completed after 0 iterations at t[s]:    460.26
+ElecMinimize: Iter:   6  Etot: -115.973062677643469  |grad|_K:  1.698e-07  alpha:  4.181e-01  linmin:  9.261e-07  t[s]:    460.49
+	Linear fluid (dielectric constant: 7.2) occupying 0.992436 of unit cell:	Completed after 1 iterations at t[s]:    460.92
+	Linear fluid (dielectric constant: 7.2) occupying 0.992436 of unit cell:	Completed after 0 iterations at t[s]:    461.52
+ElecMinimize: Iter:   7  Etot: -115.973062682242258  |grad|_K:  2.132e-07  alpha:  1.272e-01  linmin:  1.276e-01  t[s]:    461.76
+	Linear fluid (dielectric constant: 7.2) occupying 0.992436 of unit cell:	Completed after 0 iterations at t[s]:    462.11
+	Linear fluid (dielectric constant: 7.2) occupying 0.992436 of unit cell:	Completed after 0 iterations at t[s]:    462.66
+ElecMinimize: Iter:   8  Etot: -115.973062684204734  |grad|_K:  2.020e-07  alpha:  7.182e-02  linmin: -1.489e-06  t[s]:    462.90
+ElecMinimize: Converged (|Delta Etot|<1.000000e-08 for 2 iters).
+Setting wave functions to eigenvectors of Hamiltonian
+
+# Ionic positions in cartesian coordinates:
+ion S   9.366431941352712  12.388672256429736  27.361728271993783 1
+ion S   5.924023214076116  10.085966299015819  27.331775729486665 1
+ion Na   9.979204653211461   7.789059179927285  25.385029895633096 1
+ion Na   5.272659119539712  14.812821861767155  25.684143750206445 1
+
+# Forces in Cartesian coordinates:
+force S   0.000141128185475   0.000157326467278   0.000116145224946 1
+force S  -0.000002727061217   0.000040343740074   0.000426837345845 1
+force Na   0.000088020678854  -0.000032369874749   0.000007464981931 1
+force Na   0.000053568261562   0.000094507005214   0.000086230989308 1
+
+# Energy components:
+   A_diel =       -0.0673132298734360
+   Eewald =       40.5060624174237205
+       EH =      137.4460194429048840
+     Eloc =     -159.0791787177467995
+      Enl =     -140.2126778990725313
+      Exc =      -22.7983247163905709
+ Exc_core =        3.5354582655290701
+       KE =       24.6968917530209353
+-------------------------------------
+     Etot =     -115.9730626842047343
+
+IonicMinimize: Iter:   9  Etot: -115.973062684204734  |grad|_K:  1.050e-04  alpha:  2.997e+00  linmin:  2.675e-02  t[s]:    463.19
+
+#--- Lowdin population analysis ---
+# oxidation-state S -0.766 -0.766
+# oxidation-state Na +0.870 +0.870
+
+
+-------- Electronic minimization -----------
+	Linear fluid (dielectric constant: 7.2) occupying 0.992435 of unit cell:	Completed after 1 iterations at t[s]:    463.67
+ElecMinimize: Iter:   0  Etot: -115.973062788325791  |grad|_K:  3.152e-07  alpha:  1.000e+00
+	Linear fluid (dielectric constant: 7.2) occupying 0.992435 of unit cell:	Completed after 1 iterations at t[s]:    464.38
+	Linear fluid (dielectric constant: 7.2) occupying 0.992435 of unit cell:	Completed after 0 iterations at t[s]:    464.98
+ElecMinimize: Iter:   1  Etot: -115.973062885802932  |grad|_K:  2.846e-07  alpha:  5.530e-01  linmin:  1.038e-01  t[s]:    465.21
+	Linear fluid (dielectric constant: 7.2) occupying 0.992435 of unit cell:	Completed after 1 iterations at t[s]:    465.64
+	Linear fluid (dielectric constant: 7.2) occupying 0.992435 of unit cell:	Completed after 0 iterations at t[s]:    466.24
+ElecMinimize: Iter:   2  Etot: -115.973062907831434  |grad|_K:  1.798e-07  alpha:  2.449e-01  linmin:  1.711e-01  t[s]:    466.48
+	Linear fluid (dielectric constant: 7.2) occupying 0.992435 of unit cell:	Completed after 0 iterations at t[s]:    466.88
+	Linear fluid (dielectric constant: 7.2) occupying 0.992435 of unit cell:	Completed after 0 iterations at t[s]:    467.45
+ElecMinimize: 	Step increased Etot by 2.416101e-09, reducing alpha to 1.329526e-02.
+	Linear fluid (dielectric constant: 7.2) occupying 0.992435 of unit cell:	Completed after 0 iterations at t[s]:    468.05
+ElecMinimize: 	Step increased Etot by 8.338944e-09, reducing alpha to 1.329526e-03.
+	Linear fluid (dielectric constant: 7.2) occupying 0.992435 of unit cell:	Completed after 0 iterations at t[s]:    468.64
+ElecMinimize: 	Step increased Etot by 9.021974e-09, reducing alpha to 1.329526e-04.
+ElecMinimize: 	Step failed to reduce Etot after 3 attempts. Quitting step.
+ElecMinimize: 	Undoing step.
+	Linear fluid (dielectric constant: 7.2) occupying 0.992435 of unit cell:	Completed after 0 iterations at t[s]:    469.23
+ElecMinimize: 	Step failed: resetting search direction.
+ElecMinimize: Iter:   3  Etot: -115.973062898801729  |grad|_K:  1.216e-07  alpha:  1.330e-04
+	Linear fluid (dielectric constant: 7.2) occupying 0.992435 of unit cell:	Completed after 0 iterations at t[s]:    469.83
+	Linear fluid (dielectric constant: 7.2) occupying 0.992435 of unit cell:	Completed after 0 iterations at t[s]:    470.37
+ElecMinimize: Iter:   4  Etot: -115.973062915020137  |grad|_K:  8.788e-08  alpha:  6.663e-01  linmin: -1.636e-05  t[s]:    470.60
+	Linear fluid (dielectric constant: 7.2) occupying 0.992435 of unit cell:	Completed after 0 iterations at t[s]:    471.00
+	Linear fluid (dielectric constant: 7.2) occupying 0.992435 of unit cell:	Completed after 0 iterations at t[s]:    471.57
+ElecMinimize: Iter:   5  Etot: -115.973062915363542  |grad|_K:  8.634e-08  alpha:  3.576e-01  linmin: -1.246e-01  t[s]:    471.80
+	Linear fluid (dielectric constant: 7.2) occupying 0.992435 of unit cell:	Completed after 0 iterations at t[s]:    472.16
+	Linear fluid (dielectric constant: 7.2) occupying 0.992435 of unit cell:	Completed after 0 iterations at t[s]:    472.70
+ElecMinimize: Iter:   6  Etot: -115.973062923259363  |grad|_K:  8.235e-08  alpha:  5.240e-01  linmin: -6.794e-05  t[s]:    472.94
+ElecMinimize: Converged (|Delta Etot|<1.000000e-08 for 2 iters).
+Setting wave functions to eigenvectors of Hamiltonian
+
+-------- Electronic minimization -----------
+	Linear fluid (dielectric constant: 7.2) occupying 0.992435 of unit cell:	Completed after 1 iterations at t[s]:    473.41
+ElecMinimize: Iter:   0  Etot: -115.973062924586031  |grad|_K:  1.331e-07  alpha:  1.000e+00
+	Linear fluid (dielectric constant: 7.2) occupying 0.992435 of unit cell:	Completed after 0 iterations at t[s]:    474.05
+	Linear fluid (dielectric constant: 7.2) occupying 0.992435 of unit cell:	Completed after 0 iterations at t[s]:    474.60
+ElecMinimize: Iter:   1  Etot: -115.973062943830868  |grad|_K:  1.089e-07  alpha:  6.607e-01  linmin:  2.347e-06  t[s]:    474.83
+	Linear fluid (dielectric constant: 7.2) occupying 0.992435 of unit cell:	Completed after 0 iterations at t[s]:    475.22
+	Linear fluid (dielectric constant: 7.2) occupying 0.992435 of unit cell:	Completed after 0 iterations at t[s]:    475.80
+ElecMinimize: Iter:   2  Etot: -115.973062945184751  |grad|_K:  9.766e-08  alpha:  2.943e-01  linmin:  5.381e-02  t[s]:    476.03
+	Linear fluid (dielectric constant: 7.2) occupying 0.992435 of unit cell:	Completed after 0 iterations at t[s]:    476.39
+	Linear fluid (dielectric constant: 7.2) occupying 0.992435 of unit cell:	Completed after 0 iterations at t[s]:    476.93
+ElecMinimize: Iter:   3  Etot: -115.973062949211339  |grad|_K:  8.522e-08  alpha:  2.820e-01  linmin: -1.515e-06  t[s]:    477.17
+ElecMinimize: Converged (|Delta Etot|<1.000000e-08 for 2 iters).
+Setting wave functions to eigenvectors of Hamiltonian
+
+# Ionic positions in cartesian coordinates:
+ion S   9.366859408781869  12.388880869746535  27.361792050790449 1
+ion S   5.923030084771367  10.085379525127342  27.332269718132459 1
+ion Na   9.979936921119158   7.788261538997059  25.384010062453090 1
+ion Na   5.272492513507610  14.813997663269063  25.684605815944000 1
+
+# Forces in Cartesian coordinates:
+force S  -0.000014744754029   0.000016603514973   0.000123850123040 1
+force S   0.000124997813392   0.000113963925786   0.000320078186109 1
+force Na   0.000073059812274   0.000003152547811  -0.000000306868984 1
+force Na   0.000058584557659   0.000080851609319   0.000123531716082 1
+
+# Energy components:
+   A_diel =       -0.0673524522648009
+   Eewald =       40.4879640971694457
+       EH =      137.4280814498452514
+     Eloc =     -159.0420340146683884
+      Enl =     -140.2131109022912767
+      Exc =      -22.7980415125262716
+ Exc_core =        3.5354582662474225
+       KE =       24.6959721192772825
+-------------------------------------
+     Etot =     -115.9730629492113394
+
+IonicMinimize: Iter:  10  Etot: -115.973062949211339  |grad|_K:  7.687e-05  alpha:  4.096e+00  linmin: -1.658e-01  t[s]:    477.46
+IonicMinimize: Converged (|grad|_K<1.000000e-04).
+
+#--- Lowdin population analysis ---
+# oxidation-state S -0.766 -0.766
+# oxidation-state Na +0.870 +0.870
+
+
+Dumping 'Na2S2-glyme.wfns' ... done
+Dumping 'Na2S2-glyme.fluidState' ... done
+Dumping 'Na2S2-glyme.ionpos' ... done
+End date and time: Mon Dec 23 12:33:17 2024  (Duration: 0-0:07:58.12)
+Done!
