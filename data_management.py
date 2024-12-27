@@ -2,6 +2,8 @@ import pandas as pd
 import os
 import re
 
+import xyz2tab as x2t
+
 
 # --- This method gets the lines of a file after a specific marker --- #
 def read_after_last_instance(filepath, marker):
@@ -22,7 +24,7 @@ def read_after_last_instance(filepath, marker):
 
 
 # --- This method parses the JDFTx.out file --- #
-def parse_output_file(file_path):
+def parse_output_file(file_path, print=False):
     energies = []
     oxidation_states = {}
     output_file_name = None
@@ -73,14 +75,52 @@ def parse_output_file(file_path):
     df_oxidation_states = pd.DataFrame(
         list(oxidation_states.items()), columns=["Element", "Oxidation States"]
     )
-    print(df_energies)
-    print(df_oxidation_states)
+
     # Print required information
-    print(f"Output file name: {output_file_name}")
-    print(f"Electronic SCF used: {electronic_scf}")
-    print(f"Solvent: {solvent if solvent_exists else 'None'}")
+    if print:
+        print(df_energies)
+        print(df_oxidation_states)
+        print(f"Output file name: {output_file_name}")
+        print(f"Electronic SCF used: {electronic_scf}")
+        print(f"Solvent: {solvent if solvent_exists else 'None'}")
 
     return df_energies, df_oxidation_states, output_file_name, electronic_scf, solvent
+
+
+# --- This method parses xsf files --- #
+def parse_xsf_file(file_path):
+    file_path = (
+        "Data-raw/" + file_path + ".xsf"
+        if not file_path.endswith(".xsf")
+        else "Data-raw/" + file_path
+    )
+    atomic_symbols = {
+        1: "H",
+        6: "C",
+        7: "N",
+        8: "O",
+        11: "Na",
+        16: "S",
+        22: "Ti",
+        26: "Fe",
+        28: "Ni",
+    }
+    marker = "PRIMCOORD"
+    lines = read_after_last_instance(file_path, marker)
+    xyz = []
+    for line in lines[1:]:
+        parts = line.split()
+        element = int(parts[0])
+        x, y, z = map(float, parts[1:])
+        xyz.append(
+            {
+                "element": atomic_symbols[element],
+                "x": x,
+                "y": y,
+                "z": z,
+            }
+        )
+    xyz_df = pd.DataFrame(xyz)
 
 
 # --- This method compiles the energies and oxidation states of all sorbents in a subdirectory of Data-raw --- #
@@ -105,24 +145,33 @@ def extract_data(category: str):
     # Handle output files
     extracted_outputs = []
     for file in out_files:
-        df_energies, df_oxidation_states, output_file_name, electronic_scf, solvent = parse_output_file(f"{category}/{file}")
+        df_energies, df_oxidation_states, output_file_name, electronic_scf, solvent = (
+            parse_output_file(f"{category}/{file}")
+        )
         for _, row in df_energies.iterrows():
-            extracted_outputs.append({
-                "name": output_file_name,
-                "iteration": row["Iteration"],
-                "solvent": solvent,
-                "energy": row["Energy"],
-                "oxidation_states": df_oxidation_states.to_dict(orient='records'),
-                "electronic_scf": electronic_scf
-            })
-    
+            extracted_outputs.append(
+                {
+                    "name": output_file_name,
+                    "iteration": row["Iteration"],
+                    "solvent": solvent,
+                    "energy": row["Energy"],
+                    "oxidation_states": df_oxidation_states.to_dict(orient="records"),
+                    "electronic_scf": electronic_scf,
+                }
+            )
     extracted_outputs_df = pd.DataFrame(extracted_outputs)
-    
-    
+    output_directory = os.path.join(working_directory, "Data-extracted")
+    os.makedirs(output_directory, exist_ok=True)
+    output_file_path = os.path.join(output_directory, f"{category}.csv")
+    extracted_outputs_df.to_csv(output_file_path, index=False)
+
+    # Handle xsf files
+
 
 # Example usage
 if __name__ == "__main__":
     # df_energies, df_oxidation_states, output_file_name, electronic_scf, solvent = (
     #     parse_output_file("Sorbents/FeN4-PC")
     # )
-    extract_data("Sorbents")
+    parse_xsf_file("Sorbents/FeN4-PC")
+    # extract_data("Sorbents")
