@@ -1,0 +1,16 @@
+name,iteration,solvent,energy,oxidation_states,electronic_scf
+Na2S-PC-vdw,29.0,PC,-105.83834541939041,"[{'Element': 'S', 'Oxidation States': [-1.666]}, {'Element': 'Na', 'Oxidation States': [0.955, 0.955]}]",False
+Na2S-glyme-vdw,2.0,Glyme,-105.66006305322294,"[{'Element': 'S', 'Oxidation States': [-1.413]}, {'Element': 'Na', 'Oxidation States': [0.818, 0.819]}]",True
+Na2S-vdw,0.0,Vacuum,-105.61577022639933,"[{'Element': 'S', 'Oxidation States': [-1.173]}, {'Element': 'Na', 'Oxidation States': [0.673, 0.673]}]",True
+Na2S2-PC-vdw,9.0,PC,-116.13569789448705,"[{'Element': 'S', 'Oxidation States': [-0.849, -0.849]}, {'Element': 'Na', 'Oxidation States': [0.96, 0.96]}]",True
+Na2S2-glyme-vdw,17.0,Glyme,-115.97438846251998,"[{'Element': 'S', 'Oxidation States': [-0.765, -0.765]}, {'Element': 'Na', 'Oxidation States': [0.869, 0.869]}]",True
+Na2S2-vdw,1.0,Vacuum,-115.92278271907915,"[{'Element': 'S', 'Oxidation States': [-0.704, -0.704]}, {'Element': 'Na', 'Oxidation States': [0.81, 0.81]}]",True
+Na2S4-PC-vdw,71.0,PC,-136.73297371806615,"[{'Element': 'S', 'Oxidation States': [-0.715, -0.042, -0.048, -0.722]}, {'Element': 'Na', 'Oxidation States': [0.945, 0.946]}]",True
+Na2S4-glyme-vdw,13.0,Glyme,-136.57902570755738,"[{'Element': 'S', 'Oxidation States': [-0.634, -0.021, -0.022, -0.634]}, {'Element': 'Na', 'Oxidation States': [0.842, 0.842]}]",True
+Na2S4-vdw,4.0,Vacuum,-136.5347640994844,"[{'Element': 'S', 'Oxidation States': [-0.583, 0.004, 0.004, -0.583]}, {'Element': 'Na', 'Oxidation States': [0.765, 0.765]}]",True
+Na2S6-PC-vdw,7.0,PC,-157.28845237270195,"[{'Element': 'S', 'Oxidation States': [-0.517, 0.349, -0.469, -0.469, 0.348, -0.518]}, {'Element': 'Na', 'Oxidation States': [0.9, 0.899]}]",True
+Na2S6-glyme-vdw,23.0,Glyme,-157.15140931617424,"[{'Element': 'S', 'Oxidation States': [-0.475, 0.374, -0.451, -0.453, 0.375, -0.473]}, {'Element': 'Na', 'Oxidation States': [0.816, 0.817]}]",True
+Na2S6-vdw,4.0,Vacuum,-157.10750435150217,"[{'Element': 'S', 'Oxidation States': [-0.393, 0.392, -0.457, -0.457, 0.392, -0.393]}, {'Element': 'Na', 'Oxidation States': [0.721, 0.721]}]",True
+Na2S8-PC-vdw,103.0,PC,-177.86460210750892,"[{'Element': 'S', 'Oxidation States': [-0.111, -0.058, 0.024, -0.072, 0.113, -0.622, 0.159, -0.614]}, {'Element': 'Na', 'Oxidation States': [0.942, 0.933]}]",True
+Na2S8-glyme-vdw,16.0,Glyme,-177.71157096110392,"[{'Element': 'S', 'Oxidation States': [-0.09, -0.041, 0.021, -0.096, 0.153, -0.532, 0.171, -0.564]}, {'Element': 'Na', 'Oxidation States': [0.817, 0.851]}]",True
+Na2S8-vdw,175.0,Vacuum,-177.68285507054793,"[{'Element': 'S', 'Oxidation States': [0.064, -0.003, 0.033, 0.058, 0.091, -0.548, 0.053, -0.521]}, {'Element': 'Na', 'Oxidation States': [0.778, 0.714]}]",True

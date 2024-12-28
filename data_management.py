@@ -239,4 +239,4 @@ if __name__ == "__main__":
     # )
     # parse_xsf_file("Sorbents/FeN4-PC", "FeNe")
     # extract_data("Sorbents")
-    # extract_data("NaPS")
+    extract_data("NaPS")
