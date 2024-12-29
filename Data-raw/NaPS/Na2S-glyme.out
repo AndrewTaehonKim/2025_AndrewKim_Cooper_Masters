@@ -824,3 +824,473 @@ gpuInit: Selected device 0
 Resource initialization completed at t[s]:      0.38
 Run totals: 1 processes, 1 threads, 1 GPUs
 Could not open file 'Na2S-glyme.lattice' for reading.
+
+*************** JDFTx 1.7.0  ***************
+
+Start date and time: Sat Dec 28 20:31:06 2024
+Executable jdftx_gpu with command-line: -i /home/akim2/JDFTx/Na2S-glyme/Na2S-glyme.in -o /home/akim2/JDFTx/Na2S-glyme/Na2S-glyme.out
+Running on hosts (process indices):  exp-4-58 (0)
+Divided in process groups (process indices):  0 (0)
+gpuInit: Found compatible cuda device 0 'Tesla V100-SXM2-32GB'
+gpuInit: Selected device 0
+Resource initialization completed at t[s]:      0.38
+Run totals: 1 processes, 1 threads, 1 GPUs
+
+
+Input parsed successfully to the following command list (including defaults):
+
+basis kpoint-dependent
+coords-type Cartesian
+core-overlap-check vector
+coulomb-interaction Isolated
+coulomb-truncation-embed 7.56227 10.1817 26.4562
+davidson-band-ratio 1.1
+dump End State
+dump-name Na2S-glyme.$VAR
+elec-cutoff 20 100
+elec-eigen-algo Davidson
+elec-ex-corr gga-PBE
+electronic-minimize  \
+	dirUpdateScheme      FletcherReeves \
+	linminMethod         DirUpdateRecommended \
+	nIterations          100 \
+	history              15 \
+	knormThreshold       0 \
+	energyDiffThreshold  1e-08 \
+	nEnergyDiff          2 \
+	alphaTstart          1 \
+	alphaTmin            1e-10 \
+	updateTestStepSize   yes \
+	alphaTreduceFactor   0.1 \
+	alphaTincreaseFactor 3 \
+	nAlphaAdjustMax      3 \
+	wolfeEnergy          0.0001 \
+	wolfeGradient        0.9 \
+	fdTest               no
+electronic-scf  \
+	nIterations	50 \
+	energyDiffThreshold	1e-08 \
+	residualThreshold	1e-07 \
+	mixFraction	0.5 \
+	qMetric	0.8 \
+	history	10 \
+	nEigSteps	2 \
+	eigDiffThreshold	1e-08 \
+	mixedVariable	Density \
+	qKerker	0.8 \
+	qKappa	-1 \
+	verbose	no \
+	mixFractionMag	1.5
+exchange-regularization None
+fluid LinearPCM 298.000000 1.013250
+fluid-ex-corr lda-TF lda-PZ
+fluid-gummel-loop 10 1.000000e-05
+fluid-minimize  \
+	dirUpdateScheme      PolakRibiere \
+	linminMethod         DirUpdateRecommended \
+	nIterations          400 \
+	history              15 \
+	knormThreshold       1e-11 \
+	energyDiffThreshold  0 \
+	nEnergyDiff          2 \
+	alphaTstart          1 \
+	alphaTmin            1e-10 \
+	updateTestStepSize   yes \
+	alphaTreduceFactor   0.1 \
+	alphaTincreaseFactor 3 \
+	nAlphaAdjustMax      6 \
+	wolfeEnergy          0.0001 \
+	wolfeGradient        0.9 \
+	fdTest               no
+fluid-solvent Glyme 9.62137 ScalarEOS \
+	epsBulk 7.2 \
+	pMol 0 \
+	epsInf 1.9 \
+	Pvap 0 \
+	sigmaBulk 0 \
+	Rvdw 0 \
+	Res 0 \
+	tauNuc 343133
+forces-output-coords Positions
+ion S   7.562685799317076  10.092958691311287  26.456219999999998 1
+ion Na   3.570935584093532  12.697390495689309  26.456219999999998 1
+ion Na  11.551298470729389  12.699762872599402  26.456219999999998 1
+ion-species GBRV/$ID_pbe.uspp
+ion-width Ecut
+ionic-minimize  \
+	dirUpdateScheme      FletcherReeves \
+	linminMethod         DirUpdateRecommended \
+	nIterations          200 \
+	history              15 \
+	knormThreshold       0.0001 \
+	energyDiffThreshold  1e-06 \
+	nEnergyDiff          2 \
+	alphaTstart          1 \
+	alphaTmin            1e-10 \
+	updateTestStepSize   yes \
+	alphaTreduceFactor   0.1 \
+	alphaTincreaseFactor 3 \
+	nAlphaAdjustMax      3 \
+	wolfeEnergy          0.0001 \
+	wolfeGradient        0.9 \
+	fdTest               no
+kpoint   0.000000000000   0.000000000000   0.000000000000  1.00000000000000
+kpoint-folding 1 1 1 
+latt-move-scale 1 1 1
+latt-scale 1 1 1 
+lattice Triclinic 28.0058 28.0058 37.7946 90 90 120
+lattice-minimize  \
+	dirUpdateScheme      L-BFGS \
+	linminMethod         DirUpdateRecommended \
+	nIterations          0 \
+	history              15 \
+	knormThreshold       0 \
+	energyDiffThreshold  1e-06 \
+	nEnergyDiff          2 \
+	alphaTstart          1 \
+	alphaTmin            1e-10 \
+	updateTestStepSize   yes \
+	alphaTreduceFactor   0.1 \
+	alphaTincreaseFactor 3 \
+	nAlphaAdjustMax      3 \
+	wolfeEnergy          0.0001 \
+	wolfeGradient        0.9 \
+	fdTest               no
+lcao-params -1 1e-06 0.001
+pcm-variant GLSSA13
+spintype no-spin
+subspace-rotation-factor 1 yes
+symmetries automatic
+symmetry-threshold 0.0001
+
+
+
+---------- Setting up symmetries ----------
+
+Found 24 point-group symmetries of the bravais lattice
+Found 2 space-group symmetries with basis
+Applied RMS atom displacement 0 bohrs to make symmetries exact.
+
+---------- Initializing the Grid ----------
+R = 
+[      28.0058     -14.0029            0  ]
+[            0      24.2537            0  ]
+[            0            0      37.7946  ]
+unit cell volume = 25671.8
+G =
+[   0.224353    0.12953         -0  ]
+[          0   0.259061          0  ]
+[          0         -0   0.166246  ]
+Minimum fftbox size, Smin = [  128  128  172  ]
+Chosen fftbox size, S = [  128  128  180  ]
+
+---------- Initializing tighter grid for wavefunction operations ----------
+R = 
+[      28.0058     -14.0029            0  ]
+[            0      24.2537            0  ]
+[            0            0      37.7946  ]
+unit cell volume = 25671.8
+G =
+[   0.224353    0.12953         -0  ]
+[          0   0.259061          0  ]
+[          0         -0   0.166246  ]
+Minimum fftbox size, Smin = [  116  116  156  ]
+Chosen fftbox size, S = [  120  120  160  ]
+
+---------- Exchange Correlation functional ----------
+Initalized PBE GGA exchange.
+Initalized PBE GGA correlation.
+
+---------- Setting up pseudopotentials ----------
+Width of ionic core gaussian charges (only for fluid interactions / plotting) set to 0.397384
+
+Reading pseudopotential file '/home/akim2/jdftx_install/build/pseudopotentials/GBRV/s_pbe.uspp':
+  Title: S.  Created by USPP 7.3.6 on 1-4-15
+  Reference state energy: -11.898476.  6 valence electrons in orbitals:
+    |300>  occupation: 2  eigenvalue: -0.634167
+    |310>  occupation: 4  eigenvalue: -0.257568
+  lMax: 2  lLocal: 3  QijEcut: 6
+  6 projectors sampled on a log grid with 635 points:
+    l: 0  eig: -0.634161  rCut: 1.5
+    l: 0  eig: 1.500000  rCut: 1.5
+    l: 1  eig: -0.257567  rCut: 1.5
+    l: 1  eig: 1.500000  rCut: 1.5
+    l: 2  eig: -1.000000  rCut: 1.5
+    l: 2  eig: 1.500000  rCut: 1.5
+  Partial core density with radius 1.15
+  Transforming core density to a uniform radial grid of dG=0.02 with 1625 points.
+  Transforming local potential to a uniform radial grid of dG=0.02 with 1625 points.
+  Transforming nonlocal projectors to a uniform radial grid of dG=0.02 with 432 points.
+  Transforming density augmentations to a uniform radial grid of dG=0.02 with 1625 points.
+  Transforming atomic orbitals to a uniform radial grid of dG=0.02 with 432 points.
+  Core radius for overlap checks: 1.50 bohrs.
+
+Reading pseudopotential file '/home/akim2/jdftx_install/build/pseudopotentials/GBRV/na_pbe.uspp':
+  Title: Na.  Created by USPP 7.3.6 on 23-9-15
+  Reference state energy: -47.625620.  9 valence electrons in orbitals:
+    |200>  occupation: 2  eigenvalue: -2.085638
+    |210>  occupation: 6  eigenvalue: -1.053708
+    |300>  occupation: 1  eigenvalue: -0.100838
+  lMax: 2  lLocal: 0  QijEcut: 6
+  5 projectors sampled on a log grid with 657 points:
+    l: 0  eig: -2.085640  rCut: 1.37
+    l: 0  eig: -0.100839  rCut: 1.37
+    l: 1  eig: -1.053708  rCut: 1.47
+    l: 1  eig: 0.500000  rCut: 1.47
+    l: 2  eig: 0.750000  rCut: 2
+  Transforming local potential to a uniform radial grid of dG=0.02 with 1625 points.
+  Transforming nonlocal projectors to a uniform radial grid of dG=0.02 with 432 points.
+  Transforming density augmentations to a uniform radial grid of dG=0.02 with 1625 points.
+  Transforming atomic orbitals to a uniform radial grid of dG=0.02 with 432 points.
+  Core radius for overlap checks: 2.00 bohrs.
+
+Initialized 2 species with 3 total atoms.
+
+Folded 1 k-points by 1x1x1 to 1 k-points.
+
+---------- Setting up k-points, bands, fillings ----------
+No reducable k-points. 
+Computing the number of bands and number of electrons
+Calculating initial fillings.
+nElectrons:  24.000000   nBands: 12   nStates: 1
+
+----- Setting up reduced wavefunction bases (one per k-point) -----
+average nbasis = 109673.000 , ideal nbasis = 109671.883
+
+---------- Setting up coulomb interaction ----------
+Fluid mode embedding: using embedded box, but periodic Coulomb kernel.
+(Fluid response is responsible for (approximate) separation between periodic images.)
+Setting up double-sized grid for truncated Coulomb potentials:
+R = 
+[      56.0116     -28.0058            0  ]
+[            0      48.5075            0  ]
+[            0            0      75.5892  ]
+unit cell volume = 205374
+G =
+[   0.112177  0.0647651         -0  ]
+[          0    0.12953          0  ]
+[          0         -0  0.0831228  ]
+Chosen fftbox size, S = [  256  256  360  ]
+Integer grid location selected as the embedding center:
+   Grid: [  61  54  126  ]
+   Lattice: [  0.479924  0.419798  0.7  ]
+   Cartesian: [  7.56227  10.1817  26.4562  ]
+Constructing Wigner-Seitz cell: 8 faces (6 quadrilaterals, 2 hexagons)
+Range-separation parameter for embedded mesh potentials due to point charges: 0.590105 bohrs.
+
+---------- Setting up ewald sum ----------
+Optimum gaussian width for ewald sums = 19.599212 bohr.
+Real space sum over 1089 unit cells with max indices [  5  5  4  ]
+Reciprocal space sum over 2535 terms with max indices [  6  6  7  ]
+
+---------- Allocating electronic variables ----------
+Initializing wave functions:  linear combination of atomic orbitals
+S pseudo-atom occupations:   s ( 2 )  p ( 4 )
+Na pseudo-atom occupations:   s ( 2 1 )  p ( 6 )
+	FillingsUpdate:  mu: +0.174243798  nElectrons: 24.000000
+LCAOMinimize: Iter:   0  Etot: -105.3748020208236653  |grad|_K:  3.090e-02  alpha:  1.000e+00
+	FillingsUpdate:  mu: +0.158360168  nElectrons: 24.000000
+LCAOMinimize: Iter:   1  Etot: -105.4004462779386273  |grad|_K:  3.451e-02  alpha:  9.918e-02  linmin: -2.215e-01  cgtest:  7.733e-01  t[s]:      3.97
+LCAOMinimize: 	Wrong curvature in test step, increasing alphaT to 2.975522e-01.
+	FillingsUpdate:  mu: +0.119755915  nElectrons: 24.000000
+LCAOMinimize: Iter:   2  Etot: -105.4501058404564162  |grad|_K:  3.840e-02  alpha: -1.686e-01  linmin: -2.811e-01  cgtest:  6.765e-01  t[s]:      4.25
+	FillingsUpdate:  mu: -0.089140921  nElectrons: 24.000000
+LCAOMinimize: Iter:   3  Etot: -105.5504123719030076  |grad|_K:  1.268e-02  alpha:  1.648e-01  linmin:  4.452e-01  cgtest: -4.794e-01  t[s]:      4.53
+LCAOMinimize: None of the convergence criteria satisfied after 3 iterations.
+----- createFluidSolver() ----- (Fluid-side solver setup)
+   Initializing fluid molecule 'Glyme'
+     Net charge: 0   dipole magnitude: 0
+     Initializing spherical shell mfKernel with radius 0 Bohr
+     deltaS corrections:
+
+Correction to mu due to finite nuclear width = -0.000115948
+   Cavity determined by nc: 8.36e-05 and sigma: 0.6
+   Effective cavity tension: -8.03e-06 Eh/bohr^2 to account for cavitation and dispersion.
+
+
+---- Citations for features of the code used in this run ----
+
+   Software package:
+      R. Sundararaman, K. Letchworth-Weaver, K.A. Schwarz, D. Gunceler, Y. Ozhabes and T.A. Arias, 'JDFTx: software for joint density-functional theory', SoftwareX 6, 278 (2017)
+
+   gga-PBE exchange-correlation functional:
+      J.P. Perdew, K. Burke and M. Ernzerhof, Phys. Rev. Lett. 77, 3865 (1996)
+
+   Pseudopotentials:
+      KF Garrity, JW Bennett, KM Rabe and D Vanderbilt, Comput. Mater. Sci. 81, 446 (2014)
+
+   Truncated Coulomb potentials:
+      R. Sundararaman and T.A. Arias, Phys. Rev. B 87, 165122 (2013)
+
+   Linear/nonlinear dielectric/ionic fluid model with effective cavity tension:
+      D. Gunceler, K. Letchworth-Weaver, R. Sundararaman, K.A. Schwarz and T.A. Arias, Modelling Simul. Mater. Sci. Eng. 21, 074005 (2013)
+
+This list may not be complete. Please suggest additional citations or
+report any other bugs at https://github.com/shankar1729/jdftx/issues
+
+Initialization completed successfully at t[s]:      4.53
+
+Fluid solver invoked on fresh (random / LCAO) wavefunctions
+Running a vacuum solve first:
+
+-------- Initial electronic minimization -----------
+Will mix electronic density at each iteration.
+SCF: Cycle:  0   Etot: -105.603127974873360   dEtot: -5.272e-02   |Residual|: 1.061e-01   |deigs|: 5.935e-03  t[s]:      4.93
+SCF: Cycle:  1   Etot: -105.608909000437762   dEtot: -5.781e-03   |Residual|: 5.812e-02   |deigs|: 2.282e-03  t[s]:      5.24
+SCF: Cycle:  2   Etot: -105.612502825499675   dEtot: -3.594e-03   |Residual|: 1.754e-02   |deigs|: 5.788e-03  t[s]:      5.55
+SCF: Cycle:  3   Etot: -105.613276454351123   dEtot: -7.736e-04   |Residual|: 1.196e-02   |deigs|: 2.322e-03  t[s]:      5.86
+SCF: Cycle:  4   Etot: -105.613559997408231   dEtot: -2.835e-04   |Residual|: 6.943e-03   |deigs|: 2.537e-03  t[s]:      6.16
+SCF: Cycle:  5   Etot: -105.613760583704391   dEtot: -2.006e-04   |Residual|: 5.426e-03   |deigs|: 1.376e-03  t[s]:      6.46
+SCF: Cycle:  6   Etot: -105.613851114187440   dEtot: -9.053e-05   |Residual|: 3.747e-03   |deigs|: 2.571e-03  t[s]:      6.76
+SCF: Cycle:  7   Etot: -105.613893551297124   dEtot: -4.244e-05   |Residual|: 2.886e-03   |deigs|: 9.828e-04  t[s]:      7.06
+SCF: Cycle:  8   Etot: -105.613926895300494   dEtot: -3.334e-05   |Residual|: 3.527e-03   |deigs|: 2.011e-03  t[s]:      7.35
+SCF: Cycle:  9   Etot: -105.613943272881613   dEtot: -1.638e-05   |Residual|: 1.591e-03   |deigs|: 4.662e-04  t[s]:      7.65
+SCF: Cycle: 10   Etot: -105.613946383412554   dEtot: -3.111e-06   |Residual|: 2.449e-03   |deigs|: 7.067e-04  t[s]:      7.97
+SCF: Cycle: 11   Etot: -105.613966226523871   dEtot: -1.984e-05   |Residual|: 9.814e-04   |deigs|: 4.205e-04  t[s]:      8.26
+SCF: Cycle: 12   Etot: -105.613972868058241   dEtot: -6.642e-06   |Residual|: 4.777e-04   |deigs|: 3.690e-04  t[s]:      8.54
+SCF: Cycle: 13   Etot: -105.613971611677584   dEtot: +1.256e-06   |Residual|: 1.141e-03   |deigs|: 9.941e-05  t[s]:      8.85
+SCF: Cycle: 14   Etot: -105.613977300348495   dEtot: -5.689e-06   |Residual|: 4.982e-04   |deigs|: 2.708e-04  t[s]:      9.15
+SCF: Cycle: 15   Etot: -105.613979623422665   dEtot: -2.323e-06   |Residual|: 3.858e-04   |deigs|: 2.650e-04  t[s]:      9.44
+SCF: Cycle: 16   Etot: -105.613979779074072   dEtot: -1.557e-07   |Residual|: 3.490e-04   |deigs|: 1.253e-05  t[s]:      9.73
+SCF: Cycle: 17   Etot: -105.613980284775153   dEtot: -5.057e-07   |Residual|: 2.724e-04   |deigs|: 2.257e-04  t[s]:     10.04
+SCF: Cycle: 18   Etot: -105.613980354918354   dEtot: -7.014e-08   |Residual|: 2.222e-04   |deigs|: 2.200e-05  t[s]:     10.33
+SCF: Cycle: 19   Etot: -105.613980645837529   dEtot: -2.909e-07   |Residual|: 1.009e-04   |deigs|: 9.438e-05  t[s]:     10.63
+SCF: Cycle: 20   Etot: -105.613980671005848   dEtot: -2.517e-08   |Residual|: 6.289e-05   |deigs|: 2.017e-05  t[s]:     10.92
+SCF: Cycle: 21   Etot: -105.613980686989123   dEtot: -1.598e-08   |Residual|: 8.248e-05   |deigs|: 2.328e-05  t[s]:     11.22
+SCF: Cycle: 22   Etot: -105.613980705289009   dEtot: -1.830e-08   |Residual|: 4.893e-05   |deigs|: 1.750e-05  t[s]:     11.49
+SCF: Cycle: 23   Etot: -105.613980690490450   dEtot: +1.480e-08   |Residual|: 8.776e-05   |deigs|: 3.523e-05  t[s]:     11.79
+SCF: Cycle: 24   Etot: -105.613980734589418   dEtot: -4.410e-08   |Residual|: 2.006e-05   |deigs|: 3.558e-05  t[s]:     12.09
+SCF: Cycle: 25   Etot: -105.613980736251747   dEtot: -1.662e-09   |Residual|: 1.438e-05   |deigs|: 5.939e-06  t[s]:     12.37
+SCF: Cycle: 26   Etot: -105.613980737979318   dEtot: -1.728e-09   |Residual|: 1.704e-05   |deigs|: 4.340e-06  t[s]:     12.68
+SCF: Converged (|Delta E|<1.000000e-08 for 2 iters).
+
+Setting wave functions to eigenvectors of Hamiltonian
+Vacuum energy after initial minimize, Etot = -105.613980737979318
+
+
+-------- Electronic minimization -----------
+Will mix electronic density at each iteration.
+	Linear fluid (dielectric constant: 7.2) occupying 0.991537 of unit cell:	Completed after 7 iterations at t[s]:     13.33
+	Linear fluid (dielectric constant: 7.2) occupying 0.993094 of unit cell:	Completed after 6 iterations at t[s]:     14.33
+SCF: Cycle:  0   Etot: -105.650249443706116   dEtot: -9.756e-03   |Residual|: 2.856e-02   |deigs|: 9.301e-04  t[s]:     14.52
+	Linear fluid (dielectric constant: 7.2) occupying 0.991460 of unit cell:	Completed after 6 iterations at t[s]:     15.20
+	Linear fluid (dielectric constant: 7.2) occupying 0.993033 of unit cell:	Completed after 6 iterations at t[s]:     16.18
+SCF: Cycle:  1   Etot: -105.652578274217575   dEtot: -2.329e-03   |Residual|: 1.731e-02   |deigs|: 5.342e-03  t[s]:     16.42
+	Linear fluid (dielectric constant: 7.2) occupying 0.991439 of unit cell:	Completed after 7 iterations at t[s]:     17.17
+	Linear fluid (dielectric constant: 7.2) occupying 0.992934 of unit cell:	Completed after 7 iterations at t[s]:     18.34
+SCF: Cycle:  2   Etot: -105.654607161687039   dEtot: -2.029e-03   |Residual|: 1.290e-02   |deigs|: 6.882e-03  t[s]:     18.61
+	Linear fluid (dielectric constant: 7.2) occupying 0.991643 of unit cell:	Completed after 6 iterations at t[s]:     19.29
+	Linear fluid (dielectric constant: 7.2) occupying 0.993022 of unit cell:	Completed after 7 iterations at t[s]:     20.45
+SCF: Cycle:  3   Etot: -105.655019757103659   dEtot: -4.126e-04   |Residual|: 7.404e-03   |deigs|: 2.778e-03  t[s]:     20.71
+	Linear fluid (dielectric constant: 7.2) occupying 0.992058 of unit cell:	Completed after 6 iterations at t[s]:     21.41
+	Linear fluid (dielectric constant: 7.2) occupying 0.993222 of unit cell:	Completed after 7 iterations at t[s]:     22.57
+SCF: Cycle:  4   Etot: -105.657142410151693   dEtot: -2.123e-03   |Residual|: 9.668e-03   |deigs|: 9.931e-03  t[s]:     22.84
+	Linear fluid (dielectric constant: 7.2) occupying 0.992140 of unit cell:	Completed after 7 iterations at t[s]:     23.61
+	Linear fluid (dielectric constant: 7.2) occupying 0.993241 of unit cell:	Completed after 8 iterations at t[s]:     24.83
+SCF: Cycle:  5   Etot: -105.657501211261334   dEtot: -3.588e-04   |Residual|: 8.902e-03   |deigs|: 2.889e-03  t[s]:     25.10
+	Linear fluid (dielectric constant: 7.2) occupying 0.992329 of unit cell:	Completed after 6 iterations at t[s]:     25.80
+	Linear fluid (dielectric constant: 7.2) occupying 0.993243 of unit cell:	Completed after 8 iterations at t[s]:     27.03
+SCF: Cycle:  6   Etot: -105.658034518195308   dEtot: -5.333e-04   |Residual|: 6.872e-03   |deigs|: 4.276e-03  t[s]:     27.31
+	Linear fluid (dielectric constant: 7.2) occupying 0.993003 of unit cell:	Completed after 6 iterations at t[s]:     28.01
+	Linear fluid (dielectric constant: 7.2) occupying 0.993207 of unit cell:	Completed after 6 iterations at t[s]:     29.11
+SCF: Cycle:  7   Etot: -105.658852349213234   dEtot: -8.178e-04   |Residual|: 2.879e-03   |deigs|: 1.047e-02  t[s]:     29.39
+	Linear fluid (dielectric constant: 7.2) occupying 0.993403 of unit cell:	Completed after 6 iterations at t[s]:     30.06
+	Linear fluid (dielectric constant: 7.2) occupying 0.993154 of unit cell:	Completed after 5 iterations at t[s]:     31.10
+SCF: Cycle:  8   Etot: -105.659061064711807   dEtot: -2.087e-04   |Residual|: 1.937e-03   |deigs|: 5.862e-03  t[s]:     31.36
+	Linear fluid (dielectric constant: 7.2) occupying 0.993036 of unit cell:	Completed after 6 iterations at t[s]:     34.10
+	Linear fluid (dielectric constant: 7.2) occupying 0.993195 of unit cell:	Completed after 6 iterations at t[s]:     35.09
+SCF: Cycle:  9   Etot: -105.658873719270275   dEtot: +1.873e-04   |Residual|: 6.100e-03   |deigs|: 6.601e-03  t[s]:     35.28
+	Linear fluid (dielectric constant: 7.2) occupying 0.993066 of unit cell:	Completed after 5 iterations at t[s]:     35.92
+	Linear fluid (dielectric constant: 7.2) occupying 0.993182 of unit cell:	Completed after 6 iterations at t[s]:     38.94
+SCF: Cycle: 10   Etot: -105.658975175210585   dEtot: -1.015e-04   |Residual|: 4.723e-03   |deigs|: 2.323e-03  t[s]:     39.13
+	Linear fluid (dielectric constant: 7.2) occupying 0.993050 of unit cell:	Completed after 6 iterations at t[s]:     39.80
+	Linear fluid (dielectric constant: 7.2) occupying 0.993043 of unit cell:	Completed after 5 iterations at t[s]:     40.75
+SCF: Cycle: 11   Etot: -105.659123791579091   dEtot: -1.486e-04   |Residual|: 2.266e-03   |deigs|: 5.840e-03  t[s]:     40.94
+	Linear fluid (dielectric constant: 7.2) occupying 0.992825 of unit cell:	Completed after 5 iterations at t[s]:     45.28
+	Linear fluid (dielectric constant: 7.2) occupying 0.993069 of unit cell:	Completed after 5 iterations at t[s]:     46.23
+SCF: Cycle: 12   Etot: -105.659137677496304   dEtot: -1.389e-05   |Residual|: 1.595e-03   |deigs|: 4.366e-03  t[s]:     46.42
+	Linear fluid (dielectric constant: 7.2) occupying 0.992892 of unit cell:	Completed after 4 iterations at t[s]:     50.71
+	Linear fluid (dielectric constant: 7.2) occupying 0.993058 of unit cell:	Completed after 4 iterations at t[s]:     51.62
+SCF: Cycle: 13   Etot: -105.659155441881097   dEtot: -1.776e-05   |Residual|: 1.457e-03   |deigs|: 8.197e-04  t[s]:     51.82
+	Linear fluid (dielectric constant: 7.2) occupying 0.992928 of unit cell:	Completed after 3 iterations at t[s]:     54.29
+	Linear fluid (dielectric constant: 7.2) occupying 0.993053 of unit cell:	Completed after 3 iterations at t[s]:     55.13
+SCF: Cycle: 14   Etot: -105.659165119673986   dEtot: -9.678e-06   |Residual|: 6.175e-04   |deigs|: 5.251e-04  t[s]:     55.32
+	Linear fluid (dielectric constant: 7.2) occupying 0.993024 of unit cell:	Completed after 4 iterations at t[s]:     55.92
+	Linear fluid (dielectric constant: 7.2) occupying 0.993047 of unit cell:	Completed after 2 iterations at t[s]:     57.41
+SCF: Cycle: 15   Etot: -105.659169100539174   dEtot: -3.981e-06   |Residual|: 5.949e-04   |deigs|: 7.273e-04  t[s]:     57.59
+	Linear fluid (dielectric constant: 7.2) occupying 0.993029 of unit cell:	Completed after 2 iterations at t[s]:     58.22
+	Linear fluid (dielectric constant: 7.2) occupying 0.993036 of unit cell:	Completed after 2 iterations at t[s]:     58.98
+SCF: Cycle: 16   Etot: -105.659170293264509   dEtot: -1.193e-06   |Residual|: 5.332e-04   |deigs|: 1.334e-04  t[s]:     59.17
+	Linear fluid (dielectric constant: 7.2) occupying 0.993033 of unit cell:	Completed after 2 iterations at t[s]:     59.70
+	Linear fluid (dielectric constant: 7.2) occupying 0.993035 of unit cell:	Completed after 2 iterations at t[s]:     60.48
+SCF: Cycle: 17   Etot: -105.659170861345004   dEtot: -5.681e-07   |Residual|: 4.566e-04   |deigs|: 7.262e-05  t[s]:     60.67
+	Linear fluid (dielectric constant: 7.2) occupying 0.993013 of unit cell:	Completed after 4 iterations at t[s]:     61.27
+	Linear fluid (dielectric constant: 7.2) occupying 0.993039 of unit cell:	Completed after 3 iterations at t[s]:     62.14
+SCF: Cycle: 18   Etot: -105.659171174494332   dEtot: -3.131e-07   |Residual|: 1.991e-04   |deigs|: 5.205e-04  t[s]:     62.33
+	Linear fluid (dielectric constant: 7.2) occupying 0.993039 of unit cell:	Completed after 3 iterations at t[s]:     62.89
+	Linear fluid (dielectric constant: 7.2) occupying 0.993034 of unit cell:	Completed after 2 iterations at t[s]:     63.75
+SCF: Cycle: 19   Etot: -105.659172027247081   dEtot: -8.528e-07   |Residual|: 2.698e-04   |deigs|: 5.457e-04  t[s]:     63.95
+	Linear fluid (dielectric constant: 7.2) occupying 0.993033 of unit cell:	Completed after 2 iterations at t[s]:     64.47
+	Linear fluid (dielectric constant: 7.2) occupying 0.993034 of unit cell:	Completed after 1 iterations at t[s]:     65.23
+SCF: Cycle: 20   Etot: -105.659172271706993   dEtot: -2.445e-07   |Residual|: 1.125e-04   |deigs|: 9.174e-05  t[s]:     65.41
+	Linear fluid (dielectric constant: 7.2) occupying 0.993032 of unit cell:	Completed after 2 iterations at t[s]:     65.92
+	Linear fluid (dielectric constant: 7.2) occupying 0.993039 of unit cell:	Completed after 2 iterations at t[s]:     66.72
+SCF: Cycle: 21   Etot: -105.659172295873617   dEtot: -2.417e-08   |Residual|: 1.975e-04   |deigs|: 1.289e-04  t[s]:     66.92
+	Linear fluid (dielectric constant: 7.2) occupying 0.993035 of unit cell:	Completed after 1 iterations at t[s]:     67.41
+	Linear fluid (dielectric constant: 7.2) occupying 0.993040 of unit cell:	Completed after 1 iterations at t[s]:     68.15
+SCF: Cycle: 22   Etot: -105.659172399760479   dEtot: -1.039e-07   |Residual|: 1.192e-04   |deigs|: 5.552e-05  t[s]:     68.34
+	Linear fluid (dielectric constant: 7.2) occupying 0.993038 of unit cell:	Completed after 0 iterations at t[s]:     68.77
+	Linear fluid (dielectric constant: 7.2) occupying 0.993038 of unit cell:	Completed after 0 iterations at t[s]:     69.45
+SCF: Cycle: 23   Etot: -105.659172439102704   dEtot: -3.934e-08   |Residual|: 7.646e-05   |deigs|: 6.116e-05  t[s]:     69.64
+	Linear fluid (dielectric constant: 7.2) occupying 0.993034 of unit cell:	Completed after 1 iterations at t[s]:     70.07
+	Linear fluid (dielectric constant: 7.2) occupying 0.993039 of unit cell:	Completed after 1 iterations at t[s]:     70.82
+SCF: Cycle: 24   Etot: -105.659172427323909   dEtot: +1.178e-08   |Residual|: 5.901e-05   |deigs|: 5.370e-05  t[s]:     71.00
+	Linear fluid (dielectric constant: 7.2) occupying 0.993035 of unit cell:	Completed after 0 iterations at t[s]:     71.44
+	Linear fluid (dielectric constant: 7.2) occupying 0.993039 of unit cell:	Completed after 0 iterations at t[s]:     72.12
+SCF: Cycle: 25   Etot: -105.659172473956488   dEtot: -4.663e-08   |Residual|: 3.807e-05   |deigs|: 4.047e-05  t[s]:     72.31
+	Linear fluid (dielectric constant: 7.2) occupying 0.993035 of unit cell:	Completed after 0 iterations at t[s]:     72.71
+	Linear fluid (dielectric constant: 7.2) occupying 0.993039 of unit cell:	Completed after 0 iterations at t[s]:     73.34
+SCF: Cycle: 26   Etot: -105.659172480755359   dEtot: -6.799e-09   |Residual|: 1.832e-05   |deigs|: 1.201e-05  t[s]:     73.53
+	Linear fluid (dielectric constant: 7.2) occupying 0.993036 of unit cell:	Completed after 0 iterations at t[s]:     73.90
+	Linear fluid (dielectric constant: 7.2) occupying 0.993039 of unit cell:	Completed after 0 iterations at t[s]:     74.58
+SCF: Cycle: 27   Etot: -105.659172486591416   dEtot: -5.836e-09   |Residual|: 1.573e-05   |deigs|: 2.582e-05  t[s]:     74.77
+SCF: Converged (|Delta E|<1.000000e-08 for 2 iters).
+
+Setting wave functions to eigenvectors of Hamiltonian
+Single-point solvation energy estimate, DeltaEtot = -0.045191748612098
+
+# Ionic positions in cartesian coordinates:
+ion S   7.562685799317076  10.092958691311287  26.456219999999998 1
+ion Na   3.570935584093532  12.697390495689309  26.456219999999998 1
+ion Na  11.551298470729389  12.699762872599402  26.456219999999998 1
+
+# Forces in Cartesian coordinates:
+force S  -0.000052919367742   0.000217921926623   0.000000000000000 1
+force Na  -0.000012774623880   0.000050199433494   0.000000000000000 1
+force Na   0.000057165356631  -0.000005872271930   0.000000000000000 1
+
+# Energy components:
+   A_diel =       -0.0653475066616670
+   Eewald =       19.6617576906644764
+       EH =      108.0619663175781682
+     Eloc =      -95.4111366721503771
+      Enl =     -141.9464290992281121
+      Exc =      -18.5637769891745172
+ Exc_core =        1.7677287283734588
+       KE =       20.8360650440071566
+-------------------------------------
+     Etot =     -105.6591724865914159
+
+IonicMinimize: Iter:   0  Etot: -105.659172486591416  |grad|_K:  6.085e-05  alpha:  1.000e+00
+IonicMinimize: Converged (|grad|_K<1.000000e-04).
+
+#--- Lowdin population analysis ---
+# oxidation-state S -1.413
+# oxidation-state Na +0.818 +0.819
+
+
+Dumping 'Na2S-glyme.wfns' ... done
+Dumping 'Na2S-glyme.fluidState' ... done
+Dumping 'Na2S-glyme.ionpos' ... done
+End date and time: Sat Dec 28 20:32:22 2024  (Duration: 0-0:01:15.77)
+Done!

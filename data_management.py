@@ -89,7 +89,8 @@ def parse_output_file(file_path, verbose=False):
         print(f"Solvent: {solvent}")
 
     if df_energies.empty:
-        raise ValueError("Error: df_energies is empty.")
+        print(f"Error: df_energies is empty for {file_path}.")
+        raise ValueError(f"Error: df_energies is empty for {file_path}.")
     if df_oxidation_states.empty:
         raise ValueError("Error: df_oxidation_states is empty.")
 
@@ -377,5 +378,5 @@ if __name__ == "__main__":
     # parse_xsf_file("Sorbents/FeN4-PC", "FeNe")
     # extract_data("Sorbents")
     # extract_data("NaPS@graphene")
-    # extract_data("NaPS")
-    extract_adsorption_energies("NaPS@NiS2")
+    extract_data("NaPS")
+    # extract_adsorption_energies("NaPS@NiS2")

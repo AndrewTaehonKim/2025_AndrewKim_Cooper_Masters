@@ -29,4 +29,4 @@ def extract_all_raw_data(run_all:bool=False, verbose:bool=False):
             if "@" in category:
                 extract_adsorption_energies(category)
 
-extract_all_raw_data()
+extract_all_raw_data(run_all=True)
