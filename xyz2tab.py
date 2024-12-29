@@ -460,8 +460,9 @@ def run_x2t(
         ]
 
     # exit if selected bonds data frame is empty
-    if len(sel_dist) == 0:
-        print(f"No bonds found for {args_filename}. Include more atoms or elements. Exit.")
+    if args_print:
+        if len(sel_dist) == 0:
+            print(f"No bonds found for {args_filename}. Include more atoms or elements. Exit.")
         # sys.exit(1)
 
     ############ Sort
@@ -827,8 +828,9 @@ def run_x2t(
         ]
 
     # exit if selected angles data frame is empty
-    if len(sel_angles) == 0:
-        print(f"No angles found for {args_filename}. Include more atoms or elements. Exit.")
+    if args_print:
+        if len(sel_angles) == 0:
+            print(f"No angles found for {args_filename}. Include more atoms or elements. Exit.")
         # sys.exit(1)
 
     ############ Sort

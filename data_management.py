@@ -28,8 +28,9 @@ def read_after_last_instance(filepath, marker):
 def parse_output_file(file_path, verbose=False):
     energies = []
     oxidation_states = {}
-    output_file_name = None
+    output_file_name = file_path.split("/")[-1].split(".")[0]
     electronic_scf = False
+    vdw = False
     solvent = None
     file_path = (
         "Data-raw/" + file_path + ".out"
@@ -58,10 +59,6 @@ def parse_output_file(file_path, verbose=False):
             states = list(map(float, parts[3:]))
             oxidation_states[element] = states
 
-        # Check for output file name
-        if "dump-name" in line:
-            output_file_name = line.split()[1].split(".")[0]
-
         # Check for electronic scf
         if "scf" in line:
             electronic_scf = True
@@ -71,6 +68,11 @@ def parse_output_file(file_path, verbose=False):
             solvent_exists = False
         elif "fluid-solvent" in line:
             solvent = line.split()[1]
+
+        # Check for van der waals correction
+        if 'van-der-waals' in line:
+            vdw = True
+
     solvent = "Vacuum" if not solvent_exists else solvent
     # Create dataframes
     df_energies = pd.DataFrame(energies, columns=["Iteration", "Energy"])
@@ -91,7 +93,7 @@ def parse_output_file(file_path, verbose=False):
     if df_oxidation_states.empty:
         raise ValueError("Error: df_oxidation_states is empty.")
 
-    return df_energies, df_oxidation_states, output_file_name, electronic_scf, solvent
+    return df_energies, df_oxidation_states, output_file_name, electronic_scf, solvent, vdw
 
 
 # --- This method parses xsf files --- #
@@ -146,6 +148,12 @@ def parse_xsf_file(file_path: str, model: str, radius=6):
     angle_df = angle_df[["name"] + [col for col in angle_df.columns if col != "name"]]
     return bond_df, angle_df
 
+# --- This method extracts the polysulfide from the string --- #
+def extract_NaPS(filename: str):
+    polysulfide = filename.split("@")[0]
+    polysulfide = polysulfide.split("-")[0]
+    return polysulfide
+
 # --- This method compiles the energies and oxidation states of all sorbents in a subdirectory of Data-raw --- #
 def extract_data(category: str, verbose=False):
     # get working directory
@@ -156,7 +164,6 @@ def extract_data(category: str, verbose=False):
     file_list = os.listdir(directory)
     out_files = []
     xsf_files = []
-
     for file in file_list:
         if file.endswith(".out"):
             out_files.append(file)
@@ -168,7 +175,7 @@ def extract_data(category: str, verbose=False):
     # Handle output files
     extracted_outputs = []
     for file in out_files:
-        df_energies, df_oxidation_states, output_file_name, electronic_scf, solvent = (
+        df_energies, df_oxidation_states, output_file_name, electronic_scf, solvent, vdw = (
             parse_output_file(f"{category}/{file}")
         )
         for _, row in df_energies.iterrows():
@@ -180,12 +187,16 @@ def extract_data(category: str, verbose=False):
                     "energy": row["Energy"],
                     "oxidation_states": df_oxidation_states.to_dict(orient="records"),
                     "electronic_scf": electronic_scf,
+                    "vdw": vdw
                 }
             )
             
     extracted_outputs_df = pd.DataFrame(extracted_outputs)
     extracted_outputs_df.sort_values(by="name", inplace=True)
+    extracted_outputs_df["NaPS"] = extracted_outputs_df["name"].apply(extract_NaPS)
     extracted_outputs_df.reset_index(drop=True, inplace=True)
+    column_order = ["name", "NaPS", "solvent", "energy", "iteration", "electronic_scf", "vdw", "oxidation_states"]
+    extracted_outputs_df = extracted_outputs_df[column_order]
     if verbose:
         print(f"df output for {category}")
         print(extracted_outputs_df.head())
@@ -196,7 +207,7 @@ def extract_data(category: str, verbose=False):
     final_extracted_outputs_df = extracted_outputs_df.loc[
         extracted_outputs_df.groupby("name")["iteration"].idxmax()
     ]
-    output_directory = os.path.join(working_directory, "Data-extracted/final")
+    output_directory = os.path.join(working_directory, "Data-extracted/final/energies")
     os.makedirs(output_directory, exist_ok=True)
     output_file_path = os.path.join(output_directory, f"{category}.csv")
     final_extracted_outputs_df.to_csv(output_file_path, index=False)
@@ -218,16 +229,34 @@ def extract_data(category: str, verbose=False):
         extracted_xsf_angles_df = pd.DataFrame(extracted_xsf_angles)
         extracted_xsf_bonds_df.sort_values(by="name", inplace=True)
         extracted_xsf_angles_df.sort_values(by="name", inplace=True)
+        extracted_xsf_bonds_df["NaPS"] = extracted_xsf_bonds_df["name"].apply(extract_NaPS)
+        extracted_xsf_angles_df["NaPS"] = extracted_xsf_angles_df["name"].apply(extract_NaPS)
         extracted_xsf_bonds_df.reset_index(drop=True, inplace=True)
         extracted_xsf_angles_df.reset_index(drop=True, inplace=True)
+        extracted_xsf_bonds_df = extracted_xsf_bonds_df.merge(
+            extracted_outputs_df[["name", "solvent", "electronic_scf", "vdw"]],
+            on="name",
+            how="left"
+        )
+        extracted_xsf_angles_df = extracted_xsf_angles_df.merge(
+            extracted_outputs_df[["name", "solvent", "electronic_scf", "vdw"]],
+            on="name",
+            how="left"
+        )
+        bond_column_order = ["name", "NaPS", "Atoms", "solvent", "electronic_scf", "vdw", "Count", "Mean /Å", "Median /Å", "Sam. std. dev.", "Pop. std. dev.", "Std. error", "Skewness"]
+        extracted_xsf_bonds_df = extracted_xsf_bonds_df[bond_column_order]
+        angles_column_order = ["name", "NaPS", "Atoms", "solvent", "electronic_scf", "vdw", "Count", "Mean /°", "Median /°", "Sam. std. dev.", "Pop. std. dev.", "Std. error", "Skewness"]
+        extracted_xsf_angles_df = extracted_xsf_angles_df[angles_column_order]
         bond_dfs.append(extracted_xsf_bonds_df)
         angle_dfs.append(extracted_xsf_angles_df)
-        output_directory = os.path.join(working_directory, "Data-extracted/final")
-        os.makedirs(output_directory, exist_ok=True)
-        bond_output_file_path = os.path.join(output_directory, f"{category}_bond-rad{radius}.csv")
-        angle_output_file_path = os.path.join(output_directory, f"{category}_angle-rad{radius}.csv")
-        extracted_xsf_bonds_df.to_csv(bond_output_file_path, index=False)
-        extracted_xsf_angles_df.to_csv(angle_output_file_path, index=False)
+        bond_output_directory = os.path.join(working_directory, "Data-extracted/final/bonds")
+        angle_output_directory = os.path.join(working_directory, "Data-extracted/final/angles")
+        os.makedirs(bond_output_directory, exist_ok=True)
+        os.makedirs(angle_output_directory, exist_ok=True)
+        bond_output_file_path = os.path.join(bond_output_directory, f"{category}_bond-rad{radius}.csv")
+        angle_output_file_path = os.path.join(angle_output_directory, f"{category}_angle-rad{radius}.csv")
+        extracted_xsf_bonds_df.to_csv(bond_output_file_path, index=False, encoding='utf-8-sig')
+        extracted_xsf_angles_df.to_csv(angle_output_file_path, index=False, encoding='utf-8-sig')
     
     print(f"Data extraction for {category} is complete.")
     return final_extracted_outputs_df, bond_dfs[0], bond_dfs[1], angle_dfs[0], angle_dfs[1]
@@ -238,5 +267,5 @@ if __name__ == "__main__":
     #     parse_output_file("Sorbents/FeN4-PC")
     # )
     # parse_xsf_file("Sorbents/FeN4-PC", "FeNe")
-    # extract_data("Sorbents")
-    extract_data("NaPS")
+    extract_data("Sorbents")
+    # extract_data("NaPS")
