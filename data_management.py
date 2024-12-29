@@ -148,11 +148,25 @@ def parse_xsf_file(file_path: str, model: str, radius=6):
     angle_df = angle_df[["name"] + [col for col in angle_df.columns if col != "name"]]
     return bond_df, angle_df
 
+
 # --- This method extracts the polysulfide from the string --- #
 def extract_NaPS(filename: str):
-    polysulfide = filename.split("@")[0]
-    polysulfide = polysulfide.split("-")[0]
-    return polysulfide
+    if any(substring in filename for substring in ["Na2S", "Na2S2", "Na2S4", "Na2S6", "Na2S8"]):
+        polysulfide = filename.split("@")[0]
+        polysulfide = polysulfide.split("-")[0]
+        return polysulfide
+    else:
+        return None
+
+# --- This method extracts the sorbent from the string --- #
+def extract_sorbent(filename: str):
+    if any(substring in filename for substring in ["Na2S", "Na2S2", "Na2S4", "Na2S6", "Na2S8"]) and "@" not in filename:
+        return None
+    else:
+        sorbent = filename.split("-")[0]
+        if "@" in sorbent:
+            sorbent = sorbent.split("@")[1]
+        return sorbent
 
 # --- This method compiles the energies and oxidation states of all sorbents in a subdirectory of Data-raw --- #
 def extract_data(category: str, verbose=False):
@@ -190,12 +204,15 @@ def extract_data(category: str, verbose=False):
                     "vdw": vdw
                 }
             )
-            
+
+    # create final output df        
     extracted_outputs_df = pd.DataFrame(extracted_outputs)
     extracted_outputs_df.sort_values(by="name", inplace=True)
     extracted_outputs_df["NaPS"] = extracted_outputs_df["name"].apply(extract_NaPS)
+    sorbent = extract_sorbent(str(extracted_outputs_df.iloc[0]["name"]))
+    extracted_outputs_df["sorbent"] = sorbent
     extracted_outputs_df.reset_index(drop=True, inplace=True)
-    column_order = ["name", "NaPS", "solvent", "energy", "iteration", "electronic_scf", "vdw", "oxidation_states"]
+    column_order = ["name", "NaPS", "sorbent", "solvent", "energy", "iteration", "electronic_scf", "vdw", "oxidation_states"]
     extracted_outputs_df = extracted_outputs_df[column_order]
     if verbose:
         print(f"df output for {category}")
@@ -231,6 +248,8 @@ def extract_data(category: str, verbose=False):
         extracted_xsf_angles_df.sort_values(by="name", inplace=True)
         extracted_xsf_bonds_df["NaPS"] = extracted_xsf_bonds_df["name"].apply(extract_NaPS)
         extracted_xsf_angles_df["NaPS"] = extracted_xsf_angles_df["name"].apply(extract_NaPS)
+        extracted_xsf_bonds_df["sorbent"] = sorbent
+        extracted_xsf_angles_df["sorbent"] = sorbent
         extracted_xsf_bonds_df.reset_index(drop=True, inplace=True)
         extracted_xsf_angles_df.reset_index(drop=True, inplace=True)
         extracted_xsf_bonds_df = extracted_xsf_bonds_df.merge(
@@ -243,9 +262,9 @@ def extract_data(category: str, verbose=False):
             on="name",
             how="left"
         )
-        bond_column_order = ["name", "NaPS", "Atoms", "solvent", "electronic_scf", "vdw", "Count", "Mean /Å", "Median /Å", "Sam. std. dev.", "Pop. std. dev.", "Std. error", "Skewness"]
+        bond_column_order = ["name", "NaPS", "sorbent", "Atoms", "solvent", "electronic_scf", "vdw", "Count", "Mean /Å", "Median /Å", "Sam. std. dev.", "Pop. std. dev.", "Std. error", "Skewness"]
         extracted_xsf_bonds_df = extracted_xsf_bonds_df[bond_column_order]
-        angles_column_order = ["name", "NaPS", "Atoms", "solvent", "electronic_scf", "vdw", "Count", "Mean /°", "Median /°", "Sam. std. dev.", "Pop. std. dev.", "Std. error", "Skewness"]
+        angles_column_order = ["name", "NaPS", "sorbent", "Atoms", "solvent", "electronic_scf", "vdw", "Count", "Mean /°", "Median /°", "Sam. std. dev.", "Pop. std. dev.", "Std. error", "Skewness"]
         extracted_xsf_angles_df = extracted_xsf_angles_df[angles_column_order]
         bond_dfs.append(extracted_xsf_bonds_df)
         angle_dfs.append(extracted_xsf_angles_df)
@@ -261,6 +280,77 @@ def extract_data(category: str, verbose=False):
     print(f"Data extraction for {category} is complete.")
     return final_extracted_outputs_df, bond_dfs[0], bond_dfs[1], angle_dfs[0], angle_dfs[1]
 
+
+# --- This method pairs the correct NaPS and Sorbent given the conditions for parameters sorbent, solvent, electronic_scf, and vdw --- #
+def get_energy(NaPS_df: pd.DataFrame, sorbent_df: pd.DataFrame, combined_df: pd.DataFrame):
+    adsorption_df = pd.DataFrame(["NaPS", "Sorbent", "Solvent", "Energy", "Electronic SCF", "vdw"])
+    for _, row in combined_df.iterrows():
+        NaPS = row["NaPS"]
+        sorbent = row["name"]
+        solvent = row["solvent"]
+        electronic_scf = row["electronic_scf"]
+        vdw = row["vdw"]
+        NaPS_energy = NaPS_df.loc[NaPS_df["name"] == NaPS, "energy"].values[0]
+        sorbent_energy = sorbent_df.loc[sorbent_df["name"] == sorbent, "energy"].values[0]
+        adsorption_energy = sorbent_energy - NaPS_energy
+        adsorption_df.append(
+            {
+                "NaPS": NaPS,
+                "Sorbent": sorbent,
+                "Solvent": solvent,
+                "Energy": adsorption_energy,
+                "Electronic SCF": electronic_scf,
+                "vdw": vdw
+            }
+        )
+
+# --- This method extracts the adsorption energies using the finalized energies data --- #
+def extract_adsorption_energies(sorbent: str, verbose=False):
+    sorbent = sorbent if "NaPS@" not in sorbent else sorbent.split("@")[1]
+    # get working directory
+    working_directory = os.getcwd()
+    directory = working_directory + f"/Data-extracted/final/energies"
+    file_list = os.listdir(directory)
+    # get NaPS & associated sorbent energies & combined model energies
+    assert "NaPS.csv" in file_list, f"NaPS.csv not found in {directory}"
+    assert f"Sorbents.csv" in file_list, f"Sorbents.csv not found in {directory}"
+    assert f"NaPS@{sorbent}.csv" in file_list, f"NaPS@{sorbent}.csv not found in {directory}"
+    # get dataframes
+    NaPS_df = pd.read_csv(f"{directory}/NaPS.csv")
+    sorbent_df = pd.read_csv(f"{directory}/Sorbents.csv")
+    combined_df = pd.read_csv(f"{directory}/NaPS@{sorbent}.csv")
+    print(combined_df.head())
+
+    # extracted_adsorption_energies = []
+    # for file in file_list:
+    #     df = pd.read_csv(f"{directory}/{file}")
+    #     df.sort_values(by="name", inplace=True)
+    #     df.reset_index(drop=True, inplace=True)
+    #     for i in range(0, len(df), 2):
+    #         adsorption_energy = df.loc[i, "energy"] - df.loc[i + 1, "energy"]
+    #         extracted_adsorption_energies.append(
+    #             {
+    #                 "name": df.loc[i, "name"],
+    #                 "solvent": df.loc[i, "solvent"],
+    #                 "adsorption_energy": adsorption_energy,
+    #                 "electronic_scf": df.loc[i, "electronic_scf"],
+    #                 "vdw": df.loc[i, "vdw"]
+    #             }
+    #         )
+    # extracted_adsorption_energies_df = pd.DataFrame(extracted_adsorption_energies)
+    # extracted_adsorption_energies_df.sort_values(by="name", inplace=True)
+    # extracted_adsorption_energies_df.reset_index(drop=True, inplace=True)
+    # output_directory = os.path.join(working_directory, "Data-extracted/final/adsorption_energies")
+    # os.makedirs(output_directory, exist_ok=True)
+    # output_file_path = os.path.join(output_directory, f"{category}.csv")
+    # extracted_adsorption_energies_df.to_csv(output_file_path, index=False)
+    # if verbose:
+    #     print(f"df output for {category}")
+    #     print(extracted_adsorption_energies_df.head())
+    # print(f"Adsorption energy extraction for {category} is complete.")
+    # return extracted_adsorption_energies_df
+
+
 # Example usage
 if __name__ == "__main__":
     # df_energies, df_oxidation_states, output_file_name, electronic_scf, solvent = (
@@ -268,4 +358,6 @@ if __name__ == "__main__":
     # )
     # parse_xsf_file("Sorbents/FeN4-PC", "FeNe")
     extract_data("Sorbents")
-    # extract_data("NaPS")
+    extract_data("NaPS@graphene")
+    extract_data("NaPS")
+    # extract_adsorption_energies("NaPS@graphene")
