@@ -166,6 +166,8 @@ def extract_sorbent(filename: str):
         sorbent = filename.split("-")[0]
         if "@" in sorbent:
             sorbent = sorbent.split("@")[1]
+        if ".csv" in sorbent:
+            sorbent = sorbent.split(".")[0]
         return sorbent
 
 # --- This method compiles the energies and oxidation states of all sorbents in a subdirectory of Data-raw --- #
@@ -209,8 +211,7 @@ def extract_data(category: str, verbose=False):
     extracted_outputs_df = pd.DataFrame(extracted_outputs)
     extracted_outputs_df.sort_values(by="name", inplace=True)
     extracted_outputs_df["NaPS"] = extracted_outputs_df["name"].apply(extract_NaPS)
-    sorbent = extract_sorbent(str(extracted_outputs_df.iloc[0]["name"]))
-    extracted_outputs_df["sorbent"] = sorbent
+    extracted_outputs_df["sorbent"] = extracted_outputs_df["name"].apply(extract_sorbent)
     extracted_outputs_df.reset_index(drop=True, inplace=True)
     column_order = ["name", "NaPS", "sorbent", "solvent", "energy", "iteration", "electronic_scf", "vdw", "oxidation_states"]
     extracted_outputs_df = extracted_outputs_df[column_order]
@@ -248,8 +249,8 @@ def extract_data(category: str, verbose=False):
         extracted_xsf_angles_df.sort_values(by="name", inplace=True)
         extracted_xsf_bonds_df["NaPS"] = extracted_xsf_bonds_df["name"].apply(extract_NaPS)
         extracted_xsf_angles_df["NaPS"] = extracted_xsf_angles_df["name"].apply(extract_NaPS)
-        extracted_xsf_bonds_df["sorbent"] = sorbent
-        extracted_xsf_angles_df["sorbent"] = sorbent
+        extracted_xsf_bonds_df["sorbent"] = extracted_xsf_bonds_df["name"].apply(extract_sorbent)
+        extracted_xsf_angles_df["sorbent"] = extracted_xsf_angles_df["name"].apply(extract_sorbent)
         extracted_xsf_bonds_df.reset_index(drop=True, inplace=True)
         extracted_xsf_angles_df.reset_index(drop=True, inplace=True)
         extracted_xsf_bonds_df = extracted_xsf_bonds_df.merge(
@@ -281,29 +282,6 @@ def extract_data(category: str, verbose=False):
     return final_extracted_outputs_df, bond_dfs[0], bond_dfs[1], angle_dfs[0], angle_dfs[1]
 
 
-# --- This method pairs the correct NaPS and Sorbent given the conditions for parameters sorbent, solvent, electronic_scf, and vdw --- #
-def get_energy(NaPS_df: pd.DataFrame, sorbent_df: pd.DataFrame, combined_df: pd.DataFrame):
-    adsorption_df = pd.DataFrame(["NaPS", "Sorbent", "Solvent", "Energy", "Electronic SCF", "vdw"])
-    for _, row in combined_df.iterrows():
-        NaPS = row["NaPS"]
-        sorbent = row["name"]
-        solvent = row["solvent"]
-        electronic_scf = row["electronic_scf"]
-        vdw = row["vdw"]
-        NaPS_energy = NaPS_df.loc[NaPS_df["name"] == NaPS, "energy"].values[0]
-        sorbent_energy = sorbent_df.loc[sorbent_df["name"] == sorbent, "energy"].values[0]
-        adsorption_energy = sorbent_energy - NaPS_energy
-        adsorption_df.append(
-            {
-                "NaPS": NaPS,
-                "Sorbent": sorbent,
-                "Solvent": solvent,
-                "Energy": adsorption_energy,
-                "Electronic SCF": electronic_scf,
-                "vdw": vdw
-            }
-        )
-
 # --- This method extracts the adsorption energies using the finalized energies data --- #
 def extract_adsorption_energies(sorbent: str, verbose=False):
     sorbent = sorbent if "NaPS@" not in sorbent else sorbent.split("@")[1]
@@ -319,37 +297,77 @@ def extract_adsorption_energies(sorbent: str, verbose=False):
     NaPS_df = pd.read_csv(f"{directory}/NaPS.csv")
     sorbent_df = pd.read_csv(f"{directory}/Sorbents.csv")
     combined_df = pd.read_csv(f"{directory}/NaPS@{sorbent}.csv")
-    print(combined_df.head())
+    
+    # get binding energies
+    adsorption_df = pd.DataFrame(["NaPS", "Sorbent", "Solvent", "Energy", "Electronic SCF", "vdw"])
+    ads_energies = []
+    for _, row in combined_df.iterrows():
+        NaPS = row["NaPS"]
+        sorbent = row["sorbent"]
+        solvent = row["solvent"]
+        electronic_scf = row["electronic_scf"]
+        vdw = row["vdw"]
+        # Get NaPS energy alone
+        try:
+            NaPS_energy = NaPS_df.loc[
+                (NaPS_df["NaPS"] == NaPS) &
+                (NaPS_df["solvent"] == solvent) &
+                (NaPS_df["electronic_scf"] == electronic_scf) &
+                (NaPS_df["vdw"] == vdw),
+                "energy"
+            ]
+            if not NaPS_energy.empty:
+                NaPS_energy = NaPS_energy.values[0]
+            else:
+                # NaPS_energy = None
+                NaPS_energy = 0
+        except Exception as e:
+            print(e)
+        # Get sorbent energy alone
+        try:
+            sorbent_energy = sorbent_df.loc[
+                (sorbent_df["sorbent"] == sorbent) &
+                (sorbent_df["solvent"] == solvent) &
+                (sorbent_df["electronic_scf"] == electronic_scf) &
+                (sorbent_df["vdw"] == vdw),
+                "energy"
+            ]
+            if not sorbent_energy.empty:
+                sorbent_energy = sorbent_energy.values[0]
+            else:
+                # sorbent_energy = None
+                sorbent_energy = 0
+        except Exception as e:
+            print(e)
+        # get combined energy
+        sum_energy = sorbent_energy + NaPS_energy
+        
+        # get mixed model
+        combined_energy = row["energy"]
 
-    # extracted_adsorption_energies = []
-    # for file in file_list:
-    #     df = pd.read_csv(f"{directory}/{file}")
-    #     df.sort_values(by="name", inplace=True)
-    #     df.reset_index(drop=True, inplace=True)
-    #     for i in range(0, len(df), 2):
-    #         adsorption_energy = df.loc[i, "energy"] - df.loc[i + 1, "energy"]
-    #         extracted_adsorption_energies.append(
-    #             {
-    #                 "name": df.loc[i, "name"],
-    #                 "solvent": df.loc[i, "solvent"],
-    #                 "adsorption_energy": adsorption_energy,
-    #                 "electronic_scf": df.loc[i, "electronic_scf"],
-    #                 "vdw": df.loc[i, "vdw"]
-    #             }
-    #         )
-    # extracted_adsorption_energies_df = pd.DataFrame(extracted_adsorption_energies)
-    # extracted_adsorption_energies_df.sort_values(by="name", inplace=True)
-    # extracted_adsorption_energies_df.reset_index(drop=True, inplace=True)
-    # output_directory = os.path.join(working_directory, "Data-extracted/final/adsorption_energies")
-    # os.makedirs(output_directory, exist_ok=True)
-    # output_file_path = os.path.join(output_directory, f"{category}.csv")
-    # extracted_adsorption_energies_df.to_csv(output_file_path, index=False)
-    # if verbose:
-    #     print(f"df output for {category}")
-    #     print(extracted_adsorption_energies_df.head())
-    # print(f"Adsorption energy extraction for {category} is complete.")
-    # return extracted_adsorption_energies_df
+        # adsorption energy
+        ads_energy = sum_energy - combined_energy
 
+        # combine rows to df
+        ads_energies.append(
+            {
+                "NaPS": NaPS,
+                "Sorbent": sorbent,
+                "Solvent": solvent,
+                "Binding Energy": ads_energy,
+                "Combined Energy": combined_energy,
+                "Sum Energy": sum_energy,
+                "Electronic SCF": electronic_scf,
+                "vdw": vdw
+            }
+        )
+
+    adsorption_df = pd.DataFrame(ads_energies)
+    output_directory = os.path.join(working_directory, "Data-extracted/final/binding_energies")
+    os.makedirs(output_directory, exist_ok=True)
+    output_file_path = os.path.join(output_directory, f"{sorbent}.csv")
+    adsorption_df.to_csv(output_file_path, index=False)
+    return adsorption_df
 
 # Example usage
 if __name__ == "__main__":
@@ -357,7 +375,7 @@ if __name__ == "__main__":
     #     parse_output_file("Sorbents/FeN4-PC")
     # )
     # parse_xsf_file("Sorbents/FeN4-PC", "FeNe")
-    extract_data("Sorbents")
-    extract_data("NaPS@graphene")
-    extract_data("NaPS")
-    # extract_adsorption_energies("NaPS@graphene")
+    # extract_data("Sorbents")
+    # extract_data("NaPS@graphene")
+    # extract_data("NaPS")
+    extract_adsorption_energies("NaPS@NiS2")
