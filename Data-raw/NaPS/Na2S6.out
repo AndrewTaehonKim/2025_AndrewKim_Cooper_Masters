@@ -1,0 +1,383 @@
+
+*************** JDFTx 1.7.0  ***************
+
+Start date and time: Sat Dec 28 17:54:24 2024
+Executable jdftx_gpu with command-line: -i /home/akim2/JDFTx/Na2S6/Na2S6.in -o /home/akim2/JDFTx/Na2S6/Na2S6.out
+Running on hosts (process indices):  exp-7-57 (0)
+Divided in process groups (process indices):  0 (0)
+gpuInit: Found compatible cuda device 0 'Tesla V100-SXM2-32GB'
+gpuInit: Selected device 0
+Resource initialization completed at t[s]:      0.39
+Run totals: 1 processes, 1 threads, 1 GPUs
+
+
+Input parsed successfully to the following command list (including defaults):
+
+basis kpoint-dependent
+coords-type Cartesian
+core-overlap-check vector
+coulomb-interaction Isolated
+coulomb-truncation-embed 3.92133 11.8496 23.1275
+davidson-band-ratio 1.1
+dump End State
+dump-name Na2S6.$VAR
+elec-cutoff 20 100
+elec-eigen-algo Davidson
+elec-ex-corr gga-PBE
+electronic-minimize  \
+	dirUpdateScheme      FletcherReeves \
+	linminMethod         DirUpdateRecommended \
+	nIterations          100 \
+	history              15 \
+	knormThreshold       0 \
+	energyDiffThreshold  1e-08 \
+	nEnergyDiff          2 \
+	alphaTstart          1 \
+	alphaTmin            1e-10 \
+	updateTestStepSize   yes \
+	alphaTreduceFactor   0.1 \
+	alphaTincreaseFactor 3 \
+	nAlphaAdjustMax      3 \
+	wolfeEnergy          0.0001 \
+	wolfeGradient        0.9 \
+	fdTest               no
+electronic-scf  \
+	nIterations	50 \
+	energyDiffThreshold	1e-08 \
+	residualThreshold	1e-07 \
+	mixFraction	0.5 \
+	qMetric	0.8 \
+	history	10 \
+	nEigSteps	2 \
+	eigDiffThreshold	1e-08 \
+	mixedVariable	Density \
+	qKerker	0.8 \
+	qKappa	-1 \
+	verbose	no \
+	mixFractionMag	1.5
+exchange-regularization None
+fluid None
+fluid-ex-corr lda-TF lda-PZ
+fluid-gummel-loop 10 1.000000e-05
+fluid-minimize  \
+	dirUpdateScheme      PolakRibiere \
+	linminMethod         DirUpdateRecommended \
+	nIterations          100 \
+	history              15 \
+	knormThreshold       0 \
+	energyDiffThreshold  0 \
+	nEnergyDiff          2 \
+	alphaTstart          1 \
+	alphaTmin            1e-10 \
+	updateTestStepSize   yes \
+	alphaTreduceFactor   0.1 \
+	alphaTincreaseFactor 3 \
+	nAlphaAdjustMax      3 \
+	wolfeEnergy          0.0001 \
+	wolfeGradient        0.9 \
+	fdTest               no
+fluid-solvent H2O 55.338 ScalarEOS \
+	epsBulk 78.4 \
+	pMol 0.92466 \
+	epsInf 1.77 \
+	Pvap 1.06736e-10 \
+	sigmaBulk 4.62e-05 \
+	Rvdw 2.61727 \
+	Res 1.42 \
+	tauNuc 343133 \
+	poleEl 15 7 1
+forces-output-coords Positions
+ion S   3.921331479750000  11.849557634189999  23.127532414739999 1
+ion S   7.567480476899996  11.351192369400000  23.945456691719997 1
+ion S   8.668781105760003   7.743174344189998  23.234262475409999 1
+ion S   6.502139520210000   7.687128731849999  29.705151530609999 1
+ion S   7.556913106740001  11.318358310649998  29.045040495659997 1
+ion S  11.194673592419999  11.852526400019999  29.882693553839999 1
+ion Na   3.832890226020000   7.182347833710000  25.239470096249999 1
+ion Na  11.349661688099999   7.228066071600000  27.689512600169998 1
+ion-species GBRV/$ID_pbe.uspp
+ion-width 0
+ionic-minimize  \
+	dirUpdateScheme      FletcherReeves \
+	linminMethod         DirUpdateRecommended \
+	nIterations          200 \
+	history              15 \
+	knormThreshold       0.0001 \
+	energyDiffThreshold  1e-06 \
+	nEnergyDiff          2 \
+	alphaTstart          1 \
+	alphaTmin            1e-10 \
+	updateTestStepSize   yes \
+	alphaTreduceFactor   0.1 \
+	alphaTincreaseFactor 3 \
+	nAlphaAdjustMax      3 \
+	wolfeEnergy          0.0001 \
+	wolfeGradient        0.9 \
+	fdTest               no
+kpoint   0.000000000000   0.000000000000   0.000000000000  1.00000000000000
+kpoint-folding 1 1 1 
+latt-move-scale 1 1 1
+latt-scale 1 1 1 
+lattice Triclinic 28.0058 28.0058 37.7946 90 90 120
+lattice-minimize  \
+	dirUpdateScheme      L-BFGS \
+	linminMethod         DirUpdateRecommended \
+	nIterations          0 \
+	history              15 \
+	knormThreshold       0 \
+	energyDiffThreshold  1e-06 \
+	nEnergyDiff          2 \
+	alphaTstart          1 \
+	alphaTmin            1e-10 \
+	updateTestStepSize   yes \
+	alphaTreduceFactor   0.1 \
+	alphaTincreaseFactor 3 \
+	nAlphaAdjustMax      3 \
+	wolfeEnergy          0.0001 \
+	wolfeGradient        0.9 \
+	fdTest               no
+lcao-params -1 1e-06 0.001
+pcm-variant GLSSA13
+spintype no-spin
+subspace-rotation-factor 1 yes
+symmetries automatic
+symmetry-threshold 0.0001
+
+
+
+---------- Setting up symmetries ----------
+
+Found 24 point-group symmetries of the bravais lattice
+Found 1 space-group symmetries with basis
+Applied RMS atom displacement 0 bohrs to make symmetries exact.
+
+---------- Initializing the Grid ----------
+R = 
+[      28.0058     -14.0029            0  ]
+[            0      24.2537            0  ]
+[            0            0      37.7946  ]
+unit cell volume = 25671.8
+G =
+[   0.224353    0.12953         -0  ]
+[          0   0.259061          0  ]
+[          0         -0   0.166246  ]
+Minimum fftbox size, Smin = [  128  128  172  ]
+Chosen fftbox size, S = [  128  128  180  ]
+
+---------- Initializing tighter grid for wavefunction operations ----------
+R = 
+[      28.0058     -14.0029            0  ]
+[            0      24.2537            0  ]
+[            0            0      37.7946  ]
+unit cell volume = 25671.8
+G =
+[   0.224353    0.12953         -0  ]
+[          0   0.259061          0  ]
+[          0         -0   0.166246  ]
+Minimum fftbox size, Smin = [  116  116  156  ]
+Chosen fftbox size, S = [  120  120  160  ]
+
+---------- Exchange Correlation functional ----------
+Initalized PBE GGA exchange.
+Initalized PBE GGA correlation.
+
+---------- Setting up pseudopotentials ----------
+Width of ionic core gaussian charges (only for fluid interactions / plotting) set to 0
+
+Reading pseudopotential file '/home/akim2/jdftx_install/build/pseudopotentials/GBRV/s_pbe.uspp':
+  Title: S.  Created by USPP 7.3.6 on 1-4-15
+  Reference state energy: -11.898476.  6 valence electrons in orbitals:
+    |300>  occupation: 2  eigenvalue: -0.634167
+    |310>  occupation: 4  eigenvalue: -0.257568
+  lMax: 2  lLocal: 3  QijEcut: 6
+  6 projectors sampled on a log grid with 635 points:
+    l: 0  eig: -0.634161  rCut: 1.5
+    l: 0  eig: 1.500000  rCut: 1.5
+    l: 1  eig: -0.257567  rCut: 1.5
+    l: 1  eig: 1.500000  rCut: 1.5
+    l: 2  eig: -1.000000  rCut: 1.5
+    l: 2  eig: 1.500000  rCut: 1.5
+  Partial core density with radius 1.15
+  Transforming core density to a uniform radial grid of dG=0.02 with 1625 points.
+  Transforming local potential to a uniform radial grid of dG=0.02 with 1625 points.
+  Transforming nonlocal projectors to a uniform radial grid of dG=0.02 with 432 points.
+  Transforming density augmentations to a uniform radial grid of dG=0.02 with 1625 points.
+  Transforming atomic orbitals to a uniform radial grid of dG=0.02 with 432 points.
+  Core radius for overlap checks: 1.50 bohrs.
+
+Reading pseudopotential file '/home/akim2/jdftx_install/build/pseudopotentials/GBRV/na_pbe.uspp':
+  Title: Na.  Created by USPP 7.3.6 on 23-9-15
+  Reference state energy: -47.625620.  9 valence electrons in orbitals:
+    |200>  occupation: 2  eigenvalue: -2.085638
+    |210>  occupation: 6  eigenvalue: -1.053708
+    |300>  occupation: 1  eigenvalue: -0.100838
+  lMax: 2  lLocal: 0  QijEcut: 6
+  5 projectors sampled on a log grid with 657 points:
+    l: 0  eig: -2.085640  rCut: 1.37
+    l: 0  eig: -0.100839  rCut: 1.37
+    l: 1  eig: -1.053708  rCut: 1.47
+    l: 1  eig: 0.500000  rCut: 1.47
+    l: 2  eig: 0.750000  rCut: 2
+  Transforming local potential to a uniform radial grid of dG=0.02 with 1625 points.
+  Transforming nonlocal projectors to a uniform radial grid of dG=0.02 with 432 points.
+  Transforming density augmentations to a uniform radial grid of dG=0.02 with 1625 points.
+  Transforming atomic orbitals to a uniform radial grid of dG=0.02 with 432 points.
+  Core radius for overlap checks: 2.00 bohrs.
+
+Initialized 2 species with 8 total atoms.
+
+Folded 1 k-points by 1x1x1 to 1 k-points.
+
+---------- Setting up k-points, bands, fillings ----------
+No reducable k-points. 
+Computing the number of bands and number of electrons
+Calculating initial fillings.
+nElectrons:  54.000000   nBands: 27   nStates: 1
+
+----- Setting up reduced wavefunction bases (one per k-point) -----
+average nbasis = 109673.000 , ideal nbasis = 109671.883
+
+---------- Setting up coulomb interaction ----------
+Setting up double-sized grid for truncated Coulomb potentials:
+R = 
+[      56.0116     -28.0058            0  ]
+[            0      48.5075            0  ]
+[            0            0      75.5892  ]
+unit cell volume = 205374
+G =
+[   0.112177  0.0647651         -0  ]
+[          0    0.12953          0  ]
+[          0         -0  0.0831228  ]
+Chosen fftbox size, S = [  256  256  360  ]
+Integer grid location selected as the embedding center:
+   Grid: [  49  63  110  ]
+   Lattice: [  0.384302  0.488566  0.611927  ]
+   Cartesian: [  3.92133  11.8496  23.1275  ]
+Constructing Wigner-Seitz cell: 8 faces (6 quadrilaterals, 2 hexagons)
+Range-separation parameter for embedded mesh potentials due to point charges: 0.590105 bohrs.
+Constructing Wigner-Seitz cell: 8 faces (6 quadrilaterals, 2 hexagons)
+Gaussian width for range separation: 2.95095 bohrs.
+FFT grid for long-range part: [ 256 256 360 ].
+Planning fourier transform ... Done.
+Computing truncated long-range part in real space ... Done.
+Adding short-range part in reciprocal space ... Done.
+
+---------- Allocating electronic variables ----------
+Initializing wave functions:  linear combination of atomic orbitals
+S pseudo-atom occupations:   s ( 2 )  p ( 4 )
+Na pseudo-atom occupations:   s ( 2 1 )  p ( 6 )
+	FillingsUpdate:  mu: -0.166849522  nElectrons: 54.000000
+LCAOMinimize: Iter:   0  Etot: -156.5593572526051389  |grad|_K:  2.734e-02  alpha:  1.000e+00
+	FillingsUpdate:  mu: -0.150028366  nElectrons: 54.000000
+LCAOMinimize: Iter:   1  Etot: -156.6972012845636186  |grad|_K:  7.065e-03  alpha:  3.523e-01  linmin:  3.107e-01  cgtest: -7.177e-01  t[s]:      5.65
+	FillingsUpdate:  mu: -0.154111967  nElectrons: 54.000000
+LCAOMinimize: Iter:   2  Etot: -156.7001085643398142  |grad|_K:  7.222e-03  alpha:  3.197e-01  linmin:  3.641e-03  cgtest:  8.409e-01  t[s]:      6.04
+	FillingsUpdate:  mu: -0.168317220  nElectrons: 54.000000
+LCAOMinimize: Iter:   3  Etot: -156.7100490304115681  |grad|_K:  7.594e-04  alpha:  3.118e-01  linmin:  2.928e-02  cgtest: -2.564e-01  t[s]:      6.43
+LCAOMinimize: None of the convergence criteria satisfied after 3 iterations.
+
+
+---- Citations for features of the code used in this run ----
+
+   Software package:
+      R. Sundararaman, K. Letchworth-Weaver, K.A. Schwarz, D. Gunceler, Y. Ozhabes and T.A. Arias, 'JDFTx: software for joint density-functional theory', SoftwareX 6, 278 (2017)
+
+   gga-PBE exchange-correlation functional:
+      J.P. Perdew, K. Burke and M. Ernzerhof, Phys. Rev. Lett. 77, 3865 (1996)
+
+   Pseudopotentials:
+      KF Garrity, JW Bennett, KM Rabe and D Vanderbilt, Comput. Mater. Sci. 81, 446 (2014)
+
+   Truncated Coulomb potentials:
+      R. Sundararaman and T.A. Arias, Phys. Rev. B 87, 165122 (2013)
+
+This list may not be complete. Please suggest additional citations or
+report any other bugs at https://github.com/shankar1729/jdftx/issues
+
+Initialization completed successfully at t[s]:      6.44
+
+
+-------- Electronic minimization -----------
+Will mix electronic density at each iteration.
+SCF: Cycle:  0   Etot: -156.907022687119763   dEtot: -1.970e-01   |Residual|: 2.741e-01   |deigs|: 1.230e-02  t[s]:      7.07
+SCF: Cycle:  1   Etot: -157.042083816299083   dEtot: -1.351e-01   |Residual|: 1.406e-01   |deigs|: 1.582e-02  t[s]:      7.54
+SCF: Cycle:  2   Etot: -157.091061059734841   dEtot: -4.898e-02   |Residual|: 5.622e-02   |deigs|: 1.501e-02  t[s]:      7.99
+SCF: Cycle:  3   Etot: -157.094867597983438   dEtot: -3.807e-03   |Residual|: 3.185e-02   |deigs|: 5.102e-03  t[s]:      8.45
+SCF: Cycle:  4   Etot: -157.097443894593141   dEtot: -2.576e-03   |Residual|: 1.595e-02   |deigs|: 6.375e-03  t[s]:      8.90
+SCF: Cycle:  5   Etot: -157.098102603040189   dEtot: -6.587e-04   |Residual|: 1.292e-02   |deigs|: 1.707e-03  t[s]:      9.36
+SCF: Cycle:  6   Etot: -157.098204137003165   dEtot: -1.015e-04   |Residual|: 8.462e-03   |deigs|: 4.029e-03  t[s]:      9.81
+SCF: Cycle:  7   Etot: -157.098178773512956   dEtot: +2.536e-05   |Residual|: 9.050e-03   |deigs|: 7.206e-04  t[s]:     10.25
+SCF: Cycle:  8   Etot: -157.098453388537251   dEtot: -2.746e-04   |Residual|: 3.787e-03   |deigs|: 3.329e-03  t[s]:     10.68
+SCF: Cycle:  9   Etot: -157.098446942863063   dEtot: +6.446e-06   |Residual|: 4.194e-03   |deigs|: 1.422e-03  t[s]:     11.11
+SCF: Cycle: 10   Etot: -157.098481498198112   dEtot: -3.456e-05   |Residual|: 2.961e-03   |deigs|: 1.444e-03  t[s]:     11.56
+SCF: Cycle: 11   Etot: -157.098473926391762   dEtot: +7.572e-06   |Residual|: 3.146e-03   |deigs|: 4.746e-04  t[s]:     12.00
+SCF: Cycle: 12   Etot: -157.098499340937735   dEtot: -2.541e-05   |Residual|: 2.808e-03   |deigs|: 2.735e-04  t[s]:     12.39
+SCF: Cycle: 13   Etot: -157.098512574433471   dEtot: -1.323e-05   |Residual|: 2.069e-03   |deigs|: 5.255e-04  t[s]:     12.85
+SCF: Cycle: 14   Etot: -157.098520400645270   dEtot: -7.826e-06   |Residual|: 1.449e-03   |deigs|: 1.555e-04  t[s]:     13.25
+SCF: Cycle: 15   Etot: -157.098528778895002   dEtot: -8.378e-06   |Residual|: 7.313e-04   |deigs|: 2.539e-04  t[s]:     13.67
+SCF: Cycle: 16   Etot: -157.098533370676734   dEtot: -4.592e-06   |Residual|: 5.774e-04   |deigs|: 1.418e-04  t[s]:     14.07
+SCF: Cycle: 17   Etot: -157.098535291151705   dEtot: -1.920e-06   |Residual|: 5.988e-04   |deigs|: 1.806e-04  t[s]:     14.46
+SCF: Cycle: 18   Etot: -157.098536126489734   dEtot: -8.353e-07   |Residual|: 4.955e-04   |deigs|: 1.574e-04  t[s]:     14.85
+SCF: Cycle: 19   Etot: -157.098535648246099   dEtot: +4.782e-07   |Residual|: 5.784e-04   |deigs|: 1.760e-04  t[s]:     15.23
+SCF: Cycle: 20   Etot: -157.098535838024560   dEtot: -1.898e-07   |Residual|: 4.668e-04   |deigs|: 2.354e-04  t[s]:     15.62
+SCF: Cycle: 21   Etot: -157.098536354367297   dEtot: -5.163e-07   |Residual|: 3.699e-04   |deigs|: 5.104e-05  t[s]:     16.07
+SCF: Cycle: 22   Etot: -157.098536618585086   dEtot: -2.642e-07   |Residual|: 2.371e-04   |deigs|: 3.751e-05  t[s]:     16.48
+SCF: Cycle: 23   Etot: -157.098536738049688   dEtot: -1.195e-07   |Residual|: 2.148e-04   |deigs|: 6.446e-05  t[s]:     16.88
+SCF: Cycle: 24   Etot: -157.098536988548176   dEtot: -2.505e-07   |Residual|: 1.716e-04   |deigs|: 9.527e-05  t[s]:     17.33
+SCF: Cycle: 25   Etot: -157.098537181023119   dEtot: -1.925e-07   |Residual|: 9.826e-05   |deigs|: 2.808e-05  t[s]:     17.74
+SCF: Cycle: 26   Etot: -157.098537289317903   dEtot: -1.083e-07   |Residual|: 1.262e-04   |deigs|: 2.832e-05  t[s]:     18.15
+SCF: Cycle: 27   Etot: -157.098537404359973   dEtot: -1.150e-07   |Residual|: 7.629e-05   |deigs|: 3.175e-05  t[s]:     18.57
+SCF: Cycle: 28   Etot: -157.098537447102046   dEtot: -4.274e-08   |Residual|: 4.714e-05   |deigs|: 2.476e-05  t[s]:     18.98
+SCF: Cycle: 29   Etot: -157.098537464136484   dEtot: -1.703e-08   |Residual|: 5.133e-05   |deigs|: 3.513e-05  t[s]:     19.39
+SCF: Cycle: 30   Etot: -157.098537487704050   dEtot: -2.357e-08   |Residual|: 4.665e-05   |deigs|: 6.196e-06  t[s]:     19.86
+SCF: Cycle: 31   Etot: -157.098537501572423   dEtot: -1.387e-08   |Residual|: 2.649e-05   |deigs|: 2.581e-06  t[s]:     20.26
+SCF: Cycle: 32   Etot: -157.098537523391428   dEtot: -2.182e-08   |Residual|: 2.446e-05   |deigs|: 5.744e-06  t[s]:     20.69
+SCF: Cycle: 33   Etot: -157.098537529379087   dEtot: -5.988e-09   |Residual|: 1.692e-05   |deigs|: 2.648e-06  t[s]:     21.09
+SCF: Cycle: 34   Etot: -157.098537536910356   dEtot: -7.531e-09   |Residual|: 8.991e-06   |deigs|: 7.425e-06  t[s]:     21.56
+SCF: Converged (|Delta E|<1.000000e-08 for 2 iters).
+
+Setting wave functions to eigenvectors of Hamiltonian
+
+# Ionic positions in cartesian coordinates:
+ion S   3.921331479750000  11.849557634189999  23.127532414739999 1
+ion S   7.567480476899996  11.351192369400000  23.945456691719997 1
+ion S   8.668781105760003   7.743174344189998  23.234262475409999 1
+ion S   6.502139520210000   7.687128731849999  29.705151530609999 1
+ion S   7.556913106740001  11.318358310649998  29.045040495659997 1
+ion S  11.194673592419999  11.852526400019999  29.882693553839999 1
+ion Na   3.832890226020000   7.182347833710000  25.239470096249999 1
+ion Na  11.349661688099999   7.228066071600000  27.689512600169998 1
+
+# Forces in Cartesian coordinates:
+force S  -0.000155983446218  -0.000039838489216  -0.000060445136758 1
+force S   0.000148468420584   0.000018652695563   0.000087852399832 1
+force S   0.000008836953713  -0.000044078049094  -0.000013170318409 1
+force S   0.000030511751427  -0.000048176046603  -0.000013316091098 1
+force S  -0.000010603870627  -0.000054850070782  -0.000040567274056 1
+force S   0.000003308572776   0.000009540532469  -0.000027867923587 1
+force Na   0.000047760406443   0.000103947135258   0.000030201348979 1
+force Na  -0.000074476935246   0.000021841937741   0.000008294262238 1
+
+# Energy components:
+   Eewald =      213.0803897791079180
+       EH =      342.4970435016603005
+     Eloc =     -590.5855617188500446
+      Enl =     -133.0877997222593478
+      Exc =      -39.5814043768882726
+ Exc_core =       10.6063786150841732
+       KE =       39.9724163852349434
+-------------------------------------
+     Etot =     -157.0985375369103565
+
+IonicMinimize: Iter:   0  Etot: -157.098537536910356  |grad|_K:  6.151e-05  alpha:  1.000e+00
+IonicMinimize: Converged (|grad|_K<1.000000e-04).
+
+#--- Lowdin population analysis ---
+# oxidation-state S -0.392 +0.392 -0.457 -0.457 +0.392 -0.393
+# oxidation-state Na +0.720 +0.721
+
+
+Dumping 'Na2S6.wfns' ... done
+Dumping 'Na2S6.ionpos' ... done
+End date and time: Sat Dec 28 17:54:46 2024  (Duration: 0-0:00:22.10)
+Done!
