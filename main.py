@@ -29,4 +29,12 @@ def extract_all_raw_data(run_all:bool=False, verbose:bool=False):
             if "@" in category:
                 extract_adsorption_energies(category)
 
-extract_all_raw_data(run_all=True)
+def plot_all_data():
+    plot_binding_energies()
+    print("All data plotted")
+    return 0
+
+# extract_all_raw_data()
+# extract_all_raw_data(run_all=True)
+
+plot_all_data()

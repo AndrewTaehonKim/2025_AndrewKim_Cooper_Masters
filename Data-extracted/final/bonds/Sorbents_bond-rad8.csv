@@ -29,8 +29,8 @@ N_graphene-elecmin-vdw,,N_graphene,C–N,Vacuum,False,True,3,1.4288,1.4287,0.000
 N_graphene-elecmin-vdw,,N_graphene,C–C,Vacuum,False,True,93,1.4260,1.4258,0.0006,0.0006,0.0001,2.5792
 N_graphene-glyme-elecmin,,N_graphene,C–N,Glyme,False,False,3,1.4138,1.4138,0.0000,0.0000,0.0000,0.0000
 N_graphene-glyme-elecmin,,N_graphene,C–C,Glyme,False,False,93,1.4263,1.4261,0.0029,0.0028,0.0003,-0.2026
-N_graphene-glyme-elecmin-vdw,,N_graphene,C–C,Glyme,False,True,93,1.4263,1.4261,0.0029,0.0028,0.0003,-0.2026
 N_graphene-glyme-elecmin-vdw,,N_graphene,C–N,Glyme,False,True,3,1.4138,1.4138,0.0000,0.0000,0.0000,0.0000
+N_graphene-glyme-elecmin-vdw,,N_graphene,C–C,Glyme,False,True,93,1.4263,1.4261,0.0029,0.0028,0.0003,-0.2026
 N_graphene-glyme-vdw,,N_graphene,C–N,Glyme,True,True,3,1.4288,1.4287,0.0003,0.0003,0.0002,1.2943
 N_graphene-glyme-vdw,,N_graphene,C–C,Glyme,True,True,93,1.4260,1.4258,0.0006,0.0006,0.0001,2.5792
 N_graphene-vdw,,N_graphene,C–N,Vacuum,True,True,3,1.4288,1.4287,0.0003,0.0003,0.0002,1.2943
@@ -39,12 +39,12 @@ NiS2-PC,,NiS2,Ni–S,PC,False,False,136,2.3943,2.3943,0.0000,0.0000,0.0000,0.000
 NiS2-PC,,NiS2,S–S,PC,False,False,13,2.0738,2.0738,0.0000,0.0000,0.0000,0.0000
 NiS2-PC-elecmin,,NiS2,Ni–S,PC,False,False,136,2.3943,2.3943,0.0000,0.0000,0.0000,0.0000
 NiS2-PC-elecmin,,NiS2,S–S,PC,False,False,13,2.0738,2.0738,0.0000,0.0000,0.0000,0.0000
-NiS2-elecmin,,NiS2,Ni–S,Vacuum,False,False,136,2.3943,2.3943,0.0000,0.0000,0.0000,0.0000
 NiS2-elecmin,,NiS2,S–S,Vacuum,False,False,13,2.0738,2.0738,0.0000,0.0000,0.0000,0.0000
+NiS2-elecmin,,NiS2,Ni–S,Vacuum,False,False,136,2.3943,2.3943,0.0000,0.0000,0.0000,0.0000
 NiS2-glyme-elecmin,,NiS2,Ni–S,Glyme,False,False,136,2.3943,2.3943,0.0000,0.0000,0.0000,0.0000
 NiS2-glyme-elecmin,,NiS2,S–S,Glyme,False,False,13,2.0738,2.0738,0.0000,0.0000,0.0000,0.0000
-NiS2_S-PC-elecmin,,NiS2_S,S–S,PC,False,False,13,2.0738,2.0738,0.0000,0.0000,0.0000,0.0000
 NiS2_S-PC-elecmin,,NiS2_S,Ni–S,PC,False,False,136,2.3943,2.3943,0.0000,0.0000,0.0000,0.0000
+NiS2_S-PC-elecmin,,NiS2_S,S–S,PC,False,False,13,2.0738,2.0738,0.0000,0.0000,0.0000,0.0000
 NiS2_S-elecmin,,NiS2_S,S–S,Vacuum,False,False,13,2.0738,2.0738,0.0000,0.0000,0.0000,0.0000
 NiS2_S-elecmin,,NiS2_S,Ni–S,Vacuum,False,False,136,2.3943,2.3943,0.0000,0.0000,0.0000,0.0000
 NiS2_S-glyme-elecmin,,NiS2_S,S–S,Glyme,False,False,13,2.0738,2.0738,0.0000,0.0000,0.0000,0.0000
@@ -52,6 +52,7 @@ NiS2_S-glyme-elecmin,,NiS2_S,Ni–S,Glyme,False,False,136,2.3943,2.3943,0.0000,0
 TiO2,,TiO2,Ti–O,Vacuum,True,False,61,1.9651,1.9834,0.0188,0.0186,0.0024,-0.0336
 TiO2-PC-elecmin,,TiO2,Ti–O,PC,False,False,61,1.9651,1.9834,0.0188,0.0186,0.0024,-0.0336
 TiO2-elecmin,,TiO2,Ti–O,Vacuum,False,False,61,1.9651,1.9834,0.0188,0.0186,0.0024,-0.0336
+TiO2-glyme,,TiO2,Ti–O,Glyme,True,False,61,1.9651,1.9834,0.0188,0.0186,0.0024,-0.0336
 TiO2-glyme-elecmin,,TiO2,Ti–O,Glyme,False,False,61,1.9651,1.9834,0.0188,0.0186,0.0024,-0.0336
 graphene-PC-SCF,,graphene,C–C,PC,True,False,96,1.4261,1.4261,0.0000,0.0000,0.0000,0.0000
 graphene-PC-SCF-vdw,,graphene,C–C,PC,True,True,96,1.4261,1.4261,0.0000,0.0000,0.0000,0.0000
@@ -65,3 +66,5 @@ graphene-glyme-SCF,,graphene,C–C,Glyme,True,False,96,1.4261,1.4261,0.0000,0.00
 graphene-glyme-SCF-vdw,,graphene,C–C,Glyme,True,True,96,1.4261,1.4261,0.0000,0.0000,0.0000,0.0000
 graphene-glyme-elecmin,,graphene,C–C,Glyme,False,False,96,1.4261,1.4261,0.0000,0.0000,0.0000,0.0000
 graphene-glyme-vdw-elecmin,,graphene,C–C,Glyme,False,True,96,1.4261,1.4261,0.0000,0.0000,0.0000,0.0000
+graphene_vdw-SCF-vdw,,graphene_vdw,C–C,Vacuum,True,True,96,1.4261,1.4257,0.0011,0.0010,0.0001,2.3046
+graphene_vdw-elecmin-vdw,,graphene_vdw,C–C,Vacuum,False,True,96,1.4261,1.4257,0.0011,0.0010,0.0001,2.3046

@@ -321,6 +321,7 @@ def extract_adsorption_energies(sorbent: str, verbose=False):
                 NaPS_energy = NaPS_energy.values[0]
             else:
                 # NaPS_energy = None
+                print(f"NaPS energy not found for {NaPS} in {solvent} in {sorbent} given electronic_scf: {electronic_scf} and vdw: {vdw}")
                 NaPS_energy = 0
         except Exception as e:
             print(e)
@@ -337,6 +338,7 @@ def extract_adsorption_energies(sorbent: str, verbose=False):
                 sorbent_energy = sorbent_energy.values[0]
             else:
                 # sorbent_energy = None
+                print(f"Sorbent energy not found for {sorbent} in {solvent} given electronic_scf: {electronic_scf} and vdw: {vdw}")
                 sorbent_energy = 0
         except Exception as e:
             print(e)
@@ -377,6 +379,7 @@ if __name__ == "__main__":
     # )
     # parse_xsf_file("Sorbents/FeN4-PC", "FeNe")
     # extract_data("Sorbents")
-    # extract_data("NaPS@graphene")
-    extract_data("NaPS")
+    # extract_data("NaPS@graphene_vdw")
+    # extract_data("NaPS")
     # extract_adsorption_energies("NaPS@NiS2")
+    extract_adsorption_energies("NaPS@graphene_vdw")
