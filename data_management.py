@@ -254,20 +254,14 @@ def extract_data(category: str, verbose=False):
         extracted_xsf_angles_df["sorbent"] = extracted_xsf_angles_df["name"].apply(extract_sorbent)
         extracted_xsf_bonds_df.reset_index(drop=True, inplace=True)
         extracted_xsf_angles_df.reset_index(drop=True, inplace=True)
-        extracted_xsf_bonds_df = extracted_xsf_bonds_df.merge(
-            extracted_outputs_df[["name", "solvent", "electronic_scf", "vdw"]],
-            on="name",
-            how="left"
-        )
-        extracted_xsf_angles_df = extracted_xsf_angles_df.merge(
-            extracted_outputs_df[["name", "solvent", "electronic_scf", "vdw"]],
-            on="name",
-            how="left"
-        )
-        bond_column_order = ["name", "NaPS", "sorbent", "Atoms", "solvent", "electronic_scf", "vdw", "Count", "Mean /Å", "Median /Å", "Sam. std. dev.", "Pop. std. dev.", "Std. error", "Skewness"]
+        extracted_xsf_bonds_df = pd.merge(extracted_xsf_bonds_df, final_extracted_outputs_df[["name", "solvent", "electronic_scf", "vdw"]], on="name", how="left")
+        extracted_xsf_angles_df = pd.merge(extracted_xsf_angles_df, final_extracted_outputs_df[["name", "solvent", "electronic_scf", "vdw"]], on="name", how="left")
+        bond_column_order = ["name", "NaPS", "sorbent", "Atoms", "Mean /Å", "solvent", "electronic_scf", "vdw", "Count", "Median /Å", "Sam. std. dev.", "Pop. std. dev.", "Std. error", "Skewness"]
         extracted_xsf_bonds_df = extracted_xsf_bonds_df[bond_column_order]
-        angles_column_order = ["name", "NaPS", "sorbent", "Atoms", "solvent", "electronic_scf", "vdw", "Count", "Mean /°", "Median /°", "Sam. std. dev.", "Pop. std. dev.", "Std. error", "Skewness"]
+        angles_column_order = ["name", "NaPS", "sorbent", "Atoms", "Mean /°", "solvent", "electronic_scf", "vdw", "Count",  "Median /°", "Sam. std. dev.", "Pop. std. dev.", "Std. error", "Skewness"]
         extracted_xsf_angles_df = extracted_xsf_angles_df[angles_column_order]
+        extracted_xsf_bonds_df.rename(columns={"Mean /Å": "Mean", "Median /Å": "Median"}, inplace=True)
+        extracted_xsf_angles_df.rename(columns={"Mean /°": "Mean", "Median /°": "Median"}, inplace=True)
         bond_dfs.append(extracted_xsf_bonds_df)
         angle_dfs.append(extracted_xsf_angles_df)
         bond_output_directory = os.path.join(working_directory, "Data-extracted/final/bonds")
@@ -380,6 +374,6 @@ if __name__ == "__main__":
     # parse_xsf_file("Sorbents/FeN4-PC", "FeNe")
     # extract_data("Sorbents")
     # extract_data("NaPS@graphene_vdw")
-    # extract_data("NaPS")
+    extract_data("NaPS@FeN4")
     # extract_adsorption_energies("NaPS@NiS2")
-    extract_adsorption_energies("NaPS@graphene_vdw")
+    # extract_adsorption_energies("NaPS@graphene_vdw")

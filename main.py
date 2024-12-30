@@ -35,6 +35,6 @@ def plot_all_data():
     return 0
 
 # extract_all_raw_data()
-# extract_all_raw_data(run_all=True)
+extract_all_raw_data(run_all=True)
 
 plot_all_data()
