@@ -8,7 +8,7 @@ from data_management import extract_sorbent
 import matplotlib
 matplotlib.use('Agg')  # Use a non-GUI backend
 
-dpi = 200
+dpi = 300
 
 # --- This method plots the binding energies for each csv in Data-extracted/binding_energies --- #
 def plot_binding_energies():
