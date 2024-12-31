@@ -59,8 +59,8 @@ def plot_NaPS_bonds():
     # Define the directory containing the CSV files
     directory = os.path.join(os.getcwd(), 'Data-extracted/final/bonds')
     csvs = [csv for csv in os.listdir(directory) if csv.endswith('.csv')]
-    NaPS_csvs = [csv for csv in csvs if '@' not in csv and "Sorbent" not in csv]
-    adsorption_csvs = [csv for csv in csvs if '@' in csv]
+    NaPS_csvs = [csv for csv in csvs if '@' not in csv and "Sorbent" not in csv and "sorbent" not in csv]
+    adsorption_csvs = [csv for csv in csvs if '@' in csv and 'NaPS-' in csv]
     # Define the x-ticks and solvents
     x_ticks = ["Na2S", "Na2S2", "Na2S4", "Na2S6", "Na2S8"]
     solvents = ["Vacuum", "Glyme", "PC"]
