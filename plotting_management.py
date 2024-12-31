@@ -8,7 +8,7 @@ from data_management import extract_sorbent
 import matplotlib
 matplotlib.use('Agg')  # Use a non-GUI backend
 
-dpi = 100
+dpi = 200
 
 # --- This method plots the binding energies for each csv in Data-extracted/binding_energies --- #
 def plot_binding_energies():
@@ -270,7 +270,7 @@ def plot_oxidation_states():
                 else:
                     data_Na[solvent].append(0)
                     data_S[solvent].append(0)
-    print("finished gathering naps_csvs")
+    NaPS_data = {'Na': data_Na, 'S': data_S}
     # Read the data from the CSV files
     for csv in adsorption_csvs:
         csv_path = os.path.join(directory, csv)
@@ -286,7 +286,6 @@ def plot_oxidation_states():
                 else:
                     data_Na[solvent].append(0)
                     data_S[solvent].append(0)
-                
         # Plot the data as two subplots in one figure, the left for Na-S bonds and the right for S-S bonds
         fig, (ax_Na, ax_S) = plt.subplots(1, 2, figsize=(12, 10))
         bar_width = 0.2
@@ -296,8 +295,8 @@ def plot_oxidation_states():
             ax_Na.bar([p + bar_width * i for p in index], data_Na[solvent], bar_width, label=solvent, hatch=['', '\\', '/'][i])
             ax_S.bar([p + bar_width * i for p in index], data_S[solvent], bar_width, label=solvent, hatch=['', '\\', '/'][i])
             # Plot thick horizontal line for baseline NaS and SS bond lengths using NaPS_rads
-            base_Na = data_Na[solvent]
-            base_S = data_S[solvent]
+            base_Na = NaPS_data['Na'][solvent]
+            base_S = NaPS_data['S'][solvent]
             for j in index:
                 if base_Na[j] != 0:
                     if j == 0 and solvent == 'Vacuum':
@@ -317,15 +316,15 @@ def plot_oxidation_states():
         ax_S.set_xticklabels(x_ticks)
 
         # Calculate y-axis limits
-        y_min_Na = min(min(values) for values in data_Na.values())
-        y_max_Na = max(max(values) for values in data_Na.values())
-        y_range_Na = y_max_Na - y_min_Na
-        ax_Na.set_ylim(y_min_Na - 0.1 * y_range_Na if y_min_Na > 0 else 1.5, y_max_Na + 0.1 * y_range_Na)
+        # y_min_Na = min(min(values) for values in data_Na.values())
+        # y_max_Na = max(max(values) for values in data_Na.values())
+        # y_range_Na = y_max_Na - y_min_Na
+        # ax_Na.set_ylim(y_min_Na - 0.1 * y_range_Na, y_max_Na + 0.1 * y_range_Na)
 
-        y_min_S = min(min(values) for values in data_S.values())
-        y_max_S = max(max(values) for values in data_S.values())
-        y_range_S = y_max_S - y_min_S
-        ax_S.set_ylim(y_min_S - 0.1 * y_range_S  if y_min_S > 0 else 1.5, y_max_S + 0.1 * y_range_S)
+        # y_min_S = min(min(values) for values in data_S.values())
+        # y_max_S = max(max(values) for values in data_S.values())
+        # y_range_S = y_max_S - y_min_S
+        # ax_S.set_ylim(y_min_S - 0.1 * y_range_S, y_max_S + 0.1 * y_range_S)
 
         # Set y-axis labels and legends
         ax_Na.set_ylabel('Bond Length (Å)')
