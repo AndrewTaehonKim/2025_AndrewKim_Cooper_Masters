@@ -77,29 +77,45 @@ def parse_output_file(file_path, verbose=False):
         # Check for van der waals correction
         if 'van-der-waals' in line:
             vdw = True
-
     solvent = "Vacuum" if not solvent_exists else solvent
     # Create dataframes
     df_energies = pd.DataFrame(energies, columns=["Iteration", "Energy"])
-    df_oxidation_states = pd.DataFrame(
-        list(oxidation_states.items()), columns=["Element", "Oxidation States"]
-    )
+    if df_energies.empty:
+        print(f"Error: df_energies is empty for {file_path}.")
+        raise ValueError(f"Error: df_energies is empty for {file_path}.")
+
+    # if there are more than 8 S's, then need to filter    
+    if len(oxidation_states["S"]) > 8:
+        # see how many S there should be by getting NaPS
+        S_count = extract_NaPS(output_file_name).split("Na2S")[1]
+        S_count = 1 if S_count == "" else int(S_count)
+        oxidation_states["S"] = oxidation_states["S"][-S_count:]
+        print(oxidation_states["S"])
+
+    # Modify Oxidation States for NaPS Only
+    # df_oxidation_states = pd.DataFrame(
+    #     list(oxidation_states.items()), columns=["Element", "Oxidation States"]
+    # )
+    # if df_oxidation_states.empty:
+    #     raise ValueError("Error: df_oxidation_states is empty.")
+    # df_oxidation_states = df_oxidation_states[df_oxidation_states["Element"].isin(["Na", "S"])]
+    # # if there are more than 8 S states, then need to filter
+    # if df_oxidation_states["Element"] == "S".shape[0] > 8:
+    #     # see how many S there should be by getting NaPS
+    #     NaPS = extract_NaPS(output_file_name)
+    #     print(NaPS)
+    # print(df_oxidation_states)
 
     # Print required information
     if verbose:
         print(df_energies)
-        print(df_oxidation_states)
+        print(oxidation_states)
         print(f"Output file name: {output_file_name}")
         print(f"Electronic SCF used: {electronic_scf}")
         print(f"Solvent: {solvent}")
 
-    if df_energies.empty:
-        print(f"Error: df_energies is empty for {file_path}.")
-        raise ValueError(f"Error: df_energies is empty for {file_path}.")
-    if df_oxidation_states.empty:
-        raise ValueError("Error: df_oxidation_states is empty.")
 
-    return df_energies, df_oxidation_states, output_file_name, electronic_scf, solvent, vdw
+    return df_energies, oxidation_states, output_file_name, electronic_scf, solvent, vdw
 
 
 # --- This method parses xsf files --- #
@@ -243,7 +259,7 @@ def extract_data(category: str, verbose=False):
                     "iteration": row["Iteration"],
                     "solvent": solvent,
                     "energy": row["Energy"],
-                    "oxidation_states": df_oxidation_states.to_dict(orient="records"),
+                    "oxidation_states": df_oxidation_states,
                     "electronic_scf": electronic_scf,
                     "vdw": vdw
                 }
@@ -545,7 +561,7 @@ if __name__ == "__main__":
     # )
     # parse_xsf_file("Sorbents/FeN4-PC", "FeNe")
     # extract_data("Sorbents")
-    extract_data("NaPS@graphene_vdw")
-    # extract_data("NaPS@NiS2")
+    # extract_data("NaPS@graphene_vdw")
+    extract_data("NaPS@NiS2")
     # extract_adsorption_energies("NaPS@NiS2")
     # extract_adsorption_energies("NaPS@graphene_vdw")

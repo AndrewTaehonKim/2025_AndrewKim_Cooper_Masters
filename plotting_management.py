@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 import os
 
 import matplotlib.pyplot as plt
@@ -6,6 +7,8 @@ from data_management import extract_sorbent
 
 import matplotlib
 matplotlib.use('Agg')  # Use a non-GUI backend
+
+dpi = 100
 
 # --- This method plots the binding energies for each csv in Data-extracted/binding_energies --- #
 def plot_binding_energies():
@@ -50,7 +53,7 @@ def plot_binding_energies():
         figures_dir = os.path.join(os.getcwd(), 'Figures/binding_energies')
         if not os.path.exists(figures_dir):
             os.makedirs(figures_dir)
-        plt.savefig(os.path.join(figures_dir, f'{extract_sorbent(csv)}.jpg'))
+        plt.savefig(os.path.join(figures_dir, f'{extract_sorbent(csv)}.jpg'), dpi=dpi)
         plt.close()
 
 
@@ -181,19 +184,209 @@ def plot_NaPS_bonds():
         figures_dir = os.path.join(os.getcwd(), 'Figures/NaPS-bond_lengths')
         if not os.path.exists(figures_dir):
             os.makedirs(figures_dir)
-        plt.savefig(os.path.join(figures_dir, f'{csv.split(".")[0]}.jpg'), bbox_inches='tight', pad_inches=0.1)
+        plt.savefig(os.path.join(figures_dir, f'{csv.split(".")[0]}.jpg'), bbox_inches='tight', pad_inches=0.1, dpi=dpi)
         plt.close()
 
 # --- This method plots the adsorption bond lengths between the NaPS molecules and the sorbent --- #
 def plot_adsorption_lengths():
-    pass
+    # Define the directory containing the CSV files
+    directory = os.path.join(os.getcwd(), 'Data-extracted/final/adsorption_lengths')
+    csvs = [csv for csv in os.listdir(directory) if csv.endswith('.csv')]
+    # Define the x-ticks and solvents
+    x_ticks = ["Na2S", "Na2S2", "Na2S4", "Na2S6", "Na2S8"]
+    solvents = ["Vacuum", "Glyme", "PC"]
+    # Initialize a dictionary to hold the data
+    # Read the data from the CSV files
+    for csv in csvs:
+        csv_path = os.path.join(directory, csv)
+        df = pd.read_csv(csv_path)
+        data = {solvent: [] for solvent in solvents}
+        connections = {solvent: [] for solvent in solvents}
+        for solvent in solvents:
+            for tick in x_ticks:
+                filtered_df = df[(df['NaPS'] == tick) & (df['solvent'] == solvent)]
+                if not filtered_df.empty:
+                    data[solvent].append(filtered_df['Distance'].values[0])
+                    connections[solvent].append(
+                        str(filtered_df['NaPS Atom'].values[0]) + '-' + str(filtered_df['Sorbent Atom'].values[0])
+                    )
+                else:
+                    print(f"Missing adsorption bond length data for {tick} in {solvent} in {csv}")
+                    data[solvent].append(0)
+                    connections[solvent].append('')
+        # Plot the data
+        fig, ax = plt.subplots(figsize=(6, 5))
+        bar_width = 0.2
+        index = range(len(x_ticks))
+
+        for i, solvent in enumerate(solvents):
+            ax.bar([p + bar_width * i for p in index], data[solvent], bar_width, label=solvent, hatch=['', '\\', '/'][i])
+            # label each bar with the NaPS Atom - Sorbent Atom
+            for j, value in enumerate(data[solvent]):
+                ax.text(j + bar_width * i, value + 0.05, connections[solvent][j], ha='center', va='bottom', size=5)
+
+        ax.set_xticks([p + bar_width for p in index])
+        ax.set_xticklabels(x_ticks)
+        y_min = min(min(values) for values in data.values())
+        y_max = max(max(values) for values in data.values())
+        y_range = y_max - y_min
+        ax.set_ylim(1.5, y_max + 0.1 * y_range)
+        ax.set_ylabel('Adsorption Distance (Å)')
+        ax.legend()
+        
+        # Save the plot to a file
+        figures_dir = os.path.join(os.getcwd(), 'Figures/adsorption_lengths')
+        if not os.path.exists(figures_dir):
+            os.makedirs(figures_dir)
+        plt.savefig(os.path.join(figures_dir, f'{extract_sorbent(csv)}.jpg'), dpi=dpi)
+        plt.close()
 
 
 # --- This method plots the oxidation states of all molecules in the system and emphasizes the oxidation states of the NaPS and sites near the NaPS--- #
 def plot_oxidation_states():
-    pass
+    # Define the directory containing the CSV files
+    directory = os.path.join(os.getcwd(), 'Data-extracted/final/binding_energies')
+    csvs = [csv for csv in os.listdir(directory) if csv.endswith('.csv')]
+    # Define the x-ticks and solvents
+    x_ticks = ["Na2S", "Na2S2", "Na2S4", "Na2S6", "Na2S8"]
+    solvents = ["Vacuum", "Glyme", "PC"]
+    # Initialize a dictionary to hold the data
+    # Read the data from the CSV files
+    for csv in csvs:
+        csv_path = os.path.join(directory, csv)
+        df = pd.read_csv(csv_path)
+        data = {solvent: [] for solvent in solvents}
+        for solvent in solvents:
+            for tick in x_ticks:
+                filtered_df = df[(df['NaPS'] == tick) & (df['Solvent'] == solvent)]
+                if not filtered_df.empty:
+                    data[solvent].append(filtered_df['Binding Energy'].values[0])
+                else:
+                    print(f"Missing energy data for {tick} in {solvent} in {csv}")
+                    data[solvent].append(0)  # Handle missing data
+        # Plot the data
+        fig, ax = plt.subplots(figsize=(6, 5))
+        bar_width = 0.2
+        index = range(len(x_ticks))
+        
+        for i, solvent in enumerate(solvents):
+            ax.bar([p + bar_width * i for p in index], data[solvent], bar_width, label=solvent, hatch=['', '\\', '/'][i])
+        
+        ax.set_xticks([p + bar_width for p in index])
+        ax.set_xticklabels(x_ticks)
+        y_min = min(min(values) for values in data.values())
+        y_max = max(max(values) for values in data.values())
+        y_range = y_max - y_min
+        ax.set_ylim(y_min - 0.1 * y_range, y_max + 0.1 * y_range)
+        ax.set_ylabel('Binding Energy (hartrees)')
+        ax.legend()
+        
+        # Save the plot to a file
+        figures_dir = os.path.join(os.getcwd(), 'Figures/binding_energies')
+        if not os.path.exists(figures_dir):
+            os.makedirs(figures_dir)
+        plt.savefig(os.path.join(figures_dir, f'{extract_sorbent(csv)}.jpg'), dpi=dpi)
+        plt.close()
+
+
+# --- This method plots the average oxidation states for Na and S in the NaPS molecules --- #
+def plot_oxidation_states():
+# Define the directory containing the CSV files
+    directory = os.path.join(os.getcwd(), 'Data-extracted/final/energies')
+    csvs = [csv for csv in os.listdir(directory) if csv.endswith('.csv')]
+    NaPS_csvs = [csv for csv in csvs if '@' not in csv and "Sorbent" not in csv and "sorbent" not in csv]
+    adsorption_csvs = [csv for csv in csvs if '@' in csv and 'NaPS-' in csv]
+    # Define the x-ticks and solvents
+    x_ticks = ["Na2S", "Na2S2", "Na2S4", "Na2S6", "Na2S8"]
+    solvents = ["Vacuum", "Glyme", "PC"]
+    # Extract unique rad# from the CSV filenames
+    # Get baseline bond lengths for NaPS
+    for csv in NaPS_csvs:
+        # save data for NaPS
+        csv_path = os.path.join(directory, csv)
+        df = pd.read_csv(csv_path)
+        data_Na = {solvent: [] for solvent in solvents}
+        data_S = {solvent: [] for solvent in solvents}
+        for solvent in solvents:
+            for tick in x_ticks:
+                filtered_df = df[(df['NaPS'] == tick) & (df['solvent'] == solvent)]
+                if not filtered_df.empty:
+                    data_Na[solvent].append(np.mean(filtered_df['oxidation_states'].values[0]['Na']))
+                    data_S[solvent].append(np.mean(filtered_df['oxidation_states'].values[0]['S']))
+                else:
+                    data_Na[solvent].append(0)
+                    data_S[solvent].append(0)
+    # Read the data from the CSV files
+    for csv in adsorption_csvs:
+        csv_path = os.path.join(directory, csv)
+        df = pd.read_csv(csv_path)
+        data_Na = {solvent: [] for solvent in solvents}
+        data_S = {solvent: [] for solvent in solvents}
+        for solvent in solvents:
+            for tick in x_ticks:
+                filtered_df = df[(df['NaPS'] == tick) & (df['solvent'] == solvent)]
+                if not filtered_df.empty:
+                    data_Na[solvent].append(np.mean(filtered_df['oxidation_states'].values[0]['Na']))
+                    data_S[solvent].append(np.mean(filtered_df['oxidation_states'].values[0]['S']))
+                else:
+                    data_Na[solvent].append(0)
+                    data_S[solvent].append(0)
+                
+        # Plot the data as two subplots in one figure, the left for Na-S bonds and the right for S-S bonds
+        fig, (ax_Na, ax_S) = plt.subplots(1, 2, figsize=(12, 10))
+        bar_width = 0.2
+        index = range(len(x_ticks))
+
+        # Plot bars
+        for i, solvent in enumerate(solvents):
+            ax_Na.bar([p + bar_width * i for p in index], data_Na[solvent], bar_width, label=solvent, hatch=['', '\\', '/'][i])
+            ax_S.bar([p + bar_width * i for p in index], data_S[solvent][1:], bar_width, label=solvent, hatch=['', '\\', '/'][i])
+            # Plot thick horizontal line for baseline NaS and SS bond lengths using NaPS_rads
+            base_NaS = data_Na[solvent]
+            base_SS = data_S[solvent]
+            for j in index:
+                if base_NaS[solvent][j] != 0:
+                    if j == 0 and solvent == 'Vacuum':
+                        ax_Na.hlines(base_NaS[solvent][j], j + bar_width * i - bar_width / 2, j + bar_width * i + bar_width / 2, colors='red', linewidth=4, zorder=3, label='Isolated NaPS')
+                    else:
+                        ax_Na.hlines(base_NaS[solvent][j], j + bar_width * i - bar_width / 2, j + bar_width * i + bar_width / 2, colors='red', linewidth=4, zorder=3)
+                if base_SS[solvent][j+1] != 0:
+                    if j == 0 and solvent == 'Vacuum':
+                        ax_S.hlines(base_SS[solvent][j+1], j + bar_width * i - bar_width / 2, j + bar_width * i + bar_width / 2, colors='red', linewidth=4, zorder=3, label='Isolated NaPS')
+                    else:
+                        ax_S.hlines(base_SS[solvent][j+1], j + bar_width * i - bar_width / 2, j + bar_width * i + bar_width / 2, colors='red', linewidth=4, zorder=3)
+        
+        # Set x-ticks and x-tick labels
+        ax_Na.set_xticks([p + bar_width for p in index])
+        ax_Na.set_xticklabels(x_ticks)
+        ax_S.set_xticks([p + bar_width for p in index])
+        ax_S.set_xticklabels(x_ticks[1:])
+
+        # Calculate y-axis limits
+        y_min_NaS = min(min(values) for values in data_Na.values())
+        y_max_Na = max(max(values) for values in data_Na.values())
+        y_range_NaS = y_max_Na - y_min_NaS
+        ax_Na.set_ylim(y_min_NaS - 0.1 * y_range_NaS if y_min_NaS > 0 else 1.5, y_max_Na + 0.1 * y_range_NaS)
+
+        y_min_SS = min(min(values) for values in data_S.values())
+        y_max_S = max(max(values) for values in data_S.values())
+        y_range_SS = y_max_S - y_min_SS
+        ax_S.set_ylim(y_min_SS - 0.1 * y_range_SS  if y_min_SS > 0 else 1.5, y_max_S + 0.1 * y_range_SS)
+
+        # Set y-axis labels and legends
+        ax_Na.set_ylabel('Bond Length (Å)')
+        ax_S.set_ylabel('Bond Length (Å)')
+        ax_Na.legend()
+        ax_S.legend()
+
+        # Save the plot to a file
+        figures_dir = os.path.join(os.getcwd(), 'Figures/oxidation_states')
+        os.makedirs(figures_dir, exist_ok=True)
+        plt.savefig(os.path.join(figures_dir, f'{csv.split(".")[0]}.jpg'), bbox_inches='tight', pad_inches=0.1, dpi=dpi)
 
 
 if __name__ == "__main__":
     # plot_binding_energies()
-    plot_NaPS_bonds()
+    # plot_NaPS_bonds()
+    # plot_adsorption_lengths()
+    plot_oxidation_states()
