@@ -1,0 +1,27 @@
+﻿name,NaPS,sorbent,Atoms,Mean,solvent,electronic_scf,vdw,Count,Median,Sam. std. dev.,Pop. std. dev.,Std. error,Skewness
+Na2S2@graphene_vdw,Na2S2,graphene_vdw,S–S–Na,67.40,Vacuum,True,True,4,67.39,0.20,0.18,0.10,0.04
+Na2S2@graphene_vdw,Na2S2,graphene_vdw,Na–S–Na,105.96,Vacuum,True,True,2,105.96,0.28,0.20,0.20,nan
+Na2S2@graphene_vdw,Na2S2,graphene_vdw,S–Na–S,45.20,Vacuum,True,True,2,45.20,0.04,0.03,0.03,nan
+Na2S2@graphene_vdw,Na2S2,graphene_vdw,S–Na–Na,37.02,Vacuum,True,True,4,37.02,0.12,0.10,0.06,0.07
+Na2S4@graphene_vdw,Na2S4,graphene_vdw,S–S–Na,70.83,Vacuum,False,True,12,69.10,14.81,14.18,4.28,0.20
+Na2S4@graphene_vdw,Na2S4,graphene_vdw,Na–S–Na,77.11,Vacuum,False,True,4,77.10,8.54,7.39,4.27,0.00
+Na2S4@graphene_vdw,Na2S4,graphene_vdw,S–S–S,109.43,Vacuum,False,True,2,109.43,0.03,0.02,0.02,nan
+Na2S4@graphene_vdw,Na2S4,graphene_vdw,S–Na–S,56.84,Vacuum,False,True,12,53.29,20.74,19.86,5.99,0.40
+Na2S4@graphene_vdw,Na2S4,graphene_vdw,S–Na–Na,51.45,Vacuum,False,True,8,48.14,6.39,5.98,2.26,1.43
+Na2S6@graphene_vdw,Na2S6,graphene_vdw,S–Na–Na,56.83,Vacuum,True,True,10,46.14,21.94,20.82,6.94,1.42
+Na2S6@graphene_vdw,Na2S6,graphene_vdw,Na–S–Na,86.19,Vacuum,True,True,4,86.18,12.55,10.87,6.28,0.00
+Na2S6@graphene_vdw,Na2S6,graphene_vdw,S–Na–S,62.74,Vacuum,True,True,20,68.67,21.75,21.20,4.86,0.11
+Na2S6@graphene_vdw,Na2S6,graphene_vdw,S–S–S,75.76,Vacuum,True,True,10,97.95,35.98,34.13,11.38,-0.42
+Na2S6@graphene_vdw,Na2S6,graphene_vdw,S–S–Na,76.94,Vacuum,True,True,24,69.15,27.29,26.71,5.57,0.98
+Na2S8@graphene-glyme-vdw,Na2S8,graphene,S–S–S,76.08,Glyme,True,True,10,86.90,37.06,35.16,11.72,-0.25
+Na2S8@graphene-glyme-vdw,Na2S8,graphene,S–S–Na,70.66,Glyme,True,True,26,71.11,22.37,21.94,4.39,0.44
+Na2S8@graphene-glyme-vdw,Na2S8,graphene,Na–S–Na,69.62,Glyme,True,True,5,65.27,11.23,10.05,5.02,0.08
+Na2S8@graphene-glyme-vdw,Na2S8,graphene,S–Na–S,84.74,Glyme,True,True,38,76.02,47.05,46.43,7.63,0.44
+Na2S8@graphene-glyme-vdw,Na2S8,graphene,S–Na–Na,67.90,Glyme,True,True,13,59.73,26.46,25.42,7.34,1.14
+Na2S8@graphene-vdw,Na2S8,graphene,S–S–S,70.09,Vacuum,True,True,13,75.91,35.00,33.63,9.71,0.03
+Na2S8@graphene-vdw,Na2S8,graphene,S–S–Na,70.98,Vacuum,True,True,33,64.48,20.86,20.54,3.63,0.32
+Na2S8@graphene-vdw,Na2S8,graphene,Na–S–Na,61.31,Vacuum,True,True,7,57.23,9.18,8.50,3.47,0.93
+Na2S8@graphene-vdw,Na2S8,graphene,S–Na–S,82.23,Vacuum,True,True,49,84.85,35.39,35.03,5.06,0.19
+Na2S8@graphene-vdw,Na2S8,graphene,S–Na–Na,61.42,Vacuum,True,True,15,57.71,14.87,14.36,3.84,0.76
+Na2S@graphene_vdw,Na2S,graphene_vdw,Na–S–Na,112.82,Vacuum,True,True,1,112.82,nan,0.00,nan,nan
+Na2S@graphene_vdw,Na2S,graphene_vdw,S–Na–Na,33.59,Vacuum,True,True,2,33.59,0.02,0.02,0.02,nan

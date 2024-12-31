@@ -1,0 +1,13 @@
+﻿name,NaPS,sorbent,Atoms,Mean,solvent,electronic_scf,vdw,Count,Median,Sam. std. dev.,Pop. std. dev.,Std. error,Skewness
+Na2S2@NiS2_S,Na2S2,NiS2_S,S–Na,2.7713,Vacuum,False,False,1,2.7713,nan,0.0000,nan,nan
+Na2S4@NiS2_S,Na2S4,NiS2_S,S–S,2.1019,Vacuum,False,False,2,2.1019,0.1634,0.1155,0.1155,nan
+Na2S4@NiS2_S,Na2S4,NiS2_S,S–Na,2.8061,Vacuum,False,False,1,2.8061,nan,0.0000,nan,nan
+Na2S4@NiS2_S-PC,Na2S4,NiS2_S,S–S,2.1073,PC,False,False,2,2.1073,0.1466,0.1036,0.1036,nan
+Na2S4@NiS2_S-glyme,Na2S4,NiS2_S,S–S,2.0933,Glyme,False,False,2,2.0933,0.1786,0.1263,0.1263,nan
+Na2S6@NiS2_S,Na2S6,NiS2_S,S–S,2.0689,Vacuum,False,False,3,2.0915,0.1038,0.0848,0.0600,-0.9352
+Na2S6@NiS2_S-PC,Na2S6,NiS2_S,S–S,2.0307,PC,False,False,3,1.9857,0.1005,0.0820,0.0580,1.6100
+Na2S6@NiS2_S-glyme,Na2S6,NiS2_S,S–S,2.0183,Glyme,False,False,3,1.9563,0.1289,0.1052,0.0744,1.6639
+Na2S8@NiS2_S,Na2S8,NiS2_S,S–S,2.0661,Vacuum,False,False,3,2.0580,0.0783,0.0639,0.0452,0.4640
+Na2S8@NiS2_S,Na2S8,NiS2_S,S–Na,2.9109,Vacuum,False,False,1,2.9109,nan,0.0000,nan,nan
+Na2S8@NiS2_S-PC,Na2S8,NiS2_S,S–S,2.0791,PC,False,False,3,2.0682,0.0724,0.0591,0.0418,0.6584
+Na2S8@NiS2_S-glyme,Na2S8,NiS2_S,S–S,2.0673,Glyme,False,False,3,2.0594,0.0773,0.0631,0.0446,0.4568

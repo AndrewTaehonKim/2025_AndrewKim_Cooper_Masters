@@ -3,6 +3,10 @@ import os
 import re
 
 import xyz2tab as x2t
+import warnings
+
+# Suppress warnings from a specific file
+warnings.filterwarnings("ignore", module="xyz2tab")
 
 
 # --- This method gets the lines of a file after a specific marker --- #
@@ -142,12 +146,42 @@ def parse_xsf_file(file_path: str, model: str, radius=6):
             }
         )
     xyz_df = pd.DataFrame(xyz)
-    bond_df, angle_df = x2t.run_x2t(xyz_df, args_filename=model, args_print=False, args_radius=radius)
-    bond_df["name"] = model
-    angle_df["name"] = model
-    bond_df = bond_df[["name"] + [col for col in bond_df.columns if col != "name"]]
-    angle_df = angle_df[["name"] + [col for col in angle_df.columns if col != "name"]]
-    return bond_df, angle_df
+    # Separate into NaPS and Sorbent by extracting the NaPS
+    NaPS_df = xyz_df[xyz_df["element"].isin(["Na", "S"])]
+    # if NaPS is longer than 10 atoms (more than Na2S8), then need to filter
+    if NaPS_df.shape[0] > 10:
+        # get rows where the z column for the S element has a mode greater than 2
+        S_rows = NaPS_df[NaPS_df["element"] == "S"]
+        S_mode = S_rows["z"].mode()
+        NaPS_df = NaPS_df[NaPS_df["z"] > max(S_mode)]
+    if NaPS_df.shape[0] > 10:
+        raise RuntimeError(f"NaPS has more than 10 atoms in {file_path}")
+    # sorbent df is the negative of the NaPS df from the xyz df
+    sorbent_df = xyz_df[~xyz_df.index.isin(NaPS_df.index)]
+    # reset indices
+    NaPS_df.reset_index(drop=True, inplace=True)
+    sorbent_df.reset_index(drop=True, inplace=True)
+    # Run x2t on the extracted NaPS and Sorbent in the adsorption file
+    if not NaPS_df.empty:
+        NaPS_bond_df, NaPS_angle_df = x2t.run_x2t(NaPS_df, args_filename=model, args_print=False, args_radius=radius)
+        NaPS_bond_df["name"] = model
+        NaPS_angle_df["name"] = model
+        NaPS_bond_df = NaPS_bond_df[["name"] + [col for col in NaPS_bond_df.columns if col != "name"]]
+        NaPS_angle_df = NaPS_angle_df[["name"] + [col for col in NaPS_angle_df.columns if col != "name"]]
+    else:
+        NaPS_bond_df = pd.DataFrame(columns=["name", "Atoms", "Mean", "Count", "Median", "Sam. std. dev.", "Pop. std. dev.", "Std. error", "Skewness"])
+        NaPS_angle_df = pd.DataFrame(columns=["name", "Atoms", "Mean /°", "Count", "Median /°", "Sam. std. dev.", "Pop. std. dev.", "Std. error", "Skewness"])
+    if not sorbent_df.empty:
+        sorbent_bond_df, sorbent_angle_df = x2t.run_x2t(sorbent_df, args_filename=model, args_print=False, args_radius=radius)
+        sorbent_bond_df["name"] = model
+        sorbent_angle_df["name"] = model
+        sorbent_bond_df = sorbent_bond_df[["name"] + [col for col in sorbent_bond_df.columns if col != "name"]]
+        sorbent_angle_df = sorbent_angle_df[["name"] + [col for col in sorbent_angle_df.columns if col != "name"]]
+    else:
+        sorbent_bond_df = pd.DataFrame(columns=["name", "Atoms", "Mean", "Count", "Median", "Sam. std. dev.", "Pop. std. dev.", "Std. error", "Skewness"])
+        sorbent_angle_df = pd.DataFrame(columns=["name", "Atoms", "Mean /°", "Count", "Median /°", "Sam. std. dev.", "Pop. std. dev.", "Std. error", "Skewness"])
+
+    return NaPS_bond_df, NaPS_angle_df, sorbent_bond_df, sorbent_angle_df
 
 
 # --- This method extracts the polysulfide from the string --- #
@@ -158,6 +192,7 @@ def extract_NaPS(filename: str):
         return polysulfide
     else:
         return None
+
 
 # --- This method extracts the sorbent from the string --- #
 def extract_sorbent(filename: str):
@@ -170,6 +205,7 @@ def extract_sorbent(filename: str):
         if ".csv" in sorbent:
             sorbent = sorbent.split(".")[0]
         return sorbent
+
 
 # --- This method compiles the energies and oxidation states of all sorbents in a subdirectory of Data-raw --- #
 def extract_data(category: str, verbose=False):
@@ -232,49 +268,96 @@ def extract_data(category: str, verbose=False):
     final_extracted_outputs_df.to_csv(output_file_path, index=False)
 
     # Handle xsf files
-    bond_dfs = []
-    angle_dfs = []
+    NaPS_bond_dfs = []
+    NaPS_angle_dfs = []
+    sorbent_bond_dfs = []
+    sorbent_angle_dfs = []
+
     for radius in [8, 62]:
-        extracted_xsf_bonds = []
-        extracted_xsf_angles = []
+        NaPS_extracted_xsf_bonds = []
+        NaPS_extracted_xsf_angles = []
+        sorbent_extracted_xsf_bonds = []
+        sorbent_extracted_xsf_angles = []
         for file in xsf_files:
-            bond_df, angle_df = parse_xsf_file(f"{category}/{file}", file.split(".")[0], radius=radius)
-            for _, row in bond_df.iterrows():
-                extracted_xsf_bonds.append(row)
-            for _, row in angle_df.iterrows():
-                extracted_xsf_angles.append(row)
+            NaPS_bond_df, NaPS_angle_df, sorbent_bond_df, sorbent_angle_df = parse_xsf_file(f"{category}/{file}", file.split(".")[0], radius=radius)
+            # print(NaPS_bond_df)
+            for _, row in NaPS_bond_df.iterrows():
+                NaPS_extracted_xsf_bonds.append(row)
+            for _, row in NaPS_angle_df.iterrows():
+                NaPS_extracted_xsf_angles.append(row)
+            for _, row in sorbent_bond_df.iterrows():
+                sorbent_extracted_xsf_bonds.append(row)
+            for _, row in sorbent_angle_df.iterrows():
+                sorbent_extracted_xsf_angles.append(row)
+        # Create Dataframes
+        extracted_NaPS_xsf_bonds_df = pd.DataFrame(NaPS_extracted_xsf_bonds)
+        extracted_NaPS_xsf_angles_df = pd.DataFrame(NaPS_extracted_xsf_angles)
+        extracted_sorbent_xsf_bonds_df = pd.DataFrame(sorbent_extracted_xsf_bonds)
+        extracted_sorbent_xsf_angles_df = pd.DataFrame(sorbent_extracted_xsf_angles)
+        # print(extracted_NaPS_xsf_bonds_df)
+        # Modify headers of dataframes
+        if extracted_NaPS_xsf_bonds_df.empty:
+            extracted_NaPS_xsf_bonds_df = pd.DataFrame(columns=["name", "NaPS", "sorbent", "Atoms", "Mean", "Count", "Median", "Sam. std. dev.", "Pop. std. dev.", "Std. error", "Skewness"])
+            extracted_NaPS_xsf_angles_df = pd.DataFrame(columns=["name", "NaPS", "sorbent", "Atoms", "Mean", "Count", "Median", "Sam. std. dev.", "Pop. std. dev.", "Std. error", "Skewness"])
+        if extracted_sorbent_xsf_bonds_df.empty:
+            extracted_sorbent_xsf_bonds_df = pd.DataFrame(columns=["name", "NaPS", "sorbent", "Atoms", "Mean", "Count", "Median", "Sam. std. dev.", "Pop. std. dev.", "Std. error", "Skewness"])
+            extracted_sorbent_xsf_angles_df = pd.DataFrame(columns=["name", "NaPS", "sorbent", "Atoms", "Mean", "Count", "Median", "Sam. std. dev.", "Pop. std. dev.", "Std. error", "Skewness"])
+        extracted_NaPS_xsf_bonds_df.sort_values(by="name", inplace=True)
+        extracted_NaPS_xsf_angles_df.sort_values(by="name", inplace=True)
+        extracted_sorbent_xsf_bonds_df.sort_values(by="name", inplace=True)
+        extracted_sorbent_xsf_angles_df.sort_values(by="name", inplace=True)
+        # get the NaPS column
+        extracted_NaPS_xsf_bonds_df["NaPS"] = extracted_NaPS_xsf_bonds_df["name"].apply(extract_NaPS)
+        extracted_NaPS_xsf_angles_df["NaPS"] = extracted_NaPS_xsf_angles_df["name"].apply(extract_NaPS)
+        extracted_sorbent_xsf_bonds_df["sorbent"] = extracted_sorbent_xsf_bonds_df["name"].apply(extract_sorbent)
+        extracted_sorbent_xsf_angles_df["sorbent"] = extracted_sorbent_xsf_angles_df["name"].apply(extract_sorbent)
+        # get the sorbent column
+        extracted_NaPS_xsf_bonds_df["sorbent"] = extracted_NaPS_xsf_bonds_df["name"].apply(extract_sorbent)
+        extracted_NaPS_xsf_angles_df["sorbent"] = extracted_NaPS_xsf_angles_df["name"].apply(extract_sorbent)
+        extracted_sorbent_xsf_bonds_df["NaPS"] = extracted_sorbent_xsf_bonds_df["name"].apply(extract_NaPS)
+        extracted_sorbent_xsf_angles_df["NaPS"] = extracted_sorbent_xsf_angles_df["name"].apply(extract_NaPS)
+        # reset index and combine with more columns from output df
+        extracted_NaPS_xsf_bonds_df.reset_index(drop=True, inplace=True)
+        extracted_NaPS_xsf_angles_df.reset_index(drop=True, inplace=True)
+        extracted_sorbent_xsf_bonds_df.reset_index(drop=True, inplace=True)
+        extracted_sorbent_xsf_angles_df.reset_index(drop=True, inplace=True)
+        extracted_NaPS_xsf_bonds_df = pd.merge(extracted_NaPS_xsf_bonds_df, final_extracted_outputs_df[["name", "solvent", "electronic_scf", "vdw"]], on="name", how="left")
+        extracted_NaPS_xsf_angles_df = pd.merge(extracted_NaPS_xsf_angles_df, final_extracted_outputs_df[["name", "solvent", "electronic_scf", "vdw"]], on="name", how="left")
+        extracted_sorbent_xsf_bonds_df = pd.merge(extracted_sorbent_xsf_bonds_df, final_extracted_outputs_df[["name", "solvent", "electronic_scf", "vdw"]], on="name", how="left")
+        extracted_sorbent_xsf_angles_df = pd.merge(extracted_sorbent_xsf_angles_df, final_extracted_outputs_df[["name", "solvent", "electronic_scf", "vdw"]], on="name", how="left")
+        # reorder columns
+        bond_column_order = ["name", "NaPS", "sorbent", "Atoms", "Mean", "solvent", "electronic_scf", "vdw", "Count", "Median", "Sam. std. dev.", "Pop. std. dev.", "Std. error", "Skewness"]
+        angles_column_order = ["name", "NaPS", "sorbent", "Atoms", "Mean", "solvent", "electronic_scf", "vdw", "Count",  "Median", "Sam. std. dev.", "Pop. std. dev.", "Std. error", "Skewness"]
+        if not extracted_NaPS_xsf_bonds_df.empty:
+            extracted_NaPS_xsf_bonds_df = extracted_NaPS_xsf_bonds_df[bond_column_order]
+            extracted_NaPS_xsf_angles_df = extracted_NaPS_xsf_angles_df[angles_column_order]
         
-        extracted_xsf_bonds_df = pd.DataFrame(extracted_xsf_bonds)
-        extracted_xsf_angles_df = pd.DataFrame(extracted_xsf_angles)
-        extracted_xsf_bonds_df.sort_values(by="name", inplace=True)
-        extracted_xsf_angles_df.sort_values(by="name", inplace=True)
-        extracted_xsf_bonds_df["NaPS"] = extracted_xsf_bonds_df["name"].apply(extract_NaPS)
-        extracted_xsf_angles_df["NaPS"] = extracted_xsf_angles_df["name"].apply(extract_NaPS)
-        extracted_xsf_bonds_df["sorbent"] = extracted_xsf_bonds_df["name"].apply(extract_sorbent)
-        extracted_xsf_angles_df["sorbent"] = extracted_xsf_angles_df["name"].apply(extract_sorbent)
-        extracted_xsf_bonds_df.reset_index(drop=True, inplace=True)
-        extracted_xsf_angles_df.reset_index(drop=True, inplace=True)
-        extracted_xsf_bonds_df = pd.merge(extracted_xsf_bonds_df, final_extracted_outputs_df[["name", "solvent", "electronic_scf", "vdw"]], on="name", how="left")
-        extracted_xsf_angles_df = pd.merge(extracted_xsf_angles_df, final_extracted_outputs_df[["name", "solvent", "electronic_scf", "vdw"]], on="name", how="left")
-        bond_column_order = ["name", "NaPS", "sorbent", "Atoms", "Mean /Å", "solvent", "electronic_scf", "vdw", "Count", "Median /Å", "Sam. std. dev.", "Pop. std. dev.", "Std. error", "Skewness"]
-        extracted_xsf_bonds_df = extracted_xsf_bonds_df[bond_column_order]
-        angles_column_order = ["name", "NaPS", "sorbent", "Atoms", "Mean /°", "solvent", "electronic_scf", "vdw", "Count",  "Median /°", "Sam. std. dev.", "Pop. std. dev.", "Std. error", "Skewness"]
-        extracted_xsf_angles_df = extracted_xsf_angles_df[angles_column_order]
-        extracted_xsf_bonds_df.rename(columns={"Mean /Å": "Mean", "Median /Å": "Median"}, inplace=True)
-        extracted_xsf_angles_df.rename(columns={"Mean /°": "Mean", "Median /°": "Median"}, inplace=True)
-        bond_dfs.append(extracted_xsf_bonds_df)
-        angle_dfs.append(extracted_xsf_angles_df)
+        if not extracted_sorbent_xsf_bonds_df.empty:
+            extracted_sorbent_xsf_bonds_df = extracted_sorbent_xsf_bonds_df[bond_column_order]
+            extracted_sorbent_xsf_angles_df = extracted_sorbent_xsf_angles_df[angles_column_order]
+
+        
+        # append for final df creation
+        NaPS_bond_dfs.append(extracted_NaPS_xsf_bonds_df)
+        NaPS_angle_dfs.append(extracted_NaPS_xsf_angles_df)
+        sorbent_bond_dfs.append(extracted_sorbent_xsf_bonds_df)
+        sorbent_angle_dfs.append(extracted_sorbent_xsf_angles_df)
+
         bond_output_directory = os.path.join(working_directory, "Data-extracted/final/bonds")
         angle_output_directory = os.path.join(working_directory, "Data-extracted/final/angles")
         os.makedirs(bond_output_directory, exist_ok=True)
         os.makedirs(angle_output_directory, exist_ok=True)
-        bond_output_file_path = os.path.join(bond_output_directory, f"{category}_bond-rad{radius}.csv")
-        angle_output_file_path = os.path.join(angle_output_directory, f"{category}_angle-rad{radius}.csv")
-        extracted_xsf_bonds_df.to_csv(bond_output_file_path, index=False, encoding='utf-8-sig')
-        extracted_xsf_angles_df.to_csv(angle_output_file_path, index=False, encoding='utf-8-sig')
-    
+        NaPS_bond_output_file_path = os.path.join(bond_output_directory, f"NaPS-{category}_bond-rad{radius}.csv")
+        NaPS_angle_output_file_path = os.path.join(angle_output_directory, f"NaPS{category}_angle-rad{radius}.csv")
+        sorbent_bond_output_file_path = os.path.join(bond_output_directory, f"sorbent-{category}_bond-rad{radius}.csv")
+        sorbent_angle_output_file_path = os.path.join(angle_output_directory, f"sorbent-{category}_angle-rad{radius}.csv")
+        extracted_NaPS_xsf_bonds_df.to_csv(NaPS_bond_output_file_path, index=False, encoding='utf-8-sig')
+        extracted_NaPS_xsf_angles_df.to_csv(NaPS_angle_output_file_path, index=False, encoding='utf-8-sig')
+        extracted_sorbent_xsf_bonds_df.to_csv(sorbent_bond_output_file_path, index=False, encoding='utf-8-sig')
+        extracted_sorbent_xsf_angles_df.to_csv(sorbent_angle_output_file_path, index=False, encoding='utf-8-sig')
+
     print(f"Data extraction for {category} is complete.")
-    return final_extracted_outputs_df, bond_dfs[0], bond_dfs[1], angle_dfs[0], angle_dfs[1]
+    return final_extracted_outputs_df, NaPS_bond_dfs, NaPS_angle_dfs, sorbent_bond_dfs, sorbent_angle_dfs
 
 
 # --- This method extracts the adsorption energies using the finalized energies data --- #
@@ -374,6 +457,6 @@ if __name__ == "__main__":
     # parse_xsf_file("Sorbents/FeN4-PC", "FeNe")
     # extract_data("Sorbents")
     # extract_data("NaPS@graphene_vdw")
-    extract_data("NaPS@FeN4")
+    extract_data("NaPS@NiS2")
     # extract_adsorption_energies("NaPS@NiS2")
     # extract_adsorption_energies("NaPS@graphene_vdw")

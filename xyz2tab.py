@@ -342,8 +342,8 @@ def run_x2t(
                     "Element",
                     "Atom count",
                     "Mass fraction /%",
-                    "Cov. radius /Å",
-                    "Cov. radius + /Å",
+                    "Cov. radius",
+                    "Cov. radius +",
                 ],
                 tablefmt="github",
                 floatfmt=(".2f"),
@@ -497,7 +497,7 @@ def run_x2t(
         print(
             tabulate(
                 pr_sel_dist,
-                headers=["Atoms", "Bond length /Å"],
+                headers=["Atoms", "Bond length"],
                 tablefmt="github",
                 floatfmt=(".4f"),
                 showindex=False,
@@ -596,7 +596,7 @@ def run_x2t(
             print(
                 tabulate(
                     summary_bond_table_1,
-                    headers=["Atoms", "Bond lengths /Å"],
+                    headers=["Atoms", "Bond lengths"],
                     tablefmt="github",
                     floatfmt=(".4f"),
                     showindex=False,
@@ -608,7 +608,7 @@ def run_x2t(
         print(
             tabulate(
                 summary_bond_table_2,
-                headers=["Atoms", "Bond lengths /Å"],
+                headers=["Atoms", "Bond lengths"],
                 tablefmt="github",
                 floatfmt=(".4f"),
                 showindex=False,
@@ -623,8 +623,8 @@ def run_x2t(
                 headers=[
                     "Atoms",
                     "Count",
-                    "Mean /Å",
-                    "Median /Å",
+                    "Mean",
+                    "Median",
                     "Sam. std. dev.",
                     "Pop. std. dev.",
                     "Std. error",
@@ -640,8 +640,8 @@ def run_x2t(
         columns=[
             "Atoms",
             "Count",
-            "Mean /Å",
-            "Median /Å",
+            "Mean",
+            "Median",
             "Sam. std. dev.",
             "Pop. std. dev.",
             "Std. error",
@@ -880,7 +880,7 @@ def run_x2t(
         print(
             tabulate(
                 pr_sel_angles,
-                headers=["Atoms", "Angle /°"],
+                headers=["Atoms", "Angle"],
                 tablefmt="github",
                 floatfmt=(".2f"),
                 showindex=False,
@@ -979,7 +979,7 @@ def run_x2t(
             print(
                 tabulate(
                     summary_angle_table_1,
-                    headers=["Atoms", "Angle /°"],
+                    headers=["Atoms", "Angle"],
                     tablefmt="github",
                     floatfmt=(".2f"),
                     showindex=False,
@@ -991,7 +991,7 @@ def run_x2t(
         print(
             tabulate(
                 summary_angle_table_2,
-                headers=["Atoms", "Angle /°"],
+                headers=["Atoms", "Angle"],
                 tablefmt="github",
                 floatfmt=(".2f"),
                 showindex=False,
@@ -1006,8 +1006,8 @@ def run_x2t(
                 headers=[
                     "Atoms",
                     "Count",
-                    "Mean /°",
-                    "Median /°",
+                    "Mean",
+                    "Median",
                     "Sam. std. dev.",
                     "Pop. std. dev.",
                     "Std. error",
@@ -1022,8 +1022,8 @@ def run_x2t(
         columns=[
             "Atoms",
             "Count",
-            "Mean /°",
-            "Median /°",
+            "Mean",
+            "Median",
             "Sam. std. dev.",
             "Pop. std. dev.",
             "Std. error",
@@ -1142,7 +1142,7 @@ def run_x2t(
         print(
             tabulate(
                 plane1_df,
-                headers=["Atom", "Distance to Plane 1 /Å"],
+                headers=["Atom", "Distance to Plane 1"],
                 tablefmt="github",
                 floatfmt=(".4f"),
                 showindex=False,
@@ -1230,7 +1230,7 @@ def run_x2t(
         print(
             tabulate(
                 plane2_df,
-                headers=["Atom", "Distance to Plane 2 /Å", "Distance to Plane 1 /Å"],
+                headers=["Atom", "Distance to Plane 2", "Distance to Plane 1"],
                 tablefmt="github",
                 floatfmt=(".4f"),
                 showindex=False,

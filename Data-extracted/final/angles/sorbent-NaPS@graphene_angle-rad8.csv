@@ -1,0 +1,16 @@
+﻿name,NaPS,sorbent,Atoms,Mean,solvent,electronic_scf,vdw,Count,Median,Sam. std. dev.,Pop. std. dev.,Std. error,Skewness
+Na2S2@graphene,Na2S2,graphene,C–C–C,120.01,Vacuum,True,False,170,120.01,0.08,0.08,0.01,-0.20
+Na2S2@graphene-PC,Na2S2,graphene,C–C–C,120.00,PC,True,False,170,120.00,0.00,0.00,0.00,0.85
+Na2S2@graphene-glyme,Na2S2,graphene,C–C–C,120.00,Glyme,True,False,170,120.00,0.06,0.06,0.00,0.00
+Na2S4@graphene,Na2S4,graphene,C–C–C,120.00,Vacuum,False,False,170,120.00,0.06,0.06,0.00,0.01
+Na2S4@graphene-PC,Na2S4,graphene,C–C–C,120.00,PC,True,False,170,120.00,0.01,0.01,0.00,0.08
+Na2S4@graphene-glyme,Na2S4,graphene,C–C–C,120.00,Glyme,True,False,170,120.00,0.00,0.00,0.00,-0.65
+Na2S6@graphene,Na2S6,graphene,C–C–C,120.00,Vacuum,True,False,170,120.00,0.06,0.06,0.00,0.00
+Na2S6@graphene-PC,Na2S6,graphene,C–C–C,120.00,PC,True,False,170,120.00,0.06,0.06,0.00,0.00
+Na2S6@graphene-glyme,Na2S6,graphene,C–C–C,120.00,Glyme,True,False,170,120.00,0.06,0.06,0.00,0.00
+Na2S8@graphene,Na2S8,graphene,C–C–C,120.00,Vacuum,True,False,170,120.00,0.00,0.00,0.00,0.15
+Na2S8@graphene-PC,Na2S8,graphene,C–C–C,120.00,PC,True,False,170,120.00,0.00,0.00,0.00,0.15
+Na2S8@graphene-glyme,Na2S8,graphene,C–C–C,120.00,Glyme,True,False,170,120.00,0.00,0.00,0.00,0.15
+Na2S@graphene,Na2S,graphene,C–C–C,120.01,Vacuum,False,False,170,120.01,0.08,0.08,0.01,-0.30
+Na2S@graphene-PC,Na2S,graphene,C–C–C,120.00,PC,True,False,170,120.01,0.06,0.06,0.00,-0.17
+Na2S@graphene-glyme,Na2S,graphene,C–C–C,120.01,Glyme,True,False,170,120.01,0.08,0.08,0.01,-0.30

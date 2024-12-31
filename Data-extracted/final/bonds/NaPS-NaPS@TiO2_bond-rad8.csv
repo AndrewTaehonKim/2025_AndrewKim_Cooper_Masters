@@ -1,0 +1,22 @@
+﻿name,NaPS,sorbent,Atoms,Mean,solvent,electronic_scf,vdw,Count,Median,Sam. std. dev.,Pop. std. dev.,Std. error,Skewness
+Na2S2@TiO2,Na2S2,TiO2,S–S,2.0971,Vacuum,True,False,1,2.0971,nan,0.0000,nan,nan
+Na2S2@TiO2,Na2S2,TiO2,S–Na,2.6932,Vacuum,True,False,3,2.7002,0.0579,0.0473,0.0334,-0.5325
+Na2S2@TiO2-glyme,Na2S2,TiO2,S–S,2.1133,Glyme,False,False,1,2.1133,nan,0.0000,nan,nan
+Na2S2@TiO2-glyme,Na2S2,TiO2,S–Na,2.7205,Glyme,False,False,3,2.7344,0.0534,0.0436,0.0308,-1.0943
+Na2S4@TiO2,Na2S4,TiO2,S–S,2.0981,Vacuum,True,False,3,2.0925,0.0100,0.0082,0.0058,1.7304
+Na2S4@TiO2,Na2S4,TiO2,S–Na,2.7722,Vacuum,True,False,4,2.7726,0.0241,0.0209,0.0120,-0.0212
+Na2S4@TiO2-PC,Na2S4,TiO2,S–S,2.2118,PC,False,False,2,2.2118,0.0434,0.0307,0.0307,nan
+Na2S4@TiO2-glyme,Na2S4,TiO2,S–S,2.1012,Glyme,False,False,3,2.0927,0.0149,0.0122,0.0086,1.7314
+Na2S4@TiO2-glyme,Na2S4,TiO2,S–Na,2.8156,Glyme,False,False,4,2.8154,0.0148,0.0128,0.0074,0.0090
+Na2S6@TiO2,Na2S6,TiO2,S–Na,2.7606,Vacuum,True,False,4,2.7296,0.1016,0.0880,0.0508,1.2750
+Na2S6@TiO2,Na2S6,TiO2,S–S,2.0695,Vacuum,True,False,4,2.0734,0.0304,0.0263,0.0152,-0.5808
+Na2S6@TiO2-glyme,Na2S6,TiO2,S–Na,2.7244,Glyme,False,False,3,2.7243,0.0420,0.0343,0.0243,0.0022
+Na2S6@TiO2-glyme,Na2S6,TiO2,S–S,2.0801,Glyme,False,False,4,2.0820,0.0255,0.0221,0.0128,-0.3820
+Na2S8@TiO2,Na2S8,TiO2,S–S,2.0372,Vacuum,True,False,5,2.0345,0.0192,0.0172,0.0086,0.0501
+Na2S8@TiO2,Na2S8,TiO2,S–Na,2.8301,Vacuum,True,False,4,2.8118,0.0626,0.0542,0.0313,1.1559
+Na2S8@TiO2-PC,Na2S8,TiO2,S–S,2.1881,PC,False,False,1,2.1881,nan,0.0000,nan,nan
+Na2S8@TiO2-PC,Na2S8,TiO2,S–Na,2.6728,PC,False,False,2,2.6728,0.1344,0.0950,0.0950,nan
+Na2S8@TiO2-glyme,Na2S8,TiO2,S–S,2.0470,Glyme,False,False,5,2.0431,0.0153,0.0137,0.0069,0.0242
+Na2S8@TiO2-glyme,Na2S8,TiO2,S–Na,2.8288,Glyme,False,False,4,2.8132,0.0514,0.0445,0.0257,1.5685
+Na2S@TiO2,Na2S,TiO2,S–Na,2.4472,Vacuum,True,False,2,2.4472,0.0001,0.0001,0.0001,nan
+Na2S@TiO2-glyme,Na2S,TiO2,S–Na,2.7046,Glyme,True,False,2,2.7046,0.0865,0.0612,0.0612,nan
