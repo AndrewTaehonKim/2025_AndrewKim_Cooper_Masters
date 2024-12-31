@@ -1,0 +1,16 @@
+﻿name,NaPS,Sorbent,Distance,NaPS Atom,NaPS Atom Position,Sorbent Atom,Sorbent Atom Position,solvent,electronic_scf,vdw
+Na2S2@TiO2-glyme,Na2S2,TiO2,2.2049878591965077,Na,"(np.float64(4.594965), np.float64(9.114845), np.float64(4.378315))",O,"(np.float64(5.488141), np.float64(8.293077), np.float64(2.537417))",Glyme,False,False
+Na2S2@TiO2-PC,Na2S2,TiO2,3.9900848703165446,Na,"(np.float64(0.56508), np.float64(9.793686), np.float64(6.219875))",O,"(np.float64(0.894402), np.float64(8.293077), np.float64(2.537417))",PC,False,False
+Na2S2@TiO2,Na2S2,TiO2,2.180982293440275,Na,"(np.float64(4.630611), np.float64(9.116179), np.float64(4.366031))",O,"(np.float64(5.488141), np.float64(8.293077), np.float64(2.537417))",Vacuum,True,False
+Na2S4@TiO2-glyme,Na2S4,TiO2,2.224873137064223,Na,"(np.float64(9.325646), np.float64(9.317318), np.float64(4.361999))",O,"(np.float64(10.081881), np.float64(8.293077), np.float64(2.537417))",Glyme,False,False
+Na2S4@TiO2-PC,Na2S4,TiO2,2.235178956689823,Na,"(np.float64(14.326916), np.float64(9.747475), np.float64(4.213815))",O,"(np.float64(12.886816), np.float64(10.08188), np.float64(2.537417))",PC,False,False
+Na2S4@TiO2,Na2S4,TiO2,2.2097807219570447,Na,"(np.float64(13.60681), np.float64(9.046976), np.float64(4.352276))",O,"(np.float64(12.886816), np.float64(10.08188), np.float64(2.537417))",Vacuum,True,False
+Na2S6@TiO2-glyme,Na2S6,TiO2,2.1753221760081884,Na,"(np.float64(9.143694), np.float64(9.328118), np.float64(4.392227))",O,"(np.float64(8.293077), np.float64(10.08188), np.float64(2.537417))",Glyme,False,False
+Na2S6@TiO2-PC,Na2S6,TiO2,2.2179731543095826,Na,"(np.float64(8.753852), np.float64(4.237118), np.float64(4.309995))",O,"(np.float64(8.293077), np.float64(5.488141), np.float64(2.537417))",PC,False,False
+Na2S6@TiO2,Na2S6,TiO2,2.1874778157947117,Na,"(np.float64(9.136482), np.float64(9.343192), np.float64(4.415732))",O,"(np.float64(8.293077), np.float64(10.08188), np.float64(2.537417))",Vacuum,True,False
+Na2S8@TiO2-glyme,Na2S8,TiO2,2.2455420309332887,Na,"(np.float64(9.228045), np.float64(4.773841), np.float64(4.450025))",O,"(np.float64(8.293077), np.float64(5.488141), np.float64(2.537417))",Glyme,False,False
+Na2S8@TiO2-PC,Na2S8,TiO2,2.1089006033357753,Na,"(np.float64(9.454542), np.float64(9.59415), np.float64(4.228742))",O,"(np.float64(8.293077), np.float64(10.08188), np.float64(2.537417))",PC,False,False
+Na2S8@TiO2,Na2S8,TiO2,2.246047101616749,Na,"(np.float64(9.205493), np.float64(4.768201), np.float64(4.459372))",O,"(np.float64(8.293077), np.float64(5.488141), np.float64(2.537417))",Vacuum,True,False
+Na2S@TiO2-glyme,Na2S,TiO2,2.166887616955942,Na,"(np.float64(4.780595), np.float64(8.938701), np.float64(4.481112))",O,"(np.float64(5.488141), np.float64(8.293077), np.float64(2.537417))",Glyme,True,False
+Na2S@TiO2-PC,Na2S,TiO2,4.258303543347162,Na,"(np.float64(3.344551), np.float64(10.395175), np.float64(6.769334))",O,"(np.float64(3.699338), np.float64(10.08188), np.float64(2.537417))",PC,False,False
+Na2S@TiO2,Na2S,TiO2,2.316091338844391,Na,"(np.float64(7.470775), np.float64(10.380251), np.float64(4.681962))",O,"(np.float64(8.293077), np.float64(10.08188), np.float64(2.537417))",Vacuum,True,False

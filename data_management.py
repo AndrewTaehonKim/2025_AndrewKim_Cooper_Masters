@@ -84,27 +84,13 @@ def parse_output_file(file_path, verbose=False):
         print(f"Error: df_energies is empty for {file_path}.")
         raise ValueError(f"Error: df_energies is empty for {file_path}.")
 
-    # if there are more than 8 S's, then need to filter    
-    if len(oxidation_states["S"]) > 8:
-        # see how many S there should be by getting NaPS
-        S_count = extract_NaPS(output_file_name).split("Na2S")[1]
-        S_count = 1 if S_count == "" else int(S_count)
-        oxidation_states["S"] = oxidation_states["S"][-S_count:]
-        print(oxidation_states["S"])
-
-    # Modify Oxidation States for NaPS Only
-    # df_oxidation_states = pd.DataFrame(
-    #     list(oxidation_states.items()), columns=["Element", "Oxidation States"]
-    # )
-    # if df_oxidation_states.empty:
-    #     raise ValueError("Error: df_oxidation_states is empty.")
-    # df_oxidation_states = df_oxidation_states[df_oxidation_states["Element"].isin(["Na", "S"])]
-    # # if there are more than 8 S states, then need to filter
-    # if df_oxidation_states["Element"] == "S".shape[0] > 8:
-    #     # see how many S there should be by getting NaPS
-    #     NaPS = extract_NaPS(output_file_name)
-    #     print(NaPS)
-    # print(df_oxidation_states)
+    # if there are more than 8 S's, then need to filter
+    if 'S' in oxidation_states.keys() and 'Na' in output_file_name: 
+        if len(oxidation_states["S"]) > 8:
+            # see how many S there should be by getting NaPS
+            S_count = extract_NaPS(output_file_name).split("Na2S")[1]
+            S_count = 1 if S_count == "" else int(S_count)
+            oxidation_states["S"] = oxidation_states["S"][-S_count:]
 
     # Print required information
     if verbose:
@@ -247,6 +233,7 @@ def extract_data(category: str, verbose=False):
             pass
 
     # Handle output files
+    print(f"Extracting data from {category}")
     extracted_outputs = []
     for file in out_files:
         df_energies, df_oxidation_states, output_file_name, electronic_scf, solvent, vdw = (
@@ -377,10 +364,10 @@ def extract_data(category: str, verbose=False):
         extracted_sorbent_xsf_bonds_df.to_csv(sorbent_bond_output_file_path, index=False, encoding='utf-8-sig')
         extracted_sorbent_xsf_angles_df.to_csv(sorbent_angle_output_file_path, index=False, encoding='utf-8-sig')
 
-    print(f"Data extraction for {category} is complete.")
-
     # extract adsorption lengths
     rows = []
+    # get xsf_files that are adsorption only
+    xsf_files = [file for file in xsf_files if "@" in file]
     for file in xsf_files:
         _, _, _, _, NaPS_df, sorbent_df = parse_xsf_file(f"{category}/{file}", file.split(".")[0])
         # Convert DataFrames to NumPy arrays
@@ -404,7 +391,7 @@ def extract_data(category: str, verbose=False):
         # save data
         name = file.split(".")[0]
         rows.append({
-            "name": file.split(".")[0],
+            "name": name,
             "NaPS": extract_NaPS(name),
             "Sorbent": extract_sorbent(name),
             "Distance": min_distance,
@@ -413,13 +400,17 @@ def extract_data(category: str, verbose=False):
             "Sorbent Atom": closest_points[1]["element"],
             "Sorbent Atom Position": (closest_points[1]["x"], closest_points[1]["y"], closest_points[1]["z"])
         })
-    adsorption_length_df = pd.DataFrame(rows)
-    adsorption_length_df = adsorption_length_df.merge(final_extracted_outputs_df[["name", "solvent", "electronic_scf", "vdw"]], on="name", how="left")
+    if len(rows) > 0:
+        adsorption_length_df = pd.DataFrame(rows)
+        adsorption_length_df = adsorption_length_df.merge(final_extracted_outputs_df[["name", "solvent", "electronic_scf", "vdw"]], on="name", how="left")
 
-    output_directory = os.path.join(working_directory, "Data-extracted/final/adsorption_lengths")
-    os.makedirs(output_directory, exist_ok=True)
-    output_file_path = os.path.join(output_directory, f"{category}.csv")
-    adsorption_length_df.to_csv(output_file_path, index=False, encoding='utf-8-sig')
+        output_directory = os.path.join(working_directory, "Data-extracted/final/adsorption_lengths")
+        os.makedirs(output_directory, exist_ok=True)
+        output_file_path = os.path.join(output_directory, f"{category}.csv")
+        adsorption_length_df.to_csv(output_file_path, index=False, encoding='utf-8-sig')
+    else:
+        adsorption_length_df = pd.DataFrame(columns=["name", "NaPS", "Sorbent", "Distance", "NaPS Atom", "NaPS Atom Position", "Sorbent Atom", "Sorbent Atom Position", "solvent", "electronic_scf", "vdw"])
+    print(f"Data extraction for {category} is complete.")
 
     return final_extracted_outputs_df, NaPS_bond_dfs, NaPS_angle_dfs, sorbent_bond_dfs, sorbent_angle_dfs, adsorption_length_df
 
@@ -514,46 +505,6 @@ def extract_adsorption_energies(sorbent: str, verbose=False):
     return adsorption_df
 
 
-    # get working directory
-    working_directory = os.getcwd()
-    # Get list of file names
-    directory = working_directory + f"/Data-raw/{category}"
-    file_list = os.listdir(directory)
-    xsf_files = [file for file in file_list if file.endswith(".xsf")]
-    rows = []
-    for file in xsf_files:
-        _, _, _, _, NaPS_df, sorbent_df = parse_xsf_file(f"{category}/{file}", file.split(".")[0])
-        # Convert DataFrames to NumPy arrays
-        coords1 = NaPS_df[['x', 'y', 'z']].to_numpy()
-        coords2 = sorbent_df[['x', 'y', 'z']].to_numpy()
-        
-        # Initialize variables to store the minimum distance and the closest points
-        min_distance = float('inf')
-        closest_points = None
-
-        # Iterate over each point in coords1
-        for i, point1 in enumerate(coords1):
-            # Calculate the Euclidean distance between point1 and all points in coords2
-            distances = np.linalg.norm(coords2 - point1, axis=1)
-            # Find the minimum distance and the corresponding point in coords2
-            min_idx = np.argmin(distances)
-            distance = distances[min_idx]
-            if distance < min_distance:
-                min_distance = distance
-                closest_points = (NaPS_df.iloc[i], sorbent_df.iloc[min_idx])
-        # save data
-        rows.append({
-            "NaPS": extract_NaPS(file),
-            "Sorbent": extract_sorbent(file),
-            # "Solvent": 
-            "Distance": min_distance,
-            "NaPS Atom": closest_points[0]["element"],
-            "NaPS Atom Position": (closest_points[0]["x"], closest_points[0]["y"], closest_points[0]["z"]),
-            "Sorbent Atom": closest_points[1]["element"],
-            "Sorbent Atom Position": (closest_points[1]["x"], closest_points[1]["y"], closest_points[1]["z"])
-        })
-    adsorption_length_df = pd.DataFrame(rows)
-    print(adsorption_length_df)
 # Example usage
 if __name__ == "__main__":
     # df_energies, df_oxidation_states, output_file_name, electronic_scf, solvent = (
@@ -562,6 +513,6 @@ if __name__ == "__main__":
     # parse_xsf_file("Sorbents/FeN4-PC", "FeNe")
     # extract_data("Sorbents")
     # extract_data("NaPS@graphene_vdw")
-    extract_data("NaPS@NiS2")
+    extract_data("Sorbents")
     # extract_adsorption_energies("NaPS@NiS2")
     # extract_adsorption_energies("NaPS@graphene_vdw")

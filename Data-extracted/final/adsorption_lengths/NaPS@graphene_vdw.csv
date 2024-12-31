@@ -1,7 +1,7 @@
 ﻿name,NaPS,Sorbent,Distance,NaPS Atom,NaPS Atom Position,Sorbent Atom,Sorbent Atom Position,solvent,electronic_scf,vdw
-Na2S8@graphene_vdw,Na2S8,graphene_vdw,2.8230828108225943,Na,"(4.806589, 4.410139, 3.29167)",C,"(4.94001, 4.278179, 0.474831)",Vacuum,True,True
-Na2S@graphene_vdw,Na2S,graphene_vdw,2.7951944188918234,Na,"(6.008862, 6.216273, 15.194169)",C,"(6.179816, 6.420431, 12.411687)",Vacuum,True,True
-Na2S6@graphene_vdw,Na2S6,graphene_vdw,2.9945186208886736,Na,"(5.973046, 5.276248, 12.82933)",C,"(6.178247, 4.9916, 9.855442)",Vacuum,True,True
-Na2S4@graphene_vdw,Na2S4,graphene_vdw,2.9331907349171815,Na,"(2.74604, 4.744319, 10.317798)",C,"(2.468754, 4.274417, 7.4358)",Vacuum,False,True
-Na2S2@graphene_vdw,Na2S2,graphene_vdw,2.719156683119785,Na,"(5.194652, 3.958957, 12.672339)",C,"(4.916463, 4.278104, 9.986344)",Vacuum,True,True
-Na2S8@graphene_vdw-glyme,Na2S8,graphene_vdw,3.339231985602977,Na,"(5.783296, 4.571041, 3.764283)",C,"(6.175013, 4.9912, 0.474831)",Glyme,True,True
+Na2S2@graphene_vdw,Na2S2,graphene_vdw,2.719156683119785,Na,"(np.float64(5.194652), np.float64(3.958957), np.float64(12.672339))",C,"(np.float64(4.916463), np.float64(4.278104), np.float64(9.986344))",Vacuum,True,True
+Na2S4@graphene_vdw,Na2S4,graphene_vdw,2.9331907349171815,Na,"(np.float64(2.74604), np.float64(4.744319), np.float64(10.317798))",C,"(np.float64(2.468754), np.float64(4.274417), np.float64(7.4358))",Vacuum,False,True
+Na2S6@graphene_vdw,Na2S6,graphene_vdw,2.9945186208886736,Na,"(np.float64(5.973046), np.float64(5.276248), np.float64(12.82933))",C,"(np.float64(6.178247), np.float64(4.9916), np.float64(9.855442))",Vacuum,True,True
+Na2S8@graphene_vdw-glyme,Na2S8,graphene_vdw,3.339231985602977,Na,"(np.float64(5.783296), np.float64(4.571041), np.float64(3.764283))",C,"(np.float64(6.175013), np.float64(4.9912), np.float64(0.474831))",Glyme,True,True
+Na2S8@graphene_vdw,Na2S8,graphene_vdw,2.8230828108225943,Na,"(np.float64(4.806589), np.float64(4.410139), np.float64(3.29167))",C,"(np.float64(4.94001), np.float64(4.278179), np.float64(0.474831))",Vacuum,True,True
+Na2S@graphene_vdw,Na2S,graphene_vdw,2.7951944188918234,Na,"(np.float64(6.008862), np.float64(6.216273), np.float64(15.194169))",C,"(np.float64(6.179816), np.float64(6.420431), np.float64(12.411687))",Vacuum,True,True
