@@ -8,7 +8,7 @@ Na2S4@graphene,Na2S4,graphene,2.8997451788703783,Na,"(np.float64(5.323597), np.f
 Na2S6@graphene-glyme,Na2S6,graphene,6.006239799203492,Na,"(np.float64(1.738409), np.float64(6.810979), np.float64(6.055049))",C,"(np.float64(1.236225), np.float64(6.417727), np.float64(0.082773))",Glyme,True,False
 Na2S6@graphene-PC,Na2S6,graphene,4.357570002586534,S,"(np.float64(4.584093), np.float64(6.833533), np.float64(4.649507))",C,"(np.float64(4.942884), np.float64(7.133973), np.float64(0.317138))",PC,True,False
 Na2S6@graphene,Na2S6,graphene,2.9884492756735903,Na,"(np.float64(5.865744), np.float64(5.217978), np.float64(12.82956))",C,"(np.float64(6.177871), np.float64(4.991682), np.float64(9.866083))",Vacuum,True,False
-Na2S8@graphene-glyme,Na2S8,graphene,3.1607615313759436,Na,"(np.float64(4.701027), np.float64(4.951683), np.float64(3.553742))",C,"(np.float64(4.94001), np.float64(4.278179), np.float64(0.474831))",Glyme,True,False
+Na2S8@graphene-glyme,Na2S8,graphene,4.5736224465031,S,"(np.float64(5.146622), np.float64(5.294021), np.float64(4.929424))",C,"(np.float64(4.94001), np.float64(4.278179), np.float64(0.474831))",Glyme,True,False
 Na2S8@graphene-PC,Na2S8,graphene,4.00951418243682,Na,"(np.float64(4.665761), np.float64(3.557037), np.float64(4.412351))",C,"(np.float64(4.94001), np.float64(2.852106), np.float64(0.474831))",PC,True,False
 Na2S8@graphene,Na2S8,graphene,2.9538899829379224,Na,"(np.float64(4.805234), np.float64(5.179049), np.float64(3.284766))",C,"(np.float64(4.94001), np.float64(4.278179), np.float64(0.474831))",Vacuum,True,False
 Na2S@graphene-glyme,Na2S,graphene,2.738142109391329,Na,"(np.float64(5.93548), np.float64(6.213675), np.float64(15.144399))",C,"(np.float64(6.180141), np.float64(6.420325), np.float64(12.42505))",Glyme,True,False

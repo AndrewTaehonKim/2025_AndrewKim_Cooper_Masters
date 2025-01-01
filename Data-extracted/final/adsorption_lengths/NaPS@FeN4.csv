@@ -8,7 +8,7 @@ Na2S4@FeN4,Na2S4,FeN4,2.303724092309884,S,"(np.float64(2.893649), np.float64(6.0
 Na2S6@FeN4-glyme,Na2S6,FeN4,5.329558288243407,S,"(np.float64(3.14954), np.float64(8.000994), np.float64(5.827367))",N,"(np.float64(3.705028), np.float64(7.843356), np.float64(0.529181))",Glyme,False,False
 Na2S6@FeN4-PC,Na2S6,FeN4,4.363981794074536,S,"(np.float64(2.846099), np.float64(7.053329), np.float64(4.771987))",Fe,"(np.float64(3.088866), np.float64(6.061362), np.float64(0.529181))",PC,False,False
 Na2S6@FeN4,Na2S6,FeN4,2.9238695158118806,Na,"(np.float64(4.750796), np.float64(6.894019), np.float64(3.193324))",N,"(np.float64(4.94003), np.float64(5.704252), np.float64(0.529181))",Vacuum,True,False
-Na2S8@FeN4-glyme,Na2S8,FeN4,3.030076274543927,Na,"(np.float64(2.574552), np.float64(5.233031), np.float64(3.402982))",N,"(np.float64(2.470025), np.float64(4.278199), np.float64(0.529181))",Glyme,False,False
+Na2S8@FeN4-glyme,Na2S8,FeN4,2.973200511965683,Na,"(np.float64(2.23933), np.float64(5.246487), np.float64(3.330809))",N,"(np.float64(2.470025), np.float64(4.278199), np.float64(0.529181))",Glyme,False,False
 Na2S8@FeN4-PC,Na2S8,FeN4,4.211158963632695,Na,"(np.float64(1.278989), np.float64(3.011795), np.float64(4.703593))",C,"(np.float64(1.235003), np.float64(3.565157), np.float64(0.529181))",PC,False,False
 Na2S8@FeN4,Na2S8,FeN4,3.1617983390388766,Na,"(np.float64(1.929755), np.float64(5.862089), np.float64(3.563328))",N,"(np.float64(1.235003), np.float64(6.417283), np.float64(0.529181))",Vacuum,False,False
 Na2S@FeN4-glyme,Na2S,FeN4,2.7885327251852363,Na,"(np.float64(8.418745), np.float64(7.304546), np.float64(3.255785))",C,"(np.float64(8.645057), np.float64(7.843352), np.float64(0.529178))",Glyme,True,False

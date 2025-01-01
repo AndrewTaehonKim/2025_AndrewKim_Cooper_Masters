@@ -27,8 +27,9 @@ Na2S8@graphene,Na2S8,graphene,Na–S–Na,80.63,Vacuum,True,False,2,80.63,1.09,0
 Na2S8@graphene,Na2S8,graphene,S–S–S,112.41,Vacuum,True,False,2,112.41,1.46,1.03,1.03,nan
 Na2S8@graphene,Na2S8,graphene,S–Na–S,101.28,Vacuum,True,False,9,95.77,28.32,26.70,9.44,1.81
 Na2S8@graphene-PC,Na2S8,graphene,S–S–S,112.32,PC,True,False,4,112.05,1.44,1.24,0.72,1.06
-Na2S8@graphene-glyme,Na2S8,graphene,S–S–Na,91.03,Glyme,True,False,3,89.73,5.50,4.49,3.17,1.01
-Na2S8@graphene-glyme,Na2S8,graphene,S–S–S,112.26,Glyme,True,False,2,112.26,1.11,0.78,0.78,nan
-Na2S8@graphene-glyme,Na2S8,graphene,S–Na–S,96.19,Glyme,True,False,3,96.27,23.78,19.42,13.73,-0.01
+Na2S8@graphene-glyme,Na2S8,graphene,S–S–S,111.42,Glyme,True,False,4,112.15,3.21,2.78,1.61,-1.25
+Na2S8@graphene-glyme,Na2S8,graphene,S–S–Na,90.49,Glyme,True,False,5,87.12,10.85,9.71,4.85,0.31
+Na2S8@graphene-glyme,Na2S8,graphene,Na–S–Na,104.67,Glyme,True,False,1,104.67,nan,0.00,nan,nan
+Na2S8@graphene-glyme,Na2S8,graphene,S–Na–S,108.91,Glyme,True,False,6,114.21,19.60,17.89,8.00,-1.77
 Na2S@graphene,Na2S,graphene,Na–S–Na,106.38,Vacuum,False,False,1,106.38,nan,0.00,nan,nan
 Na2S@graphene-glyme,Na2S,graphene,Na–S–Na,106.38,Glyme,True,False,1,106.38,nan,0.00,nan,nan

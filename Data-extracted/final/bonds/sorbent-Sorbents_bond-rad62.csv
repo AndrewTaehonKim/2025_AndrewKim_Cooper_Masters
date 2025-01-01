@@ -66,23 +66,23 @@ TiO2,,TiO2,Ti–O,2.6348,Vacuum,True,False,109,1.9834,0.7586,0.7551,0.0727,0.242
 TiO2,,TiO2,Ti–Ti,4.0710,Vacuum,True,False,49,3.5692,0.5175,0.5122,0.0739,0.0421
 TiO2-PC-elecmin,,TiO2,Ti–O,2.6348,PC,False,False,109,1.9834,0.7586,0.7551,0.0727,0.2426
 TiO2-PC-elecmin,,TiO2,Ti–Ti,4.0710,PC,False,False,49,3.5692,0.5175,0.5122,0.0739,0.0421
-TiO2-elecmin,,TiO2,Ti–Ti,4.0710,Vacuum,False,False,49,3.5692,0.5175,0.5122,0.0739,0.0421
 TiO2-elecmin,,TiO2,Ti–O,2.6348,Vacuum,False,False,109,1.9834,0.7586,0.7551,0.0727,0.2426
-TiO2-glyme,,TiO2,Ti–O,2.6348,Glyme,True,False,109,1.9834,0.7586,0.7551,0.0727,0.2426
+TiO2-elecmin,,TiO2,Ti–Ti,4.0710,Vacuum,False,False,49,3.5692,0.5175,0.5122,0.0739,0.0421
 TiO2-glyme,,TiO2,Ti–Ti,4.0710,Glyme,True,False,49,3.5692,0.5175,0.5122,0.0739,0.0421
-TiO2-glyme-elecmin,,TiO2,Ti–O,2.6348,Glyme,False,False,109,1.9834,0.7586,0.7551,0.0727,0.2426
+TiO2-glyme,,TiO2,Ti–O,2.6348,Glyme,True,False,109,1.9834,0.7586,0.7551,0.0727,0.2426
 TiO2-glyme-elecmin,,TiO2,Ti–Ti,4.0710,Glyme,False,False,49,3.5692,0.5175,0.5122,0.0739,0.0421
+TiO2-glyme-elecmin,,TiO2,Ti–O,2.6348,Glyme,False,False,109,1.9834,0.7586,0.7551,0.0727,0.2426
 graphene-PC-SCF,,graphene,C–C,1.4261,PC,True,False,96,1.4261,0.0000,0.0000,0.0000,0.0000
-graphene-PC-SCF-vdw,,graphene,C–C,1.4261,PC,True,True,96,1.4261,0.0000,0.0000,0.0000,0.0000
 graphene-PC-elecmin,,graphene,C–C,1.4261,PC,False,False,96,1.4261,0.0000,0.0000,0.0000,0.0000
-graphene-PC-elecmin-vdw,,graphene,C–C,1.4261,PC,False,True,96,1.4261,0.0000,0.0000,0.0000,0.0000
 graphene-SCF,,graphene,C–C,1.4261,Vacuum,True,False,96,1.4257,0.0011,0.0010,0.0001,2.3046
-graphene-SCF-vdw,,graphene,C–C,1.4261,Vacuum,True,True,96,1.4257,0.0011,0.0010,0.0001,2.3046
 graphene-elecmin,,graphene,C–C,1.4261,Vacuum,False,False,96,1.4257,0.0011,0.0010,0.0001,2.3046
-graphene-elecmin-vdw,,graphene,C–C,1.4261,Vacuum,False,True,96,1.4257,0.0011,0.0010,0.0001,2.3046
 graphene-glyme-SCF,,graphene,C–C,1.4261,Glyme,True,False,96,1.4261,0.0000,0.0000,0.0000,0.0000
-graphene-glyme-SCF-vdw,,graphene,C–C,1.4261,Glyme,True,True,96,1.4261,0.0000,0.0000,0.0000,0.0000
 graphene-glyme-elecmin,,graphene,C–C,1.4261,Glyme,False,False,96,1.4261,0.0000,0.0000,0.0000,0.0000
-graphene-glyme-vdw-elecmin,,graphene,C–C,1.4261,Glyme,False,True,96,1.4261,0.0000,0.0000,0.0000,0.0000
+graphene_vdw-PC-SCF-vdw,,graphene_vdw,C–C,1.4261,PC,True,True,96,1.4261,0.0000,0.0000,0.0000,0.0000
+graphene_vdw-PC-elecmin-vdw,,graphene_vdw,C–C,1.4261,PC,False,True,96,1.4261,0.0000,0.0000,0.0000,0.0000
 graphene_vdw-SCF-vdw,,graphene_vdw,C–C,1.4261,Vacuum,True,True,96,1.4257,0.0011,0.0010,0.0001,2.3046
+graphene_vdw-SCF-vdw (2),,graphene_vdw,C–C,1.4261,Vacuum,True,True,96,1.4257,0.0011,0.0010,0.0001,2.3046
 graphene_vdw-elecmin-vdw,,graphene_vdw,C–C,1.4261,Vacuum,False,True,96,1.4257,0.0011,0.0010,0.0001,2.3046
+graphene_vdw-elecmin-vdw (2),,graphene_vdw,C–C,1.4261,Vacuum,False,True,96,1.4257,0.0011,0.0010,0.0001,2.3046
+graphene_vdw-glyme-SCF-vdw,,graphene_vdw,C–C,1.4261,Glyme,True,True,96,1.4261,0.0000,0.0000,0.0000,0.0000
+graphene_vdw-glyme-vdw-elecmin,,graphene_vdw,C–C,1.4261,Glyme,False,True,96,1.4261,0.0000,0.0000,0.0000,0.0000

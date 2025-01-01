@@ -11,6 +11,7 @@ def extract_all_raw_data(run_all:bool=False, verbose:bool=False):
     if run_all:
         for category in categories:
             extract_data(category)
+        for category in categories:
             if "@" in category:
                 extract_adsorption_energies(category)
         print("All raw data extracted")
@@ -31,6 +32,9 @@ def extract_all_raw_data(run_all:bool=False, verbose:bool=False):
 
 def plot_all_data():
     plot_binding_energies()
+    plot_adsorption_lengths()
+    plot_NaPS_bonds()
+    plot_oxidation_states()
     print("All data plotted")
     return 0
 

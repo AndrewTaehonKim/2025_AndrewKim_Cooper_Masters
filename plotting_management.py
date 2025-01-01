@@ -339,7 +339,7 @@ def plot_oxidation_states():
 
 
 if __name__ == "__main__":
-    # plot_binding_energies()
+    plot_binding_energies()
     # plot_NaPS_bonds()
     # plot_adsorption_lengths()
-    plot_oxidation_states()
+    # plot_oxidation_states()

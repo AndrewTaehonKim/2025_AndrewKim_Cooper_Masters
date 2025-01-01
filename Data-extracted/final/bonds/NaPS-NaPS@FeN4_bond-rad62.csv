@@ -29,9 +29,9 @@ Na2S8@FeN4,Na2S8,FeN4,S–S,2.3677,Vacuum,False,False,8,2.0565,0.6084,0.5691,0.2
 Na2S8@FeN4-PC,Na2S8,FeN4,S–Na,4.3841,PC,False,False,1,4.3841,nan,0.0000,nan,nan
 Na2S8@FeN4-PC,Na2S8,FeN4,Na–Na,5.2965,PC,False,False,1,5.2965,nan,0.0000,nan,nan
 Na2S8@FeN4-PC,Na2S8,FeN4,S–S,2.2324,PC,False,False,7,2.0228,0.5029,0.4656,0.1901,2.6083
-Na2S8@FeN4-glyme,Na2S8,FeN4,Na–Na,3.8889,Glyme,False,False,1,3.8889,nan,0.0000,nan,nan
-Na2S8@FeN4-glyme,Na2S8,FeN4,S–Na,3.4976,Glyme,False,False,13,3.3998,0.5693,0.5470,0.1579,0.1369
-Na2S8@FeN4-glyme,Na2S8,FeN4,S–S,2.3544,Glyme,False,False,9,2.0780,0.5562,0.5244,0.1854,1.6019
+Na2S8@FeN4-glyme,Na2S8,FeN4,Na–Na,3.8643,Glyme,False,False,1,3.8643,nan,0.0000,nan,nan
+Na2S8@FeN4-glyme,Na2S8,FeN4,S–Na,3.4962,Glyme,False,False,13,3.3878,0.5705,0.5481,0.1582,0.1231
+Na2S8@FeN4-glyme,Na2S8,FeN4,S–S,2.3538,Glyme,False,False,9,2.0731,0.5556,0.5238,0.1852,1.5994
 Na2S@FeN4,Na2S,FeN4,S–Na,2.5574,Vacuum,True,False,2,2.5574,0.0172,0.0121,0.0121,nan
 Na2S@FeN4,Na2S,FeN4,Na–Na,4.1518,Vacuum,True,False,1,4.1518,nan,0.0000,nan,nan
 Na2S@FeN4-PC,Na2S,FeN4,S–Na,3.0702,PC,True,False,2,3.0702,0.0623,0.0441,0.0441,nan
