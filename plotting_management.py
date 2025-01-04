@@ -14,7 +14,10 @@ dpi = 300
 def plot_binding_energies():
     # Define the directory containing the CSV files
     directory = os.path.join(os.getcwd(), 'Data-extracted/final/binding_energies')
-    csvs = [csv for csv in os.listdir(directory) if csv.endswith('.csv')]
+    csvs = [csv for csv in os.listdir(directory) if csv.endswith('.csv') and 'reference' not in csv]
+    conversion_factor = 2625.5  # Convert hartree to kJ/mol
+    # Get reference data
+    reference_df = pd.read_csv(os.path.join(directory, 'references.csv'))
     # Define the x-ticks and solvents
     x_ticks = ["Na2S", "Na2S2", "Na2S4", "Na2S6", "Na2S8"]
     solvents = ["Vacuum", "Glyme", "PC"]
@@ -24,11 +27,13 @@ def plot_binding_energies():
         csv_path = os.path.join(directory, csv)
         df = pd.read_csv(csv_path)
         data = {solvent: [] for solvent in solvents}
+        sorbent = df['Sorbent'].values[0]
         for solvent in solvents:
             for tick in x_ticks:
                 filtered_df = df[(df['NaPS'] == tick) & (df['Solvent'] == solvent)]
                 if not filtered_df.empty:
-                    data[solvent].append(filtered_df['Binding Energy'].values[0])
+                    # convert hartree to kJ/mol
+                    data[solvent].append(filtered_df['Binding Energy'].values[0]*conversion_factor)
                 else:
                     print(f"Missing energy data for {tick} in {solvent} in {csv}")
                     data[solvent].append(0)  # Handle missing data
@@ -40,13 +45,24 @@ def plot_binding_energies():
         for i, solvent in enumerate(solvents):
             ax.bar([p + bar_width * i for p in index], data[solvent], bar_width, label=solvent, hatch=['', '\\', '/'][i])
         
+        # Plot thick horizontal line for reference data based on matching NaPS and sorbent
+        labeled = False
+        for j in index:
+            reference_data = reference_df[(reference_df['NaPS'] == x_ticks[j]) & (reference_df['Sorbent'] == sorbent)]
+            if not reference_data.empty:
+                if labeled is False:
+                    ax.hlines(reference_data['Binding Energy'].values[0]*conversion_factor, j - bar_width / 2, j + bar_width / 2 * 5, colors='red', linewidth=4, zorder=3, label=f'Reference {reference_data['Reference #'].values[0]}')
+                    labeled = True
+                else:
+                    ax.hlines(reference_data['Binding Energy'].values[0]*conversion_factor, j - bar_width / 2, j + bar_width / 2 * 5, colors='red', linewidth=4, zorder=3)
+        
         ax.set_xticks([p + bar_width for p in index])
         ax.set_xticklabels(x_ticks)
         y_min = min(min(values) for values in data.values())
         y_max = max(max(values) for values in data.values())
         y_range = y_max - y_min
-        ax.set_ylim(y_min - 0.1 * y_range, y_max + 0.1 * y_range)
-        ax.set_ylabel('Binding Energy (hartrees)')
+        ax.set_ylim((y_min - 0.1 * y_range) if y_min < 0 else 0, y_max + 0.1 * y_range)
+        ax.set_ylabel('Binding Energy ($kJ\;mol^{-1}$)')
         ax.legend()
         
         # Save the plot to a file
