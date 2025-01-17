@@ -1,0 +1,16 @@
+﻿name,NaPS,Sorbent,Distance,NaPS Atom,NaPS Atom Position,Sorbent Atom,Sorbent Atom Position,solvent,electronic_scf,vdw
+Na2S2@graphene-glyme,Na2S2,graphene,5.4740603529571175,Na,"(np.float64(2.370165), np.float64(7.922637), np.float64(5.502083))",C,"(np.float64(2.473339), np.float64(8.560891), np.float64(0.066338))",Glyme,True,False
+Na2S2@graphene-PC,Na2S2,graphene,4.088656410710002,Na,"(np.float64(6.023533), np.float64(2.92542), np.float64(4.035456))",C,"(np.float64(6.175031), np.float64(3.56515), np.float64(0.0))",PC,True,False
+Na2S2@graphene,Na2S2,graphene,2.723821003087206,Na,"(np.float64(5.229213), np.float64(4.081878), np.float64(12.715259))",C,"(np.float64(4.915256), np.float64(4.277397), np.float64(10.016666))",Vacuum,True,False
+Na2S4@graphene-glyme,Na2S4,graphene,6.233672900167364,Na,"(np.float64(3.478101), np.float64(8.8234), np.float64(7.210318))",C,"(np.float64(3.705018), np.float64(7.843336), np.float64(1.058354))",Glyme,True,False
+Na2S4@graphene-PC,Na2S4,graphene,4.007736311197257,Na,"(np.float64(6.811194), np.float64(8.692656), np.float64(11.343962))",C,"(np.float64(7.40802), np.float64(8.552873), np.float64(7.38338))",PC,True,False
+Na2S4@graphene,Na2S4,graphene,2.8997451788703783,Na,"(np.float64(5.323597), np.float64(7.322982), np.float64(10.290345))",C,"(np.float64(4.938272), np.float64(7.127383), np.float64(7.422979))",Vacuum,False,False
+Na2S6@graphene-glyme,Na2S6,graphene,6.006239799203492,Na,"(np.float64(1.738409), np.float64(6.810979), np.float64(6.055049))",C,"(np.float64(1.236225), np.float64(6.417727), np.float64(0.082773))",Glyme,True,False
+Na2S6@graphene-PC,Na2S6,graphene,4.357570002586534,S,"(np.float64(4.584093), np.float64(6.833533), np.float64(4.649507))",C,"(np.float64(4.942884), np.float64(7.133973), np.float64(0.317138))",PC,True,False
+Na2S6@graphene,Na2S6,graphene,2.9884492756735903,Na,"(np.float64(5.865744), np.float64(5.217978), np.float64(12.82956))",C,"(np.float64(6.177871), np.float64(4.991682), np.float64(9.866083))",Vacuum,True,False
+Na2S8@graphene-glyme,Na2S8,graphene,4.5736224465031,S,"(np.float64(5.146622), np.float64(5.294021), np.float64(4.929424))",C,"(np.float64(4.94001), np.float64(4.278179), np.float64(0.474831))",Glyme,True,False
+Na2S8@graphene-PC,Na2S8,graphene,4.00951418243682,Na,"(np.float64(4.665761), np.float64(3.557037), np.float64(4.412351))",C,"(np.float64(4.94001), np.float64(2.852106), np.float64(0.474831))",PC,True,False
+Na2S8@graphene,Na2S8,graphene,2.9538899829379224,Na,"(np.float64(4.805234), np.float64(5.179049), np.float64(3.284766))",C,"(np.float64(4.94001), np.float64(4.278179), np.float64(0.474831))",Vacuum,True,False
+Na2S@graphene-glyme,Na2S,graphene,2.738142109391329,Na,"(np.float64(5.93548), np.float64(6.213675), np.float64(15.144399))",C,"(np.float64(6.180141), np.float64(6.420325), np.float64(12.42505))",Glyme,True,False
+Na2S@graphene-PC,Na2S,graphene,3.3633030091222826,Na,"(np.float64(0.725828), np.float64(5.866556), np.float64(10.616242))",C,"(np.float64(1.232255), np.float64(6.414005), np.float64(7.336663))",PC,True,False
+Na2S@graphene,Na2S,graphene,2.7381386729700163,Na,"(np.float64(5.935473), np.float64(6.213675), np.float64(15.144396))",C,"(np.float64(6.18014), np.float64(6.420325), np.float64(12.425051))",Vacuum,False,False

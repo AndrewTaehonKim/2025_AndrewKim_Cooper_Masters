@@ -231,7 +231,8 @@ def extract_data(category: str, verbose=False):
             xsf_files.append(file)
         else:
             pass
-
+    
+    # --- Energies, Oxidation States, etc. --- #
     # Handle output files
     print(f"Extracting data from {category}")
     extracted_outputs = []
@@ -274,7 +275,8 @@ def extract_data(category: str, verbose=False):
     os.makedirs(output_directory, exist_ok=True)
     output_file_path = os.path.join(output_directory, f"{category}.csv")
     final_extracted_outputs_df.to_csv(output_file_path, index=False)
-
+    
+    # --- BONDS AND ANGLES --- #
     # Handle xsf files
     NaPS_bond_dfs = []
     NaPS_angle_dfs = []
@@ -513,6 +515,6 @@ if __name__ == "__main__":
     # parse_xsf_file("Sorbents/FeN4-PC", "FeNe")
     # extract_data("Sorbents")
     # extract_data("NaPS@graphene_vdw")
-    extract_data("Sorbents")
+    extract_data("NaPS")
     # extract_adsorption_energies("NaPS@NiS2")
     # extract_adsorption_energies("NaPS@graphene_vdw")

@@ -9,13 +9,107 @@ import matplotlib
 matplotlib.use('Agg')  # Use a non-GUI backend
 
 dpi = 300
+conversion_factor = 2625.5  # Convert hartree to kJ/mol
+
+# --- This method plots the energyies for the NaPSs with vdw, without vdw, scf, and without scf --- #
+def plot_NaPS():
+    directory = os.path.join(os.getcwd(), 'Data-extracted/final/energies')
+    csv = "NaPS.csv"
+    csv_path = os.path.join(directory, csv)
+    full_df = pd.read_csv(csv_path)
+    # create a subplot of 2 by 2 with SCF and elecmin as first and second row and no vdw and vdw as first and second column
+    fig, axs = plt.subplots(2, 2, figsize=(12, 10))
+    # Define the x-ticks and solvents
+    x_ticks = ["Na2S", "Na2S2", "Na2S4", "Na2S6", "Na2S8"]
+    solvents = ["Vacuum", "Glyme", "PC"]
+    # Initialize a dictionary to hold the data
+    nvdw_scf_data = {solvent: [] for solvent in solvents}
+    vdw_scf_data = {solvent: [] for solvent in solvents}
+    nvdw_elecmin_data = {solvent: [] for solvent in solvents}
+    vdw_elecmin_data = {solvent: [] for solvent in solvents}
+
+    # split data into 4
+    nvdw_scf_df = full_df[(full_df['vdw'] == False) & (full_df['electronic_scf'] == True)]
+    vdw_scf_df = full_df[(full_df['vdw'] == True) & (full_df['electronic_scf'] == True)]
+    nvdw_elecmin_df = full_df[(full_df['vdw'] == False) & (full_df['electronic_scf'] == False)]
+    vdw_elecmin_df = full_df[(full_df['vdw'] == True) & (full_df['electronic_scf'] == False)]
+
+    # Read the data from the CSV files
+    for df, data in zip([nvdw_scf_df, vdw_scf_df, nvdw_elecmin_df, vdw_elecmin_df], [nvdw_scf_data, vdw_scf_data, nvdw_elecmin_data, vdw_elecmin_data]):
+        for solvent in solvents:
+            for tick in x_ticks:
+                filtered_df = df[(df['NaPS'] == tick) & (df['solvent'] == solvent)]
+                if not filtered_df.empty:
+                    data[solvent].append(filtered_df['energy'].values[0]*-1)
+                else:
+                    print(f"Missing energy data for {tick} in {solvent} in {csv}")
+                    data[solvent].append(0)
+    # Plot the data
+    bar_width = 0.2
+    index = range(len(x_ticks))
+    for i, data in enumerate([nvdw_scf_data, vdw_scf_data, nvdw_elecmin_data, vdw_elecmin_data]):
+        for j, solvent in enumerate(solvents):
+            axs[i // 2, i % 2].bar([p + bar_width * j for p in index], data[solvent], bar_width, label=solvent, hatch=['', '\\', '/'][j])
+        axs[i // 2, i % 2].set_xticks([p + bar_width for p in index])
+        axs[i // 2, i % 2].set_xticklabels(x_ticks)
+        axs[i // 2, i % 2].set_ylabel('Energy (Hartree)')
+        axs[i // 2, i % 2].set_ylim(bottom=100)
+        axs[i // 2, i % 2].legend()
+    plt.savefig(os.path.join(os.getcwd(), 'Figures/NaPS-4_subplot-system_type.jpg'), dpi=dpi, bbox_inches='tight')
+
+    # split data by NaPS
+    Na2S_df = full_df[full_df['NaPS'] == 'Na2S']
+    Na2S2_df = full_df[full_df['NaPS'] == 'Na2S2']
+    Na2S4_df = full_df[full_df['NaPS'] == 'Na2S4']
+    Na2S6_df = full_df[full_df['NaPS'] == 'Na2S6']
+    Na2S8_df = full_df[full_df['NaPS'] == 'Na2S8']
+    NaPS_df = [Na2S_df, Na2S2_df, Na2S4_df, Na2S6_df, Na2S8_df]
+
+    # dictionaries to store
+    Na2S_data = {solvent: [] for solvent in solvents}
+    Na2S2_data = {solvent: [] for solvent in solvents}
+    Na2S4_data = {solvent: [] for solvent in solvents}
+    Na2S6_data = {solvent: [] for solvent in solvents}
+    Na2S8_data = {solvent: [] for solvent in solvents}
+    NaPS_data = [Na2S_data, Na2S2_data, Na2S4_data, Na2S6_data, Na2S8_data]
+    # plotting variables
+    NaPSs = ["Na2S", "Na2S2", "Na2S4", "Na2S6", "Na2S8"]
+    x_ticks = ["no vdw / scf", "vdw / scf", "no vdw / elecmin", "vdw / elecmin"]
+    x_ticks = ["A", "B", "C", "D"]
+    system_types = [(False, True), (True, True), (False, False), (True, False)] # vdw, scf
+    # Plot the data
+    fig, axs = plt.subplots(5, 1, figsize=(10, 15))
+    for df, data in zip(NaPS_df, NaPS_data):
+        for solvent in solvents:
+            for i, tick in enumerate(x_ticks):
+                filtered_df = df[(df['solvent'] == solvent) & (df['electronic_scf'] == system_types[i][0]) & (df['vdw'] == system_types[i][1])]
+                if not filtered_df.empty:
+                    data[solvent].append(filtered_df['energy'].values[0]*-1)
+                else:
+                    print(f"Missing energy data for {tick} in {solvent} in {csv}")
+                    data[solvent].append(0)
+    index = range(len(x_ticks))
+    bar_width = 0.2
+    for i, data in enumerate(NaPS_data):
+        y_min = min(min(values) for values in data.values())
+        y_max = max(max(values) for values in data.values())
+        for j, solvent in enumerate(solvents):
+            axs[i].bar([p + bar_width * j for p in index], data[solvent], bar_width, label=solvent, hatch=['', '\\', '/'][j])
+        axs[i].set_xticks([p + bar_width for p in index])
+        axs[i].set_xticklabels(x_ticks)
+        axs[i].set_ylabel('Energy (Hartree)')
+        axs[i].set_title(f'{NaPSs[i]}')
+        axs[i].set_ylim(y_min-0.1, y_max+0.1)
+        axs[i].legend()
+    plt.savefig(os.path.join(os.getcwd(), 'Figures/NaPS-5_subplot-NaPS.jpg'), dpi=dpi, bbox_inches='tight')
+
 
 # --- This method plots the binding energies for each csv in Data-extracted/binding_energies --- #
 def plot_binding_energies():
     # Define the directory containing the CSV files
     directory = os.path.join(os.getcwd(), 'Data-extracted/final/binding_energies')
     csvs = [csv for csv in os.listdir(directory) if csv.endswith('.csv') and 'reference' not in csv]
-    conversion_factor = 2625.5  # Convert hartree to kJ/mol
+    
     # Get reference data
     reference_df = pd.read_csv(os.path.join(directory, 'references.csv'))
     # Define the x-ticks and solvents
@@ -203,6 +297,7 @@ def plot_NaPS_bonds():
         plt.savefig(os.path.join(figures_dir, f'{csv.split(".")[0]}.jpg'), bbox_inches='tight', pad_inches=0.1, dpi=dpi)
         plt.close()
 
+
 # --- This method plots the adsorption bond lengths between the NaPS molecules and the sorbent --- #
 def plot_adsorption_lengths():
     # Define the directory containing the CSV files
@@ -331,6 +426,9 @@ def plot_oxidation_states():
         ax_S.set_xticks([p + bar_width for p in index])
         ax_S.set_xticklabels(x_ticks)
 
+        # set title for Na and S
+        ax_Na.set_title('Na Oxidation States', fontsize=12)
+        ax_S.set_title('S Oxidation States', fontsize=12)
         # Calculate y-axis limits
         # y_min_Na = min(min(values) for values in data_Na.values())
         # y_max_Na = max(max(values) for values in data_Na.values())
@@ -343,10 +441,10 @@ def plot_oxidation_states():
         # ax_S.set_ylim(y_min_S - 0.1 * y_range_S, y_max_S + 0.1 * y_range_S)
 
         # Set y-axis labels and legends
-        ax_Na.set_ylabel('Bond Length (Å)')
-        ax_S.set_ylabel('Bond Length (Å)')
-        ax_Na.legend()
-        ax_S.legend()
+        ax_Na.set_ylabel('Oxidation State')
+        ax_S.set_ylabel('Oxidation State')
+        ax_Na.legend(loc='best')
+        ax_S.legend(loc='best')
 
         # Save the plot to a file
         figures_dir = os.path.join(os.getcwd(), 'Figures/oxidation_states')
@@ -354,8 +452,10 @@ def plot_oxidation_states():
         plt.savefig(os.path.join(figures_dir, f'{csv.split(".")[0]}.jpg'), bbox_inches='tight', pad_inches=0.1, dpi=dpi)
 
 
+
 if __name__ == "__main__":
-    plot_binding_energies()
+    plot_NaPS()
+    # plot_binding_energies()
     # plot_NaPS_bonds()
     # plot_adsorption_lengths()
     # plot_oxidation_states()

@@ -1,0 +1,16 @@
+﻿name,NaPS,Sorbent,Distance,NaPS Atom,NaPS Atom Position,Sorbent Atom,Sorbent Atom Position,solvent,electronic_scf,vdw
+Na2S2@FeN4-glyme,Na2S2,FeN4,2.298813473,S,"(np.float64(2.964391), np.float64(6.120657), np.float64(2.823853))",Fe,"(np.float64(3.088865), np.float64(6.061359), np.float64(0.529178))",Glyme,FALSE,FALSE
+Na2S4@FeN4-glyme,Na2S4,FeN4,2.306331208,S,"(np.float64(2.893564), np.float64(6.015226), np.float64(2.826765))",Fe,"(np.float64(3.088866), np.float64(6.061362), np.float64(0.529181))",Glyme,FALSE,FALSE
+Na2S6@FeN4-glyme,Na2S6,FeN4,5.329558288,S,"(np.float64(3.14954), np.float64(8.000994), np.float64(5.827367))",N,"(np.float64(3.705028), np.float64(7.843356), np.float64(0.529181))",Glyme,FALSE,FALSE
+Na2S8@FeN4-glyme,Na2S8,FeN4,2.973200512,Na,"(np.float64(2.23933), np.float64(5.246487), np.float64(3.330809))",N,"(np.float64(2.470025), np.float64(4.278199), np.float64(0.529181))",Glyme,FALSE,FALSE
+Na2S@FeN4-glyme,Na2S,FeN4,2.788532725,Na,"(np.float64(8.418745), np.float64(7.304546), np.float64(3.255785))",C,"(np.float64(8.645057), np.float64(7.843352), np.float64(0.529178))",Glyme,TRUE,FALSE
+Na2S2@FeN4-PC,Na2S2,FeN4,2.253993887,S,"(np.float64(2.885804), np.float64(6.120205), np.float64(2.773235))",Fe,"(np.float64(3.088865), np.float64(6.061359), np.float64(0.529178))",PC,FALSE,FALSE
+Na2S4@FeN4-PC,Na2S4,FeN4,2.269391224,S,"(np.float64(2.863671), np.float64(6.038635), np.float64(2.787257))",Fe,"(np.float64(3.088866), np.float64(6.061362), np.float64(0.529181))",PC,FALSE,FALSE
+Na2S6@FeN4-PC,Na2S6,FeN4,4.363981794,S,"(np.float64(2.846099), np.float64(7.053329), np.float64(4.771987))",Fe,"(np.float64(3.088866), np.float64(6.061362), np.float64(0.529181))",PC,FALSE,FALSE
+Na2S8@FeN4-PC,Na2S8,FeN4,4.211158964,Na,"(np.float64(1.278989), np.float64(3.011795), np.float64(4.703593))",C,"(np.float64(1.235003), np.float64(3.565157), np.float64(0.529181))",PC,FALSE,FALSE
+Na2S@FeN4-PC,Na2S,FeN4,3.046486883,Na,"(np.float64(8.852272), np.float64(7.382049), np.float64(3.533399))",C,"(np.float64(8.645057), np.float64(7.843352), np.float64(0.529178))",PC,TRUE,FALSE
+Na2S2@FeN4,Na2S2,FeN4,2.35082946,S,"(np.float64(2.809103), np.float64(6.087862), np.float64(2.863151))",Fe,"(np.float64(3.088865), np.float64(6.061359), np.float64(0.529178))",Vacuum,TRUE,FALSE
+Na2S4@FeN4,Na2S4,FeN4,2.303724092,S,"(np.float64(2.893649), np.float64(6.012794), np.float64(2.824105))",Fe,"(np.float64(3.088866), np.float64(6.061362), np.float64(0.529181))",Vacuum,TRUE,FALSE
+Na2S6@FeN4,Na2S6,FeN4,2.923869516,Na,"(np.float64(4.750796), np.float64(6.894019), np.float64(3.193324))",N,"(np.float64(4.94003), np.float64(5.704252), np.float64(0.529181))",Vacuum,TRUE,FALSE
+Na2S8@FeN4,Na2S8,FeN4,3.161798339,Na,"(np.float64(1.929755), np.float64(5.862089), np.float64(3.563328))",N,"(np.float64(1.235003), np.float64(6.417283), np.float64(0.529181))",Vacuum,FALSE,FALSE
+Na2S@FeN4,Na2S,FeN4,2.786535169,Na,"(np.float64(8.411495), np.float64(7.303157), np.float64(3.252855))",C,"(np.float64(8.645057), np.float64(7.843352), np.float64(0.529178))",Vacuum,TRUE,FALSE
