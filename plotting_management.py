@@ -4,15 +4,63 @@ import os
 import ast
 import matplotlib.pyplot as plt
 from data_management import extract_sorbent
-
+from matplotlib.ticker import FuncFormatter
 import matplotlib
 matplotlib.use('Agg')  # Use a non-GUI backend
 
 dpi = 300
 conversion_factor = 2625.5  # Convert hartree to kJ/mol
+NaPS_labels = ["$Na_2S$", "$Na_2S_2$", "$Na_2S_4$", "$Na_2S_6$", "$Na_2S_8$"]
+
+# --- This method plots the convergence of NaPSs based on cell size --- #
+def plot_cell_size_convergence():
+    directory = os.path.join(os.getcwd(), 'Data-extracted/final/convergence')
+    csv = "NaPS_cell_convergence"
+    csv_path = os.path.join(directory, csv + ".csv")
+    df = pd.read_csv(csv_path)
+    # get unique cell sizes
+    cell_sizes = df['Cell Size (A x A x A)'].unique()
+    NaPSs = df['NaPS'].unique()
+    fig, axs = plt.subplots(2, 3, figsize=(15, 10))
+    for i, NaPS in enumerate(NaPSs):
+        filtered_df = df[df['NaPS'] == NaPS]
+        filtered_df.dropna(inplace=True)
+        filtered_df.drop(filtered_df[filtered_df['%Difference'] == 0].index, inplace=True)
+        indices = [i for i in range(filtered_df.shape[0])]
+        axs[i//3][i%3].set_title(f'{NaPS_labels[i]}')
+        axs[i//3][i%3].scatter(indices, filtered_df['%Difference'])
+        axs[i//3][i%3].set_xticks(indices)
+        axs[i//3][i%3].set_xticklabels(np.array(filtered_df['Cell Size (A x A x A)']), rotation=45)
+        axs[i//3][i%3].set_xlabel('Cell Size (A x A x A)')
+        axs[i//3][i%3].set_ylabel('% Difference from Smallest Cell Size (%)')
+    plt.subplots_adjust(wspace=.4, hspace=.7)
+    plt.savefig(os.path.join(os.getcwd(), 'Figures/NaPS-cell_size_convergence.jpg'), dpi=dpi*2, bbox_inches='tight')
+
+# --- This method plots the kpoint convergence and time taken --- #
+def plot_kpoint_convergence():
+    directory = os.path.join(os.getcwd(), 'Data-extracted/final/convergence')
+    csv = "graphene_kpoint_convergence"
+    csv_path = os.path.join(directory, csv + ".csv")
+    df = pd.read_csv(csv_path)
+    # get unique kpoints
+    kpoints = df['kpoint'].unique()
+    fig, axs = plt.subplots(1, 2, figsize=(8, 2))
+    # plot kpoint energy convergence
+    axs[0].bar(kpoints, df['energy'])
+    axs[0].set_xlabel('kpoint folding')
+    axs[0].set_ylabel('Energy (Hartree)')
+    axs[0].set_ylim(-417, -410)
+    # plot time required
+    axs[1].bar(kpoints, df['Time (min)'])
+    axs[1].set_xlabel('kpoint folding')
+    axs[1].set_ylabel('Time (min)')    
+    
+    plt.savefig(os.path.join(os.getcwd(), 'Figures/graphene_kpoint_convergence.jpg'), dpi=dpi, bbox_inches='tight')
+
+
 
 # --- This method plots the energyies for the NaPSs with vdw, without vdw, scf, and without scf --- #
-def plot_NaPS():
+def plot_NaPS_energy():
     directory = os.path.join(os.getcwd(), 'Data-extracted/final/energies')
     csv = "NaPS.csv"
     csv_path = os.path.join(directory, csv)
@@ -103,6 +151,62 @@ def plot_NaPS():
         axs[i].legend()
     plt.savefig(os.path.join(os.getcwd(), 'Figures/NaPS-5_subplot-NaPS.jpg'), dpi=dpi, bbox_inches='tight')
 
+
+# --- This method plots the oxidation states of the Na and S in the NaPS molecules --- #
+def plot_NaPS_oxidation():
+    # Define the directory containing the CSV files
+    directory = os.path.join(os.getcwd(), 'Data-extracted/final/energies')
+    csv = "NaPS.csv"
+    csv_path = os.path.join(directory, csv)
+    full_df = pd.read_csv(csv_path)
+    # create a subplot of 2 by 2 with SCF and elecmin as first and second row and no vdw and vdw as first and second column
+    fig, axs = plt.subplots(2, 2, figsize=(12, 10))
+    # Define the x-ticks and solvents
+    x_ticks = ["Na2S", "Na2S2", "Na2S4", "Na2S6", "Na2S8"]
+    x_labels = ["$Na_2S$", "$Na_2S_2$", "$Na_2S_4$", "$Na_2S_6$", "$Na_2S_8$"]
+    solvents = ["Vacuum", "Glyme", "PC"]
+    # Initialize a dictionary to hold the data
+    data_S = {solvent: [] for solvent in solvents}
+    data_Na = {solvent: [] for solvent in solvents}
+    data_S_std = {solvent: [] for solvent in solvents}
+    data_Na_std = {solvent: [] for solvent in solvents}
+    # Read the data from the CSV files
+    for solvent in solvents:
+        for tick in x_ticks:
+            oxidation_list_S = []
+            oxidation_list_Na = []
+            filtered_df = full_df[(full_df['NaPS'] == tick) & (full_df['solvent'] == solvent)]
+            if not filtered_df.empty:
+                oxidation_list_Na.append(ast.literal_eval(filtered_df['oxidation_states'].values[0])['Na'])
+                oxidation_list_S.append(ast.literal_eval(filtered_df['oxidation_states'].values[0])['S'])
+            else:
+                print(f"Missing oxidation state data for {tick} in {solvent} in {csv}")
+                oxidation_list_Na.append(0)
+                oxidation_list_S.append(0)
+            data_Na[solvent].append(np.mean(np.array(oxidation_list_Na)))
+            data_S[solvent].append(np.mean(np.array(oxidation_list_S)))
+            data_Na_std[solvent].append(np.std(np.array(oxidation_list_Na)))
+            data_S_std[solvent].append(np.std(np.array(oxidation_list_S)))
+    # Plot the data
+    fig, axs = plt.subplots(1, 2, figsize=(12, 5))
+    bar_width = 0.2
+    index = range(len(x_ticks))
+    for i, solvent in enumerate(solvents):
+        # bar plot with std
+        axs[0].bar([p + bar_width * i for p in index], data_Na[solvent], bar_width, label=solvent, yerr=data_Na_std[solvent], hatch=['', '\\', '/'][i], error_kw={'ecolor': 'black', 'capsize': 5, 'elinewidth': 1, 'capthick': 1})
+        axs[1].bar([p + bar_width * i for p in index], data_S[solvent], bar_width, label=solvent, yerr=data_S_std[solvent], hatch=['', '\\', '/'][i], error_kw={'ecolor': 'black', 'capsize': 5, 'elinewidth': 1, 'capthick': 1})
+    axs[0].set_xticks([p + bar_width for p in index])
+    axs[0].set_xticklabels(x_labels)
+    axs[1].set_xticks([p + bar_width for p in index])
+    axs[1].set_xticklabels(x_labels)
+    axs[0].set_ylabel('Oxidation State')
+    axs[1].set_ylabel('Oxidation State')
+    axs[0].legend()
+    axs[1].legend()
+    axs[0].set_ylim(0.6, 1.1)
+    axs[0].set_title('Na Oxidation States')
+    axs[1].set_title('S Oxidation States')
+    plt.savefig(os.path.join(os.getcwd(), 'Figures/oxidation_states/NaPS.jpg'), dpi=dpi, bbox_inches='tight')
 
 # --- This method plots the binding energies for each csv in Data-extracted/binding_energies --- #
 def plot_binding_energies():
@@ -454,8 +558,11 @@ def plot_oxidation_states():
 
 
 if __name__ == "__main__":
-    plot_NaPS()
-    # plot_binding_energies()
+    # plot_cell_size_convergence()
+    # plot_kpoint_convergence()
+    # plot_NaPS_energy()
+    # plot_NaPS_oxidation()
+    plot_binding_energies()
     # plot_NaPS_bonds()
     # plot_adsorption_lengths()
     # plot_oxidation_states()

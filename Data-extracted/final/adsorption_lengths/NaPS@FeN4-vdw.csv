@@ -1,0 +1,15 @@
+﻿name,NaPS,Sorbent,Distance,NaPS Atom,NaPS Atom Position,Sorbent Atom,Sorbent Atom Position,solvent,electronic_scf,vdw
+Na2S2@FeN4-glyme-vdw,Na2S2,FeN4_vdw,2.292231652859283,S,"(np.float64(2.995745), np.float64(6.072358), np.float64(2.819491))",Fe,"(np.float64(3.088865), np.float64(6.061359), np.float64(0.529178))",Glyme,False,True
+Na2S2@FeN4-vdw,Na2S2,FeN4_vdw,2.3355070299917746,S,"(np.float64(2.889848), np.float64(6.119885), np.float64(2.855454))",Fe,"(np.float64(3.088865), np.float64(6.061359), np.float64(0.529178))",Vacuum,True,True
+Na2S4@FeN4-glyme-vdw,Na2S4,FeN4_vdw,2.286925609243554,S,"(np.float64(2.919799), np.float64(6.043029), np.float64(2.809775))",Fe,"(np.float64(3.088866), np.float64(6.061362), np.float64(0.529181))",Glyme,False,True
+Na2S4@FeN4-PC-vdw,Na2S4,FeN4_vdw,2.2590971491146634,S,"(np.float64(2.89763), np.float64(6.054861), np.float64(2.78016))",Fe,"(np.float64(3.088866), np.float64(6.061362), np.float64(0.529181))",PC,False,True
+Na2S4@FeN4-vdw,Na2S4,FeN4_vdw,2.294557366065621,S,"(np.float64(2.865889), np.float64(6.039296), np.float64(2.812772))",Fe,"(np.float64(3.088866), np.float64(6.061362), np.float64(0.529181))",Vacuum,True,True
+Na2S6@FeN4-glyme-vdw,Na2S6,FeN4_vdw,3.240779275365726,Na,"(np.float64(1.223765), np.float64(4.752127), np.float64(3.544745))",C,"(np.float64(1.235003), np.float64(3.565157), np.float64(0.529181))",Glyme,False,True
+Na2S6@FeN4-PC-vdw,Na2S6,FeN4_vdw,3.4563479558131878,S,"(np.float64(1.92698), np.float64(7.391602), np.float64(3.885284))",C,"(np.float64(1.235003), np.float64(7.843356), np.float64(0.529181))",PC,False,True
+Na2S6@FeN4-vdw,Na2S6,FeN4_vdw,3.044587038181041,Na,"(np.float64(1.386395), np.float64(5.039347), np.float64(3.270697))",N,"(np.float64(2.470025), np.float64(4.278199), np.float64(0.529181))",Vacuum,True,True
+Na2S8@FeN4-glyme-vdw,Na2S8,FeN4_vdw,3.0331300534894647,Na,"(np.float64(1.893119), np.float64(5.615228), np.float64(3.379351))",N,"(np.float64(1.235003), np.float64(6.417283), np.float64(0.529181))",Glyme,False,True
+Na2S8@FeN4-PC-vdw,Na2S8,FeN4_vdw,3.5047565401966225,S,"(np.float64(5.175282), np.float64(6.779962), np.float64(3.868684))",C,"(np.float64(6.175033), np.float64(6.417283), np.float64(0.529181))",PC,False,True
+Na2S8@FeN4-vdw,Na2S8,FeN4_vdw,2.8848357884283464,Na,"(np.float64(1.609901), np.float64(5.310595), np.float64(3.166788))",N,"(np.float64(1.235003), np.float64(6.417283), np.float64(0.529181))",Vacuum,True,True
+Na2S@FeN4-glyme-vdw,Na2S,FeN4_vdw,3.0961910478867423,Na,"(np.float64(3.995894), np.float64(6.583837), np.float64(3.443061))",Fe,"(np.float64(3.088865), np.float64(6.061359), np.float64(0.529178))",Glyme,False,True
+Na2S@FeN4-PC-vdw,Na2S,FeN4_vdw,3.467242035071968,Na,"(np.float64(3.083343), np.float64(7.705985), np.float64(3.937463))",N,"(np.float64(3.705027), np.float64(7.843352), np.float64(0.529178))",PC,False,True
+Na2S@FeN4-vdw,Na2S,FeN4_vdw,2.825583419490743,Na,"(np.float64(8.483613), np.float64(7.328473), np.float64(3.30276))",C,"(np.float64(8.645057), np.float64(7.843352), np.float64(0.529178))",Vacuum,True,True

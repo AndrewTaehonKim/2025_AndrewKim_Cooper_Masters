@@ -211,7 +211,10 @@ def extract_sorbent(filename: str):
             sorbent = sorbent.split("@")[1]
         if ".csv" in sorbent:
             sorbent = sorbent.split(".")[0]
-        return sorbent
+        if 'vdw' in filename and 'vdw' not in sorbent:
+            return sorbent+"_vdw"
+        else:
+            return sorbent
 
 
 # --- This method compiles the energies and oxidation states of all sorbents in a subdirectory of Data-raw --- #
@@ -513,8 +516,10 @@ if __name__ == "__main__":
     #     parse_output_file("Sorbents/FeN4-PC")
     # )
     # parse_xsf_file("Sorbents/FeN4-PC", "FeNe")
-    # extract_data("Sorbents")
+    extract_data("Sorbents")
     # extract_data("NaPS@graphene_vdw")
-    extract_data("NaPS")
+    extract_data("NaPS@FeN4-vdw")
+    extract_adsorption_energies("NaPS@FeN4-vdw")
+    # extract_data("NaPS")
     # extract_adsorption_energies("NaPS@NiS2")
     # extract_adsorption_energies("NaPS@graphene_vdw")
