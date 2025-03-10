@@ -1,4 +1,5 @@
 ﻿name,NaPS,sorbent,Atoms,Mean,solvent,electronic_scf,vdw,Count,Median,Sam. std. dev.,Pop. std. dev.,Std. error,Skewness
+Na2S2@FeN4-PC-vdw,Na2S2,FeN4_vdw,S–S,2.0462,PC,False,True,1,2.0462,nan,0.0000,nan,nan
 Na2S2@FeN4-glyme-vdw,Na2S2,FeN4_vdw,S–S,2.0790,Glyme,False,True,1,2.0790,nan,0.0000,nan,nan
 Na2S2@FeN4-glyme-vdw,Na2S2,FeN4_vdw,S–Na,2.8029,Glyme,False,True,4,2.7960,0.0681,0.0590,0.0340,0.3470
 Na2S2@FeN4-vdw,Na2S2,FeN4_vdw,S–S,2.1009,Vacuum,True,True,1,2.1009,nan,0.0000,nan,nan

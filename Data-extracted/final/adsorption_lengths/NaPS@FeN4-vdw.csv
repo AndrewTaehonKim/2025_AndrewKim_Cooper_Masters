@@ -1,5 +1,6 @@
 ﻿name,NaPS,Sorbent,Distance,NaPS Atom,NaPS Atom Position,Sorbent Atom,Sorbent Atom Position,solvent,electronic_scf,vdw
 Na2S2@FeN4-glyme-vdw,Na2S2,FeN4_vdw,2.292231652859283,S,"(np.float64(2.995745), np.float64(6.072358), np.float64(2.819491))",Fe,"(np.float64(3.088865), np.float64(6.061359), np.float64(0.529178))",Glyme,False,True
+Na2S2@FeN4-PC-vdw,Na2S2,FeN4_vdw,2.2482386786004285,S,"(np.float64(2.94371), np.float64(6.107226), np.float64(2.772257))",Fe,"(np.float64(3.088865), np.float64(6.061359), np.float64(0.529178))",PC,False,True
 Na2S2@FeN4-vdw,Na2S2,FeN4_vdw,2.3355070299917746,S,"(np.float64(2.889848), np.float64(6.119885), np.float64(2.855454))",Fe,"(np.float64(3.088865), np.float64(6.061359), np.float64(0.529178))",Vacuum,True,True
 Na2S4@FeN4-glyme-vdw,Na2S4,FeN4_vdw,2.286925609243554,S,"(np.float64(2.919799), np.float64(6.043029), np.float64(2.809775))",Fe,"(np.float64(3.088866), np.float64(6.061362), np.float64(0.529181))",Glyme,False,True
 Na2S4@FeN4-PC-vdw,Na2S4,FeN4_vdw,2.2590971491146634,S,"(np.float64(2.89763), np.float64(6.054861), np.float64(2.78016))",Fe,"(np.float64(3.088866), np.float64(6.061362), np.float64(0.529181))",PC,False,True

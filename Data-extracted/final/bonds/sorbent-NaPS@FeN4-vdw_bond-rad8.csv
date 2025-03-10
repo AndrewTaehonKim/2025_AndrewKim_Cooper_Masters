@@ -1,4 +1,7 @@
 ﻿name,NaPS,sorbent,Atoms,Mean,solvent,electronic_scf,vdw,Count,Median,Sam. std. dev.,Pop. std. dev.,Std. error,Skewness
+Na2S2@FeN4-PC-vdw,Na2S2,FeN4_vdw,C–C,1.4261,PC,False,True,78,1.4261,0.0000,0.0000,0.0000,0.0000
+Na2S2@FeN4-PC-vdw,Na2S2,FeN4_vdw,C–N,1.4261,PC,False,True,8,1.4261,0.0000,0.0000,0.0000,0.0000
+Na2S2@FeN4-PC-vdw,Na2S2,FeN4_vdw,N–Fe,1.8865,PC,False,True,4,1.8865,0.0013,0.0011,0.0006,0.0018
 Na2S2@FeN4-glyme-vdw,Na2S2,FeN4_vdw,C–C,1.4261,Glyme,False,True,78,1.4261,0.0000,0.0000,0.0000,0.0000
 Na2S2@FeN4-glyme-vdw,Na2S2,FeN4_vdw,C–N,1.4261,Glyme,False,True,8,1.4261,0.0000,0.0000,0.0000,0.0000
 Na2S2@FeN4-glyme-vdw,Na2S2,FeN4_vdw,N–Fe,1.8865,Glyme,False,True,4,1.8865,0.0013,0.0011,0.0006,0.0018
@@ -8,18 +11,18 @@ Na2S2@FeN4-vdw,Na2S2,FeN4_vdw,N–Fe,1.8865,Vacuum,True,True,4,1.8865,0.0013,0.0
 Na2S4@FeN4-PC-vdw,Na2S4,FeN4_vdw,N–Fe,1.8865,PC,False,True,4,1.8865,0.0013,0.0011,0.0006,0.0018
 Na2S4@FeN4-PC-vdw,Na2S4,FeN4_vdw,C–N,1.4261,PC,False,True,8,1.4261,0.0000,0.0000,0.0000,0.0000
 Na2S4@FeN4-PC-vdw,Na2S4,FeN4_vdw,C–C,1.4261,PC,False,True,78,1.4261,0.0000,0.0000,0.0000,0.6434
-Na2S4@FeN4-glyme-vdw,Na2S4,FeN4_vdw,N–Fe,1.8865,Glyme,False,True,4,1.8865,0.0013,0.0011,0.0006,0.0018
-Na2S4@FeN4-glyme-vdw,Na2S4,FeN4_vdw,C–N,1.4261,Glyme,False,True,8,1.4261,0.0000,0.0000,0.0000,0.0000
 Na2S4@FeN4-glyme-vdw,Na2S4,FeN4_vdw,C–C,1.4261,Glyme,False,True,78,1.4261,0.0000,0.0000,0.0000,0.6434
+Na2S4@FeN4-glyme-vdw,Na2S4,FeN4_vdw,C–N,1.4261,Glyme,False,True,8,1.4261,0.0000,0.0000,0.0000,0.0000
+Na2S4@FeN4-glyme-vdw,Na2S4,FeN4_vdw,N–Fe,1.8865,Glyme,False,True,4,1.8865,0.0013,0.0011,0.0006,0.0018
 Na2S4@FeN4-vdw,Na2S4,FeN4_vdw,C–C,1.4261,Vacuum,True,True,78,1.4261,0.0000,0.0000,0.0000,0.6434
 Na2S4@FeN4-vdw,Na2S4,FeN4_vdw,C–N,1.4261,Vacuum,True,True,8,1.4261,0.0000,0.0000,0.0000,0.0000
 Na2S4@FeN4-vdw,Na2S4,FeN4_vdw,N–Fe,1.8865,Vacuum,True,True,4,1.8865,0.0013,0.0011,0.0006,0.0018
-Na2S6@FeN4-PC-vdw,Na2S6,FeN4_vdw,C–N,1.4261,PC,False,True,8,1.4261,0.0000,0.0000,0.0000,0.0000
-Na2S6@FeN4-PC-vdw,Na2S6,FeN4_vdw,C–C,1.4261,PC,False,True,78,1.4261,0.0000,0.0000,0.0000,0.6434
 Na2S6@FeN4-PC-vdw,Na2S6,FeN4_vdw,N–Fe,1.8865,PC,False,True,4,1.8865,0.0013,0.0011,0.0006,0.0018
+Na2S6@FeN4-PC-vdw,Na2S6,FeN4_vdw,C–C,1.4261,PC,False,True,78,1.4261,0.0000,0.0000,0.0000,0.6434
+Na2S6@FeN4-PC-vdw,Na2S6,FeN4_vdw,C–N,1.4261,PC,False,True,8,1.4261,0.0000,0.0000,0.0000,0.0000
 Na2S6@FeN4-glyme-vdw,Na2S6,FeN4_vdw,C–N,1.4261,Glyme,False,True,8,1.4261,0.0000,0.0000,0.0000,0.0000
-Na2S6@FeN4-glyme-vdw,Na2S6,FeN4_vdw,C–C,1.4261,Glyme,False,True,78,1.4261,0.0000,0.0000,0.0000,0.6434
 Na2S6@FeN4-glyme-vdw,Na2S6,FeN4_vdw,N–Fe,1.8865,Glyme,False,True,4,1.8865,0.0013,0.0011,0.0006,0.0018
+Na2S6@FeN4-glyme-vdw,Na2S6,FeN4_vdw,C–C,1.4261,Glyme,False,True,78,1.4261,0.0000,0.0000,0.0000,0.6434
 Na2S6@FeN4-vdw,Na2S6,FeN4_vdw,C–C,1.4261,Vacuum,True,True,78,1.4261,0.0000,0.0000,0.0000,0.6434
 Na2S6@FeN4-vdw,Na2S6,FeN4_vdw,C–N,1.4261,Vacuum,True,True,8,1.4261,0.0000,0.0000,0.0000,0.0000
 Na2S6@FeN4-vdw,Na2S6,FeN4_vdw,N–Fe,1.8865,Vacuum,True,True,4,1.8865,0.0013,0.0011,0.0006,0.0018

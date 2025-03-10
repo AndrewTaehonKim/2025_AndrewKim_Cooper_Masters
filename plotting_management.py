@@ -7,6 +7,7 @@ from data_management import extract_sorbent
 from matplotlib.ticker import FuncFormatter
 import matplotlib
 matplotlib.use('Agg')  # Use a non-GUI backend
+matplotlib.rcParams['text.usetex'] = False
 
 dpi = 300
 conversion_factor = 2625.5  # Convert hartree to kJ/mol
@@ -19,7 +20,7 @@ def plot_cell_size_convergence():
     csv_path = os.path.join(directory, csv + ".csv")
     df = pd.read_csv(csv_path)
     # get unique cell sizes
-    cell_sizes = df['Cell Size (A x A x A)'].unique()
+    cell_sizes = df['Cell Length'].unique()
     NaPSs = df['NaPS'].unique()
     fig, axs = plt.subplots(2, 3, figsize=(15, 10))
     for i, NaPS in enumerate(NaPSs):
@@ -28,11 +29,12 @@ def plot_cell_size_convergence():
         filtered_df.drop(filtered_df[filtered_df['%Difference'] == 0].index, inplace=True)
         indices = [i for i in range(filtered_df.shape[0])]
         axs[i//3][i%3].set_title(f'{NaPS_labels[i]}')
-        axs[i//3][i%3].scatter(indices, filtered_df['%Difference'])
+        axs[i//3][i%3].scatter(indices, np.abs(filtered_df['%Difference'].to_numpy()))
         axs[i//3][i%3].set_xticks(indices)
-        axs[i//3][i%3].set_xticklabels(np.array(filtered_df['Cell Size (A x A x A)']), rotation=45)
-        axs[i//3][i%3].set_xlabel('Cell Size (A x A x A)')
-        axs[i//3][i%3].set_ylabel('% Difference from Smallest Cell Size (%)')
+        axs[i//3][i%3].set_xticklabels(np.array(filtered_df['Cell Length']))#, rotation=45)
+        axs[i//3][i%3].set_xlabel('Cell Length (Å)')
+        axs[i//3][i%3].set_ylabel('Absolute % Difference (%)')
+        axs[i//3][i%3].set_ylim(0, 1.1e-5)
     plt.subplots_adjust(wspace=.4, hspace=.7)
     plt.savefig(os.path.join(os.getcwd(), 'Figures/NaPS-cell_size_convergence.jpg'), dpi=dpi*2, bbox_inches='tight')
 
@@ -56,7 +58,6 @@ def plot_kpoint_convergence():
     axs[1].set_ylabel('Time (min)')    
     
     plt.savefig(os.path.join(os.getcwd(), 'Figures/graphene_kpoint_convergence.jpg'), dpi=dpi, bbox_inches='tight')
-
 
 
 # --- This method plots the energyies for the NaPSs with vdw, without vdw, scf, and without scf --- #
@@ -204,11 +205,13 @@ def plot_NaPS_oxidation():
     axs[0].legend()
     axs[1].legend()
     axs[0].set_ylim(0.6, 1.1)
+    
     axs[0].set_title('Na Oxidation States')
     axs[1].set_title('S Oxidation States')
     plt.savefig(os.path.join(os.getcwd(), 'Figures/oxidation_states/NaPS.jpg'), dpi=dpi, bbox_inches='tight')
 
 # --- This method plots the binding energies for each csv in Data-extracted/binding_energies --- #
+"""
 def plot_binding_energies():
     # Define the directory containing the CSV files
     directory = os.path.join(os.getcwd(), 'Data-extracted/final/binding_energies')
@@ -218,6 +221,9 @@ def plot_binding_energies():
     reference_df = pd.read_csv(os.path.join(directory, 'references.csv'))
     # Define the x-ticks and solvents
     x_ticks = ["Na2S", "Na2S2", "Na2S4", "Na2S6", "Na2S8"]
+    
+    # correct for TiO2
+
     solvents = ["Vacuum", "Glyme", "PC"]
     # Initialize a dictionary to hold the data
     # Read the data from the CSV files
@@ -226,6 +232,9 @@ def plot_binding_energies():
         df = pd.read_csv(csv_path)
         data = {solvent: [] for solvent in solvents}
         sorbent = df['Sorbent'].values[0]
+        # Save absolute minimum and maximum for plotting purposes
+        y_min = 0
+        y_max = 0
         for solvent in solvents:
             for tick in x_ticks:
                 filtered_df = df[(df['NaPS'] == tick) & (df['Solvent'] == solvent)]
@@ -235,6 +244,8 @@ def plot_binding_energies():
                 else:
                     print(f"Missing energy data for {tick} in {solvent} in {csv}")
                     data[solvent].append(0)  # Handle missing data
+        y_min = min(min(values) for values in data.values())
+        y_max = max(max(values) for values in data.values())                    
         # Plot the data
         fig, ax = plt.subplots(figsize=(6, 5))
         bar_width = 0.2
@@ -245,19 +256,45 @@ def plot_binding_energies():
         
         # Plot thick horizontal line for reference data based on matching NaPS and sorbent
         labeled = False
+        energy_list = []
+        energy_std_list = []
         for j in index:
             reference_data = reference_df[(reference_df['NaPS'] == x_ticks[j]) & (reference_df['Sorbent'] == sorbent)]
+            # take average and std
+            energy = reference_data['Binding Energy (kJ/mol)'].mean()
+            energy_std = reference_data['Binding Energy (kJ/mol)'].std()
+            energy_min = reference_data['Binding Energy (kJ/mol)'].min()
+            energy_max = reference_data['Binding Energy (kJ/mol)'].max()
+            if energy_min < y_min:
+                y_min = energy_min
+            if energy_max > y_max:
+                y_max = energy_max
+            # Convert the average, minimum, and maximum binding energy to kJ/mol
+            energy_min_kJ = energy_min
+            energy_max_kJ = energy_max
+            # Calculate the asymmetric error bars
+            yerr = [[energy - energy_min_kJ], [energy_max_kJ - energy]]
+            # if reference data is larger than 1, print reference data, energy, and std
+            # if reference_data.shape[0] > 1:
+            #     print(f"Reference data for {sorbent} and {x_ticks[j]}: {reference_data['Binding Energy (kJ/mol)'].values}")
+            #     print(f"Energy: {energy}")
+            #     print(f"Std: {energy_std}")
             if not reference_data.empty:
                 if labeled is False:
-                    ax.hlines(reference_data['Binding Energy'].values[0]*conversion_factor, j - bar_width / 2, j + bar_width / 2 * 5, colors='red', linewidth=4, zorder=3, label=f'Reference {reference_data['Reference #'].values[0]}')
+                    # label with a horizontal line
+                    ax.hlines(energy, j - bar_width / 2, j + bar_width / 2, colors='red', linewidth=4, zorder=3, label=f'Reference')
                     labeled = True
                 else:
-                    ax.hlines(reference_data['Binding Energy'].values[0]*conversion_factor, j - bar_width / 2, j + bar_width / 2 * 5, colors='red', linewidth=4, zorder=3)
-        
+                    ax.hlines(energy, j - bar_width / 2, j + bar_width / 2, colors='red', linewidth=4, zorder=3)
+                if not pd.isna(energy_std):
+                    # ax.errorbar(j, energy, yerr=energy_std, fmt='o', color='red', zorder=3, capsize=5, capthick=1, elinewidth=1)
+                    ax.errorbar(j, energy, yerr=yerr, fmt='o', color='red', zorder=3, capsize=5, capthick=1, elinewidth=1)
         ax.set_xticks([p + bar_width for p in index])
-        ax.set_xticklabels(x_ticks)
-        y_min = min(min(values) for values in data.values())
-        y_max = max(max(values) for values in data.values())
+        ax.set_xticklabels(NaPS_labels)
+        # y_min = min(min(values) for values in data.values())
+        # y_max = max(max(values) for values in data.values())
+        print(f"y_min: {y_min}, y_max: {y_max}")
+        y_max = y_max if y_max < 5000 else 500
         y_range = y_max - y_min
         ax.set_ylim((y_min - 0.1 * y_range) if y_min < 0 else 0, y_max + 0.1 * y_range)
         ax.set_ylabel('Binding Energy ($kJ\;mol^{-1}$)')
@@ -269,7 +306,93 @@ def plot_binding_energies():
             os.makedirs(figures_dir)
         plt.savefig(os.path.join(figures_dir, f'{extract_sorbent(csv)}.jpg'), dpi=dpi)
         plt.close()
+"""
+def plot_binding_energies():
+    # Define the directory containing the CSV files
+    directory = os.path.join(os.getcwd(), 'Data-extracted/final/binding_energies')
+    csvs = [csv for csv in os.listdir(directory) if csv.endswith('.csv') and 'reference' not in csv]
+    
+    # Get reference data
+    reference_df = pd.read_csv(os.path.join(directory, 'references.csv'))
+    # Define the x-ticks and solvents
+    x_ticks = ["Na2S", "Na2S2", "Na2S4", "Na2S6", "Na2S8"]
+    solvents = ["Reference", "Vacuum", "Glyme", "PC"]
+    # Initialize a dictionary to hold the data
+    # Read the data from the CSV files
+    for csv in csvs:
+        csv_path = os.path.join(directory, csv)
+        df = pd.read_csv(csv_path)
+        data = {solvent: [] for solvent in solvents}
+        error_bars = {solvent: [] for solvent in solvents}
+        sorbent = df['Sorbent'].values[0]
+        for solvent in solvents[1:]:  # Skip "Reference" for now
+            for tick in x_ticks:
+                filtered_df = df[(df['NaPS'] == tick) & (df['Solvent'] == solvent)]
+                if not filtered_df.empty:
+                    # convert hartree to kJ/mol
+                    data[solvent].append(filtered_df['Binding Energy'].values[0] * conversion_factor)
+                else:
+                    print(f"Missing energy data for {tick} in {solvent} in {csv}")
+                    data[solvent].append(0)  # Handle missing data
+                    error_bars[solvent].append([[0], [0]])  # No error bars
+        # Add reference data
+        reference_exists = True
+        for tick in x_ticks:
+            reference_data = reference_df[(reference_df['NaPS'] == tick) & (reference_df['Sorbent'] == sorbent)]
+            if not reference_data.empty:
+                # Calculate the average, minimum, and maximum binding energy
+                average_binding_energy_kJ = reference_data['Binding Energy (kJ/mol)'].mean()
+                energy_min_kJ = reference_data['Binding Energy (kJ/mol)'].min()
+                energy_max_kJ = reference_data['Binding Energy (kJ/mol)'].max()
+                data["Reference"].append(average_binding_energy_kJ)
+                # Store the error bars
+                yerr = [[average_binding_energy_kJ - energy_min_kJ], [energy_max_kJ - average_binding_energy_kJ]]
+                error_bars["Reference"].append(yerr)
+                print(f"Reference data for {sorbent} and {tick}: {average_binding_energy_kJ}")
+            else:
+                print(f"Missing reference data for {tick} in {sorbent}")
+                reference_exists = False
 
+        # Plot the data
+        fig, ax = plt.subplots(figsize=(10, 6))
+        bar_width = 0.2
+        index = range(len(x_ticks))
+        
+        if reference_exists:
+            for i, solvent in enumerate(solvents):
+                if solvent == "Reference":
+                    print(f"For sorbent {sorbent} ; Reference data: {data[solvent]}")
+                    for j, tick in enumerate(x_ticks):
+                        ax.bar(j + bar_width * i, data[solvent][j], bar_width, label="Literature" if j == 0 else "", color='red', yerr=error_bars[solvent][j], error_kw={'ecolor': 'black', 'capsize': 5, 'elinewidth': 2, 'capthick': 2})
+                else:
+                    ax.bar([p + bar_width * i for p in index], data[solvent], bar_width, label=solvent, hatch=['', '\\', '/'][i-1])
+        else:
+            for i, solvent in enumerate(solvents[1:]):  # Skip "Reference"
+                ax.bar([p + bar_width * i for p in index], data[solvent], bar_width, label=solvent, hatch=['', '\\', '/'][i])
+        
+        ax.set_xticks([p + bar_width * (1.5 if reference_exists else 1) for p in index])
+        x_tick_labels = ["$Na_2S$", "$Na_2S_2$", "$Na_2S_4$", "$Na_2S_6$", "$Na_2S_8$"]
+        ax.set_xticklabels(x_tick_labels)
+        
+        # Filter out empty lists before calculating y_min and y_max
+        non_empty_data = [values for values in data.values() if values]
+        y_min = min(min(values) for values in non_empty_data)
+        y_max = max(max(values) for values in non_empty_data)
+        # if reference exists, check for y_max in error bars
+        if reference_exists:
+            y_max = max(y_max, np.max([error_bar[1][0]+data["Reference"] for error_bar in error_bars["Reference"]]))
+        y_range = y_max - y_min
+        ax.set_ylim((y_min - 0.1 * y_range) if y_min < 0 else 0, y_max + 0.1 * y_range)
+        ax.set_ylabel('Binding Energy ($kJ\\;mol^{-1}$)', fontsize=15)
+
+        ax.set_xlabel('NaPS', fontsize=15)
+        ax.legend()
+        # Save the plot to a file
+        figures_dir = os.path.join(os.getcwd(), 'Figures/binding_energies')
+        if not os.path.exists(figures_dir):
+            os.makedirs(figures_dir)
+        plt.savefig(os.path.join(figures_dir, f'{sorbent}.jpg'), dpi=300)
+        plt.close()
 
 # --- This method plots the bond lengths of the NaPS molecules in the adsorbed state vs. non-adsorbed state --- #
 def plot_NaPS_bonds():
@@ -409,6 +532,7 @@ def plot_adsorption_lengths():
     csvs = [csv for csv in os.listdir(directory) if csv.endswith('.csv')]
     # Define the x-ticks and solvents
     x_ticks = ["Na2S", "Na2S2", "Na2S4", "Na2S6", "Na2S8"]
+    x_tick_labels = [r"$Na_2S$", r"$Na_2S_2$", r"$Na_2S_4$", r"$Na_2S_6$", r"$Na_2S_8$"]
     solvents = ["Vacuum", "Glyme", "PC"]
     # Initialize a dictionary to hold the data
     # Read the data from the CSV files
@@ -430,7 +554,7 @@ def plot_adsorption_lengths():
                     data[solvent].append(0)
                     connections[solvent].append('')
         # Plot the data
-        fig, ax = plt.subplots(figsize=(6, 5))
+        fig, ax = plt.subplots(figsize=(10, 6))
         bar_width = 0.2
         index = range(len(x_ticks))
 
@@ -441,13 +565,14 @@ def plot_adsorption_lengths():
                 ax.text(j + bar_width * i, value + 0.05, connections[solvent][j], ha='center', va='bottom', size=5)
 
         ax.set_xticks([p + bar_width for p in index])
-        ax.set_xticklabels(x_ticks)
+        ax.set_xticklabels(x_tick_labels)
         y_min = min(min(values) for values in data.values())
         y_max = max(max(values) for values in data.values())
         y_range = y_max - y_min
         ax.set_ylim(1.5, y_max + 0.1 * y_range)
-        ax.set_ylabel('Adsorption Distance (Å)')
+        ax.set_ylabel('Adsorption Distance (Å)', fontsize=15)
         ax.legend()
+        ax.set_xlabel('NaPS', fontsize=15)
         
         # Save the plot to a file
         figures_dir = os.path.join(os.getcwd(), 'Figures/adsorption_lengths')
@@ -466,6 +591,7 @@ def plot_oxidation_states():
     adsorption_csvs = [csv for csv in csvs if '@' in csv]
     # Define the x-ticks and solvents
     x_ticks = ["Na2S", "Na2S2", "Na2S4", "Na2S6", "Na2S8"]
+    x_tick_labels = [r"$Na_2S$", r"$Na_2S_2$", r"$Na_2S_4$", r"$Na_2S_6$", r"$Na_2S_8$"]
     solvents = ["Vacuum", "Glyme", "PC"]
     # Extract unique rad# from the CSV filenames
     # Get baseline bond lengths for NaPS
@@ -502,7 +628,7 @@ def plot_oxidation_states():
                     data_Na[solvent].append(0)
                     data_S[solvent].append(0)
         # Plot the data as two subplots in one figure, the left for Na-S bonds and the right for S-S bonds
-        fig, (ax_Na, ax_S) = plt.subplots(1, 2, figsize=(12, 10))
+        fig, (ax_Na, ax_S) = plt.subplots(2, 1, figsize=(14, 10))
         bar_width = 0.2
         index = range(len(x_ticks))
         # Plot bars
@@ -526,13 +652,13 @@ def plot_oxidation_states():
         
         # Set x-ticks and x-tick labels
         ax_Na.set_xticks([p + bar_width for p in index])
-        ax_Na.set_xticklabels(x_ticks)
+        ax_Na.set_xticklabels(x_tick_labels)
         ax_S.set_xticks([p + bar_width for p in index])
-        ax_S.set_xticklabels(x_ticks)
+        ax_S.set_xticklabels(x_tick_labels)
 
         # set title for Na and S
-        ax_Na.set_title('Na Oxidation States', fontsize=12)
-        ax_S.set_title('S Oxidation States', fontsize=12)
+        ax_Na.set_title('Na Oxidation States', fontsize=17)
+        ax_S.set_title('S Oxidation States', fontsize=17)
         # Calculate y-axis limits
         # y_min_Na = min(min(values) for values in data_Na.values())
         # y_max_Na = max(max(values) for values in data_Na.values())
@@ -545,16 +671,79 @@ def plot_oxidation_states():
         # ax_S.set_ylim(y_min_S - 0.1 * y_range_S, y_max_S + 0.1 * y_range_S)
 
         # Set y-axis labels and legends
-        ax_Na.set_ylabel('Oxidation State')
-        ax_S.set_ylabel('Oxidation State')
+        ax_Na.set_ylabel('Oxidation State', fontsize=15)
+        ax_S.set_ylabel('Oxidation State', fontsize=15)
         ax_Na.legend(loc='best')
-        ax_S.legend(loc='best')
-
+        ax_S.legend(loc='lower right')
+        ax_Na.set_ylim(0.6, 1.2)
+        if 'TiO2' in csv:
+            ax_Na.set_ylim(0, 1.2)
+        ax_Na.set_xlabel('NaPS', fontsize=15)
+        ax_S.set_xlabel('NaPS', fontsize=15)
+        # put gap between ax_Na and ax_S
+        plt.subplots_adjust(hspace=0.3)
         # Save the plot to a file
         figures_dir = os.path.join(os.getcwd(), 'Figures/oxidation_states')
         os.makedirs(figures_dir, exist_ok=True)
         plt.savefig(os.path.join(figures_dir, f'{csv.split(".")[0]}.jpg'), bbox_inches='tight', pad_inches=0.1, dpi=dpi)
 
+# --- This method plots the summary of binding energies for all materials --- #
+def plot_binding_energy_summary():
+    sorbents = ["graphene_vdw", "N_graphene", "FeN4_vdw", "TiO2", "NiS2", "NiS2_S"]
+    # sorbents = ["graphene_vdw", "N_graphene", "FeN4_vdw", "NiS2", "NiS2_S"]
+    sorbent_names = ["$Graphene$", "$N-graphene$", "$FeN_4-graphene$", "$TiO_2$", "$NiS_2$ Ni side", "$NiS_2$ S side"]
+    # sorbent_names = ["$Graphene$", "$N-graphene$", "$FeN_4-graphene$", "$NiS_2$ Ni side", "$NiS_2$ S side"]
+    # Define the directory containing the CSV files
+    directory = os.path.join(os.getcwd(), 'Data-extracted/final/binding_energies')
+    csvs = [csv for csv in os.listdir(directory) if csv.endswith('.csv') and 'reference' not in csv]
+    NaPS = ["Na2S", "Na2S2", "Na2S4", "Na2S6", "Na2S8"]
+    NaPS_markers = ['o', 's', 'D', '^', 'v']
+    solvents = ["Vacuum", "Glyme", "PC"]
+    solvent_colors = ['b', 'r', 'g']
+    # initialize dictionary
+    data = {sorbent: {solvent: [] for solvent in solvents} for sorbent in sorbents}
+    NaPS_marker_dict = {NaPS[i]: NaPS_markers[i] for i in range(len(NaPS))}
+    solvent_color_dict = {solvents[i]: solvent_colors[i] for i in range(len(solvents))}
+    # initialize plot
+    fig, axs = plt.subplots(1, 1, figsize=(10, 10))
+    axs.set_xlabel('Sorbent')
+    axs.set_ylabel('Binding Energy (kJ/mol)', fontsize=15)
+    axs.set_xticklabels(sorbent_names)
+    axs.set_xticks(range(len(sorbents)))
+    for csv in csvs:
+        sorbent = extract_sorbent(csv)
+        if sorbent not in sorbents:
+            continue
+        csv_path = os.path.join(directory, csv)
+        df = pd.read_csv(csv_path)
+        # get sorbent index
+        
+        sorbent_index = sorbents.index(sorbent)
+        for solvent in solvents:
+            for NaPS_mol in NaPS:
+                filtered_df = df[(df['NaPS'] == NaPS_mol) & (df['Solvent'] == solvent)]
+                if not filtered_df.empty:
+                    axs.plot(np.full(filtered_df.shape[0],sorbent_index), filtered_df['Binding Energy'].values[0]*conversion_factor, marker=NaPS_marker_dict[NaPS_mol], color=solvent_color_dict[solvent], markersize=10)
+                else:
+                    print(f"Missing data for {NaPS_mol} in {solvent} in {sorbent} in {csv}")
+
+    
+    # generate legend with section for NaPS and section for solvent
+    NaPS_legend = [matplotlib.lines.Line2D([0], [0], marker=NaPS_markers[i], color='w', label=NaPS[i], markerfacecolor='black', markersize=10) for i in range(len(NaPS))]
+    solvent_legend = [matplotlib.lines.Line2D([0], [0], marker='o', color='w', label=solvents[i], markerfacecolor=solvent_colors[i], markersize=10) for i in range(len(solvents))]
+
+    # Create headers as text elements
+    header_NaPS = matplotlib.lines.Line2D([0], [0], color='none', label='NaPS (marker)')
+    header_solvent = matplotlib.lines.Line2D([0], [0], color='none', label='Solvent (color)')
+    header_empty = matplotlib.lines.Line2D([0], [0], color='none', label='')
+
+    # Combine headers and legend entries
+    legend_elements = [header_NaPS] + NaPS_legend + [header_empty] + [header_solvent] + solvent_legend
+
+    # Create the legend with a larger title
+    legend = axs.legend(handles=legend_elements, loc='upper left', fontsize='x-large')
+
+    plt.savefig('Figures/binding_energy_summary.jpg', dpi=dpi)
 
 
 if __name__ == "__main__":
@@ -566,3 +755,4 @@ if __name__ == "__main__":
     # plot_NaPS_bonds()
     # plot_adsorption_lengths()
     # plot_oxidation_states()
+    # plot_binding_energy_summary()
