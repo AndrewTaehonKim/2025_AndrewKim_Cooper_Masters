@@ -70,6 +70,7 @@ def plot_NaPS_energy():
     fig, axs = plt.subplots(2, 2, figsize=(12, 10))
     # Define the x-ticks and solvents
     x_ticks = ["Na2S", "Na2S2", "Na2S4", "Na2S6", "Na2S8"]
+    x_labels = ["$Na_2S$", "$Na_2S_2$", "$Na_2S_4$", "$Na_2S_6$", "$Na_2S_8$"]
     solvents = ["Vacuum", "Glyme", "PC"]
     # Initialize a dictionary to hold the data
     nvdw_scf_data = {solvent: [] for solvent in solvents}
@@ -147,7 +148,7 @@ def plot_NaPS_energy():
         axs[i].set_xticks([p + bar_width for p in index])
         axs[i].set_xticklabels(x_ticks)
         axs[i].set_ylabel('Energy (Hartree)')
-        axs[i].set_title(f'{NaPSs[i]}')
+        axs[i].set_title(f'{x_labels[i]}')
         axs[i].set_ylim(y_min-0.1, y_max+0.1)
         axs[i].legend()
     plt.savefig(os.path.join(os.getcwd(), 'Figures/NaPS-5_subplot-NaPS.jpg'), dpi=dpi, bbox_inches='tight')
@@ -749,9 +750,9 @@ def plot_binding_energy_summary():
 if __name__ == "__main__":
     # plot_cell_size_convergence()
     # plot_kpoint_convergence()
-    # plot_NaPS_energy()
+    plot_NaPS_energy()
     # plot_NaPS_oxidation()
-    plot_binding_energies()
+    # plot_binding_energies()
     # plot_NaPS_bonds()
     # plot_adsorption_lengths()
     # plot_oxidation_states()
